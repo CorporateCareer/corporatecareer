@@ -108,7 +108,8 @@ h1, h2, h3, h4, h5 {
 .nav-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 0;
 }
 
 .logo {
@@ -145,6 +146,8 @@ h1, h2, h3, h4, h5 {
   align-items: center;
   gap: 36px;
   list-style: none;
+  margin-left: auto;
+  margin-right: 20px;
 }
 
 .nav-links a {
@@ -1204,6 +1207,8 @@ h1, h2, h3, h4, h5 {
   /* Navigation */
   .hamburger { display: flex; }
 
+  .lang-toggle { margin-right: 8px; }
+
   .nav-links {
     position: fixed;
     inset: 0;
@@ -1214,6 +1219,8 @@ h1, h2, h3, h4, h5 {
     align-items: center;
     gap: 36px;
     z-index: 199;
+    margin-left: 0;
+    margin-right: 0;
     transform: translateX(100%);
     transition: transform 0.35s var(--ease);
   }
@@ -1325,28 +1332,29 @@ h1, h2, h3, h4, h5 {
 .lang-toggle {
   display: flex;
   align-items: center;
-  gap: 4px;
-  background: var(--gray-100);
-  border: 1px solid var(--gray-200);
+  gap: 5px;
+  background: var(--white);
+  border: 1.5px solid var(--blue-600);
   border-radius: 8px;
-  padding: 5px 10px;
+  padding: 6px 12px;
   cursor: pointer;
   font-family: var(--font);
   font-size: 0.75rem;
   font-weight: 700;
-  letter-spacing: 0.04em;
-  transition: background var(--t) var(--ease), border-color var(--t) var(--ease);
+  letter-spacing: 0.06em;
+  transition: background var(--t) var(--ease), box-shadow var(--t) var(--ease);
   flex-shrink: 0;
+  margin-right: 12px;
 }
 
 .lang-toggle:hover {
-  background: var(--gray-200);
-  border-color: var(--gray-300);
+  background: rgba(37,99,235,0.06);
+  box-shadow: 0 2px 8px rgba(37,99,235,0.15);
 }
 
 .lang-btn { color: var(--gray-400); transition: color var(--t) var(--ease); }
 .lang-btn.lang-active { color: var(--blue-600); }
-.lang-sep { color: var(--gray-300); }
+.lang-sep { color: var(--gray-300); font-weight: 400; }
 
 /* Mobile portrait */
 @media (max-width: 480px) {
