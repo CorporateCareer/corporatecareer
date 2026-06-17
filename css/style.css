@@ -1332,29 +1332,36 @@ h1, h2, h3, h4, h5 {
 .lang-toggle {
   display: flex;
   align-items: center;
-  gap: 5px;
-  background: var(--white);
-  border: 1.5px solid var(--blue-600);
-  border-radius: 8px;
-  padding: 6px 12px;
+  gap: 3px;
+  background: var(--gray-100);
+  border: 1px solid var(--gray-200);
+  border-radius: 9px;
+  padding: 3px;
   cursor: pointer;
   font-family: var(--font);
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  transition: background var(--t) var(--ease), box-shadow var(--t) var(--ease);
   flex-shrink: 0;
   margin-right: 12px;
+  transition: border-color var(--t) var(--ease);
 }
 
-.lang-toggle:hover {
-  background: rgba(37,99,235,0.06);
-  box-shadow: 0 2px 8px rgba(37,99,235,0.15);
+.lang-toggle:hover { border-color: var(--gray-300); }
+
+.lang-btn {
+  display: block;
+  padding: 5px 11px;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--gray-400);
+  transition: color var(--t) var(--ease), background var(--t) var(--ease), box-shadow var(--t) var(--ease);
 }
 
-.lang-btn { color: var(--gray-400); transition: color var(--t) var(--ease); }
-.lang-btn.lang-active { color: var(--blue-600); }
-.lang-sep { color: var(--gray-300); font-weight: 400; }
+.lang-btn.lang-active {
+  background: var(--blue-600);
+  color: var(--white);
+  box-shadow: 0 1px 4px rgba(37,99,235,0.35);
+}
 
 /* Mobile portrait */
 @media (max-width: 480px) {
