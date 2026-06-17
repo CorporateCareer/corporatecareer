@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CorporateCareer works with the leading firms in Finance, Consulting and Law to connect Dutch students with the best opportunities.">
+  <title>Partners — CorporateCareer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ── Page hero ── */
+    .page-hero {
+      background: linear-gradient(135deg, var(--navy-950) 0%, var(--navy-800) 100%);
+      padding: 140px 0 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(37,99,235,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .page-hero .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(37,99,235,0.15);
+      border: 1px solid rgba(37,99,235,0.3);
+      color: var(--blue-300);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 999px;
+      margin-bottom: 24px;
+    }
+    .page-hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .page-hero p {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.60);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ── Sections ── */
+    .page-section { padding: 80px 0; }
+    .page-section.gray { background: var(--gray-50); }
+    .page-section + .page-section { border-top: 1px solid var(--gray-200); }
+    .page-section.gray + .page-section,
+    .page-section + .page-section.gray { border-top: none; }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--blue-600);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 800;
+      color: var(--navy-900);
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+    .section-header-center { text-align: center; }
+
+    /* ── Sector heading ── */
+    .sector-heading {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .sector-heading h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--navy-900);
+    }
+    .sector-pill {
+      background: rgba(37,99,235,0.08);
+      border: 1px solid rgba(37,99,235,0.2);
+      color: var(--blue-600);
+      padding: 4px 14px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* ── Partner cards ── */
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .partner-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 14px;
+      padding: 24px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .partner-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+    }
+    .partner-initial {
+      width: 80px;
+      height: 80px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      font-weight: 900;
+      color: white;
+      margin-bottom: 16px;
+      letter-spacing: 0.04em;
+      flex-shrink: 0;
+    }
+    .partner-name {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--navy-900);
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+    .partner-desc {
+      font-size: 0.75rem;
+      color: var(--gray-500);
+      line-height: 1.5;
+      margin-bottom: 14px;
+      flex: 1;
+    }
+    .partner-link {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--blue-600);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .partner-link:hover { color: var(--blue-500); }
+
+    /* consulting section on white bg */
+    .consulting-partners-section {
+      background: var(--gray-50);
+    }
+
+    /* ── CTA strip ── */
+    .page-cta {
+      background: linear-gradient(135deg, var(--blue-600) 0%, var(--violet) 100%);
+      padding: 72px 0;
+      text-align: center;
+    }
+    .page-cta h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; color: var(--white); margin-bottom: 14px; }
+    .page-cta p { color: rgba(255,255,255,0.72); font-size: 1rem; margin-bottom: 32px; }
+    .cta-form-inline {
+      display: flex;
+      gap: 10px;
+      max-width: 480px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .cta-form-inline input[type="email"] {
+      flex: 1;
+      min-width: 200px;
+      padding: 14px 18px;
+      border-radius: 8px;
+      border: none;
+      font-size: 0.95rem;
+      font-family: var(--font);
+      outline: none;
+      color: var(--navy-900);
+    }
+    .cta-form-inline button {
+      background: var(--navy-900);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 14px 28px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      font-family: var(--font);
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+      white-space: nowrap;
+    }
+    .cta-form-inline button:hover { background: var(--navy-950); transform: translateY(-2px); }
+
+    @media (max-width: 900px) {
+      .partners-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .partners-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAVIGATION ─────────────────────── -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">CC</span>
+        <span class="logo-text">CorporateCareer</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="finance.html" data-i18n="nav.finance">Finance</a></li>
+        <li><a href="consulting.html" data-i18n="nav.consulting">Consulting</a></li>
+        <li><a href="legal.html" data-i18n="nav.legal">Legal</a></li>
+        <li><a href="jobs.html" data-i18n="nav.careers">Careers</a></li>
+        <li><a href="partners.html" class="active" data-i18n="nav.partners">Partners</a></li>
+        <li><a href="over-ons.html" data-i18n="nav.about">About Us</a></li>
+        <li>
+          <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+            <span class="lang-btn lang-btn--en lang-active">EN</span>
+            <span class="lang-btn lang-btn--nl">NL</span>
+          </button>
+        </li>
+        <li><a href="index.html#start" class="btn-nav" data-i18n="nav.cta">Get Started</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" data-i18n="nav.hamburger.open">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── HERO ──────────────────────────── -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="badge" data-i18n="partners.badge">Our Network</span>
+      <h1 data-i18n-html="partners.title">Our<br><span class="gradient-text">Partners</span></h1>
+      <p data-i18n="partners.subtitle">We work with the leading firms in Finance, Consulting and Law to connect our students with the best opportunities.</p>
+    </div>
+  </section>
+
+  <!-- ── FINANCE PARTNERS ───────────────── -->
+  <section class="page-section">
+    <div class="container">
+      <div class="sector-heading fade-up">
+        <h3 data-i18n="partners.finance.title">Finance</h3>
+        <span class="sector-pill">8 firms</span>
+      </div>
+      <div class="partners-grid">
+        <div class="partner-card fade-up">
+          <div class="partner-initial" style="background:#b5922e;">GS</div>
+          <div class="partner-name">Goldman Sachs</div>
+          <div class="partner-desc">Global investment banking leader with a major M&amp;A presence in Amsterdam</div>
+          <a href="jobs.html" class="partner-link">View careers →</a>
+        </div>
+        <div class="partner-card fade-up">
+          <div class="partner-initial" style="background:#0a2d6e;">JPM</div>
+          <div class="partner-name">J.P. Morgan</div>
+          <div class="partner-desc">World's largest investment bank, active across ECM, DCM and M&amp;A in the Netherlands</div>
+          <a href="jobs.html" class="partner-link">View careers →</a>
+        </div>
+        <div class="partner-card fade-up">
+          <div class="partner-initial" style="background:#8b0000;">RC</div>
+          <div class="partner-name">Rothschild &amp; Co</div>
+          <div class="partner-desc">Leading independent financial advisory firm, specialising in M&amp;A and restructuring</div>
+          <a href="jobs.html" class="partner-link">View careers →</a>
+        </div>
+        <div class="partner-card fade-up">
+          <div class="partner-initial" style="background:#1a237e;">LAZ</div>
+          <div class="partner-name">Lazard</div>
+          <div class="partner-desc">Premier global financial advisory and asset management firm</div>
+          <a href="jobs.html" class="partner-link">View careers →</a>
+        </div>
+        <div class="partner-card fade-up">
+          <div class="partner-initial" style="background:#00a650;">AA</div>
+          <div class="partner-name">ABN AMRO M&amp;A</div>
+          <div class="partner-desc">The leading Dutch bank with a dedicated M&amp;A advisory practice</div>
+          <a href="jobs.html" class="partner-link">View careers →</a>
+        </div>
+        <div class="partner-card fade-up">
+          <div class="partner-initial" style="background:#005a6e;">KC</div>
+          <div class="partner-name">Kempen &amp; Co</div>
+          <div class="partner-desc">Specialist Dutch investment bank focusing on equity capital markets and M&amp;A</div>
+          <a href="jobs.html" class="partner-link">View careers →</a>
+        </div>
+        <div class="partner-card fade-up">
+          <div class="partner-initial" style="background:#e85c00;">NB</div>
+          <div class="partner-name">NIBC</div>
+          <div class="partner-desc">Dutch merchant bank active in corporate finance and leveraged finance</div>
+          <a href="jobs.html" class="partner-link">View careers →</a>
+        </div>
+        <div class="partner-card fade-up">
+          <div class="partner-initial" style="background:#e05000;">RB</div>
+          <div class="partner-name">Rabobank</div>
+          <div class="partner-desc">Major Dutch bank with strong structured finance and project finance capabilities</div>
+          <a href="jobs.html" class="partner-link">View careers →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONSULTING PARTNERS ────────────── -->
+  <section class="page-section gray">
+    <div class="container">
+      <div class="sector-heading fade-up">
+        <h3 data-i18n="partners.consulting.title">Consulting</h3>
+        <span class="sector-pill">6 firms</span>
+      </div>
+      <div class="partners-grid">
+        <div class="partner-card fade-up">
+          <div class="partner-initial" style="background:#003366;">MK</div>
+          <div class="partner-name">McKinsey &amp; Company</div>
+          <div class="partner-desc">The world's most prestigious strategy consultancy, with offices in Amsterdam</div>
+          <a href="jobs.html" class="partner-link">View careers →</a>
+        </div>
+        <div class="partner-card fade-up">
+          <div class="partner-initial" style="background:#00823d;">BCG</div>
+          <div class="partner-name">BCG</div>
+          <div class="partner-desc">Boston Consulting Group — global strategy firm known for innovation and impact</div>
+          <a href="jobs.html" class="partner-link">View careers →</a>
+        </div>
+        <div class="partner-card fade-up">
+          <div class="partner-initial" style="background:#cc0000;">BC</div>
+          <div class="partner-name">Bain &amp; Company</div>
+          <div class="partner-desc">Top-ranked employer in the Netherlands, known for its collaborative culture</div>
+          <a href="jobs.html" class="partner-link">View careers →</a>
+        </div>
+        <div class="partner-card fade-up">
+          <div class="partner-initial" style="background:#e2001a;">RB</div>
+          <div class="partner-name">Roland Berger</div>
+          <div class="partner-desc">Europe's only leading independent strategy consultancy</div>
+          <a href="jobs.html" class="partner-link">View careers →</a>
+        </div>
+        <div class="partner-card fade-up">
+          <div class="partner-initial" style="background:#00205b;">OW</div>
+          <div class="partner-name">Oliver Wyman</div>
+          <div class="partner-desc">Specialist strategy firm with deep expertise in financial services</div>
+          <a href="jobs.html" class="partner-link">View careers →</a>
+        </div>
+        <div class="partner-card fade-up">
+          <div class="partner-initial" style="background:#e31837;">S&amp;</div>
+          <div class="partner-name">Strategy&amp; (PwC)</div>
+          <div class="partner-desc">PwC's global strategy consulting arm, combining scale with boutique depth</div>
+          <a href="jobs.html" class="partner-link">View careers →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── LEGAL PARTNERS ─────────────────── -->
+  <section class="page-section">
+    <div class="container">
+      <div class="sector-heading fade-up">
+        <h3 data-i18n="partners.legal.title">Legal</h3>
+        <span class="sector-pill">6 firms</span>
+      </div>
+      <div class="partners-grid">
+        <div class="partner-card fade-up">
+          <div class="partner-initial" style="background:#1a1a5e;">DB</div>
+          <div class="partner-name">De Brauw</div>
+          <div class="partner-desc">The Netherlands' most prestigious law firm, ranked top in M&amp;A and corporate</div>
+          <a href="jobs.html" class="partner-link">View careers →</a>
+        </div>
+        <div class="partner-card fade-up">
+          <div class="partner-initial" style="background:#003366;">ND</div>
+          <div class="partner-name">NautaDutilh</div>
+          <div class="partner-desc">Leading Benelux firm with top-tier practices in corporate, finance and litigation</div>
+          <a href="jobs.html" class="partner-link">View careers →</a>
+        </div>
+        <div class="partner-card fade-up">
+          <div class="partner-initial" style="background:#8b0000;">FF</div>
+          <div class="partner-name">Freshfields</div>
+          <div class="partner-desc">Magic Circle firm with a major transactional and regulatory practice in Amsterdam</div>
+          <a href="jobs.html" class="partner-link">View careers →</a>
+        </div>
+        <div class="partner-card fade-up">
+          <div class="partner-initial" style="background:#4a0080;">AO</div>
+          <div class="partner-name">Allen &amp; Overy</div>
+          <div class="partner-desc">Global Magic Circle firm, one of the largest law firms in the world</div>
+          <a href="jobs.html" class="partner-link">View careers →</a>
+        </div>
+        <div class="partner-card fade-up">
+          <div class="partner-initial" style="background:#006064;">HL</div>
+          <div class="partner-name">Hogan Lovells</div>
+          <div class="partner-desc">International firm with strong finance and banking law practice in the Netherlands</div>
+          <a href="jobs.html" class="partner-link">View careers →</a>
+        </div>
+        <div class="partner-card fade-up">
+          <div class="partner-initial" style="background:#162d57;">ST</div>
+          <div class="partner-name">Stibbe</div>
+          <div class="partner-desc">Top Benelux law firm known for its quality and collegial culture</div>
+          <a href="jobs.html" class="partner-link">View careers →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BECOME A PARTNER CTA ──────────── -->
+  <section class="page-cta">
+    <div class="container">
+      <h2 data-i18n="partners.cta.title">Become a Partner</h2>
+      <p data-i18n="partners.cta.subtitle">Are you a firm looking to recruit top Dutch talent? Let's talk.</p>
+      <form class="cta-form-inline" novalidate>
+        <label for="partnerEmail" class="sr-only">Email address</label>
+        <input type="email" id="partnerEmail" placeholder="your@firm.com" autocomplete="email">
+        <button type="submit" data-i18n="partners.cta.btn">Get in Touch</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ─────────────────────────── -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="logo" aria-label="CorporateCareer homepage">
+          <span class="logo-icon">CC</span>
+          <span class="logo-text">CorporateCareer</span>
+        </a>
+        <p data-i18n="footer.tagline">Your route to the top of Dutch business.</p>
+        <div class="footer-about">
+          <h5><a href="over-ons.html" style="color:inherit;text-decoration:none;" data-i18n="footer.about.heading">About Us</a></h5>
+          <p data-i18n="footer.about.text">CorporateCareer was founded by alumni from Erasmus, UvA and VU who found their own way to Goldman Sachs, McKinsey and De Brauw. We help ambitious Dutch students break through in investment banking, law and consulting.</p>
+          <p data-i18n="footer.about.stat">Over 2,400 students came before you.</p>
+        </div>
+      </div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <div class="footer-col">
+          <h5 data-i18n="footer.col1.title">Career Paths</h5>
+          <a href="finance.html" data-i18n="nav.finance">Finance</a>
+          <a href="consulting.html" data-i18n="nav.consulting">Consulting</a>
+          <a href="legal.html" data-i18n="nav.legal">Legal</a>
+        </div>
+        <div class="footer-col">
+          <h5 data-i18n="footer.col2.title">Platform</h5>
+          <a href="jobs.html" data-i18n="nav.careers">Careers</a>
+          <a href="partners.html" data-i18n="nav.partners">Partners</a>
+          <a href="over-ons.html" data-i18n="footer.col2.about">About Us</a>
+        </div>
+        <div class="footer-col">
+          <h5 data-i18n="footer.col3.title">Legal</h5>
+          <a href="#" data-i18n="footer.col3.privacy">Privacy Policy</a>
+          <a href="#" data-i18n="footer.col3.terms">Terms &amp; Conditions</a>
+          <a href="#" data-i18n="footer.col3.cookies">Cookies</a>
+        </div>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <span data-i18n="footer.copy">© 2025 CorporateCareer — All rights reserved</span>
+        <span data-i18n="footer.location">Amsterdam, Netherlands</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
