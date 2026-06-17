@@ -1058,7 +1058,34 @@ h1, h2, h3, h4, h5 {
   color: rgba(255,255,255,0.38);
   font-size: 0.855rem;
   line-height: 1.65;
-  max-width: 220px;
+  max-width: 260px;
+}
+
+.footer-about {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  max-width: 280px;
+}
+
+.footer-about h5 {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue-400);
+  margin-bottom: 10px;
+}
+
+.footer-about p {
+  max-width: 280px;
+  margin-bottom: 8px;
+}
+
+.footer-about p:last-child {
+  color: rgba(255,255,255,0.55);
+  font-weight: 500;
+  margin-bottom: 0;
 }
 
 .footer-links {
