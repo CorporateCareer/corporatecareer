@@ -16,7 +16,10 @@ hamburger.addEventListener('click', () => {
   navLinks.classList.toggle('open', open);
   document.body.style.overflow = open ? 'hidden' : '';
   hamburger.setAttribute('aria-expanded', open);
-  hamburger.setAttribute('aria-label', open ? 'Menu sluiten' : 'Menu openen');
+  const lang = window.CURRENT_LANG || 'en';
+  const openLabel  = (typeof TRANSLATIONS !== 'undefined' && TRANSLATIONS[lang]) ? TRANSLATIONS[lang]['nav.hamburger.open']  : 'Open menu';
+  const closeLabel = (typeof TRANSLATIONS !== 'undefined' && TRANSLATIONS[lang]) ? TRANSLATIONS[lang]['nav.hamburger.close'] : 'Close menu';
+  hamburger.setAttribute('aria-label', open ? closeLabel : openLabel);
 });
 
 // Close menu when a link is clicked
@@ -26,7 +29,9 @@ navLinks.querySelectorAll('a').forEach(link => {
     navLinks.classList.remove('open');
     document.body.style.overflow = '';
     hamburger.setAttribute('aria-expanded', 'false');
-    hamburger.setAttribute('aria-label', 'Menu openen');
+    const lang = window.CURRENT_LANG || 'en';
+    const openLabel = (typeof TRANSLATIONS !== 'undefined' && TRANSLATIONS[lang]) ? TRANSLATIONS[lang]['nav.hamburger.open'] : 'Open menu';
+    hamburger.setAttribute('aria-label', openLabel);
   });
 });
 
@@ -67,14 +72,20 @@ form.addEventListener('submit', e => {
   if (!email) return;
 
   // Simulated success state
+  const lang = window.CURRENT_LANG || 'en';
+  const successText = (typeof TRANSLATIONS !== 'undefined' && TRANSLATIONS[lang])
+    ? TRANSLATIONS[lang]['cta.success'] : 'Sent!';
+  const resetText = (typeof TRANSLATIONS !== 'undefined' && TRANSLATIONS[lang])
+    ? TRANSLATIONS[lang]['cta.btn'] : 'Get Free Roadmap';
+
   btn.disabled = true;
-  btn.textContent = 'Verstuurd!';
+  btn.textContent = successText;
   btn.style.cssText = 'background:#22c55e; box-shadow: 0 4px 20px rgba(34,197,94,0.4)';
   input.value = '';
 
   setTimeout(() => {
     btn.disabled = false;
-    btn.innerHTML = 'Ontvang gratis stappenplan';
+    btn.textContent = resetText;
     btn.style.cssText = '';
   }, 3500);
 });

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="CorporateCareer begeleidt ambitieuze Nederlandse studenten stap-voor-stap naar elite beroepen in advocatuur, investment banking en consulting.">
-  <title>CorporateCareer — Jouw Route naar de Top</title>
+  <meta name="description" content="CorporateCareer guides ambitious Dutch students step-by-step towards elite careers in law, investment banking and consulting.">
+  <title>CorporateCareer — Your Route to the Top</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
@@ -19,14 +19,19 @@
         <span class="logo-text">CorporateCareer</span>
       </a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#paden">Carrièrepaden</a></li>
-        <li><a href="#hoe-het-werkt">Aanpak</a></li>
-        <li><a href="#ervaringen">Ervaringen</a></li>
-        <li><a href="jobs.html">Vacatures</a></li>
-        <li><a href="over-ons.html">Over ons</a></li>
-        <li><a href="#start" class="btn-nav">Begin nu</a></li>
+        <li><a href="#paden" data-i18n="nav.paths">Career Paths</a></li>
+        <li><a href="#hoe-het-werkt" data-i18n="nav.approach">Approach</a></li>
+        <li><a href="#ervaringen" data-i18n="nav.experiences">Testimonials</a></li>
+        <li><a href="jobs.html" data-i18n="nav.jobs">Jobs</a></li>
+        <li><a href="over-ons.html" data-i18n="nav.about">About Us</a></li>
+        <li><a href="#start" class="btn-nav" data-i18n="nav.cta">Get Started</a></li>
       </ul>
-      <button class="hamburger" id="hamburger" aria-label="Menu openen">
+      <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+        <span class="lang-btn lang-btn--en lang-active">EN</span>
+        <span class="lang-sep">|</span>
+        <span class="lang-btn lang-btn--nl">NL</span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" data-i18n="nav.hamburger.open">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -43,37 +48,36 @@
       <div class="hero-text">
         <div class="hero-badge fade-up">
           <span class="badge-dot"></span>
-          Voor ambitieuze Nederlandse studenten
+          <span data-i18n="hero.badge">For Ambitious Dutch Students</span>
         </div>
-        <h1 class="hero-title fade-up">
-          Van Student naar<br>
-          <span class="gradient-text">Elite Carrière</span>
+        <h1 class="hero-title fade-up" data-i18n-html="hero.title">
+          From Student to<br>
+          <span class="gradient-text">Elite Career</span>
         </h1>
-        <p class="hero-subtitle fade-up">
-          CorporateCareer geeft je het exacte stappenplan om door te stoten naar de top van
-          advocatuur, investment banking of consulting — en jouw eerste aanbod binnen te halen.
+        <p class="hero-subtitle fade-up" data-i18n="hero.subtitle">
+          CorporateCareer gives you the exact roadmap to break into the top of law, investment banking or consulting — and land your first offer.
         </p>
         <div class="hero-cta fade-up">
           <a href="#paden" class="btn-primary">
-            Kies jouw pad
+            <span data-i18n="hero.cta.primary">Choose Your Path</span>
             <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg>
           </a>
-          <a href="#hoe-het-werkt" class="btn-ghost">Hoe het werkt</a>
+          <a href="#hoe-het-werkt" class="btn-ghost" data-i18n="hero.cta.secondary">How it works</a>
         </div>
         <div class="hero-stats fade-up">
           <div class="stat">
             <span class="stat-number">2.400<span class="stat-plus">+</span></span>
-            <span class="stat-label">Studenten geholpen</span>
+            <span class="stat-label" data-i18n="hero.stat1.label">Students helped</span>
           </div>
           <div class="stat-divider"></div>
           <div class="stat">
             <span class="stat-number">89<span class="stat-plus">%</span></span>
-            <span class="stat-label">Ontvangt eerste aanbod</span>
+            <span class="stat-label" data-i18n="hero.stat2.label">Receive first offer</span>
           </div>
           <div class="stat-divider"></div>
           <div class="stat">
             <span class="stat-number">€95k<span class="stat-plus">+</span></span>
-            <span class="stat-label">Gemiddeld startsalaris</span>
+            <span class="stat-label" data-i18n="hero.stat3.label">Avg. starting salary</span>
           </div>
         </div>
       </div>
@@ -83,7 +87,7 @@
           <img
             class="hero-img"
             src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=700&q=80"
-            alt="Professional consultant aan het werk"
+            alt="Professional consultant at work"
             loading="eager"
             onerror="this.closest('.hero-image-frame').classList.add('img-fallback')"
           >
@@ -98,7 +102,7 @@
             <div class="float-avatars">
               <span>SV</span><span>TM</span><span>LD</span>
             </div>
-            <span class="float-text">+128 studenten geplaatst</span>
+            <span class="float-text" data-i18n="hero.float.placed">+128 students placed</span>
           </div>
         </div>
       </div>
@@ -113,14 +117,14 @@
   <section class="paden" id="paden">
     <div class="container">
       <div class="section-header fade-up">
-        <span class="section-tag">Kies je route</span>
-        <h2>Drie paden. Één doel: de top.</h2>
-        <p>Selecteer het beroep dat bij jouw ambities past en ontvang je persoonlijke stappenplan.</p>
+        <span class="section-tag" data-i18n="paths.tag">Choose Your Route</span>
+        <h2 data-i18n="paths.title">Three Paths. One Goal: The Top.</h2>
+        <p data-i18n="paths.subtitle">Select the career that matches your ambitions and receive your personal roadmap.</p>
       </div>
 
       <div class="cards-grid">
 
-        <!-- Advocatuur -->
+        <!-- Law -->
         <article class="career-card fade-up" data-career="advocatuur">
           <div class="card-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
@@ -128,57 +132,57 @@
               <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/>
             </svg>
           </div>
-          <span class="card-tag">Rechten</span>
-          <h3>Advocatuur</h3>
-          <p>Word advocaat bij een Magic Circle of top-tier Nederlands kantoor. Beheers dealstructuren, litigation en high-stakes cliëntadvies op het hoogste niveau.</p>
+          <span class="card-tag" data-i18n="card.law.tag">Law</span>
+          <h3 data-i18n="card.law.title">Law</h3>
+          <p data-i18n="card.law.desc">Become a lawyer at a Magic Circle or top-tier Dutch firm. Master deal structures, litigation and high-stakes client advice at the highest level.</p>
           <div class="card-details">
             <div class="detail">
-              <span class="detail-label">Startsalaris</span>
+              <span class="detail-label" data-i18n="card.law.salary.label">Starting salary</span>
               <span class="detail-value">€65k – €85k</span>
             </div>
             <div class="detail">
-              <span class="detail-label">Partner niveau</span>
+              <span class="detail-label" data-i18n="card.law.partner.label">Partner level</span>
               <span class="detail-value">€200k – €500k+</span>
             </div>
             <div class="detail">
-              <span class="detail-label">Top kantoren</span>
+              <span class="detail-label" data-i18n="card.law.firms.label">Top firms</span>
               <span class="detail-value">De Brauw · NautaDutilh · Freshfields</span>
             </div>
           </div>
           <a href="advocatuur.html" class="card-cta">
-            Bekijk stappenplan
+            <span data-i18n="card.law.cta">View roadmap</span>
             <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg>
           </a>
         </article>
 
         <!-- Investment Banking -->
         <article class="career-card featured fade-up" data-career="ib">
-          <div class="featured-badge">Meest populair</div>
+          <div class="featured-badge" data-i18n="card.ib.badge">Most Popular</div>
           <div class="card-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M3 17l4-8 4 4 4-6 4 4"/>
               <path stroke-linecap="round" stroke-linejoin="round" d="M3 21h18"/>
             </svg>
           </div>
-          <span class="card-tag">Finance</span>
-          <h3>Investment Banking</h3>
-          <p>Sluit multimiljoen-deals bij Goldman Sachs, Rothschild of ABN AMRO M&A. Leer financieel modelleren, pitchen en corporate finance van binnenuit.</p>
+          <span class="card-tag" data-i18n="card.ib.tag">Finance</span>
+          <h3 data-i18n="card.ib.title">Investment Banking</h3>
+          <p data-i18n="card.ib.desc">Close multi-million deals at Goldman Sachs, Rothschild or ABN AMRO M&amp;A. Learn financial modelling, pitching and corporate finance from the inside.</p>
           <div class="card-details">
             <div class="detail">
-              <span class="detail-label">Startsalaris (analyst)</span>
+              <span class="detail-label" data-i18n="card.ib.salary.label">Starting salary (analyst)</span>
               <span class="detail-value">€80k – €110k</span>
             </div>
             <div class="detail">
-              <span class="detail-label">MD niveau</span>
+              <span class="detail-label" data-i18n="card.ib.md.label">MD level</span>
               <span class="detail-value">€300k – €1M+</span>
             </div>
             <div class="detail">
-              <span class="detail-label">Top banken</span>
+              <span class="detail-label" data-i18n="card.ib.banks.label">Top banks</span>
               <span class="detail-value">Goldman Sachs · JP Morgan · Rothschild</span>
             </div>
           </div>
           <a href="investment-banking.html" class="card-cta">
-            Bekijk stappenplan
+            <span data-i18n="card.ib.cta">View roadmap</span>
             <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg>
           </a>
         </article>
@@ -190,25 +194,25 @@
               <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
             </svg>
           </div>
-          <span class="card-tag">Strategy</span>
-          <h3>Management Consulting</h3>
-          <p>Los complexe strategische vraagstukken op bij McKinsey, BCG of Bain. Werk met Fortune 500-CEO's en verander bedrijven van binnenuit met jouw analyse.</p>
+          <span class="card-tag" data-i18n="card.con.tag">Strategy</span>
+          <h3 data-i18n="card.con.title">Management Consulting</h3>
+          <p data-i18n="card.con.desc">Solve complex strategic challenges at McKinsey, BCG or Bain. Work with Fortune 500 CEOs and transform companies from the inside with your analysis.</p>
           <div class="card-details">
             <div class="detail">
-              <span class="detail-label">Startsalaris (analyst)</span>
+              <span class="detail-label" data-i18n="card.con.salary.label">Starting salary (analyst)</span>
               <span class="detail-value">€70k – €90k</span>
             </div>
             <div class="detail">
-              <span class="detail-label">Partner niveau</span>
+              <span class="detail-label" data-i18n="card.con.partner.label">Partner level</span>
               <span class="detail-value">€250k – €600k+</span>
             </div>
             <div class="detail">
-              <span class="detail-label">Top firma's</span>
+              <span class="detail-label" data-i18n="card.con.firms.label">Top firms</span>
               <span class="detail-value">McKinsey · BCG · Bain (MBB)</span>
             </div>
           </div>
           <a href="consulting.html" class="card-cta">
-            Bekijk stappenplan
+            <span data-i18n="card.con.cta">View roadmap</span>
             <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg>
           </a>
         </article>
@@ -221,33 +225,33 @@
   <section class="aanpak" id="hoe-het-werkt">
     <div class="container">
       <div class="section-header section-header--light fade-up">
-        <span class="section-tag">Het proces</span>
-        <h2>Jouw route naar de top in 4 stappen</h2>
-        <p>Van eerstejaars student tot getekend contract bij jouw droomwerkgever.</p>
+        <span class="section-tag" data-i18n="steps.tag">The Process</span>
+        <h2 data-i18n="steps.title">Your Route to the Top in 4 Steps</h2>
+        <p data-i18n="steps.subtitle">From first-year student to signed contract at your dream employer.</p>
       </div>
       <div class="steps-grid">
         <div class="step fade-up">
           <div class="step-number">01</div>
-          <h4>Kies je carrièrepad</h4>
-          <p>Bepaal of advocatuur, investment banking of consulting het beste bij jouw ambities en persoonlijkheid past.</p>
+          <h4 data-i18n="step1.title">Choose Your Career Path</h4>
+          <p data-i18n="step1.desc">Determine whether law, investment banking or consulting best fits your ambitions and personality.</p>
         </div>
         <div class="step-connector" aria-hidden="true"></div>
         <div class="step fade-up">
           <div class="step-number">02</div>
-          <h4>Optimaliseer je profiel</h4>
-          <p>Volg ons CV-framework, bouw strategisch je netwerk en doe de juiste extracurriculaire activiteiten.</p>
+          <h4 data-i18n="step2.title">Optimise Your Profile</h4>
+          <p data-i18n="step2.desc">Follow our CV framework, strategically build your network and pursue the right extracurricular activities.</p>
         </div>
         <div class="step-connector" aria-hidden="true"></div>
         <div class="step fade-up">
           <div class="step-number">03</div>
-          <h4>Train voor de selectie</h4>
-          <p>Oefen cases, technische vragen en competency-based interviews met onze bewezen methodieken.</p>
+          <h4 data-i18n="step3.title">Train for Selection</h4>
+          <p data-i18n="step3.desc">Practise cases, technical questions and competency-based interviews with our proven methodologies.</p>
         </div>
         <div class="step-connector" aria-hidden="true"></div>
         <div class="step fade-up">
           <div class="step-number">04</div>
-          <h4>Ontvang jouw aanbod</h4>
-          <p>Solliciteer gestructureerd, navigeer het selectieproces en onderteken het contract bij jouw topwerkgever.</p>
+          <h4 data-i18n="step4.title">Receive Your Offer</h4>
+          <p data-i18n="step4.desc">Apply strategically, navigate the selection process and sign the contract at your top employer.</p>
         </div>
       </div>
     </div>
@@ -257,38 +261,38 @@
   <section class="ervaringen" id="ervaringen">
     <div class="container">
       <div class="section-header fade-up">
-        <span class="section-tag">Ervaringen</span>
-        <h2>Studenten die ons voor waren</h2>
-        <p>Meer dan 2.400 studenten gingen je voor. Dit zeggen ze.</p>
+        <span class="section-tag" data-i18n="testi.tag">Experiences</span>
+        <h2 data-i18n="testi.title">Students Who Made It</h2>
+        <p data-i18n="testi.subtitle">Over 2,400 students came before you. Here's what they say.</p>
       </div>
       <div class="testimonials-grid">
         <blockquote class="testimonial fade-up">
-          <p>Na 6 maanden CorporateCareer had ik drie aanbiedingen van top investment banks. De stappenplannen zijn ongelofelijk concreet en toepasbaar.</p>
+          <p data-i18n="testi1.quote">After 6 months with CorporateCareer I had three offers from top investment banks. The roadmaps are incredibly concrete and actionable.</p>
           <footer class="testimonial-author">
             <div class="author-avatar">SV</div>
             <div>
               <cite class="author-name">Sophie V.</cite>
-              <span class="author-role">Analyst @ Goldman Sachs Amsterdam</span>
+              <span class="author-role" data-i18n="testi1.role">Analyst @ Goldman Sachs Amsterdam</span>
             </div>
           </footer>
         </blockquote>
         <blockquote class="testimonial fade-up">
-          <p>McKinsey leek onbereikbaar voor mij als eerstejaars. CorporateCareer leerde mij precies hoe ik mijn profiel stap voor stap moest opbouwen.</p>
+          <p data-i18n="testi2.quote">McKinsey seemed out of reach for me as a first-year. CorporateCareer showed me exactly how to build my profile step by step.</p>
           <footer class="testimonial-author">
             <div class="author-avatar">TM</div>
             <div>
               <cite class="author-name">Thomas M.</cite>
-              <span class="author-role">Business Analyst @ McKinsey Rotterdam</span>
+              <span class="author-role" data-i18n="testi2.role">Business Analyst @ McKinsey Rotterdam</span>
             </div>
           </footer>
         </blockquote>
         <blockquote class="testimonial fade-up">
-          <p>De advocatuur guide was extreem waardevol. Ik begon in jaar 2 met netwerken via CorporateCareer en heb nu een stageplek bij De Brauw.</p>
+          <p data-i18n="testi3.quote">The law guide was extremely valuable. I started networking in year 2 via CorporateCareer and now have an internship at De Brauw.</p>
           <footer class="testimonial-author">
             <div class="author-avatar">LD</div>
             <div>
               <cite class="author-name">Laura D.</cite>
-              <span class="author-role">Stagiaire @ De Brauw Blackstone Westbroek</span>
+              <span class="author-role" data-i18n="testi3.role">Intern @ De Brauw Blackstone Westbroek</span>
             </div>
           </footer>
         </blockquote>
@@ -302,16 +306,16 @@
       <div class="cta-box fade-up">
         <div class="cta-glow" aria-hidden="true"></div>
         <div class="cta-content">
-          <h2>Klaar om jouw carrière te starten?</h2>
-          <p>Kies je pad en ontvang direct je gratis, gepersonaliseerde stappenplan.</p>
+          <h2 data-i18n="cta.title">Ready to Start Your Career?</h2>
+          <p data-i18n="cta.subtitle">Choose your path and receive your free, personalised roadmap.</p>
           <form class="cta-form" id="ctaForm" novalidate>
-            <label for="emailInput" class="sr-only">E-mailadres</label>
-            <input type="email" id="emailInput" placeholder="jouw@email.nl" required autocomplete="email">
-            <button type="submit" class="btn-primary">
-              Ontvang gratis stappenplan
+            <label for="emailInput" class="sr-only" data-i18n="cta.email.label">Email address</label>
+            <input type="email" id="emailInput" data-i18n-placeholder="cta.email.placeholder" placeholder="your@email.com" required autocomplete="email">
+            <button type="submit" class="btn-primary" data-i18n="cta.btn">
+              Get Free Roadmap
             </button>
           </form>
-          <p class="cta-note">Geen spam. Altijd uitschrijven mogelijk.</p>
+          <p class="cta-note" data-i18n="cta.note">No spam. Unsubscribe at any time.</p>
         </div>
       </div>
     </div>
@@ -325,42 +329,43 @@
           <span class="logo-icon">CC</span>
           <span class="logo-text">CorporateCareer</span>
         </a>
-        <p>Jouw route naar de top van het Nederlandse bedrijfsleven.</p>
+        <p data-i18n="footer.tagline">Your route to the top of Dutch business.</p>
         <div class="footer-about">
-          <h5><a href="over-ons.html" style="color:inherit;text-decoration:none;">Over ons</a></h5>
-          <p>CorporateCareer is opgericht door oud-studenten van Erasmus, UvA en VU die zelf de weg hebben gevonden naar Goldman Sachs, McKinsey en De Brauw. Wij helpen ambitieuze Nederlandse studenten met eerlijke informatie, gerichte voorbereiding en een sterk netwerk om door te breken in investment banking, advocatuur en consulting.</p>
-          <p>Meer dan 2.400 studenten gingen je voor.</p>
+          <h5><a href="over-ons.html" style="color:inherit;text-decoration:none;" data-i18n="footer.about.heading">About Us</a></h5>
+          <p data-i18n="footer.about.text">CorporateCareer was founded by alumni from Erasmus, UvA and VU who found their own way to Goldman Sachs, McKinsey and De Brauw. We help ambitious Dutch students break through in investment banking, law and consulting.</p>
+          <p data-i18n="footer.about.stat">Over 2,400 students came before you.</p>
         </div>
       </div>
-      <nav class="footer-links" aria-label="Footer navigatie">
+      <nav class="footer-links" aria-label="Footer navigation">
         <div class="footer-col">
-          <h5>Carrièrepaden</h5>
-          <a href="advocatuur.html">Advocatuur</a>
+          <h5 data-i18n="footer.col1.title">Career Paths</h5>
+          <a href="advocatuur.html" data-i18n="footer.col1.law">Law</a>
           <a href="investment-banking.html">Investment Banking</a>
           <a href="consulting.html">Consulting</a>
         </div>
         <div class="footer-col">
-          <h5>Platform</h5>
-          <a href="over-ons.html">Over ons</a>
-          <a href="#">Blog</a>
-          <a href="#">Contact</a>
+          <h5 data-i18n="footer.col2.title">Platform</h5>
+          <a href="over-ons.html" data-i18n="footer.col2.about">About Us</a>
+          <a href="#" data-i18n="footer.col2.blog">Blog</a>
+          <a href="#" data-i18n="footer.col2.contact">Contact</a>
         </div>
         <div class="footer-col">
-          <h5>Legal</h5>
-          <a href="#">Privacybeleid</a>
-          <a href="#">Algemene voorwaarden</a>
-          <a href="#">Cookies</a>
+          <h5 data-i18n="footer.col3.title">Legal</h5>
+          <a href="#" data-i18n="footer.col3.privacy">Privacy Policy</a>
+          <a href="#" data-i18n="footer.col3.terms">Terms &amp; Conditions</a>
+          <a href="#" data-i18n="footer.col3.cookies">Cookies</a>
         </div>
       </nav>
     </div>
     <div class="footer-bottom">
       <div class="container footer-bottom-inner">
-        <span>© 2025 CorporateCareer — Alle rechten voorbehouden</span>
-        <span>Amsterdam, Nederland</span>
+        <span data-i18n="footer.copy">© 2025 CorporateCareer — All rights reserved</span>
+        <span data-i18n="footer.location">Amsterdam, Netherlands</span>
       </div>
     </div>
   </footer>
 
+  <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

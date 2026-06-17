@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Leer meer over CorporateCareer — wie we zijn, waarom we dit platform hebben gebouwd en hoe we ambitieuze Nederlandse studenten helpen doorbreken in investment banking, advocatuur en consulting.">
-  <title>Over ons — CorporateCareer</title>
+  <meta name="description" content="Learn more about CorporateCareer — who we are, why we built this platform, and how we help ambitious Dutch students break into investment banking, law and consulting.">
+  <title>About Us — CorporateCareer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
@@ -291,14 +291,19 @@
         <span class="logo-text">CorporateCareer</span>
       </a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="index.html#paden">Carrièrepaden</a></li>
-        <li><a href="index.html#hoe-het-werkt">Aanpak</a></li>
-        <li><a href="index.html#ervaringen">Ervaringen</a></li>
-        <li><a href="jobs.html">Vacatures</a></li>
-        <li><a href="over-ons.html" class="active">Over ons</a></li>
-        <li><a href="index.html#start" class="btn-nav">Begin nu</a></li>
+        <li><a href="index.html#paden" data-i18n="nav.paths">Career Paths</a></li>
+        <li><a href="index.html#hoe-het-werkt" data-i18n="nav.approach">Approach</a></li>
+        <li><a href="index.html#ervaringen" data-i18n="nav.experiences">Testimonials</a></li>
+        <li><a href="jobs.html" data-i18n="nav.jobs">Jobs</a></li>
+        <li><a href="over-ons.html" class="active" data-i18n="nav.about">About Us</a></li>
+        <li><a href="index.html#start" class="btn-nav" data-i18n="nav.cta">Get Started</a></li>
       </ul>
-      <button class="hamburger" id="hamburger" aria-label="Menu openen">
+      <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+        <span class="lang-btn lang-btn--en lang-active">EN</span>
+        <span class="lang-sep">|</span>
+        <span class="lang-btn lang-btn--nl">NL</span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" data-i18n="nav.hamburger.open">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -307,34 +312,34 @@
   <!-- ── HERO ──────────────────────────── -->
   <section class="about-hero">
     <div class="container">
-      <span class="badge">Ons verhaal</span>
-      <h1>Gebouwd door studenten,<br><span>voor studenten</span></h1>
-      <p>We weten hoe het voelt om niet te weten waar je moet beginnen. Daarom bouwden we het platform dat wij zelf hadden willen hebben.</p>
+      <span class="badge" data-i18n="about.badge">Our story</span>
+      <h1 data-i18n-html="about.title">Built by students,<br><span>for students</span></h1>
+      <p data-i18n="about.subtitle">We know what it feels like not to know where to start. That's why we built the platform we wished we'd had.</p>
     </div>
   </section>
 
-  <!-- ── MISSIE ─────────────────────────── -->
+  <!-- ── MISSION ────────────────────────── -->
   <section class="about-section">
     <div class="container">
       <div class="about-grid">
         <div class="fade-up">
-          <p class="about-label">Onze missie</p>
-          <h2>Gelijke kansen voor elk ambitieus talent</h2>
-          <p>In Nederland weten te veel studenten niet hoe ze moeten binnenkomen bij Goldman Sachs, McKinsey of De Brauw Blackstone Westbroek. Niet omdat ze er niet goed genoeg voor zijn — maar omdat ze simpelweg niet weten hoe het spel gespeeld wordt.</p>
-          <p>CorporateCareer geeft iedereen eerlijke toegang tot de kennis, voorbereiding en netwerken die voorheen voorbehouden waren aan studenten met de juiste connecties.</p>
+          <p class="about-label" data-i18n="about.mission.label">Our Mission</p>
+          <h2 data-i18n="about.mission.title">Equal Opportunities for Every Ambitious Talent</h2>
+          <p data-i18n="about.mission.p1">In the Netherlands, too many students don't know how to break into Goldman Sachs, McKinsey or De Brauw Blackstone Westbroek. Not because they aren't good enough — but simply because they don't know how the game is played.</p>
+          <p data-i18n="about.mission.p2">CorporateCareer gives everyone fair access to the knowledge, preparation and networks that were previously reserved for students with the right connections.</p>
         </div>
         <div class="about-stats fade-up" style="grid-column: span 1;">
           <div class="about-stat">
             <div class="stat-number">2.400+</div>
-            <div class="stat-label">studenten begeleid</div>
+            <div class="stat-label">students guided</div>
           </div>
           <div class="about-stat">
             <div class="stat-number">89%</div>
-            <div class="stat-label">slagingspercentage</div>
+            <div class="stat-label">success rate</div>
           </div>
           <div class="about-stat">
             <div class="stat-number">€95k</div>
-            <div class="stat-label">gemiddeld startsalaris</div>
+            <div class="stat-label">avg. starting salary</div>
           </div>
         </div>
       </div>
@@ -345,67 +350,67 @@
   <section class="about-section dark">
     <div class="container">
       <div style="text-align:center; margin-bottom: 0;">
-        <p class="about-label" style="color:var(--blue-400);">Het team</p>
-        <h2>Opgericht door mensen die het zelf hebben gedaan</h2>
-        <p style="color:rgba(255,255,255,0.5); max-width:520px; margin:0 auto;">Ieder van ons heeft de recruitmentprocessen bij de topbedrijven doorlopen. Wat we leerden, delen we nu met jou.</p>
+        <p class="about-label" style="color:var(--blue-400);" data-i18n="about.team.label">The Team</p>
+        <h2 data-i18n="about.team.title">Founded by People Who've Done It</h2>
+        <p style="color:rgba(255,255,255,0.5); max-width:520px; margin:0 auto;" data-i18n="about.team.subtitle">Each of us has gone through the recruitment processes at top firms. What we learned, we now share with you.</p>
       </div>
       <div class="team-grid">
         <div class="team-card fade-up">
           <div class="team-avatar">TK</div>
           <div class="team-name">Thomas Kuijpers</div>
-          <div class="team-role">Co-founder · Investment Banking</div>
-          <div class="team-bio">Oud-analist bij Goldman Sachs Amsterdam. RSM Erasmus afgestudeerd. Hielp 400+ studenten aan een IB-offer.</div>
+          <div class="team-role" data-i18n="about.team1.role">Co-founder · Investment Banking</div>
+          <div class="team-bio" data-i18n="about.team1.bio">Former analyst at Goldman Sachs Amsterdam. RSM Erasmus graduate. Helped 400+ students land an IB offer.</div>
         </div>
         <div class="team-card fade-up" style="animation-delay: 0.1s">
           <div class="team-avatar">LA</div>
           <div class="team-name">Laura Akkerman</div>
-          <div class="team-role">Co-founder · Advocatuur</div>
-          <div class="team-bio">Associate bij De Brauw Blackstone Westbroek. Cum laude afgestudeerd aan de Universiteit van Amsterdam.</div>
+          <div class="team-role" data-i18n="about.team2.role">Co-founder · Law</div>
+          <div class="team-bio" data-i18n="about.team2.bio">Associate at De Brauw Blackstone Westbroek. Graduated cum laude from the University of Amsterdam.</div>
         </div>
         <div class="team-card fade-up" style="animation-delay: 0.2s">
           <div class="team-avatar">JV</div>
           <div class="team-name">Jesse van der Berg</div>
-          <div class="team-role">Co-founder · Consulting</div>
-          <div class="team-bio">Junior consultant bij McKinsey Amsterdam. VU Bedrijfskunde. Begeleidt studenten bij case interview-voorbereiding.</div>
+          <div class="team-role" data-i18n="about.team3.role">Co-founder · Consulting</div>
+          <div class="team-bio" data-i18n="about.team3.bio">Junior consultant at McKinsey Amsterdam. VU Business Administration. Guides students in case interview preparation.</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── WAARDEN ────────────────────────── -->
+  <!-- ── VALUES ────────────────────────── -->
   <section class="about-section">
     <div class="container">
       <div style="text-align:center; margin-bottom: 0;">
-        <p class="about-label">Onze waarden</p>
-        <h2>Waar we voor staan</h2>
+        <p class="about-label" data-i18n="about.values.label">Our Values</p>
+        <h2 data-i18n="about.values.title">What We Stand For</h2>
       </div>
       <div class="values-grid">
         <div class="value-card fade-up">
           <div class="value-icon">🎯</div>
           <div>
-            <h4>Eerlijkheid boven hype</h4>
-            <p>We vertellen je wat recruiters echt zoeken — niet wat je graag wil horen. Geen loze beloftes, wel concrete voorbereiding.</p>
+            <h4 data-i18n="about.val1.title">Honesty over Hype</h4>
+            <p data-i18n="about.val1.desc">We tell you what recruiters really look for — not what you want to hear. No empty promises, just concrete preparation.</p>
           </div>
         </div>
         <div class="value-card fade-up">
           <div class="value-icon">🤝</div>
           <div>
-            <h4>Netwerk als hefboom</h4>
-            <p>Toegang tot onze community van oud-deelnemers bij Goldman, McKinsey, De Brauw en meer — mensen die jou actief willen helpen.</p>
+            <h4 data-i18n="about.val2.title">Network as Leverage</h4>
+            <p data-i18n="about.val2.desc">Access to our community of alumni at Goldman, McKinsey, De Brauw and more — people who actively want to help you.</p>
           </div>
         </div>
         <div class="value-card fade-up">
           <div class="value-icon">📈</div>
           <div>
-            <h4>Resultaat telt</h4>
-            <p>Onze begeleiding wordt afgemeten aan één ding: jij krijgt het offer. 89% van onze deelnemers slaagt in het eerste jaar.</p>
+            <h4 data-i18n="about.val3.title">Results Count</h4>
+            <p data-i18n="about.val3.desc">Our coaching is measured by one thing: you get the offer. 89% of our participants succeed in the first year.</p>
           </div>
         </div>
         <div class="value-card fade-up">
           <div class="value-icon">🌍</div>
           <div>
-            <h4>Gelijke toegang</h4>
-            <p>Of je nu van een ROC komt of van een topuniversiteit — ambitie en voorbereiding zijn de enige vereisten. Achtergrond maakt ons niet uit.</p>
+            <h4 data-i18n="about.val4.title">Equal Access</h4>
+            <p data-i18n="about.val4.desc">Whether you come from a university of applied sciences or a research university — ambition and preparation are the only requirements.</p>
           </div>
         </div>
       </div>
@@ -415,11 +420,11 @@
   <!-- ── CTA ───────────────────────────── -->
   <section class="about-cta">
     <div class="container">
-      <h2>Klaar om te beginnen?</h2>
-      <p>Sluit je aan bij 2.400+ studenten die al de stap hebben gezet.</p>
+      <h2 data-i18n="about.cta.title">Ready to Begin?</h2>
+      <p data-i18n="about.cta.subtitle">Join 2,400+ students who have already taken the step.</p>
       <div class="btn-row">
-        <a href="index.html#start" class="btn-primary">Ontvang gratis stappenplan</a>
-        <a href="jobs.html" class="btn-outline">Bekijk vacatures</a>
+        <a href="index.html#start" class="btn-primary" data-i18n="about.cta.primary">Get Free Roadmap</a>
+        <a href="jobs.html" class="btn-outline" data-i18n="about.cta.secondary">View Jobs</a>
       </div>
     </div>
   </section>
@@ -432,42 +437,43 @@
           <span class="logo-icon">CC</span>
           <span class="logo-text">CorporateCareer</span>
         </a>
-        <p>Jouw route naar de top van het Nederlandse bedrijfsleven.</p>
+        <p data-i18n="footer.tagline">Your route to the top of Dutch business.</p>
         <div class="footer-about">
-          <h5>Over ons</h5>
-          <p>CorporateCareer is opgericht door oud-studenten van Erasmus, UvA en VU die zelf de weg hebben gevonden naar Goldman Sachs, McKinsey en De Brauw.</p>
-          <p>Meer dan 2.400 studenten gingen je voor.</p>
+          <h5><a href="over-ons.html" style="color:inherit;text-decoration:none;" data-i18n="footer.about.heading">About Us</a></h5>
+          <p data-i18n="footer.about.text">CorporateCareer was founded by alumni from Erasmus, UvA and VU who found their own way to Goldman Sachs, McKinsey and De Brauw. We help ambitious Dutch students break through in investment banking, law and consulting.</p>
+          <p data-i18n="footer.about.stat">Over 2,400 students came before you.</p>
         </div>
       </div>
-      <nav class="footer-links" aria-label="Footer navigatie">
+      <nav class="footer-links" aria-label="Footer navigation">
         <div class="footer-col">
-          <h5>Carrièrepaden</h5>
-          <a href="advocatuur.html">Advocatuur</a>
+          <h5 data-i18n="footer.col1.title">Career Paths</h5>
+          <a href="advocatuur.html" data-i18n="footer.col1.law">Law</a>
           <a href="investment-banking.html">Investment Banking</a>
           <a href="consulting.html">Consulting</a>
         </div>
         <div class="footer-col">
-          <h5>Platform</h5>
-          <a href="over-ons.html">Over ons</a>
-          <a href="#">Blog</a>
-          <a href="#">Contact</a>
+          <h5 data-i18n="footer.col2.title">Platform</h5>
+          <a href="over-ons.html" data-i18n="footer.col2.about">About Us</a>
+          <a href="#" data-i18n="footer.col2.blog">Blog</a>
+          <a href="#" data-i18n="footer.col2.contact">Contact</a>
         </div>
         <div class="footer-col">
-          <h5>Legal</h5>
-          <a href="#">Privacybeleid</a>
-          <a href="#">Algemene voorwaarden</a>
-          <a href="#">Cookies</a>
+          <h5 data-i18n="footer.col3.title">Legal</h5>
+          <a href="#" data-i18n="footer.col3.privacy">Privacy Policy</a>
+          <a href="#" data-i18n="footer.col3.terms">Terms &amp; Conditions</a>
+          <a href="#" data-i18n="footer.col3.cookies">Cookies</a>
         </div>
       </nav>
     </div>
     <div class="footer-bottom">
       <div class="container footer-bottom-inner">
-        <span>© 2025 CorporateCareer — Alle rechten voorbehouden</span>
-        <span>Amsterdam, Nederland</span>
+        <span data-i18n="footer.copy">© 2025 CorporateCareer — All rights reserved</span>
+        <span data-i18n="footer.location">Amsterdam, Netherlands</span>
       </div>
     </div>
   </footer>
 
+  <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

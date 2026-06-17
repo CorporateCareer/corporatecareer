@@ -1321,6 +1321,33 @@ h1, h2, h3, h4, h5 {
   }
 }
 
+/* ── LANGUAGE TOGGLE ──────────────────────── */
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--gray-100);
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-family: var(--font);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  transition: background var(--t) var(--ease), border-color var(--t) var(--ease);
+  flex-shrink: 0;
+}
+
+.lang-toggle:hover {
+  background: var(--gray-200);
+  border-color: var(--gray-300);
+}
+
+.lang-btn { color: var(--gray-400); transition: color var(--t) var(--ease); }
+.lang-btn.lang-active { color: var(--blue-600); }
+.lang-sep { color: var(--gray-300); }
+
 /* Mobile portrait */
 @media (max-width: 480px) {
   .hero-stats { gap: 16px; }
