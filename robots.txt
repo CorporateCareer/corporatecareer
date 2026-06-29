@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://corporatecareer.github.io/corporatecareer/sitemap.xml
+Sitemap: https://corporatecareer.nl/sitemap.xml
