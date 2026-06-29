@@ -103,4 +103,40 @@
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://corporatecareer.nl/management-consulting-nederland.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://corporatecareer.nl/corporate-finance-amsterdam.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://corporatecareer.nl/erasmus-finance-carriere.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://corporatecareer.nl/trading-stage-amsterdam.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://corporatecareer.nl/graduate-programme-amsterdam.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://corporatecareer.nl/notariaat-stage-amsterdam.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
