@@ -16,6 +16,27 @@ const TRANSLATIONS = {
     'nav.legal':            'Legal',
     'nav.careers':          'Careers',
     'nav.partners':         'Partners',
+    'nav.articles':         'Articles',
+
+    /* Hero (FCP homepage) */
+    'hero.badge':           'The #1 Career Platform for Finance, Consulting & Law',
+    'hero.title':           'Your career<br><span class="gradient-text">starts here</span>',
+    'hero.cta.primary':     'View all vacancies',
+
+    /* Homepage sections */
+    'home.featured.tag':    'Featured',
+    'home.featured.title':  'Open Positions',
+    'home.featured.viewall':'View all vacancies →',
+    'home.partners.title':  'Discover top-tier employers',
+    'home.partners.sub':    '100+ prestigious partners',
+    'home.partners.viewall':'View all partners →',
+    'home.new.title':       'New This Week',
+    'home.articles.title':  'Career Guides & Articles',
+    'home.articles.viewall':'View all articles →',
+
+    /* Articles page */
+    'articles.badge':       'Knowledge Hub',
+    'articles.title':       'Career Guides &<br><span>Articles</span>',
 
     /* Finance page */
     'finance.badge':              'Career Path',
@@ -67,15 +88,12 @@ const TRANSLATIONS = {
     'partners.cta.subtitle':       'Are you a firm looking to recruit top Dutch talent? Let\'s talk.',
     'partners.cta.btn':            'Get in Touch',
 
-    /* Hero */
-    'hero.badge':           'For Ambitious Dutch Students',
-    'hero.title':           'From Student to<br><span class="gradient-text">Elite Career</span>',
+    /* Hero (continued) */
     'hero.subtitle':        'CorporateCareer gives you the exact roadmap to break into the top of law, investment banking or consulting — and land your first offer.',
-    'hero.cta.primary':     'Choose Your Path',
     'hero.cta.secondary':   'How it works',
     'hero.stat1.label':     'Students helped',
-    'hero.stat2.label':     'Receive first offer',
-    'hero.stat3.label':     'Avg. starting salary',
+    'hero.stat2.label':     'Offer rate',
+    'hero.stat3.label':     'Avg. salary',
     'hero.float.placed':    '+128 students placed',
 
     /* Career Paths section */
@@ -226,6 +244,27 @@ const TRANSLATIONS = {
     'nav.legal':            'Legal',
     'nav.careers':          'Vacatures',
     'nav.partners':         'Partners',
+    'nav.articles':         'Artikelen',
+
+    /* Hero (FCP homepage) */
+    'hero.badge':           'Het #1 Carrièreplatform voor Finance, Consulting & Recht',
+    'hero.title':           'Jouw carrière<br><span class="gradient-text">begint hier</span>',
+    'hero.cta.primary':     'Bekijk alle vacatures',
+
+    /* Homepage sections */
+    'home.featured.tag':    'Uitgelicht',
+    'home.featured.title':  'Open Vacatures',
+    'home.featured.viewall':'Alle vacatures bekijken →',
+    'home.partners.title':  'Ontdek topwerkgevers',
+    'home.partners.sub':    '100+ prestigieuze partners',
+    'home.partners.viewall':'Alle partners bekijken →',
+    'home.new.title':       'Nieuw deze week',
+    'home.articles.title':  'Carrièregidsen & Artikelen',
+    'home.articles.viewall':'Alle artikelen bekijken →',
+
+    /* Articles page */
+    'articles.badge':       'Kenniscentrum',
+    'articles.title':       'Carrièregidsen &<br><span>Artikelen</span>',
 
     /* Finance page */
     'finance.badge':              'Carrièrepad',
@@ -277,15 +316,12 @@ const TRANSLATIONS = {
     'partners.cta.subtitle':       'Ben je een bedrijf dat top Nederlands talent wil aantrekken? Laten we praten.',
     'partners.cta.btn':            'Neem contact op',
 
-    /* Hero */
-    'hero.badge':           'Voor ambitieuze Nederlandse studenten',
-    'hero.title':           'Van Student naar<br><span class="gradient-text">Elite Carrière</span>',
+    /* Hero (continued) */
     'hero.subtitle':        'CorporateCareer geeft je het exacte stappenplan om door te stoten naar de top van advocatuur, investment banking of consulting — en jouw eerste aanbod binnen te halen.',
-    'hero.cta.primary':     'Kies jouw pad',
     'hero.cta.secondary':   'Hoe het werkt',
     'hero.stat1.label':     'Studenten geholpen',
-    'hero.stat2.label':     'Ontvangt eerste aanbod',
-    'hero.stat3.label':     'Gemiddeld startsalaris',
+    'hero.stat2.label':     'Succesratio',
+    'hero.stat3.label':     'Gemiddeld salaris',
     'hero.float.placed':    '+128 studenten geplaatst',
 
     /* Career Paths section */
