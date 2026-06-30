@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- ── SEO ──────────────────────────────── -->
+  <meta name="keywords" content="investment banking nederland, consulting carrière, advocatuur traineeship, goldman sachs amsterdam, mckinsey stage nederland, corporate career platform">
+  <meta name="author" content="CorporateCareer">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://corporatecareer.nl/">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CorporateCareer">
+  <meta property="og:title" content="CorporateCareer — Finance, Consulting & Law Careers in the Netherlands">
+  <meta property="og:description" content="The #1 Dutch career platform for ambitious students. Break into Goldman Sachs, McKinsey or De Brauw. Free roadmaps for investment banking, consulting and law.">
+  <meta property="og:url" content="https://corporatecareer.nl/">
+  <meta property="og:image" content="https://corporatecareer.nl/img/og-cover.jpg">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:locale:alternate" content="nl_NL">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CorporateCareer — Finance, Consulting & Law Careers in the Netherlands">
+  <meta name="twitter:description" content="The #1 Dutch career platform for ambitious students. Break into Goldman Sachs, McKinsey or De Brauw. Free roadmaps for investment banking, consulting and law.">
+  <meta name="twitter:image" content="https://corporatecareer.nl/img/og-cover.jpg">
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://corporatecareer.nl/#organization",
+      "name": "CorporateCareer",
+      "url": "https://corporatecareer.nl/",
+      "description": "The #1 Dutch career platform for ambitious students in finance, consulting and law.",
+      "foundingLocation": "Amsterdam, Netherlands"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://corporatecareer.nl/#website",
+      "url": "https://corporatecareer.nl/",
+      "name": "CorporateCareer",
+      "publisher": {"@id": "https://corporatecareer.nl/#organization"},
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://corporatecareer.nl/jobs.html?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  ]
+  }
+  </script>
+  <meta name="description" content="The #1 Dutch career platform for ambitious students. Break into Goldman Sachs, McKinsey or De Brauw. Free roadmaps for investment banking, consulting and law.">
+  <title>CorporateCareer — Finance, Consulting & Law Careers in the Netherlands</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ── HOMEPAGE-SPECIFIC STYLES ─────────────── */
+
+    /* Featured Vacancies */
+    .featured-jobs {
+      padding: 80px 0;
+      background: var(--white);
+    }
+
+    .jobs-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .job-card {
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: 14px;
+      padding: 24px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+    }
+
+    .job-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+    }
+
+    .job-card-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .company-logo {
+      width: 56px;
+      height: 56px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: white;
+      flex-shrink: 0;
+      letter-spacing: -0.5px;
+    }
+
+    .job-card-title {
+      flex: 1;
+    }
+
+    .job-card-title strong {
+      display: block;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      line-height: 1.3;
+      margin-bottom: 3px;
+    }
+
+    .job-card-title span {
+      font-size: 0.85rem;
+      color: var(--gray-500);
+    }
+
+    .job-badges {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 10px;
+      border-radius: 100px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      border: 1px solid;
+    }
+
+    .badge-pill--location {
+      background: var(--gray-50);
+      border-color: var(--gray-200);
+      color: var(--gray-600);
+    }
+
+    .badge-pill--type {
+      background: rgba(37,99,235,0.06);
+      border-color: rgba(37,99,235,0.18);
+      color: var(--blue-600);
+    }
+
+    .job-desc {
+      font-size: 0.85rem;
+      color: var(--gray-500);
+      line-height: 1.65;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .job-link {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--blue-600);
+      text-decoration: none;
+      transition: color var(--t) var(--ease);
+      margin-top: auto;
+    }
+
+    .job-link:hover {
+      color: var(--navy-700);
+    }
+
+    .view-all-center {
+      text-align: center;
+    }
+
+    .view-all-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--blue-600);
+      text-decoration: none;
+      transition: gap var(--t) var(--ease), color var(--t) var(--ease);
+    }
+
+    .view-all-link:hover {
+      color: var(--navy-700);
+      gap: 10px;
+    }
+
+    /* Partner Logos scroll */
+    .partners-strip {
+      padding: 48px 0;
+      background: var(--gray-50);
+      overflow: hidden;
+    }
+
+    .partners-strip-header {
+      max-width: 1200px;
+      margin: 0 auto 32px;
+      padding: 0 24px;
+    }
+
+    .partners-strip-header h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 4px;
+    }
+
+    .partners-strip-header p {
+      font-size: 0.88rem;
+      color: var(--gray-500);
+    }
+
+    .logo-rows {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .logo-row-track {
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .logo-row-inner {
+      display: flex;
+      align-items: center;
+      width: max-content;
+      animation: scroll-logos 30s linear infinite;
+    }
+
+    @keyframes scroll-logos {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    .logo-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      padding: 8px 16px;
+      margin: 0 8px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .chip-initial {
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+      font-weight: 800;
+      color: white;
+      flex-shrink: 0;
+      letter-spacing: -0.5px;
+    }
+
+    .chip-name {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--gray-700);
+    }
+
+    .partners-strip-footer {
+      max-width: 1200px;
+      margin: 24px auto 0;
+      padding: 0 24px;
+    }
+
+    /* More Vacancies (New This Week) */
+    .new-vacancies {
+      padding: 64px 0;
+      background: var(--white);
+    }
+
+    .jobs-grid-2x2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .job-card-compact {
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: 14px;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+    }
+
+    .job-card-compact:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.10);
+    }
+
+    .job-card-compact .company-logo {
+      width: 48px;
+      height: 48px;
+      font-size: 0.68rem;
+    }
+
+    .compact-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .compact-title {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      display: block;
+      margin-bottom: 2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .compact-company {
+      font-size: 0.8rem;
+      color: var(--gray-500);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .compact-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+
+    .compact-location {
+      font-size: 0.75rem;
+      color: var(--gray-500);
+    }
+
+    /* Articles section */
+    .home-articles {
+      padding: 80px 0;
+      background: #eff6ff;
+    }
+
+    .article-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .article-card {
+      background: white;
+      border-radius: 14px;
+      overflow: hidden;
+      transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+    }
+
+    .article-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+    }
+
+    .article-accent {
+      height: 4px;
+      width: 100%;
+    }
+
+    .article-card-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .article-category {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 100px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .article-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      line-height: 1.35;
+      margin: 0;
+    }
+
+    .article-excerpt {
+      font-size: 0.855rem;
+      color: var(--gray-500);
+      line-height: 1.68;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .article-read-more {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--blue-600);
+      text-decoration: none;
+      margin-top: auto;
+      transition: color var(--t) var(--ease);
+    }
+
+    .article-read-more:hover { color: var(--navy-700); }
+
+    /* Responsive adjustments */
+    @media (max-width: 1024px) {
+      .jobs-grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .article-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .jobs-grid-3 {
+        grid-template-columns: 1fr;
+      }
+      .jobs-grid-2x2 {
+        grid-template-columns: 1fr;
+      }
+      .article-cards-grid {
+        grid-template-columns: 1fr;
+      }
+      .compact-right {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAVIGATION ─────────────────────────── -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="/" class="logo">
+        <span class="logo-icon">CC</span>
+        <span class="logo-text">CorporateCareer</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="finance.html" data-i18n="nav.finance">Finance</a></li>
+        <li><a href="consulting.html" data-i18n="nav.consulting">Consulting</a></li>
+        <li><a href="legal.html" data-i18n="nav.legal">Legal</a></li>
+        <li><a href="jobs.html" data-i18n="nav.careers">Careers</a></li>
+        <li><a href="partners.html" data-i18n="nav.partners">Partners</a></li>
+        <li class="nav-hide-md"><a href="articles.html" data-i18n="nav.articles">Articles</a></li>
+        <li class="nav-hide-md"><a href="over-ons.html" data-i18n="nav.about">About Us</a></li>
+        <li>
+          <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+            <span class="lang-btn lang-btn--en lang-active">EN</span>
+            <span class="lang-btn lang-btn--nl">NL</span>
+          </button>
+        </li>
+        <li><a href="#start" class="btn-nav" data-i18n="nav.cta">Get Started</a></li>
+        <li><a href="partners.html" class="btn-nav-partner">Become a partner</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" data-i18n="nav.hamburger.open">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── HERO ──────────────────────────── -->
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+      <div class="hero-glow hero-glow--right"></div>
+      <div class="hero-glow hero-glow--left"></div>
+    </div>
+    <div class="container hero-content">
+      <div class="hero-text">
+        <div class="hero-badge fade-up">
+          <span class="badge-dot"></span>
+          <span data-i18n="hero.badge">The #1 Career Platform for Finance, Consulting &amp; Law</span>
+        </div>
+        <h1 class="hero-title fade-up" data-i18n-html="hero.title">
+          Your career<br>
+          <span class="gradient-text">starts here</span>
+        </h1>
+        <p class="hero-subtitle fade-up" data-i18n="hero.subtitle">
+          CorporateCareer gives you the exact roadmap to break into the top of law, investment banking or consulting — and land your first offer.
+        </p>
+        <div class="hero-cta fade-up">
+          <a href="jobs.html" class="btn-primary">
+            <span data-i18n="hero.cta.primary">View all vacancies</span>
+            <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg>
+          </a>
+          <a href="#how-it-works" class="btn-ghost" data-i18n="hero.cta.secondary">How it works</a>
+        </div>
+        <div class="hero-stats fade-up">
+          <div class="stat">
+            <span class="stat-number">2,400<span class="stat-plus">+</span></span>
+            <span class="stat-label" data-i18n="hero.stat1.label">Students helped</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-number">89<span class="stat-plus">%</span></span>
+            <span class="stat-label" data-i18n="hero.stat2.label">Offer rate</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-number">€95k<span class="stat-plus">+</span></span>
+            <span class="stat-label" data-i18n="hero.stat3.label">Avg. salary</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual fade-up">
+        <div class="hero-image-frame">
+          <img
+            class="hero-img"
+            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=700&q=80"
+            alt="Professional consultant at work"
+            loading="eager"
+            onerror="this.closest('.hero-image-frame').classList.add('img-fallback')"
+          >
+          <div class="hero-float-card hero-float-card--top">
+            <div class="float-icon">📈</div>
+            <div class="float-info">
+              <strong>Investment Banking</strong>
+              <span>Goldman Sachs · Amsterdam</span>
+            </div>
+          </div>
+          <div class="hero-float-card hero-float-card--bottom">
+            <div class="float-avatars">
+              <span>SV</span><span>TM</span><span>LD</span>
+            </div>
+            <span class="float-text" data-i18n="hero.float.placed">+128 students placed</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ── FEATURED VACANCIES ─────────────────── -->
+  <section class="featured-jobs">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-tag" data-i18n="home.featured.tag">Featured</span>
+        <h2 data-i18n="home.featured.title">Open Positions</h2>
+      </div>
+
+      <div class="jobs-grid-3">
+
+        <!-- Goldman Sachs -->
+        <article class="job-card fade-up">
+          <div class="job-card-header">
+            <div class="company-logo" style="background: #b5922e;">GS</div>
+            <div class="job-card-title">
+              <strong>Summer Analyst, Investment Banking</strong>
+              <span>Goldman Sachs</span>
+            </div>
+          </div>
+          <div class="job-badges">
+            <span class="badge-pill badge-pill--location">📍 Amsterdam</span>
+            <span class="badge-pill badge-pill--type">Finance</span>
+          </div>
+          <p class="job-desc">Join Goldman Sachs's Investment Banking Division for a ten-week programme working on live M&amp;A, ECM and DCM transactions in Amsterdam.</p>
+          <a href="jobs.html" class="job-link">View position →</a>
+        </article>
+
+        <!-- McKinsey -->
+        <article class="job-card fade-up">
+          <div class="job-card-header">
+            <div class="company-logo" style="background: #003366;">Mc</div>
+            <div class="job-card-title">
+              <strong>Business Analyst</strong>
+              <span>McKinsey &amp; Company</span>
+            </div>
+          </div>
+          <div class="job-badges">
+            <span class="badge-pill badge-pill--location">📍 Amsterdam</span>
+            <span class="badge-pill badge-pill--type">Consulting</span>
+          </div>
+          <p class="job-desc">Work alongside senior partners to solve complex strategic challenges for leading Dutch and international companies across all industries.</p>
+          <a href="jobs.html" class="job-link">View position →</a>
+        </article>
+
+        <!-- De Brauw -->
+        <article class="job-card fade-up">
+          <div class="job-card-header">
+            <div class="company-logo" style="background: #1a1a5e;">DB</div>
+            <div class="job-card-title">
+              <strong>Trainee Advocaat</strong>
+              <span>De Brauw Blackstone Westbroek</span>
+            </div>
+          </div>
+          <div class="job-badges">
+            <span class="badge-pill badge-pill--location">📍 Amsterdam</span>
+            <span class="badge-pill badge-pill--type">Legal</span>
+          </div>
+          <p class="job-desc">Rotate across top practice areas at the Netherlands' leading law firm, advising multinationals on their most complex transactions and disputes.</p>
+          <a href="jobs.html" class="job-link">View position →</a>
+        </article>
+
+      </div>
+
+      <div class="view-all-center fade-up">
+        <a href="jobs.html" class="view-all-link" data-i18n="home.featured.viewall">View all vacancies →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PARTNER LOGOS ──────────────────────── -->
+  <section class="partners-strip fade-up">
+    <div class="partners-strip-header">
+      <h3 data-i18n="home.partners.title">Discover top-tier employers</h3>
+      <p data-i18n="home.partners.sub">100+ prestigious partners</p>
+    </div>
+
+    <div class="logo-rows">
+      <!-- Row 1: Finance -->
+      <div class="logo-row-track">
+        <div class="logo-row-inner">
+          <!-- Original set -->
+          <div class="logo-chip"><div class="chip-initial" style="background:#b5922e;">GS</div><span class="chip-name">Goldman Sachs</span></div>
+          <div class="logo-chip"><div class="chip-initial" style="background:#0a2d6e;">JP</div><span class="chip-name">J.P. Morgan</span></div>
+          <div class="logo-chip"><div class="chip-initial" style="background:#8b0000;">Ro</div><span class="chip-name">Rothschild</span></div>
+          <div class="logo-chip"><div class="chip-initial" style="background:#1a3a5c;">Lz</div><span class="chip-name">Lazard</span></div>
+          <div class="logo-chip"><div class="chip-initial" style="background:#005a9e;">AB</div><span class="chip-name">ABN AMRO</span></div>
+          <div class="logo-chip"><div class="chip-initial" style="background:#00447c;">Km</div><span class="chip-name">Kempen</span></div>
+          <div class="logo-chip"><div class="chip-initial" style="background:#004288;">NI</div><span class="chip-name">NIBC</span></div>
+          <div class="logo-chip"><div class="chip-initial" style="background:#e8502a;">Ra</div><span class="chip-name">Rabobank</span></div>
+          <div class="logo-chip"><div class="chip-initial" style="background:#ff6200;">IN</div><span class="chip-name">ING</span></div>
+          <div class="logo-chip"><div class="chip-initial" style="background:#86bc25;">De</div><span class="chip-name">Deloitte</span></div>
+          <!-- Duplicate for seamless loop -->
+          <div class="logo-chip"><div class="chip-initial" style="background:#b5922e;">GS</div><span class="chip-name">Goldman Sachs</span></div>
+          <div class="logo-chip"><div class="chip-initial" style="background:#0a2d6e;">JP</div><span class="chip-name">J.P. Morgan</span></div>
+          <div class="logo-chip"><div class="chip-initial" style="background:#8b0000;">Ro</div><span class="chip-name">Rothschild</span></div>
+          <div class="logo-chip"><div class="chip-initial" style="background:#1a3a5c;">Lz</div><span class="chip-name">Lazard</span></div>
+          <div class="logo-chip"><div class="chip-initial" style="background:#005a9e;">AB</div><span class="chip-name">ABN AMRO</span></div>
+          <div class="logo-chip"><div class="chip-initial" style="background:#00447c;">Km</div><span class="chip-name">Kempen</span></div>
+          <div class="logo-chip"><div class="chip-initial" style="background:#004288;">NI</div><span class="chip-name">NIBC</span></div>
+          <div class="logo-chip"><div class="chip-initial" style="background:#e8502a;">Ra</div><span class="chip-name">Rabobank</span></div>
+          <div class="logo-chip"><div class="chip-initial" style="background:#ff6200;">IN</div><span class="chip-name">ING</span></div>
+          <div class="logo-chip"><div class="chip-initial" style="background:#86bc25;">De</div><span class="chip-name">Deloitte</span></div>
+        </div>
+      </div>
+
+      <!-- Row 2: Consulting / Law -->
+      <div class="logo-row-track">
+        <div class="logo-row-inner" style="animation-direction: reverse;">
+          <!-- Original set -->
+          <div class="logo-chip"><div class="chip-initial" style="background:#003366;">Mc</div><span class="chip-name">McKinsey</span></div>
+          <div class="logo-chip"><div class="chip-initial" style="background:#00823d;">BC</div><span class="chip-name">BCG</span></div>
+          <div class="logo-chip"><div class="chip-initial" style="background:#cc0000;">Ba</div><span class="chip-name">Bain</span></div>
+          <div class="logo-chip"><div class="chip-initial" style="background:#1d3461;">RB</div><span class="chip-name">Roland Berger</span></div>
+          <div class="logo-chip"><div class="chip-initial" style="background:#0072b1;">OW</div><span class="chip-name">Oliver Wyman</span></div>
+          <div class="logo-chip"><div class="chip-initial" style="background:#1a1a5e;">DB</div><span class="chip-name">De Brauw</span></div>
+          <div class="logo-chip"><div class="chip-initial" style="background:#2c3e7a;">ND</div><span class="chip-name">NautaDutilh</span></div>
+          <div class="logo-chip"><div class="chip-initial" style="background:#002D62;">Fr</div><span class="chip-name">Freshfields</span></div>
+          <div class="logo-chip"><div class="chip-initial" style="background:#1e3a5f;">AO</div><span class="chip-name">Allen &amp; Overy</span></div>
+          <div class="logo-chip"><div class="chip-initial" style="background:#004a77;">St</div><span class="chip-name">Stibbe</span></div>
+          <!-- Duplicate for seamless loop -->
+          <div class="logo-chip"><div class="chip-initial" style="background:#003366;">Mc</div><span class="chip-name">McKinsey</span></div>
+          <div class="logo-chip"><div class="chip-initial" style="background:#00823d;">BC</div><span class="chip-name">BCG</span></div>
+          <div class="logo-chip"><div class="chip-initial" style="background:#cc0000;">Ba</div><span class="chip-name">Bain</span></div>
+          <div class="logo-chip"><div class="chip-initial" style="background:#1d3461;">RB</div><span class="chip-name">Roland Berger</span></div>
+          <div class="logo-chip"><div class="chip-initial" style="background:#0072b1;">OW</div><span class="chip-name">Oliver Wyman</span></div>
+          <div class="logo-chip"><div class="chip-initial" style="background:#1a1a5e;">DB</div><span class="chip-name">De Brauw</span></div>
+          <div class="logo-chip"><div class="chip-initial" style="background:#2c3e7a;">ND</div><span class="chip-name">NautaDutilh</span></div>
+          <div class="logo-chip"><div class="chip-initial" style="background:#002D62;">Fr</div><span class="chip-name">Freshfields</span></div>
+          <div class="logo-chip"><div class="chip-initial" style="background:#1e3a5f;">AO</div><span class="chip-name">Allen &amp; Overy</span></div>
+          <div class="logo-chip"><div class="chip-initial" style="background:#004a77;">St</div><span class="chip-name">Stibbe</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="partners-strip-footer">
+      <a href="partners.html" class="view-all-link" data-i18n="home.partners.viewall">View all partners →</a>
+    </div>
+  </section>
+
+  <!-- ── NEW THIS WEEK ──────────────────────── -->
+  <section class="new-vacancies">
+    <div class="container">
+      <div class="section-header fade-up">
+        <h2 data-i18n="home.new.title">New This Week</h2>
+      </div>
+
+      <div class="jobs-grid-2x2">
+
+        <!-- J.P. Morgan -->
+        <div class="job-card-compact fade-up">
+          <div class="company-logo" style="background:#0a2d6e;">JP</div>
+          <div class="compact-info">
+            <span class="compact-title">Global Markets Traineeship</span>
+            <span class="compact-company">J.P. Morgan</span>
+            <div class="job-badges">
+              <span class="badge-pill badge-pill--type">Finance</span>
+            </div>
+          </div>
+          <div class="compact-right">
+            <span class="compact-location">📍 Amsterdam</span>
+            <a href="jobs.html" class="job-link">View →</a>
+          </div>
+        </div>
+
+        <!-- BCG -->
+        <div class="job-card-compact fade-up">
+          <div class="company-logo" style="background:#00823d;">BC</div>
+          <div class="compact-info">
+            <span class="compact-title">Associate</span>
+            <span class="compact-company">BCG</span>
+            <div class="job-badges">
+              <span class="badge-pill badge-pill--type">Consulting</span>
+            </div>
+          </div>
+          <div class="compact-right">
+            <span class="compact-location">📍 Amsterdam</span>
+            <a href="jobs.html" class="job-link">View →</a>
+          </div>
+        </div>
+
+        <!-- NautaDutilh -->
+        <div class="job-card-compact fade-up">
+          <div class="company-logo" style="background:#2c3e7a;">ND</div>
+          <div class="compact-info">
+            <span class="compact-title">Trainee</span>
+            <span class="compact-company">NautaDutilh</span>
+            <div class="job-badges">
+              <span class="badge-pill badge-pill--type">Legal</span>
+            </div>
+          </div>
+          <div class="compact-right">
+            <span class="compact-location">📍 Amsterdam</span>
+            <a href="jobs.html" class="job-link">View →</a>
+          </div>
+        </div>
+
+        <!-- Rothschild -->
+        <div class="job-card-compact fade-up">
+          <div class="company-logo" style="background:#8b0000;">Ro</div>
+          <div class="compact-info">
+            <span class="compact-title">M&amp;A Analyst</span>
+            <span class="compact-company">Rothschild &amp; Co</span>
+            <div class="job-badges">
+              <span class="badge-pill badge-pill--type">Finance</span>
+            </div>
+          </div>
+          <div class="compact-right">
+            <span class="compact-location">📍 Amsterdam</span>
+            <a href="jobs.html" class="job-link">View →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ARTICLES ───────────────────────────── -->
+  <section class="home-articles">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-tag">Insights</span>
+        <h2 data-i18n="home.articles.title">Career Guides &amp; Articles</h2>
+      </div>
+
+      <div class="article-cards-grid">
+
+        <!-- Article 1: IB -->
+        <article class="article-card fade-up">
+          <div class="article-accent" style="background:#2563eb;"></div>
+          <div class="article-card-body">
+            <span class="article-category" style="background:rgba(37,99,235,0.08);color:#2563eb;">Investment Banking</span>
+            <h3 class="article-title">Breaking Into Investment Banking in the Netherlands</h3>
+            <p class="article-excerpt">Everything you need to know about the application process, spring weeks and summer internships at bulge bracket and elite boutique banks.</p>
+            <a href="articles.html" class="article-read-more">Read more →</a>
+          </div>
+        </article>
+
+        <!-- Article 2: Consulting -->
+        <article class="article-card fade-up">
+          <div class="article-accent" style="background:#16a34a;"></div>
+          <div class="article-card-body">
+            <span class="article-category" style="background:rgba(22,163,74,0.08);color:#16a34a;">Consulting</span>
+            <h3 class="article-title">How to Crack the Case Interview</h3>
+            <p class="article-excerpt">A step-by-step guide to mastering the case interview at McKinsey, BCG and Bain — from market sizing to profitability cases.</p>
+            <a href="articles.html" class="article-read-more">Read more →</a>
+          </div>
+        </article>
+
+        <!-- Article 3: Legal -->
+        <article class="article-card fade-up">
+          <div class="article-accent" style="background:#7c3aed;"></div>
+          <div class="article-card-body">
+            <span class="article-category" style="background:rgba(124,58,237,0.08);color:#7c3aed;">Legal</span>
+            <h3 class="article-title">Your Path to a Magic Circle Traineeship</h3>
+            <p class="article-excerpt">How to position yourself for a traineeship at De Brauw, NautaDutilh or Freshfields — from your LLM to your first day.</p>
+            <a href="articles.html" class="article-read-more">Read more →</a>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="view-all-center fade-up">
+        <a href="articles.html" class="view-all-link" data-i18n="home.articles.viewall">View all articles →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── HOW IT WORKS ────────────────────── -->
+  <section class="aanpak" id="how-it-works">
+    <div class="container">
+      <div class="section-header section-header--light fade-up">
+        <span class="section-tag" data-i18n="steps.tag">The Process</span>
+        <h2 data-i18n="steps.title">Your Route to the Top in 4 Steps</h2>
+        <p data-i18n="steps.subtitle">From first-year student to signed contract at your dream employer.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step fade-up">
+          <div class="step-number">01</div>
+          <h4 data-i18n="step1.title">Choose Your Career Path</h4>
+          <p data-i18n="step1.desc">Determine whether law, investment banking or consulting best fits your ambitions and personality.</p>
+        </div>
+        <div class="step-connector" aria-hidden="true"></div>
+        <div class="step fade-up">
+          <div class="step-number">02</div>
+          <h4 data-i18n="step2.title">Optimise Your Profile</h4>
+          <p data-i18n="step2.desc">Follow our CV framework, strategically build your network and pursue the right extracurricular activities.</p>
+        </div>
+        <div class="step-connector" aria-hidden="true"></div>
+        <div class="step fade-up">
+          <div class="step-number">03</div>
+          <h4 data-i18n="step3.title">Train for Selection</h4>
+          <p data-i18n="step3.desc">Practise cases, technical questions and competency-based interviews with our proven methodologies.</p>
+        </div>
+        <div class="step-connector" aria-hidden="true"></div>
+        <div class="step fade-up">
+          <div class="step-number">04</div>
+          <h4 data-i18n="step4.title">Receive Your Offer</h4>
+          <p data-i18n="step4.desc">Apply strategically, navigate the selection process and sign the contract at your top employer.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FINAL CTA ──────────────────────── -->
+  <section class="start-section" id="start">
+    <div class="container">
+      <div class="cta-box fade-up">
+        <div class="cta-glow" aria-hidden="true"></div>
+        <div class="cta-content">
+          <h2 data-i18n="cta.title">Ready to Start Your Career?</h2>
+          <p data-i18n="cta.subtitle">Choose your path and receive your free, personalised roadmap.</p>
+          <form class="cta-form" id="ctaForm" novalidate>
+            <label for="emailInput" class="sr-only" data-i18n="cta.email.label">Email address</label>
+            <input type="email" id="emailInput" data-i18n-placeholder="cta.email.placeholder" placeholder="your@email.com" required autocomplete="email">
+            <button type="submit" class="btn-primary" data-i18n="cta.btn">
+              Get Free Roadmap
+            </button>
+          </form>
+          <p class="cta-note" data-i18n="cta.note">No spam. Unsubscribe at any time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ─────────────────────────── -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="/" class="logo" aria-label="CorporateCareer homepage">
+          <span class="logo-icon">CC</span>
+          <span class="logo-text">CorporateCareer</span>
+        </a>
+        <p data-i18n="footer.tagline">Your route to the top of Dutch business.</p>
+        <div class="footer-about">
+          <h5><a href="over-ons.html" style="color:inherit;text-decoration:none;" data-i18n="footer.about.heading">About Us</a></h5>
+          <p data-i18n="footer.about.text">CorporateCareer was founded by alumni from Erasmus, UvA and VU who found their own way to Goldman Sachs, McKinsey and De Brauw. We help ambitious Dutch students break through in investment banking, law and consulting.</p>
+          <p data-i18n="footer.about.stat">Over 2,400 students came before you.</p>
+        </div>
+      </div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <div class="footer-col">
+          <h5 data-i18n="footer.col1.title">Career Paths</h5>
+          <a href="advocatuur.html" data-i18n="footer.col1.law">Law</a>
+          <a href="investment-banking.html">Investment Banking</a>
+          <a href="consulting.html">Consulting</a>
+        </div>
+        <div class="footer-col">
+          <h5 data-i18n="footer.col2.title">Platform</h5>
+          <a href="over-ons.html" data-i18n="footer.col2.about">About Us</a>
+          <a href="articles.html" data-i18n="footer.col2.blog">Articles</a>
+          <a href="#" data-i18n="footer.col2.contact">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5 data-i18n="footer.col3.title">Legal</h5>
+          <a href="#" data-i18n="footer.col3.privacy">Privacy Policy</a>
+          <a href="#" data-i18n="footer.col3.terms">Terms &amp; Conditions</a>
+          <a href="#" data-i18n="footer.col3.cookies">Cookies</a>
+        </div>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <span data-i18n="footer.copy">© 2025 CorporateCareer — All rights reserved</span>
+        <span data-i18n="footer.location">Amsterdam, Netherlands</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

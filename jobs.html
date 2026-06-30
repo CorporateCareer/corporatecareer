@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- ── SEO ──────────────────────────────── -->
+  <meta name="keywords" content="vacatures finance nederland, investment banking vacatures amsterdam, consulting stage, advocatuur vacature, open positions amsterdam finance">
+  <meta name="author" content="CorporateCareer">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://corporatecareer.nl/jobs.html">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CorporateCareer">
+  <meta property="og:title" content="Open Positions in Finance, Consulting & Law — CorporateCareer">
+  <meta property="og:description" content="Browse open vacancies at Goldman Sachs, McKinsey, De Brauw and 100+ top employers in the Netherlands. Filter by sector, type and location. Updated weekly.">
+  <meta property="og:url" content="https://corporatecareer.nl/jobs.html">
+  <meta property="og:image" content="https://corporatecareer.nl/img/og-cover.jpg">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:locale:alternate" content="nl_NL">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Open Positions in Finance, Consulting & Law — CorporateCareer">
+  <meta name="twitter:description" content="Browse open vacancies at Goldman Sachs, McKinsey, De Brauw and 100+ top employers in the Netherlands. Filter by sector, type and location. Updated weekly.">
+  <meta name="twitter:image" content="https://corporatecareer.nl/img/og-cover.jpg">
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+    {
+      "@type": "ItemList",
+      "@id": "https://corporatecareer.nl/jobs.html#joblist",
+      "name": "Open Positions in Finance, Consulting and Law",
+      "description": "Current vacancies at top employers in the Netherlands",
+      "url": "https://corporatecareer.nl/jobs.html",
+      "numberOfItems": 20
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://corporatecareer.nl/"},
+        {"@type": "ListItem", "position": 2, "name": "Careers", "item": "https://corporatecareer.nl/jobs.html"}
+      ]
+    }
+  ]
+  }
+  </script>
+  <meta name="description" content="Browse open vacancies at Goldman Sachs, McKinsey, De Brauw and 100+ top employers in the Netherlands. Filter by sector, type and location. Updated weekly.">
+  <title>Open Positions in Finance, Consulting & Law — CorporateCareer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ── JOBS-SPECIFIC STYLES ───────────── */
+
+    /* Hero */
+    .jobs-hero {
+      background: var(--navy-900);
+      padding: 130px 0 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .jobs-hero::before {
+      content: '';
+      position: absolute;
+      top: -200px; right: -150px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(59,130,246,0.14) 0%, transparent 65%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .jobs-hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 760px;
+    }
+
+    .jobs-hero h1 {
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 900;
+      color: white;
+      letter-spacing: -0.03em;
+      margin-bottom: 14px;
+      line-height: 1.1;
+    }
+
+    .jobs-hero p {
+      color: rgba(255,255,255,0.55);
+      font-size: 1.05rem;
+      margin-bottom: 32px;
+    }
+
+    /* Search bar */
+    .search-wrap {
+      display: flex;
+      gap: 10px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 14px;
+      padding: 8px;
+      margin-bottom: 22px;
+    }
+
+    .search-field {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 9px;
+      padding: 0 14px;
+    }
+
+    .search-field svg { width: 18px; height: 18px; color: rgba(255,255,255,0.4); flex-shrink: 0; }
+
+    .search-field input {
+      flex: 1;
+      background: none;
+      border: none;
+      outline: none;
+      color: white;
+      font-size: 0.95rem;
+      font-family: var(--font);
+      padding: 12px 0;
+    }
+
+    .search-field input::placeholder { color: rgba(255,255,255,0.35); }
+
+    .location-field {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 9px;
+      padding: 0 14px;
+      min-width: 160px;
+    }
+
+    .location-field svg { width: 16px; height: 16px; color: rgba(255,255,255,0.4); flex-shrink: 0; }
+
+    .location-field select {
+      background: none;
+      border: none;
+      outline: none;
+      color: white;
+      font-size: 0.9rem;
+      font-family: var(--font);
+      cursor: pointer;
+      padding: 12px 0;
+    }
+
+    .location-field select option { background: var(--navy-900); color: white; }
+
+    .btn-search {
+      background: var(--blue-500);
+      color: white;
+      border: none;
+      border-radius: 9px;
+      padding: 13px 24px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      font-family: var(--font);
+      cursor: pointer;
+      transition: background var(--t) var(--ease), transform var(--t) var(--ease);
+      white-space: nowrap;
+    }
+
+    .btn-search:hover { background: var(--blue-600); transform: translateY(-1px); }
+
+    /* Sector pills */
+    .sector-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .pill {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.65);
+      padding: 8px 18px;
+      border-radius: 100px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      font-family: var(--font);
+      cursor: pointer;
+      transition: all var(--t) var(--ease);
+    }
+
+    .pill:hover {
+      background: rgba(255,255,255,0.12);
+      color: white;
+    }
+
+    .pill.active {
+      background: var(--blue-500);
+      border-color: var(--blue-500);
+      color: white;
+      box-shadow: 0 2px 12px rgba(59,130,246,0.35);
+    }
+
+    /* Jobs layout */
+    .jobs-section {
+      background: var(--gray-50);
+      padding: 48px 0 80px;
+      min-height: 70vh;
+    }
+
+    .jobs-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    /* Sidebar */
+    .filters-sidebar {
+      background: white;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--gray-200);
+      padding: 24px;
+      position: sticky;
+      top: 90px;
+    }
+
+    .sidebar-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--gray-100);
+    }
+
+    .sidebar-header h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--gray-900);
+    }
+
+    #clearFilters {
+      background: none;
+      border: none;
+      color: var(--blue-500);
+      font-size: 0.78rem;
+      font-weight: 600;
+      font-family: var(--font);
+      cursor: pointer;
+      padding: 0;
+    }
+
+    #clearFilters:hover { color: var(--blue-600); }
+
+    .filter-group {
+      margin-bottom: 24px;
+    }
+
+    .filter-group:last-child { margin-bottom: 0; }
+
+    .filter-group h4 {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--gray-500);
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .filter-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 9px;
+      cursor: pointer;
+      font-size: 0.875rem;
+      color: var(--gray-700);
+      font-weight: 500;
+      transition: color var(--t) var(--ease);
+    }
+
+    .filter-label:hover { color: var(--gray-900); }
+
+    .filter-label input[type="checkbox"] {
+      width: 16px; height: 16px;
+      accent-color: var(--blue-500);
+      cursor: pointer;
+      flex-shrink: 0;
+      border-radius: 4px;
+    }
+
+    .filter-count {
+      margin-left: auto;
+      font-size: 0.72rem;
+      color: var(--gray-400);
+      background: var(--gray-100);
+      padding: 1px 7px;
+      border-radius: 100px;
+    }
+
+    /* Jobs main area */
+    .jobs-main { min-width: 0; }
+
+    .jobs-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    #jobCount {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--gray-600);
+    }
+
+    #jobCount strong { color: var(--gray-900); }
+
+    .sort-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: var(--gray-500);
+    }
+
+    .sort-wrap label { font-weight: 500; white-space: nowrap; }
+
+    #sortSelect {
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 0.85rem;
+      font-family: var(--font);
+      color: var(--gray-700);
+      cursor: pointer;
+      outline: none;
+    }
+
+    /* Job cards */
+    #jobsList { display: flex; flex-direction: column; gap: 16px; }
+
+    .job-card {
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      display: flex;
+      gap: 20px;
+      transition: all 0.25s var(--ease);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .job-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--blue-500), var(--blue-400));
+      opacity: 0;
+      transition: opacity 0.25s var(--ease);
+    }
+
+    .job-card:hover {
+      border-color: transparent;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.10);
+      transform: translateY(-2px);
+    }
+
+    .job-card:hover::before { opacity: 1; }
+
+    .job-card.featured {
+      border-color: rgba(59,130,246,0.2);
+      background: linear-gradient(to right, rgba(59,130,246,0.025), white 40%);
+    }
+
+    .job-card.featured::before { opacity: 1; }
+
+    /* Company logo box */
+    .job-logo {
+      width: 52px; height: 52px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.68rem;
+      font-weight: 900;
+      color: white;
+      flex-shrink: 0;
+      letter-spacing: 0.02em;
+    }
+
+    .job-body { flex: 1; min-width: 0; }
+
+    .job-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .job-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 3px;
+      line-height: 1.3;
+    }
+
+    .job-company {
+      font-size: 0.85rem;
+      color: var(--gray-500);
+      font-weight: 500;
+    }
+
+    .job-badges { display: flex; gap: 6px; flex-wrap: wrap; flex-shrink: 0; }
+
+    .badge {
+      padding: 3px 10px;
+      border-radius: 100px;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .badge--featured { background: rgba(59,130,246,0.1); color: var(--blue-500); }
+    .badge--finance  { background: rgba(16,185,129,0.1); color: #059669; }
+    .badge--advocatuur { background: rgba(139,92,246,0.1); color: #7c3aed; }
+    .badge--consulting  { background: rgba(245,158,11,0.1); color: #d97706; }
+    .badge--stage    { background: rgba(236,72,153,0.1); color: #db2777; }
+    .badge--graduate { background: rgba(59,130,246,0.1); color: var(--blue-500); }
+    .badge--full-time { background: rgba(16,185,129,0.1); color: #059669; }
+
+    /* Meta row */
+    .job-meta {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+
+    .job-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.8rem;
+      color: var(--gray-500);
+      font-weight: 500;
+    }
+
+    .job-meta-item svg { width: 13px; height: 13px; flex-shrink: 0; }
+
+    .job-description {
+      font-size: 0.875rem;
+      color: var(--gray-600);
+      line-height: 1.65;
+      margin-bottom: 16px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .job-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .job-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+
+    .tag {
+      background: var(--gray-100);
+      color: var(--gray-600);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.72rem;
+      font-weight: 600;
+    }
+
+    .btn-job {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--navy-900);
+      color: white;
+      padding: 9px 18px;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all var(--t) var(--ease);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .btn-job:hover {
+      background: var(--blue-500);
+      transform: translateY(-1px);
+    }
+
+    .btn-job svg { width: 14px; height: 14px; transition: transform var(--t) var(--ease); }
+    .btn-job:hover svg { transform: translateX(3px); }
+
+    /* No results */
+    .no-results {
+      text-align: center;
+      padding: 80px 24px;
+      color: var(--gray-500);
+      background: white;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--gray-200);
+    }
+
+    .no-results p { font-size: 1rem; margin-bottom: 8px; }
+    .no-results span { font-size: 0.875rem; color: var(--gray-400); }
+
+    /* Mobile filters toggle */
+    .filters-toggle {
+      display: none;
+      width: 100%;
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      font-family: var(--font);
+      color: var(--gray-700);
+      cursor: pointer;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .jobs-layout { grid-template-columns: 1fr; }
+      .filters-sidebar { position: static; display: none; }
+      .filters-sidebar.open { display: block; }
+      .filters-toggle { display: flex; }
+    }
+
+    @media (max-width: 640px) {
+      .search-wrap { flex-direction: column; gap: 8px; padding: 10px; }
+      .location-field { min-width: unset; }
+      .job-card { flex-direction: column; gap: 14px; }
+      .job-top { flex-direction: column; }
+      .jobs-header { flex-direction: column; align-items: flex-start; gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAVBAR ──────────────────────────────── -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">CC</span>
+        <span class="logo-text">CorporateCareer</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="finance.html" data-i18n="nav.finance">Finance</a></li>
+        <li><a href="consulting.html" data-i18n="nav.consulting">Consulting</a></li>
+        <li><a href="legal.html" data-i18n="nav.legal">Legal</a></li>
+        <li><a href="jobs.html" class="nav-active" data-i18n="nav.careers">Careers</a></li>
+        <li><a href="partners.html" data-i18n="nav.partners">Partners</a></li>
+        <li class="nav-hide-md"><a href="articles.html" data-i18n="nav.articles">Articles</a></li>
+        <li class="nav-hide-md"><a href="over-ons.html" data-i18n="nav.about">About Us</a></li>
+        <li>
+          <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+            <span class="lang-btn lang-btn--en lang-active">EN</span>
+            <span class="lang-btn lang-btn--nl">NL</span>
+          </button>
+        </li>
+        <li><a href="index.html#start" class="btn-nav" data-i18n="nav.cta">Get Started</a></li>
+        <li><a href="partners.html" class="btn-nav-partner">Become a partner</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" data-i18n="nav.hamburger.open">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── JOBS HERO ──────────────────────────── -->
+  <section class="jobs-hero">
+    <div class="container">
+      <div class="jobs-hero-inner">
+        <h1 data-i18n="jobs.hero.title">Open Positions</h1>
+        <p data-i18n="jobs.hero.subtitle">Current vacancies in Finance, Law and Consulting</p>
+
+        <div class="search-wrap">
+          <div class="search-field">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+            </svg>
+            <input type="text" id="searchInput" data-i18n-placeholder="jobs.search.placeholder" placeholder="Search jobs, companies..." autocomplete="off">
+          </div>
+          <div class="location-field">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/>
+            </svg>
+            <select id="locationFilter" aria-label="Filter by location">
+              <option value="" data-i18n="jobs.location.all">All locations</option>
+              <option value="Amsterdam">Amsterdam</option>
+              <option value="Rotterdam">Rotterdam</option>
+              <option value="Den Haag">Den Haag</option>
+              <option value="Utrecht">Utrecht</option>
+            </select>
+          </div>
+          <button class="btn-search" onclick="applyFilters()">Search</button>
+        </div>
+
+        <div class="sector-pills" id="sectorPills">
+          <button class="pill active" data-sector="">All sectors</button>
+          <button class="pill" data-sector="finance">Finance</button>
+          <button class="pill" data-sector="advocatuur">Law</button>
+          <button class="pill" data-sector="consulting">Consulting</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── JOBS CONTENT ───────────────────────── -->
+  <section class="jobs-section">
+    <div class="container jobs-layout">
+
+      <!-- SIDEBAR -->
+      <div>
+        <button class="filters-toggle" id="filtersToggle">
+          <span data-i18n="jobs.mobile.filters">Filters</span>
+          <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+        </button>
+
+        <aside class="filters-sidebar" id="filtersSidebar">
+          <div class="sidebar-header">
+            <h3>Filters</h3>
+            <button id="clearFilters">Clear all</button>
+          </div>
+
+          <div class="filter-group">
+            <h4 data-i18n="jobs.filter.sector">Sector</h4>
+            <label class="filter-label">
+              <input type="checkbox" name="sector" value="finance">
+              Finance <span class="filter-count">8</span>
+            </label>
+            <label class="filter-label">
+              <input type="checkbox" name="sector" value="advocatuur">
+              Law <span class="filter-count">6</span>
+            </label>
+            <label class="filter-label">
+              <input type="checkbox" name="sector" value="consulting">
+              Consulting <span class="filter-count">6</span>
+            </label>
+          </div>
+
+          <div class="filter-group">
+            <h4 data-i18n="jobs.filter.type">Type</h4>
+            <label class="filter-label">
+              <input type="checkbox" name="type" value="graduate">
+              Graduate <span class="filter-count">13</span>
+            </label>
+            <label class="filter-label">
+              <input type="checkbox" name="type" value="stage">
+              Stage / Internship <span class="filter-count">7</span>
+            </label>
+          </div>
+
+          <div class="filter-group">
+            <h4>Location</h4>
+            <label class="filter-label">
+              <input type="checkbox" name="location" value="Amsterdam">
+              Amsterdam <span class="filter-count">16</span>
+            </label>
+            <label class="filter-label">
+              <input type="checkbox" name="location" value="Rotterdam">
+              Rotterdam <span class="filter-count">2</span>
+            </label>
+            <label class="filter-label">
+              <input type="checkbox" name="location" value="Den Haag">
+              Den Haag <span class="filter-count">1</span>
+            </label>
+            <label class="filter-label">
+              <input type="checkbox" name="location" value="Utrecht">
+              Utrecht <span class="filter-count">1</span>
+            </label>
+          </div>
+        </aside>
+      </div>
+
+      <!-- MAIN JOBS LIST -->
+      <main class="jobs-main">
+        <div class="jobs-header">
+          <span id="jobCount"><strong>20</strong> positions found</span>
+          <div class="sort-wrap">
+            <label for="sortSelect" data-i18n="jobs.sort.label">Sort by:</label>
+            <select id="sortSelect" onchange="applyFilters()" aria-label="Sort">
+              <option value="recent" data-i18n="jobs.sort.newest">Newest</option>
+              <option value="featured">Featured first</option>
+            </select>
+          </div>
+        </div>
+        <div id="jobsList"></div>
+        <div id="noResults" class="no-results" style="display:none">
+          <p data-i18n="jobs.empty">No positions match your filters.</p>
+        </div>
+      </main>
+
+    </div>
+  </section>
+
+  <!-- ── FOOTER ─────────────────────────────── -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <span class="logo-icon">CC</span>
+          <span class="logo-text">CorporateCareer</span>
+        </a>
+        <p data-i18n="footer.tagline">Your route to the top of Dutch business.</p>
+        <div class="footer-about">
+          <h5><a href="over-ons.html" style="color:inherit;text-decoration:none;" data-i18n="footer.about.heading">About Us</a></h5>
+          <p data-i18n="footer.about.text">CorporateCareer was founded by alumni from Erasmus, UvA and VU who found their own way to Goldman Sachs, McKinsey and De Brauw. We help ambitious Dutch students break through in investment banking, law and consulting.</p>
+          <p data-i18n="footer.about.stat">Over 2,400 students came before you.</p>
+        </div>
+      </div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <div class="footer-col">
+          <h5 data-i18n="footer.col1.title">Career Paths</h5>
+          <a href="advocatuur.html" data-i18n="footer.col1.law">Law</a>
+          <a href="investment-banking.html">Investment Banking</a>
+          <a href="consulting.html">Consulting</a>
+        </div>
+        <div class="footer-col">
+          <h5 data-i18n="footer.col2.title">Platform</h5>
+          <a href="jobs.html" data-i18n="nav.jobs">Jobs</a>
+          <a href="over-ons.html" data-i18n="footer.col2.about">About Us</a>
+          <a href="#" data-i18n="footer.col2.blog">Blog</a>
+        </div>
+        <div class="footer-col">
+          <h5 data-i18n="footer.col3.title">Legal</h5>
+          <a href="#" data-i18n="footer.col3.privacy">Privacy Policy</a>
+          <a href="#" data-i18n="footer.col3.terms">Terms &amp; Conditions</a>
+          <a href="#" data-i18n="footer.col3.cookies">Cookies</a>
+        </div>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <span data-i18n="footer.copy">© 2025 CorporateCareer — All rights reserved</span>
+        <span data-i18n="footer.location">Amsterdam, Netherlands</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    /* ── JOB DATA ─────────────────────────── */
+    const JOBS = [
+      // ── FINANCE ──────────────────────────
+      {
+        id: 1, featured: true,
+        title: "Investment Banking Analyst",
+        company: "Goldman Sachs", initials: "GS", color: "#003087",
+        sector: "finance", type: "graduate", location: "Amsterdam",
+        salary: "€80k – €110k", daysAgo: 1,
+        description: "Werk aan grensoverschrijdende M&A-transacties en kapitaalmarktdeals voor toonaangevende Europese bedrijven. Bouw financiële modellen, schrijf pitchbooks en ondersteun senior bankers bij deal execution.",
+        tags: ["M&A", "DCF", "Pitchbooks", "LBO"]
+      },
+      {
+        id: 2, featured: true,
+        title: "Investment Banking Analyst",
+        company: "J.P. Morgan", initials: "JPM", color: "#00468b",
+        sector: "finance", type: "graduate", location: "Amsterdam",
+        salary: "€85k – €115k", daysAgo: 2,
+        description: "Sluit je aan bij het Europese team van 's werelds grootste investment bank. Werk aan deals in energie, technologie en industrials, en ontwikkel je skills in financieel modelleren en cliëntpresentaties.",
+        tags: ["DCM", "ECM", "M&A", "Modelling"]
+      },
+      {
+        id: 3, featured: false,
+        title: "M&A Analyst",
+        company: "Rothschild & Co", initials: "R&C", color: "#1c1c3c",
+        sector: "finance", type: "graduate", location: "Amsterdam",
+        salary: "€75k – €95k", daysAgo: 3,
+        description: "Rothschild is het leidende onafhankelijke M&A-advieskantoor. Begeleid complexe fusies en overnames voor midcap en large-cap cliënten, volledig onafhankelijk van bankeigenbelang.",
+        tags: ["M&A", "Valuations", "Deal Execution"]
+      },
+      {
+        id: 4, featured: false,
+        title: "Equity Research Analyst",
+        company: "Kempen & Co", initials: "KC", color: "#c0392b",
+        sector: "finance", type: "graduate", location: "Amsterdam",
+        salary: "€65k – €85k", daysAgo: 5,
+        description: "Analyseer beursgenoteerde bedrijven in de Benelux en schrijf gedetailleerde beleggingsaanbevelingen voor institutionele beleggers. Presenteer je bevindingen aan portfolio managers bij toonaangevende fondsen.",
+        tags: ["Equity Research", "Bloomberg", "Valuations"]
+      },
+      {
+        id: 5, featured: false,
+        title: "Corporate Finance Stage",
+        company: "ABN AMRO", initials: "AA", color: "#00a650",
+        sector: "finance", type: "stage", location: "Amsterdam",
+        salary: "€600 – €900/mnd", daysAgo: 1,
+        description: "Ondersteun ons Corporate Finance team bij due diligence, financiële modellen en transactiedocumentatie. Werk mee aan echte deals en leer alles over het M&A-proces van binnenuit.",
+        tags: ["Excel", "PowerPoint", "Due Diligence"]
+      },
+      {
+        id: 6, featured: false,
+        title: "Leveraged Finance Analyst",
+        company: "NIBC", initials: "NB", color: "#e67e22",
+        sector: "finance", type: "graduate", location: "Den Haag",
+        salary: "€70k – €90k", daysAgo: 4,
+        description: "Analyseer en structureer leveraged buy-out financieringen voor private equity-gedreven transacties. Beoordeel kredietrisico, onderhandel leningdocumentatie en werk nauw samen met PE-huizen.",
+        tags: ["LBO", "Credit Analysis", "Debt Structuring"]
+      },
+      {
+        id: 7, featured: false,
+        title: "Structured Finance Analyst",
+        company: "Rabobank", initials: "RB", color: "#f57c00",
+        sector: "finance", type: "graduate", location: "Utrecht",
+        salary: "€65k – €80k", daysAgo: 6,
+        description: "Ontwikkel en analyseer complexe financieringsstructuren voor internationale agri- en voedselprojecten. Werk met cliënten wereldwijd en draag bij aan duurzame financieringsoplossingen.",
+        tags: ["Project Finance", "Structured Finance", "Agri"]
+      },
+      {
+        id: 8, featured: false,
+        title: "Capital Markets Stage",
+        company: "ING", initials: "ING", color: "#ff6600",
+        sector: "finance", type: "stage", location: "Amsterdam",
+        salary: "€600 – €900/mnd", daysAgo: 2,
+        description: "Maak kennis met obligatie-emissies, aandelenplaatsingen en financiële derivaten. Ondersteun het team bij transactievoorbereiding, due diligence en dagelijkse marktactiviteiten.",
+        tags: ["DCM", "ECM", "Derivatives"]
+      },
+
+      // ── ADVOCATUUR ───────────────────────
+      {
+        id: 9, featured: true,
+        title: "Stage Advocaat M&A",
+        company: "De Brauw Blackstone Westbroek", initials: "DB", color: "#1e3a5f",
+        sector: "advocatuur", type: "stage", location: "Amsterdam",
+        salary: "€800 – €1.100/mnd", daysAgo: 1,
+        description: "Stage bij de best gerangschikte M&A-praktijkgroep van Nederland. Werk mee aan grensoverschrijdende transacties en leer van de meest ervaren corporate advocaten in de Benelux.",
+        tags: ["M&A", "Corporate Law", "Due Diligence"]
+      },
+      {
+        id: 10, featured: false,
+        title: "Associate Corporate Law",
+        company: "NautaDutilh", initials: "ND", color: "#2c3e50",
+        sector: "advocatuur", type: "graduate", location: "Amsterdam",
+        salary: "€70k – €88k", daysAgo: 3,
+        description: "Versterk ons corporate-team en adviseer nationale en internationale cliënten bij fusies, overnames en herstructureringen. Groei door richting associate partner in een dynamische praktijk.",
+        tags: ["Corporate Law", "M&A", "Vennootschapsrecht"]
+      },
+      {
+        id: 11, featured: true,
+        title: "Trainee Advocaat",
+        company: "Freshfields", initials: "FF", color: "#8b0000",
+        sector: "advocatuur", type: "stage", location: "Amsterdam",
+        salary: "€900 – €1.200/mnd", daysAgo: 2,
+        description: "Internationaal traineeship bij een van de meest prestigieuze Magic Circle-kantoren. Roteer door meerdere praktijkgebieden en bouw een breed juridisch fundament op met internationale exposure.",
+        tags: ["International Law", "Finance", "M&A"]
+      },
+      {
+        id: 12, featured: false,
+        title: "Legal Trainee Banking",
+        company: "Allen & Overy", initials: "A&O", color: "#4a0e8f",
+        sector: "advocatuur", type: "stage", location: "Amsterdam",
+        salary: "€800 – €1.050/mnd", daysAgo: 4,
+        description: "Werk aan complexe financierings- en herstructureringstransacties voor internationale banken en corporate cliënten. Sluit je aan bij een van de meest toonaangevende Magic Circle-kantoren ter wereld.",
+        tags: ["Banking Law", "Finance", "Restructuring"]
+      },
+      {
+        id: 13, featured: false,
+        title: "Associate Banking & Finance",
+        company: "Hogan Lovells", initials: "HL", color: "#c0392b",
+        sector: "advocatuur", type: "graduate", location: "Amsterdam",
+        salary: "€72k – €90k", daysAgo: 5,
+        description: "Adviseer cliënten in de financiële sector bij leningstructuren, obligaties en complexe financiële producten. Bouw expertise op in een internationaal team met focus op Europese financieringstransacties.",
+        tags: ["Finance Law", "Bonds", "Loans"]
+      },
+      {
+        id: 14, featured: false,
+        title: "Stage Advocaat Arbeidsrecht",
+        company: "Stibbe", initials: "SB", color: "#16213e",
+        sector: "advocatuur", type: "stage", location: "Amsterdam",
+        salary: "€750 – €950/mnd", daysAgo: 7,
+        description: "Stage bij de arbeidsrechtpraktijk van een van de meest toonaangevende kantoren in de Benelux. Adviseer cliënten bij ontslagzaken, arbeidsovereenkomsten en reorganisaties.",
+        tags: ["Arbeidsrecht", "Employment Law", "HR Advies"]
+      },
+
+      // ── CONSULTING ───────────────────────
+      {
+        id: 15, featured: true,
+        title: "Business Analyst",
+        company: "McKinsey & Company", initials: "MC", color: "#003366",
+        sector: "consulting", type: "graduate", location: "Amsterdam",
+        salary: "€78k – €98k", daysAgo: 1,
+        description: "Los strategische vraagstukken op voor toonaangevende Nederlandse en internationale bedrijven. Werk in diverse teams, wissel snel van industrie en groei snel door naar Junior Associate.",
+        tags: ["Strategy", "Data Analysis", "Problem Solving"]
+      },
+      {
+        id: 16, featured: true,
+        title: "Junior Consultant",
+        company: "Boston Consulting Group", initials: "BCG", color: "#006e6d",
+        sector: "consulting", type: "graduate", location: "Amsterdam",
+        salary: "€75k – €92k", daysAgo: 2,
+        description: "Ontwikkel innovatieve oplossingen voor complexe bedrijfsvraagstukken als onderdeel van diverse projectteams. BCG biedt een unieke mix van strategische diepgang, data-gedreven inzichten en menselijke impact.",
+        tags: ["Strategy", "Innovation", "Data"]
+      },
+      {
+        id: 17, featured: false,
+        title: "Associate Consultant",
+        company: "Bain & Company", initials: "BC", color: "#c0392b",
+        sector: "consulting", type: "graduate", location: "Amsterdam",
+        salary: "€74k – €92k", daysAgo: 3,
+        description: "Werk samen met senior partners aan strategische transformaties voor Europa's grootste bedrijven. Bain scoort als #1 werkgever in Nederland en biedt een unieke cultuur van collegialiteit en impact.",
+        tags: ["Private Equity", "Strategy", "Operations"]
+      },
+      {
+        id: 18, featured: false,
+        title: "Strategy Consultant",
+        company: "Roland Berger", initials: "RB", color: "#003087",
+        sector: "consulting", type: "graduate", location: "Amsterdam",
+        salary: "€65k – €82k", daysAgo: 5,
+        description: "Europa's enige toonaangevende onafhankelijke strategieconsultancy. Adviseer Europese topbedrijven bij transformaties in automotive, energie en industrie. Sterke groei- en doorstroommogelijkheden.",
+        tags: ["Transformation", "Operations", "Strategy"]
+      },
+      {
+        id: 19, featured: false,
+        title: "Analyst",
+        company: "Oliver Wyman", initials: "OW", color: "#0077b6",
+        sector: "consulting", type: "graduate", location: "Amsterdam",
+        salary: "€68k – €85k", daysAgo: 4,
+        description: "Gespecialiseerde strategische adviesdiensten voor de financiële sector. Werk aan vraagstukken rondom risicomanagement, digitale transformatie en het verdienmodel van banken en verzekeraars.",
+        tags: ["Financial Services", "Risk", "Digital"]
+      },
+      {
+        id: 20, featured: false,
+        title: "Consultant Strategy&",
+        company: "Strategy& (PwC)", initials: "S&", color: "#d4380d",
+        sector: "consulting", type: "graduate", location: "Rotterdam",
+        salary: "€65k – €80k", daysAgo: 6,
+        description: "Word onderdeel van de strategische tak van PwC en werk aan digitale transformaties en M&A-strategie. Combineer de schaal van PwC met de intensiteit van boutique strategieconsultancy.",
+        tags: ["Digital", "M&A Strategy", "Operations"]
+      }
+    ];
+
+    /* ── RENDER & FILTER LOGIC ─────────────── */
+    const sectorMap  = { finance: "Finance", advocatuur: "Advocatuur", consulting: "Consulting" };
+    const typeMap    = { graduate: "Graduate", stage: "Stage" };
+    const sectorBadgeClass = { finance: "badge--finance", advocatuur: "badge--advocatuur", consulting: "badge--consulting" };
+    const typeBadgeClass   = { graduate: "badge--graduate", stage: "badge--stage" };
+
+    function timeLabel(days) {
+      const lang = window.CURRENT_LANG || 'en';
+      if (lang === 'nl') {
+        if (days === 0) return "Vandaag";
+        if (days === 1) return "Gisteren";
+        return `${days} dagen geleden`;
+      } else {
+        if (days === 0) return "Today";
+        if (days === 1) return "Yesterday";
+        return `${days} days ago`;
+      }
+    }
+
+    function renderJob(job) {
+      const lang = window.CURRENT_LANG || 'en';
+      const t = (typeof TRANSLATIONS !== 'undefined' && TRANSLATIONS[lang]) ? TRANSLATIONS[lang] : {};
+      const applyLabel    = t['jobs.card.apply']    || 'View position';
+      const featuredLabel = t['jobs.card.featured'] || 'Featured';
+
+      return `
+        <article class="job-card ${job.featured ? 'featured' : ''}" data-id="${job.id}">
+          <div class="job-logo" style="background:${job.color}">${job.initials}</div>
+          <div class="job-body">
+            <div class="job-top">
+              <div>
+                <h3 class="job-title">${job.title}</h3>
+                <p class="job-company">${job.company}</p>
+              </div>
+              <div class="job-badges">
+                ${job.featured ? `<span class="badge badge--featured">⭐ ${featuredLabel}</span>` : ''}
+                <span class="badge ${sectorBadgeClass[job.sector]}">${sectorMap[job.sector]}</span>
+                <span class="badge ${typeBadgeClass[job.type]}">${typeMap[job.type]}</span>
+              </div>
+            </div>
+            <div class="job-meta">
+              <span class="job-meta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                ${job.location}
+              </span>
+              <span class="job-meta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+                ${typeMap[job.type]}
+              </span>
+              <span class="job-meta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                ${job.salary}
+              </span>
+              <span class="job-meta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                ${timeLabel(job.daysAgo)}
+              </span>
+            </div>
+            <p class="job-description">${job.description}</p>
+            <div class="job-footer">
+              <div class="job-tags">${job.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
+              <a href="#" class="btn-job">
+                ${applyLabel}
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>`;
+    }
+
+    function getActiveFilters() {
+      return {
+        search:    document.getElementById('searchInput').value.trim().toLowerCase(),
+        location:  document.getElementById('locationFilter').value,
+        sectors:   [...document.querySelectorAll('input[name="sector"]:checked')].map(el => el.value),
+        types:     [...document.querySelectorAll('input[name="type"]:checked')].map(el => el.value),
+        sort:      document.getElementById('sortSelect').value
+      };
+    }
+
+    function applyFilters() {
+      const f = getActiveFilters();
+      let results = JOBS.filter(job => {
+        if (f.search && !job.title.toLowerCase().includes(f.search) && !job.company.toLowerCase().includes(f.search)) return false;
+        if (f.location && job.location !== f.location) return false;
+        if (f.sectors.length && !f.sectors.includes(job.sector)) return false;
+        if (f.types.length && !f.types.includes(job.type)) return false;
+        return true;
+      });
+
+      if (f.sort === 'featured') {
+        results = [...results.filter(j => j.featured), ...results.filter(j => !j.featured)];
+      }
+
+      const list  = document.getElementById('jobsList');
+      const none  = document.getElementById('noResults');
+      const count = document.getElementById('jobCount');
+
+      const lang = window.CURRENT_LANG || 'en';
+      const t    = (typeof TRANSLATIONS !== 'undefined' && TRANSLATIONS[lang]) ? TRANSLATIONS[lang] : {};
+
+      if (results.length === 0) {
+        list.innerHTML = '';
+        none.style.display = 'block';
+        count.innerHTML = lang === 'nl'
+          ? '<strong>0</strong> vacatures gevonden'
+          : '<strong>0</strong> positions found';
+      } else {
+        list.innerHTML = results.map(renderJob).join('');
+        none.style.display = 'none';
+        if (lang === 'nl') {
+          count.innerHTML = `<strong>${results.length}</strong> vacature${results.length !== 1 ? 's' : ''} gevonden`;
+        } else {
+          count.innerHTML = `<strong>${results.length}</strong> position${results.length !== 1 ? 's' : ''} found`;
+        }
+      }
+
+      // Sync sector pills
+      const activePill = document.querySelector('#sectorPills .pill.active');
+      const activeSector = activePill ? activePill.dataset.sector : '';
+      // keep pills in sync with checkboxes
+    }
+
+    // Sector pills
+    document.querySelectorAll('#sectorPills .pill').forEach(pill => {
+      pill.addEventListener('click', () => {
+        document.querySelectorAll('#sectorPills .pill').forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        const sector = pill.dataset.sector;
+        document.querySelectorAll('input[name="sector"]').forEach(cb => {
+          cb.checked = sector ? cb.value === sector : false;
+        });
+        applyFilters();
+      });
+    });
+
+    // Sidebar checkboxes sync pill
+    document.querySelectorAll('input[name="sector"]').forEach(cb => {
+      cb.addEventListener('change', () => {
+        document.querySelectorAll('#sectorPills .pill').forEach(p => p.classList.remove('active'));
+        const checked = [...document.querySelectorAll('input[name="sector"]:checked')];
+        if (checked.length === 1) {
+          const match = document.querySelector(`#sectorPills .pill[data-sector="${checked[0].value}"]`);
+          if (match) match.classList.add('active');
+        } else if (checked.length === 0) {
+          document.querySelector('#sectorPills .pill[data-sector=""]').classList.add('active');
+        }
+        applyFilters();
+      });
+    });
+
+    document.querySelectorAll('input[name="type"], input[name="location"]').forEach(cb => {
+      cb.addEventListener('change', applyFilters);
+    });
+
+    document.getElementById('searchInput').addEventListener('input', applyFilters);
+    document.getElementById('locationFilter').addEventListener('change', applyFilters);
+
+    document.getElementById('clearFilters').addEventListener('click', () => {
+      document.querySelectorAll('.filters-sidebar input[type="checkbox"]').forEach(cb => cb.checked = false);
+      document.getElementById('searchInput').value = '';
+      document.getElementById('locationFilter').value = '';
+      document.querySelectorAll('#sectorPills .pill').forEach(p => p.classList.remove('active'));
+      document.querySelector('#sectorPills .pill[data-sector=""]').classList.add('active');
+      applyFilters();
+    });
+
+    // Mobile sidebar toggle
+    document.getElementById('filtersToggle').addEventListener('click', () => {
+      document.getElementById('filtersSidebar').classList.toggle('open');
+    });
+
+    // Initial render — wait for i18n to set CURRENT_LANG first
+    // applyFilters is called by i18n.js DOMContentLoaded handler via applyLanguage
+    // But also call here as a fallback if i18n already ran
+    if (typeof window.CURRENT_LANG !== 'undefined') {
+      applyFilters();
+    }
+  </script>
+</body>
+</html>

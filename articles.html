@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- ── SEO ──────────────────────────────── -->
+  <meta name="keywords" content="investment banking gids, case interview tips, advocatuur carrièregids, consulting tips nederland, karriere gids finance">
+  <meta name="author" content="CorporateCareer">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://corporatecareer.nl/articles.html">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CorporateCareer">
+  <meta property="og:title" content="Career Guides & Articles — Finance, Consulting & Law | CorporateCareer">
+  <meta property="og:description" content="In-depth career guides for ambitious Dutch students. How to crack the case interview, investment banking recruitment timelines, and law firm traineeship strategies.">
+  <meta property="og:url" content="https://corporatecareer.nl/articles.html">
+  <meta property="og:image" content="https://corporatecareer.nl/img/og-cover.jpg">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:locale:alternate" content="nl_NL">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Career Guides & Articles — Finance, Consulting & Law | CorporateCareer">
+  <meta name="twitter:description" content="In-depth career guides for ambitious Dutch students. How to crack the case interview, investment banking recruitment timelines, and law firm traineeship strategies.">
+  <meta name="twitter:image" content="https://corporatecareer.nl/img/og-cover.jpg">
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://corporatecareer.nl/articles.html#collection",
+      "name": "Career Guides & Articles",
+      "description": "In-depth career guides for finance, consulting and law careers in the Netherlands.",
+      "url": "https://corporatecareer.nl/articles.html",
+      "publisher": {"@id": "https://corporatecareer.nl/#organization"}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://corporatecareer.nl/"},
+        {"@type": "ListItem", "position": 2, "name": "Articles", "item": "https://corporatecareer.nl/articles.html"}
+      ]
+    }
+  ]
+  }
+  </script>
+  <meta name="description" content="In-depth career guides for ambitious Dutch students. How to crack the case interview, investment banking recruitment timelines, and law firm traineeship strategies.">
+  <title>Career Guides & Articles — Finance, Consulting & Law | CorporateCareer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ── ARTICLES PAGE STYLES ─────────────── */
+    .articles-hero {
+      background: linear-gradient(145deg, #1e3a8a 0%, #1d4ed8 45%, #2563eb 100%);
+      padding: 120px 0 80px;
+      text-align: center;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .articles-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .articles-hero .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 100px;
+      padding: 6px 16px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 24px;
+    }
+
+    .articles-hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .articles-hero h1 span {
+      color: rgba(255,255,255,0.75);
+    }
+
+    .articles-hero p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.8);
+      max-width: 540px;
+      margin: 0 auto;
+    }
+
+    /* Filter pills */
+    .articles-filters {
+      background: white;
+      border-bottom: 1px solid var(--gray-200);
+      position: sticky;
+      top: 68px;
+      z-index: 10;
+    }
+
+    .articles-filters-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .filter-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 18px;
+      border-radius: 100px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      border: 1.5px solid var(--gray-200);
+      background: white;
+      color: var(--gray-600);
+      cursor: pointer;
+      transition: all 0.2s;
+      user-select: none;
+    }
+
+    .filter-pill:hover {
+      border-color: var(--blue-600);
+      color: var(--blue-600);
+    }
+
+    .filter-pill.active {
+      background: var(--blue-600);
+      border-color: var(--blue-600);
+      color: white;
+    }
+
+    .filter-pill.active--green {
+      background: #16a34a;
+      border-color: #16a34a;
+      color: white;
+    }
+
+    .filter-pill.active--purple {
+      background: #7c3aed;
+      border-color: #7c3aed;
+      color: white;
+    }
+
+    /* Articles grid */
+    .articles-section {
+      padding: 64px 0 80px;
+      background: var(--gray-50);
+    }
+
+    .articles-count {
+      font-size: 0.88rem;
+      color: var(--gray-500);
+      margin-bottom: 28px;
+    }
+
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+
+    .article-card {
+      background: white;
+      border-radius: 14px;
+      overflow: hidden;
+      transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .article-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.12);
+    }
+
+    .article-accent {
+      height: 4px;
+      width: 100%;
+      flex-shrink: 0;
+    }
+
+    .article-card-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex: 1;
+    }
+
+    .article-category {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 100px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      align-self: flex-start;
+    }
+
+    .article-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      line-height: 1.35;
+      margin: 0;
+    }
+
+    .article-excerpt {
+      font-size: 0.855rem;
+      color: var(--gray-500);
+      line-height: 1.68;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      flex: 1;
+    }
+
+    .article-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 8px;
+      padding-top: 16px;
+      border-top: 1px solid var(--gray-100);
+    }
+
+    .article-author {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .author-avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+      font-weight: 800;
+      color: white;
+      flex-shrink: 0;
+    }
+
+    .author-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .author-name {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--gray-700);
+      line-height: 1.2;
+    }
+
+    .author-date {
+      font-size: 0.7rem;
+      color: var(--gray-400);
+    }
+
+    .article-read-more {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--blue-600);
+      text-decoration: none;
+      white-space: nowrap;
+      transition: color var(--t) var(--ease);
+    }
+
+    .article-read-more:hover { color: var(--navy-700); }
+
+    /* Pagination */
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .page-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      border: 1.5px solid var(--gray-200);
+      background: white;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--gray-600);
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .page-btn:hover {
+      border-color: var(--blue-600);
+      color: var(--blue-600);
+    }
+
+    .page-btn.active {
+      background: var(--blue-600);
+      border-color: var(--blue-600);
+      color: white;
+    }
+
+    .page-ellipsis {
+      color: var(--gray-400);
+      font-size: 0.82rem;
+      padding: 0 4px;
+    }
+
+    /* Hidden articles */
+    .article-card[data-hidden="true"] {
+      display: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .articles-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 640px) {
+      .articles-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAVIGATION ─────────────────────────── -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="/" class="logo">
+        <span class="logo-icon">CC</span>
+        <span class="logo-text">CorporateCareer</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="finance.html" data-i18n="nav.finance">Finance</a></li>
+        <li><a href="consulting.html" data-i18n="nav.consulting">Consulting</a></li>
+        <li><a href="legal.html" data-i18n="nav.legal">Legal</a></li>
+        <li><a href="jobs.html" data-i18n="nav.careers">Careers</a></li>
+        <li><a href="partners.html" data-i18n="nav.partners">Partners</a></li>
+        <li><a href="articles.html" class="nav-active" data-i18n="nav.articles">Articles</a></li>
+        <li class="nav-hide-md"><a href="over-ons.html" data-i18n="nav.about">About Us</a></li>
+        <li>
+          <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+            <span class="lang-btn lang-btn--en lang-active">EN</span>
+            <span class="lang-btn lang-btn--nl">NL</span>
+          </button>
+        </li>
+        <li><a href="index.html#start" class="btn-nav" data-i18n="nav.cta">Get Started</a></li>
+        <li><a href="partners.html" class="btn-nav-partner">Become a partner</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" data-i18n="nav.hamburger.open">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── HERO ──────────────────────────── -->
+  <section class="articles-hero">
+    <div class="container">
+      <div class="hero-badge fade-up">
+        <span data-i18n="articles.badge">Knowledge Hub</span>
+      </div>
+      <h1 class="fade-up" data-i18n-html="articles.title">
+        Career Guides &<br><span>Articles</span>
+      </h1>
+      <p class="fade-up">In-depth guides on breaking into finance, consulting and law in the Netherlands.</p>
+    </div>
+  </section>
+
+  <!-- ── FILTER PILLS ───────────────────── -->
+  <div class="articles-filters">
+    <div class="articles-filters-inner">
+      <button class="filter-pill active" data-filter="all" onclick="filterArticles('all', this)">All</button>
+      <button class="filter-pill" data-filter="finance" onclick="filterArticles('finance', this)">Finance</button>
+      <button class="filter-pill" data-filter="consulting" onclick="filterArticles('consulting', this)">Consulting</button>
+      <button class="filter-pill" data-filter="legal" onclick="filterArticles('legal', this)">Legal</button>
+    </div>
+  </div>
+
+  <!-- ── ARTICLES GRID ───────────────────── -->
+  <section class="articles-section">
+    <div class="container">
+      <p class="articles-count" id="articlesCount">9 articles</p>
+
+      <div class="articles-grid" id="articlesGrid">
+
+        <!-- Finance 1 -->
+        <article class="article-card fade-up" data-category="finance">
+          <div class="article-accent" style="background:#2563eb;"></div>
+          <div class="article-card-body">
+            <span class="article-category" style="background:rgba(37,99,235,0.08);color:#2563eb;">Investment Banking</span>
+            <h2 class="article-title">Breaking Into Investment Banking in the Netherlands</h2>
+            <p class="article-excerpt">Everything you need to know about the application process, spring weeks and summer internships at bulge bracket and elite boutique banks in Amsterdam and beyond.</p>
+            <div class="article-footer">
+              <div class="article-author">
+                <div class="author-avatar" style="background:#2563eb;">TK</div>
+                <div class="author-info">
+                  <span class="author-name">Thomas K.</span>
+                  <span class="author-date">June 2025</span>
+                </div>
+              </div>
+              <a href="#" class="article-read-more">Read more →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Finance 2 -->
+        <article class="article-card fade-up" data-category="finance">
+          <div class="article-accent" style="background:#2563eb;"></div>
+          <div class="article-card-body">
+            <span class="article-category" style="background:rgba(37,99,235,0.08);color:#2563eb;">Investment Banking</span>
+            <h2 class="article-title">The IB Recruitment Timeline: When to Apply</h2>
+            <p class="article-excerpt">A month-by-month breakdown of spring weeks, summer internships and full-time analyst applications — so you never miss a deadline at Goldman, JPM or Rothschild.</p>
+            <div class="article-footer">
+              <div class="article-author">
+                <div class="author-avatar" style="background:#2563eb;">SV</div>
+                <div class="author-info">
+                  <span class="author-name">Sophie V.</span>
+                  <span class="author-date">May 2025</span>
+                </div>
+              </div>
+              <a href="#" class="article-read-more">Read more →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Finance 3 -->
+        <article class="article-card fade-up" data-category="finance">
+          <div class="article-accent" style="background:#2563eb;"></div>
+          <div class="article-card-body">
+            <span class="article-category" style="background:rgba(37,99,235,0.08);color:#2563eb;">Investment Banking</span>
+            <h2 class="article-title">Financial Modelling: What Banks Actually Test</h2>
+            <p class="article-excerpt">DCF, LBO, merger models — a practical guide to the technical skills tested in IB superdays, with example questions from real Goldman Sachs and Rothschild interviews.</p>
+            <div class="article-footer">
+              <div class="article-author">
+                <div class="author-avatar" style="background:#1d4ed8;">LM</div>
+                <div class="author-info">
+                  <span class="author-name">Lena M.</span>
+                  <span class="author-date">April 2025</span>
+                </div>
+              </div>
+              <a href="#" class="article-read-more">Read more →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Consulting 1 -->
+        <article class="article-card fade-up" data-category="consulting">
+          <div class="article-accent" style="background:#16a34a;"></div>
+          <div class="article-card-body">
+            <span class="article-category" style="background:rgba(22,163,74,0.08);color:#16a34a;">Consulting</span>
+            <h2 class="article-title">How to Crack the Case Interview</h2>
+            <p class="article-excerpt">A step-by-step guide to mastering the case interview at McKinsey, BCG and Bain — from market sizing and profitability cases to the final recommendation.</p>
+            <div class="article-footer">
+              <div class="article-author">
+                <div class="author-avatar" style="background:#16a34a;">JR</div>
+                <div class="author-info">
+                  <span class="author-name">Jasper R.</span>
+                  <span class="author-date">June 2025</span>
+                </div>
+              </div>
+              <a href="#" class="article-read-more">Read more →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Consulting 2 -->
+        <article class="article-card fade-up" data-category="consulting">
+          <div class="article-accent" style="background:#16a34a;"></div>
+          <div class="article-card-body">
+            <span class="article-category" style="background:rgba(22,163,74,0.08);color:#16a34a;">Consulting</span>
+            <h2 class="article-title">McKinsey vs BCG vs Bain: Which Is Right for You?</h2>
+            <p class="article-excerpt">A candid comparison of the three MBB firms on culture, work-life balance, exit opportunities and the Dutch office experience — to help you decide where to focus.</p>
+            <div class="article-footer">
+              <div class="article-author">
+                <div class="author-avatar" style="background:#15803d;">NB</div>
+                <div class="author-info">
+                  <span class="author-name">Nina B.</span>
+                  <span class="author-date">May 2025</span>
+                </div>
+              </div>
+              <a href="#" class="article-read-more">Read more →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Consulting 3 -->
+        <article class="article-card fade-up" data-category="consulting">
+          <div class="article-accent" style="background:#16a34a;"></div>
+          <div class="article-card-body">
+            <span class="article-category" style="background:rgba(22,163,74,0.08);color:#16a34a;">Consulting</span>
+            <h2 class="article-title">Building the Perfect Consulting CV</h2>
+            <p class="article-excerpt">What top consulting firms actually look for on your CV: the right extracurriculars, how to frame your thesis, and the one mistake that kills most applications before round one.</p>
+            <div class="article-footer">
+              <div class="article-author">
+                <div class="author-avatar" style="background:#16a34a;">AV</div>
+                <div class="author-info">
+                  <span class="author-name">Anna V.</span>
+                  <span class="author-date">March 2025</span>
+                </div>
+              </div>
+              <a href="#" class="article-read-more">Read more →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Legal 1 -->
+        <article class="article-card fade-up" data-category="legal">
+          <div class="article-accent" style="background:#7c3aed;"></div>
+          <div class="article-card-body">
+            <span class="article-category" style="background:rgba(124,58,237,0.08);color:#7c3aed;">Legal</span>
+            <h2 class="article-title">Your Path to a Magic Circle Traineeship</h2>
+            <p class="article-excerpt">How to position yourself for a traineeship at De Brauw, NautaDutilh or Freshfields — from your LLM results and moot court experience to your first networking event.</p>
+            <div class="article-footer">
+              <div class="article-author">
+                <div class="author-avatar" style="background:#7c3aed;">EK</div>
+                <div class="author-info">
+                  <span class="author-name">Emma K.</span>
+                  <span class="author-date">June 2025</span>
+                </div>
+              </div>
+              <a href="#" class="article-read-more">Read more →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Legal 2 -->
+        <article class="article-card fade-up" data-category="legal">
+          <div class="article-accent" style="background:#7c3aed;"></div>
+          <div class="article-card-body">
+            <span class="article-category" style="background:rgba(124,58,237,0.08);color:#7c3aed;">Legal</span>
+            <h2 class="article-title">Corporate Law vs Litigation: Which Practice Area Suits You?</h2>
+            <p class="article-excerpt">A practical guide to the main practice areas at Dutch top firms — M&amp;A, restructuring, disputes and regulatory — with salary ranges and typical career trajectories.</p>
+            <div class="article-footer">
+              <div class="article-author">
+                <div class="author-avatar" style="background:#6d28d9;">DH</div>
+                <div class="author-info">
+                  <span class="author-name">Daan H.</span>
+                  <span class="author-date">April 2025</span>
+                </div>
+              </div>
+              <a href="#" class="article-read-more">Read more →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Legal 3 -->
+        <article class="article-card fade-up" data-category="legal">
+          <div class="article-accent" style="background:#7c3aed;"></div>
+          <div class="article-card-body">
+            <span class="article-category" style="background:rgba(124,58,237,0.08);color:#7c3aed;">Legal</span>
+            <h2 class="article-title">Networking at Law Firms: A Student's Guide</h2>
+            <p class="article-excerpt">How to attend open days, firm events and drinks sessions at De Brauw and NautaDutilh — and actually build the relationships that get you remembered when applications open.</p>
+            <div class="article-footer">
+              <div class="article-author">
+                <div class="author-avatar" style="background:#7c3aed;">ML</div>
+                <div class="author-info">
+                  <span class="author-name">Mila L.</span>
+                  <span class="author-date">February 2025</span>
+                </div>
+              </div>
+              <a href="#" class="article-read-more">Read more →</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Pagination -->
+      <nav class="pagination" aria-label="Article pages">
+        <a href="#" class="page-btn active">1</a>
+        <a href="#" class="page-btn">2</a>
+        <a href="#" class="page-btn">3</a>
+        <span class="page-ellipsis">…</span>
+        <a href="#" class="page-btn">Next →</a>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ─────────────────────────── -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="/" class="logo" aria-label="CorporateCareer homepage">
+          <span class="logo-icon">CC</span>
+          <span class="logo-text">CorporateCareer</span>
+        </a>
+        <p data-i18n="footer.tagline">Your route to the top of Dutch business.</p>
+        <div class="footer-about">
+          <h5><a href="over-ons.html" style="color:inherit;text-decoration:none;" data-i18n="footer.about.heading">About Us</a></h5>
+          <p data-i18n="footer.about.text">CorporateCareer was founded by alumni from Erasmus, UvA and VU who found their own way to Goldman Sachs, McKinsey and De Brauw.</p>
+          <p data-i18n="footer.about.stat">Over 2,400 students came before you.</p>
+        </div>
+      </div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <div class="footer-col">
+          <h5 data-i18n="footer.col1.title">Career Paths</h5>
+          <a href="finance.html">Finance</a>
+          <a href="consulting.html">Consulting</a>
+          <a href="legal.html">Legal</a>
+        </div>
+        <div class="footer-col">
+          <h5 data-i18n="footer.col2.title">Platform</h5>
+          <a href="over-ons.html" data-i18n="footer.col2.about">About Us</a>
+          <a href="articles.html" data-i18n="footer.col2.blog">Articles</a>
+          <a href="#" data-i18n="footer.col2.contact">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5 data-i18n="footer.col3.title">Legal</h5>
+          <a href="#" data-i18n="footer.col3.privacy">Privacy Policy</a>
+          <a href="#" data-i18n="footer.col3.terms">Terms &amp; Conditions</a>
+          <a href="#" data-i18n="footer.col3.cookies">Cookies</a>
+        </div>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <span data-i18n="footer.copy">© 2025 CorporateCareer — All rights reserved</span>
+        <span data-i18n="footer.location">Amsterdam, Netherlands</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    function filterArticles(category, btn) {
+      // Update active pill
+      document.querySelectorAll('.filter-pill').forEach(p => {
+        p.classList.remove('active', 'active--green', 'active--purple');
+      });
+      if (category === 'finance') btn.classList.add('active');
+      else if (category === 'consulting') btn.classList.add('active--green');
+      else if (category === 'legal') btn.classList.add('active--purple');
+      else btn.classList.add('active');
+
+      // Show/hide cards
+      const cards = document.querySelectorAll('#articlesGrid .article-card');
+      let visible = 0;
+      cards.forEach(card => {
+        const match = category === 'all' || card.dataset.category === category;
+        card.setAttribute('data-hidden', match ? 'false' : 'true');
+        if (match) visible++;
+      });
+
+      document.getElementById('articlesCount').textContent = visible + ' article' + (visible === 1 ? '' : 's');
+    }
+  </script>
+</body>
+</html>
