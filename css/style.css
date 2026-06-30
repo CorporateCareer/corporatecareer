@@ -144,9 +144,13 @@ h1, h2, h3, h4, h5 {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 16px;
   list-style: none;
   margin-left: auto;
+}
+@media (max-width: 1280px) {
+  .nav-links { gap: 12px; }
+  .nav-links a { font-size: 0.82rem; }
 }
 
 .lang-toggle { margin-right: 0; }
