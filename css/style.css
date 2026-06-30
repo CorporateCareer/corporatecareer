@@ -184,6 +184,22 @@ h1, h2, h3, h4, h5 {
   box-shadow: 0 4px 18px rgba(59,130,246,0.5) !important;
 }
 
+.btn-nav-partner {
+  background: transparent !important;
+  color: var(--navy-900) !important;
+  padding: 10px 20px !important;
+  border-radius: 9px !important;
+  font-weight: 600 !important;
+  font-size: 0.875rem !important;
+  border: 1.5px solid var(--gray-300) !important;
+  transition: border-color var(--t) var(--ease), background var(--t) var(--ease) !important;
+}
+.btn-nav-partner:hover {
+  border-color: var(--blue-500) !important;
+  color: var(--blue-600) !important;
+  background: rgba(59,130,246,0.06) !important;
+}
+
 /* Hamburger */
 .hamburger {
   display: none;
