@@ -144,9 +144,16 @@ h1, h2, h3, h4, h5 {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 16px;
   list-style: none;
   margin-left: auto;
+}
+@media (max-width: 1280px) {
+  .nav-links { gap: 10px; }
+  .nav-links a { font-size: 0.82rem; }
+}
+@media (max-width: 1100px) {
+  .nav-hide-md { display: none; }
 }
 
 .lang-toggle { margin-right: 0; }
@@ -182,6 +189,22 @@ h1, h2, h3, h4, h5 {
   background: var(--blue-600) !important;
   transform: translateY(-1px);
   box-shadow: 0 4px 18px rgba(59,130,246,0.5) !important;
+}
+
+.btn-nav-partner {
+  background: transparent !important;
+  color: var(--navy-900) !important;
+  padding: 10px 20px !important;
+  border-radius: 9px !important;
+  font-weight: 600 !important;
+  font-size: 0.875rem !important;
+  border: 1.5px solid var(--gray-300) !important;
+  transition: border-color var(--t) var(--ease), background var(--t) var(--ease) !important;
+}
+.btn-nav-partner:hover {
+  border-color: var(--blue-500) !important;
+  color: var(--blue-600) !important;
+  background: rgba(59,130,246,0.06) !important;
 }
 
 /* Hamburger */
