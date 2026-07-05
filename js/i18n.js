@@ -1,4 +1,4 @@
-/* ── CorporateCareer i18n — English / Dutch ── */
+/* ── CorporateCareer i18n, English / Dutch ── */
 
 const TRANSLATIONS = {
   en: {
@@ -45,7 +45,7 @@ const TRANSLATIONS = {
     'finance.overview.label':     'What is IB?',
     'finance.overview.title':     'The Engine of Global Finance',
     'finance.overview.p1':        'Investment bankers advise companies and governments on their most important financial decisions: mergers, acquisitions, IPOs and debt issuance. At the top firms in Amsterdam, you work on transactions worth hundreds of millions.',
-    'finance.overview.p2':        'The work is demanding — long hours, steep learning curve — but the compensation and career acceleration are unmatched.',
+    'finance.overview.p2':        'The work is demanding, with long hours and a steep learning curve, but the compensation and career acceleration are unmatched.',
     'finance.salary.label':       'Compensation',
     'finance.salary.title':       'What Does IB Pay?',
     'finance.skills.label':       'Skills',
@@ -73,7 +73,7 @@ const TRANSLATIONS = {
     'legal.overview.label':     'What is Big Law?',
     'legal.overview.title':     'High-Stakes Legal Work',
     'legal.overview.p1':        'At a top Dutch or international law firm you advise multinationals, private equity funds and financial institutions on complex transactions, litigation and regulatory matters. Your work has real financial and societal impact.',
-    'legal.overview.p2':        'The path starts with an LLM (master\'s in law), then a traineeship — a rotation across practice areas before specialising.',
+    'legal.overview.p2':        'The path starts with an LLM (master\'s in law), then a traineeship, a rotation across practice areas before specialising.',
     'legal.cta.title':          'Ready to Break Into Big Law?',
     'legal.cta.subtitle':       'Get our step-by-step Law roadmap and firm application guide.',
 
@@ -89,7 +89,7 @@ const TRANSLATIONS = {
     'partners.cta.btn':            'Get in Touch',
 
     /* Hero (continued) */
-    'hero.subtitle':        'CorporateCareer gives you the exact roadmap to break into the top of law, investment banking or consulting — and land your first offer.',
+    'hero.subtitle':        'CorporateCareer gives you the exact roadmap to break into the top of law, investment banking or consulting, and land your first offer.',
     'hero.cta.secondary':   'How it works',
     'hero.stat1.label':     'Students helped',
     'hero.stat2.label':     'Offer rate',
@@ -177,7 +177,7 @@ const TRANSLATIONS = {
     'footer.col3.privacy':  'Privacy Policy',
     'footer.col3.terms':    'Terms & Conditions',
     'footer.col3.cookies':  'Cookies',
-    'footer.copy':          '© 2025 CorporateCareer — All rights reserved',
+    'footer.copy':          '© 2025 CorporateCareer. All rights reserved',
     'footer.location':      'Amsterdam, Netherlands',
 
     /* Jobs page UI */
@@ -202,7 +202,7 @@ const TRANSLATIONS = {
     'about.subtitle':       'We know what it feels like not to know where to start. That\'s why we built the platform we wished we\'d had.',
     'about.mission.label':  'Our Mission',
     'about.mission.title':  'Equal Opportunities for Every Ambitious Talent',
-    'about.mission.p1':     'In the Netherlands, too many students don\'t know how to break into Goldman Sachs, McKinsey or De Brauw Blackstone Westbroek. Not because they aren\'t good enough — but simply because they don\'t know how the game is played.',
+    'about.mission.p1':     'In the Netherlands, too many students don\'t know how to break into Goldman Sachs, McKinsey or De Brauw Blackstone Westbroek. Not because they aren\'t good enough, but simply because they don\'t know how the game is played.',
     'about.mission.p2':     'CorporateCareer gives everyone fair access to the knowledge, preparation and networks that were previously reserved for students with the right connections.',
     'about.team.label':     'The Team',
     'about.team.title':     'Founded by People Who\'ve Done It',
@@ -216,13 +216,13 @@ const TRANSLATIONS = {
     'about.values.label':   'Our Values',
     'about.values.title':   'What We Stand For',
     'about.val1.title':     'Honesty over Hype',
-    'about.val1.desc':      'We tell you what recruiters really look for — not what you want to hear. No empty promises, just concrete preparation.',
+    'about.val1.desc':      'We tell you what recruiters really look for, not what you want to hear. No empty promises, just concrete preparation.',
     'about.val2.title':     'Network as Leverage',
-    'about.val2.desc':      'Access to our community of alumni at Goldman, McKinsey, De Brauw and more — people who actively want to help you.',
+    'about.val2.desc':      'Access to our community of alumni at Goldman, McKinsey, De Brauw and more, people who actively want to help you.',
     'about.val3.title':     'Results Count',
     'about.val3.desc':      'Our coaching is measured by one thing: you get the offer. 89% of our participants succeed in the first year.',
     'about.val4.title':     'Equal Access',
-    'about.val4.desc':      'Whether you come from a university of applied sciences or a research university — ambition and preparation are the only requirements.',
+    'about.val4.desc':      'Whether you come from a university of applied sciences or a research university, ambition and preparation are the only requirements.',
     'about.cta.title':      'Ready to Begin?',
     'about.cta.subtitle':   'Join 2,400+ students who have already taken the step.',
     'about.cta.primary':    'Get Free Roadmap',
@@ -273,7 +273,7 @@ const TRANSLATIONS = {
     'finance.overview.label':     'Wat is IB?',
     'finance.overview.title':     'De motor van de wereldeconomie',
     'finance.overview.p1':        'Investment bankers adviseren bedrijven en overheden bij hun belangrijkste financiële beslissingen: fusies, overnames, beursgangen en schuldemissies. Bij de topkantoren in Amsterdam werk je aan transacties van honderden miljoenen.',
-    'finance.overview.p2':        'Het werk is veeleisend — lange dagen, steile leercurve — maar de beloning en carrièreversnelling zijn ongeëvenaard.',
+    'finance.overview.p2':        'Het werk is veeleisend, met lange dagen en een steile leercurve, maar de beloning en carrièreversnelling zijn ongeëvenaard.',
     'finance.salary.label':       'Salaris',
     'finance.salary.title':       'Wat verdien je in IB?',
     'finance.skills.label':       'Vaardigheden',
@@ -301,7 +301,7 @@ const TRANSLATIONS = {
     'legal.overview.label':     'Wat is Big Law?',
     'legal.overview.title':     'Hoogwaardige juridische praktijk',
     'legal.overview.p1':        'Bij een top Nederlands of internationaal advocatenkantoor adviseer je multinationals, private equity-fondsen en financiële instellingen over complexe transacties, geschillen en regulatoire kwesties. Jouw werk heeft echte financiële en maatschappelijke impact.',
-    'legal.overview.p2':        'Het pad begint met een rechtenstudie (master), gevolgd door een traineeship — een roulatie over praktijkgebieden voordat je specialiseert.',
+    'legal.overview.p2':        'Het pad begint met een rechtenstudie (master), gevolgd door een traineeship, een roulatie over praktijkgebieden voordat je specialiseert.',
     'legal.cta.title':          'Klaar om door te breken in de advocatuur?',
     'legal.cta.subtitle':       'Ontvang ons stap-voor-stap advocatuur stappenplan en sollicitatiegids.',
 
@@ -317,7 +317,7 @@ const TRANSLATIONS = {
     'partners.cta.btn':            'Neem contact op',
 
     /* Hero (continued) */
-    'hero.subtitle':        'CorporateCareer geeft je het exacte stappenplan om door te stoten naar de top van advocatuur, investment banking of consulting — en jouw eerste aanbod binnen te halen.',
+    'hero.subtitle':        'CorporateCareer geeft je het exacte stappenplan om door te stoten naar de top van advocatuur, investment banking of consulting, en jouw eerste aanbod binnen te halen.',
     'hero.cta.secondary':   'Hoe het werkt',
     'hero.stat1.label':     'Studenten geholpen',
     'hero.stat2.label':     'Succesratio',
@@ -405,7 +405,7 @@ const TRANSLATIONS = {
     'footer.col3.privacy':  'Privacybeleid',
     'footer.col3.terms':    'Algemene voorwaarden',
     'footer.col3.cookies':  'Cookies',
-    'footer.copy':          '© 2025 CorporateCareer — Alle rechten voorbehouden',
+    'footer.copy':          '© 2025 CorporateCareer. Alle rechten voorbehouden',
     'footer.location':      'Amsterdam, Nederland',
 
     /* Jobs page UI */
@@ -430,7 +430,7 @@ const TRANSLATIONS = {
     'about.subtitle':       'We weten hoe het voelt om niet te weten waar je moet beginnen. Daarom bouwden we het platform dat wij zelf hadden willen hebben.',
     'about.mission.label':  'Onze missie',
     'about.mission.title':  'Gelijke kansen voor elk ambitieus talent',
-    'about.mission.p1':     'In Nederland weten te veel studenten niet hoe ze moeten binnenkomen bij Goldman Sachs, McKinsey of De Brauw Blackstone Westbroek. Niet omdat ze er niet goed genoeg voor zijn — maar omdat ze simpelweg niet weten hoe het spel gespeeld wordt.',
+    'about.mission.p1':     'In Nederland weten te veel studenten niet hoe ze moeten binnenkomen bij Goldman Sachs, McKinsey of De Brauw Blackstone Westbroek. Niet omdat ze er niet goed genoeg voor zijn, maar omdat ze simpelweg niet weten hoe het spel gespeeld wordt.',
     'about.mission.p2':     'CorporateCareer geeft iedereen eerlijke toegang tot de kennis, voorbereiding en netwerken die voorheen voorbehouden waren aan studenten met de juiste connecties.',
     'about.team.label':     'Het team',
     'about.team.title':     'Opgericht door mensen die het zelf hebben gedaan',
@@ -444,13 +444,13 @@ const TRANSLATIONS = {
     'about.values.label':   'Onze waarden',
     'about.values.title':   'Waar we voor staan',
     'about.val1.title':     'Eerlijkheid boven hype',
-    'about.val1.desc':      'We vertellen je wat recruiters echt zoeken — niet wat je graag wil horen. Geen loze beloftes, wel concrete voorbereiding.',
+    'about.val1.desc':      'We vertellen je wat recruiters echt zoeken, niet wat je graag wil horen. Geen loze beloftes, wel concrete voorbereiding.',
     'about.val2.title':     'Netwerk als hefboom',
-    'about.val2.desc':      'Toegang tot onze community van oud-deelnemers bij Goldman, McKinsey, De Brauw en meer — mensen die jou actief willen helpen.',
+    'about.val2.desc':      'Toegang tot onze community van oud-deelnemers bij Goldman, McKinsey, De Brauw en meer, mensen die jou actief willen helpen.',
     'about.val3.title':     'Resultaat telt',
     'about.val3.desc':      'Onze begeleiding wordt afgemeten aan één ding: jij krijgt het offer. 89% van onze deelnemers slaagt in het eerste jaar.',
     'about.val4.title':     'Gelijke toegang',
-    'about.val4.desc':      'Of je nu van een ROC komt of van een topuniversiteit — ambitie en voorbereiding zijn de enige vereisten.',
+    'about.val4.desc':      'Of je nu van een ROC komt of van een topuniversiteit, ambitie en voorbereiding zijn de enige vereisten.',
     'about.cta.title':      'Klaar om te beginnen?',
     'about.cta.subtitle':   'Sluit je aan bij 2.400+ studenten die al de stap hebben gezet.',
     'about.cta.primary':    'Ontvang gratis stappenplan',
