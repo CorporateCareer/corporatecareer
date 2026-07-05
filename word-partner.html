@@ -79,7 +79,7 @@
   <style>
     /* ── Hero ── */
     .partner-hero {
-      background: linear-gradient(150deg, #0a1628 0%, #122442 55%, #1b3564 100%);
+      background: linear-gradient(150deg, #142a45 0%, #1c3557 55%, #285288 100%);
       padding: 150px 0 100px;
       text-align: center;
       position: relative;
@@ -89,15 +89,15 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(198,161,91,0.14) 0%, transparent 70%);
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(120,165,240,0.16) 0%, transparent 70%);
       pointer-events: none;
     }
     .partner-hero .badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(198,161,91,0.10);
-      border: 1px solid rgba(198,161,91,0.32);
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.22);
       color: rgba(255,255,255,0.9);
       font-size: 0.78rem;
       font-weight: 600;
@@ -144,13 +144,13 @@
     .stats-strip { background: var(--white); border-bottom: 1px solid var(--gray-200); padding: 52px 0; }
     .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; text-align: center; }
     .stat-number { font-size: 2.6rem; font-weight: 900; color: var(--navy-900); line-height: 1; letter-spacing: -0.04em; margin-bottom: 8px; }
-    .stat-number em { color: var(--gold-deep); font-style: normal; }
+    .stat-number em { color: var(--blue-600); font-style: normal; }
     .stat-label { font-size: 0.84rem; color: var(--gray-500); line-height: 1.45; }
 
     /* ── Sections ── */
     .wp-section { padding: 92px 0; }
     .wp-section.bg-light { background: var(--gray-50); }
-    .wp-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 12px; }
+    .wp-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue-600); margin-bottom: 12px; }
     .wp-title { font-size: clamp(1.7rem, 3.2vw, 2.4rem); font-weight: 650; color: var(--navy-950); line-height: 1.2; margin-bottom: 16px; }
     .wp-subtitle { font-size: 1.05rem; color: var(--gray-500); line-height: 1.7; }
     .wp-header { margin-bottom: 56px; }
@@ -165,8 +165,8 @@
     .af-text h3 { font-size: 0.92rem; font-weight: 700; color: var(--navy-900); margin-bottom: 3px; }
     .af-text p { font-size: 0.84rem; color: var(--gray-500); line-height: 1.6; }
 
-    .audience-card { background: linear-gradient(150deg, #0a1628 0%, #14294a 100%); border-radius: 22px; padding: 36px; color: white; border: 1px solid rgba(198,161,91,0.2); }
-    .ac-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-soft); margin-bottom: 20px; }
+    .audience-card { background: linear-gradient(150deg, #142a45 0%, #1e3a61 100%); border-radius: 22px; padding: 36px; color: white; border: 1px solid rgba(255,255,255,0.12); }
+    .ac-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue-300); margin-bottom: 20px; }
     .ac-item { display: flex; align-items: baseline; gap: 12px; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
     .ac-item:last-of-type { border-bottom: none; }
     .ac-item strong { font-size: 1.05rem; color: #fff; white-space: nowrap; }
@@ -196,21 +196,21 @@
     .faq-q { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; cursor: pointer; font-size: 0.95rem; font-weight: 600; color: var(--navy-900); gap: 16px; user-select: none; }
     .faq-q:hover { color: var(--blue-600); }
     .faq-icon { width: 26px; height: 26px; border-radius: 50%; border: 1px solid var(--gray-300); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.1rem; line-height: 1; color: var(--gray-400); transition: border-color 0.2s, color 0.2s, transform 0.2s; }
-    .faq-item.open .faq-icon { border-color: var(--gold); color: var(--gold-deep); transform: rotate(45deg); }
+    .faq-item.open .faq-icon { border-color: var(--blue-500); color: var(--blue-600); transform: rotate(45deg); }
     .faq-a { display: none; padding: 0 0 20px; font-size: 0.9rem; color: var(--gray-500); line-height: 1.75; }
     .faq-item.open .faq-a { display: block; }
 
     /* ── Contact ── */
-    .contact-wrap { background: linear-gradient(150deg, #0a1628 0%, #122442 100%); padding: 96px 0; }
+    .contact-wrap { background: linear-gradient(150deg, #142a45 0%, #1c3557 100%); padding: 96px 0; }
     .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 72px; align-items: start; }
     .contact-left h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 650; color: var(--white); line-height: 1.15; margin-bottom: 16px; }
     .contact-left > p { font-size: 1rem; color: rgba(255,255,255,0.6); line-height: 1.75; margin-bottom: 36px; }
     .contact-info { display: flex; flex-direction: column; gap: 15px; margin-bottom: 36px; }
     .ci-row { display: flex; align-items: center; gap: 13px; font-size: 0.9rem; color: rgba(255,255,255,0.7); }
-    .ci-icon { width: 38px; height: 38px; border-radius: 9px; background: rgba(255,255,255,0.07); color: var(--gold-soft); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .contact-proof { border-left: 2px solid var(--gold); padding: 4px 0 4px 18px; }
+    .ci-icon { width: 38px; height: 38px; border-radius: 9px; background: rgba(255,255,255,0.07); color: var(--blue-300); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .contact-proof { border-left: 2px solid var(--blue-500); padding: 4px 0 4px 18px; }
     .contact-proof p { font-size: 0.9rem; color: rgba(255,255,255,0.75); line-height: 1.7; font-style: italic; }
-    .contact-proof span { display: block; font-size: 0.76rem; color: var(--gold-soft); margin-top: 8px; font-style: normal; font-weight: 600; letter-spacing: 0.04em; }
+    .contact-proof span { display: block; font-size: 0.76rem; color: var(--blue-300); margin-top: 8px; font-style: normal; font-weight: 600; letter-spacing: 0.04em; }
 
     .contact-form-card { background: var(--white); border-radius: 20px; padding: 40px; }
     .contact-form-card h3 { font-size: 1.2rem; font-weight: 700; color: var(--navy-900); margin-bottom: 6px; }
