@@ -1,12 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="7" fill="#0a1628"/>
-  <rect x="0.5" y="0.5" width="31" height="31" rx="6.5" fill="none" stroke="#c6a15b" stroke-opacity="0.55"/>
+  <rect width="32" height="32" rx="7" fill="#142a45"/>
   <text
     x="16" y="22"
     font-family="Georgia,serif"
     font-size="14"
     font-weight="700"
-    fill="#e8d3a8"
+    fill="#ffffff"
     text-anchor="middle"
     letter-spacing="-0.5"
   >CC</text>
