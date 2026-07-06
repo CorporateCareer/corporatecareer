@@ -33,7 +33,7 @@
       "name": "Open Positions in Finance, Consulting and Law",
       "description": "Current vacancies at top employers in the Netherlands",
       "url": "https://corporatecareer.nl/jobs.html",
-      "numberOfItems": 20
+      "numberOfItems": 60
     },
     {
       "@type": "BreadcrumbList",
@@ -343,6 +343,8 @@
     /* Job cards */
     #jobsList { display: flex; flex-direction: column; gap: 16px; }
 
+    .job-title a{color:inherit;text-decoration:none}
+    .job-title a:hover{color:var(--blue-600)}
     .job-card {
       background: white;
       border: 1px solid var(--gray-200);
@@ -621,8 +623,6 @@
               <option value="" data-i18n="jobs.location.all">All locations</option>
               <option value="Amsterdam">Amsterdam</option>
               <option value="Rotterdam">Rotterdam</option>
-              <option value="Den Haag">Den Haag</option>
-              <option value="Utrecht">Utrecht</option>
             </select>
           </div>
           <button class="btn-search" onclick="applyFilters()">Search</button>
@@ -659,15 +659,15 @@
             <h4 data-i18n="jobs.filter.sector">Sector</h4>
             <label class="filter-label">
               <input type="checkbox" name="sector" value="finance">
-              Finance <span class="filter-count">8</span>
+              Finance <span class="filter-count">19</span>
             </label>
             <label class="filter-label">
               <input type="checkbox" name="sector" value="advocatuur">
-              Law <span class="filter-count">6</span>
+              Law <span class="filter-count">8</span>
             </label>
             <label class="filter-label">
               <input type="checkbox" name="sector" value="consulting">
-              Consulting <span class="filter-count">6</span>
+              Consulting <span class="filter-count">33</span>
             </label>
           </div>
 
@@ -675,7 +675,7 @@
             <h4 data-i18n="jobs.filter.type">Type</h4>
             <label class="filter-label">
               <input type="checkbox" name="type" value="graduate">
-              Graduate <span class="filter-count">13</span>
+              Graduate <span class="filter-count">53</span>
             </label>
             <label class="filter-label">
               <input type="checkbox" name="type" value="stage">
@@ -687,19 +687,11 @@
             <h4>Location</h4>
             <label class="filter-label">
               <input type="checkbox" name="location" value="Amsterdam">
-              Amsterdam <span class="filter-count">16</span>
+              Amsterdam <span class="filter-count">59</span>
             </label>
             <label class="filter-label">
               <input type="checkbox" name="location" value="Rotterdam">
-              Rotterdam <span class="filter-count">2</span>
-            </label>
-            <label class="filter-label">
-              <input type="checkbox" name="location" value="Den Haag">
-              Den Haag <span class="filter-count">1</span>
-            </label>
-            <label class="filter-label">
-              <input type="checkbox" name="location" value="Utrecht">
-              Utrecht <span class="filter-count">1</span>
+              Rotterdam <span class="filter-count">1</span>
             </label>
           </div>
         </aside>
@@ -708,7 +700,7 @@
       <!-- MAIN JOBS LIST -->
       <main class="jobs-main">
         <div class="jobs-header">
-          <span id="jobCount"><strong>20</strong> positions found</span>
+          <span id="jobCount"><strong>60</strong> positions found</span>
           <div class="sort-wrap">
             <label for="sortSelect" data-i18n="jobs.sort.label">Sort by:</label>
             <select id="sortSelect" onchange="applyFilters()" aria-label="Sort">
@@ -772,203 +764,2662 @@
 
   <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
+  <script id="jobs-data" type="application/json">
+[
+  {
+    "title": "Manager Sale & Purchase Agreement - Transaction Services",
+    "company": "PwC",
+    "sector": "finance",
+    "type": "graduate",
+    "location": "Amsterdam",
+    "url": "https://pwc.wd3.myworkdayjobs.com/Global_Experienced_Careers/job/Amsterdam/Manager-Sale---Purchase-Agreement---Transaction-Services_733560WD-2",
+    "checkText": "733560WD-2",
+    "tags": [
+      "Deals",
+      "Transaction Services"
+    ],
+    "id": 1,
+    "featured": true,
+    "active": true,
+    "initials": "PwC",
+    "color": "#d04a02",
+    "salary": "",
+    "daysAgo": null,
+    "description": "PwC heeft een openstaande vacature voor Manager Sale & Purchase Agreement - Transaction Services in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "pwc-manager-sale-en-purchase-agreement-transaction-services",
+    "detail": {
+      "firmBlurb": "PwC is een van de Big Four en levert advies, audit en fiscale dienstverlening. In Nederland werken duizenden professionals, met een groot kantoor op de Zuidas in Amsterdam.",
+      "firmSite": "https://www.pwc.nl",
+      "intro": "PwC zoekt een Manager Sale & Purchase Agreement - Transaction Services voor het kantoor in Amsterdam. Het gaat om een functie binnen finance. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van PwC.",
+      "does": [
+        "Financiele of commerciele due diligence uitvoeren bij overnames en investeringen",
+        "Bedrijfscijfers, businessplannen en waarderingen analyseren",
+        "Bevindingen rapporteren aan participatiemaatschappijen en corporate clienten"
+      ],
+      "brings": [
+        "Een masterdiploma in economie, finance, econometrie of accountancy",
+        "Ervaring in transactieadvies, audit of corporate finance",
+        "Sterke analytische vaardigheden en uitstekend Engels"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Finance",
+        "Type": "Vaste functie",
+        "Niveau": "Starter / ervaren",
+        "Praktijk": "Deals"
+      }
+    }
+  },
+  {
+    "title": "Manager Financial Due Diligence",
+    "company": "PwC",
+    "sector": "finance",
+    "type": "graduate",
+    "location": "Amsterdam",
+    "url": "https://pwc.wd3.myworkdayjobs.com/Global_Experienced_Careers/job/Amsterdam/Manager-Financial-Due-Diligence_733568WD",
+    "checkText": "733568WD",
+    "tags": [
+      "Deals",
+      "Due Diligence"
+    ],
+    "id": 2,
+    "featured": true,
+    "active": true,
+    "initials": "PwC",
+    "color": "#d04a02",
+    "salary": "",
+    "daysAgo": null,
+    "description": "PwC heeft een openstaande vacature voor Manager Financial Due Diligence in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "pwc-manager-financial-due-diligence",
+    "detail": {
+      "firmBlurb": "PwC is een van de Big Four en levert advies, audit en fiscale dienstverlening. In Nederland werken duizenden professionals, met een groot kantoor op de Zuidas in Amsterdam.",
+      "firmSite": "https://www.pwc.nl",
+      "intro": "PwC zoekt een Manager Financial Due Diligence voor het kantoor in Amsterdam. Het gaat om een functie binnen finance. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van PwC.",
+      "does": [
+        "Financiele of commerciele due diligence uitvoeren bij overnames en investeringen",
+        "Bedrijfscijfers, businessplannen en waarderingen analyseren",
+        "Bevindingen rapporteren aan participatiemaatschappijen en corporate clienten"
+      ],
+      "brings": [
+        "Een masterdiploma in economie, finance, econometrie of accountancy",
+        "Ervaring in transactieadvies, audit of corporate finance",
+        "Sterke analytische vaardigheden en uitstekend Engels"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Finance",
+        "Type": "Vaste functie",
+        "Niveau": "Starter / ervaren",
+        "Praktijk": "Deals"
+      }
+    }
+  },
+  {
+    "title": "Senior Consultant Sale & Purchase Agreement - Transaction Services",
+    "company": "PwC",
+    "sector": "finance",
+    "type": "graduate",
+    "location": "Amsterdam",
+    "url": "https://pwc.wd3.myworkdayjobs.com/Global_Experienced_Careers/job/Amsterdam/Senior-Consultant-Sale---Purchase-Agreement---Transaction-Services_733528WD",
+    "checkText": "733528WD",
+    "tags": [
+      "Deals",
+      "Transaction Services"
+    ],
+    "id": 3,
+    "featured": true,
+    "active": true,
+    "initials": "PwC",
+    "color": "#d04a02",
+    "salary": "",
+    "daysAgo": null,
+    "description": "PwC heeft een openstaande vacature voor Senior Consultant Sale & Purchase Agreement - Transaction Services in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "pwc-senior-consultant-sale-en-purchase-agreement-transaction-services",
+    "detail": {
+      "firmBlurb": "PwC is een van de Big Four en levert advies, audit en fiscale dienstverlening. In Nederland werken duizenden professionals, met een groot kantoor op de Zuidas in Amsterdam.",
+      "firmSite": "https://www.pwc.nl",
+      "intro": "PwC zoekt een Senior Consultant Sale & Purchase Agreement - Transaction Services voor het kantoor in Amsterdam. Het gaat om een functie binnen finance. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van PwC.",
+      "does": [
+        "Financiele of commerciele due diligence uitvoeren bij overnames en investeringen",
+        "Bedrijfscijfers, businessplannen en waarderingen analyseren",
+        "Bevindingen rapporteren aan participatiemaatschappijen en corporate clienten"
+      ],
+      "brings": [
+        "Een masterdiploma in economie, finance, econometrie of accountancy",
+        "Ervaring in transactieadvies, audit of corporate finance",
+        "Sterke analytische vaardigheden en uitstekend Engels"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Finance",
+        "Type": "Vaste functie",
+        "Niveau": "Starter / ervaren",
+        "Praktijk": "Deals"
+      }
+    }
+  },
+  {
+    "title": "Senior Consultant Financial Due Diligence",
+    "company": "PwC",
+    "sector": "finance",
+    "type": "graduate",
+    "location": "Amsterdam",
+    "url": "https://pwc.wd3.myworkdayjobs.com/Global_Experienced_Careers/job/Amsterdam/Senior-Consultant-Financial-Due-Diligence_733519WD-1",
+    "checkText": "733519WD-1",
+    "tags": [
+      "Deals",
+      "Due Diligence"
+    ],
+    "id": 4,
+    "featured": false,
+    "active": true,
+    "initials": "PwC",
+    "color": "#d04a02",
+    "salary": "",
+    "daysAgo": null,
+    "description": "PwC heeft een openstaande vacature voor Senior Consultant Financial Due Diligence in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "pwc-senior-consultant-financial-due-diligence",
+    "detail": {
+      "firmBlurb": "PwC is een van de Big Four en levert advies, audit en fiscale dienstverlening. In Nederland werken duizenden professionals, met een groot kantoor op de Zuidas in Amsterdam.",
+      "firmSite": "https://www.pwc.nl",
+      "intro": "PwC zoekt een Senior Consultant Financial Due Diligence voor het kantoor in Amsterdam. Het gaat om een functie binnen finance. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van PwC.",
+      "does": [
+        "Financiele of commerciele due diligence uitvoeren bij overnames en investeringen",
+        "Bedrijfscijfers, businessplannen en waarderingen analyseren",
+        "Bevindingen rapporteren aan participatiemaatschappijen en corporate clienten"
+      ],
+      "brings": [
+        "Een masterdiploma in economie, finance, econometrie of accountancy",
+        "Ervaring in transactieadvies, audit of corporate finance",
+        "Sterke analytische vaardigheden en uitstekend Engels"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Finance",
+        "Type": "Vaste functie",
+        "Niveau": "Starter / ervaren",
+        "Praktijk": "Deals"
+      }
+    }
+  },
+  {
+    "title": "Manager Corporate Tax - Real Estate",
+    "company": "PwC",
+    "sector": "consulting",
+    "type": "graduate",
+    "location": "Amsterdam",
+    "url": "https://pwc.wd3.myworkdayjobs.com/Global_Experienced_Careers/job/Amsterdam/Manager-Corporate-Tax---Real-Estate_736253WD",
+    "checkText": "736253WD",
+    "tags": [
+      "Tax",
+      "Real Estate"
+    ],
+    "id": 5,
+    "featured": false,
+    "active": true,
+    "initials": "PwC",
+    "color": "#d04a02",
+    "salary": "",
+    "daysAgo": null,
+    "description": "PwC heeft een openstaande vacature voor Manager Corporate Tax - Real Estate in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "pwc-manager-corporate-tax-real-estate",
+    "detail": {
+      "firmBlurb": "PwC is een van de Big Four en levert advies, audit en fiscale dienstverlening. In Nederland werken duizenden professionals, met een groot kantoor op de Zuidas in Amsterdam.",
+      "firmSite": "https://www.pwc.nl",
+      "intro": "PwC zoekt een Manager Corporate Tax - Real Estate voor het kantoor in Amsterdam. Het gaat om een functie binnen consulting. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van PwC.",
+      "does": [
+        "Clienten adviseren over vennootschapsbelasting, transfer pricing of vastgoedfiscaliteit",
+        "Fiscale structuren en transacties analyseren en documenteren",
+        "Meewerken aan grensoverschrijdende dossiers"
+      ],
+      "brings": [
+        "Een masterdiploma fiscaal recht, fiscale economie of een gelijkwaardige richting",
+        "Ervaring in een fiscale adviesrol",
+        "Uitstekende beheersing van het Nederlands en het Engels"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Consulting",
+        "Type": "Vaste functie",
+        "Niveau": "Starter / ervaren",
+        "Praktijk": "Tax"
+      }
+    }
+  },
+  {
+    "title": "Senior Associate Corporate Tax - Financial Services",
+    "company": "PwC",
+    "sector": "consulting",
+    "type": "graduate",
+    "location": "Amsterdam",
+    "url": "https://pwc.wd3.myworkdayjobs.com/Global_Experienced_Careers/job/Amsterdam/Senior-Associate-Corporate-Tax---Financial-Services_736249WD",
+    "checkText": "736249WD",
+    "tags": [
+      "Tax",
+      "Financial Services"
+    ],
+    "id": 6,
+    "featured": false,
+    "active": true,
+    "initials": "PwC",
+    "color": "#d04a02",
+    "salary": "",
+    "daysAgo": null,
+    "description": "PwC heeft een openstaande vacature voor Senior Associate Corporate Tax - Financial Services in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "pwc-senior-associate-corporate-tax-financial-services",
+    "detail": {
+      "firmBlurb": "PwC is een van de Big Four en levert advies, audit en fiscale dienstverlening. In Nederland werken duizenden professionals, met een groot kantoor op de Zuidas in Amsterdam.",
+      "firmSite": "https://www.pwc.nl",
+      "intro": "PwC zoekt een Senior Associate Corporate Tax - Financial Services voor het kantoor in Amsterdam. Het gaat om een functie binnen consulting. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van PwC.",
+      "does": [
+        "Clienten adviseren over vennootschapsbelasting, transfer pricing of vastgoedfiscaliteit",
+        "Fiscale structuren en transacties analyseren en documenteren",
+        "Meewerken aan grensoverschrijdende dossiers"
+      ],
+      "brings": [
+        "Een masterdiploma fiscaal recht, fiscale economie of een gelijkwaardige richting",
+        "Ervaring in een fiscale adviesrol",
+        "Uitstekende beheersing van het Nederlands en het Engels"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Consulting",
+        "Type": "Vaste functie",
+        "Niveau": "Starter / ervaren",
+        "Praktijk": "Tax"
+      }
+    }
+  },
+  {
+    "title": "Manager Transfer Pricing - Private Business",
+    "company": "PwC",
+    "sector": "consulting",
+    "type": "graduate",
+    "location": "Rotterdam",
+    "url": "https://pwc.wd3.myworkdayjobs.com/Global_Experienced_Careers/job/Rotterdam/Manager-Transfer-Pricing---Private-Business_735684WD",
+    "checkText": "735684WD",
+    "tags": [
+      "Tax",
+      "Transfer Pricing"
+    ],
+    "id": 7,
+    "featured": false,
+    "active": true,
+    "initials": "PwC",
+    "color": "#d04a02",
+    "salary": "",
+    "daysAgo": null,
+    "description": "PwC heeft een openstaande vacature voor Manager Transfer Pricing - Private Business in Rotterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "pwc-manager-transfer-pricing-private-business",
+    "detail": {
+      "firmBlurb": "PwC is een van de Big Four en levert advies, audit en fiscale dienstverlening. In Nederland werken duizenden professionals, met een groot kantoor op de Zuidas in Amsterdam.",
+      "firmSite": "https://www.pwc.nl",
+      "intro": "PwC zoekt een Manager Transfer Pricing - Private Business voor het kantoor in Rotterdam. Het gaat om een functie binnen consulting. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van PwC.",
+      "does": [
+        "Clienten adviseren over vennootschapsbelasting, transfer pricing of vastgoedfiscaliteit",
+        "Fiscale structuren en transacties analyseren en documenteren",
+        "Meewerken aan grensoverschrijdende dossiers"
+      ],
+      "brings": [
+        "Een masterdiploma fiscaal recht, fiscale economie of een gelijkwaardige richting",
+        "Ervaring in een fiscale adviesrol",
+        "Uitstekende beheersing van het Nederlands en het Engels"
+      ],
+      "facts": {
+        "Locatie": "Rotterdam, Nederland",
+        "Sector": "Consulting",
+        "Type": "Vaste functie",
+        "Niveau": "Starter / ervaren",
+        "Praktijk": "Tax"
+      }
+    }
+  },
+  {
+    "title": "Senior Manager Non-life Actuarial Consulting",
+    "company": "PwC",
+    "sector": "finance",
+    "type": "graduate",
+    "location": "Amsterdam",
+    "url": "https://pwc.wd3.myworkdayjobs.com/Global_Experienced_Careers/job/Amsterdam/Senior-Manager-Non-life-Actuarial-Consulting_737493WD-1",
+    "checkText": "737493WD-1",
+    "tags": [
+      "Actuarieel",
+      "Insurance"
+    ],
+    "id": 8,
+    "featured": false,
+    "active": true,
+    "initials": "PwC",
+    "color": "#d04a02",
+    "salary": "",
+    "daysAgo": null,
+    "description": "PwC heeft een openstaande vacature voor Senior Manager Non-life Actuarial Consulting in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "pwc-senior-manager-non-life-actuarial-consulting",
+    "detail": {
+      "firmBlurb": "PwC is een van de Big Four en levert advies, audit en fiscale dienstverlening. In Nederland werken duizenden professionals, met een groot kantoor op de Zuidas in Amsterdam.",
+      "firmSite": "https://www.pwc.nl",
+      "intro": "PwC zoekt een Senior Manager Non-life Actuarial Consulting voor het kantoor in Amsterdam. Het gaat om een functie binnen finance. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van PwC.",
+      "does": [
+        "Actuariele analyses en modellen opstellen voor verzekeraars en pensioenfondsen",
+        "Clienten adviseren over risico, reserves en kapitaalvereisten",
+        "Regelgeving zoals Solvency II vertalen naar de praktijk"
+      ],
+      "brings": [
+        "Een masterdiploma actuariaat, econometrie of wiskunde",
+        "Ervaring in een actuariele of kwantitatieve rol",
+        "Sterke analytische en modelleervaardigheden"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Finance",
+        "Type": "Vaste functie",
+        "Niveau": "Starter / ervaren",
+        "Praktijk": "Actuarieel"
+      }
+    }
+  },
+  {
+    "title": "(Senior) Manager Pensioenfondsen",
+    "company": "PwC",
+    "sector": "finance",
+    "type": "graduate",
+    "location": "Amsterdam",
+    "url": "https://pwc.wd3.myworkdayjobs.com/Global_Experienced_Careers/job/Amsterdam/XMLNAME--Senior--Manager-Pensioenfondsen_647555WD-2",
+    "checkText": "647555WD-2",
+    "tags": [
+      "Pensioen",
+      "Actuarieel"
+    ],
+    "id": 9,
+    "featured": false,
+    "active": true,
+    "initials": "PwC",
+    "color": "#d04a02",
+    "salary": "",
+    "daysAgo": null,
+    "description": "PwC heeft een openstaande vacature voor (Senior) Manager Pensioenfondsen in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "pwc-senior-manager-pensioenfondsen",
+    "detail": {
+      "firmBlurb": "PwC is een van de Big Four en levert advies, audit en fiscale dienstverlening. In Nederland werken duizenden professionals, met een groot kantoor op de Zuidas in Amsterdam.",
+      "firmSite": "https://www.pwc.nl",
+      "intro": "PwC zoekt een (Senior) Manager Pensioenfondsen voor het kantoor in Amsterdam. Het gaat om een functie binnen finance. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van PwC.",
+      "does": [
+        "Actuariele analyses en modellen opstellen voor verzekeraars en pensioenfondsen",
+        "Clienten adviseren over risico, reserves en kapitaalvereisten",
+        "Regelgeving zoals Solvency II vertalen naar de praktijk"
+      ],
+      "brings": [
+        "Een masterdiploma actuariaat, econometrie of wiskunde",
+        "Ervaring in een actuariele of kwantitatieve rol",
+        "Sterke analytische en modelleervaardigheden"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Finance",
+        "Type": "Vaste functie",
+        "Niveau": "Starter / ervaren",
+        "Praktijk": "Pensioen"
+      }
+    }
+  },
+  {
+    "title": "Senior Associate Employment Law",
+    "company": "PwC",
+    "sector": "advocatuur",
+    "type": "graduate",
+    "location": "Amsterdam",
+    "url": "https://pwc.wd3.myworkdayjobs.com/Global_Experienced_Careers/job/Amsterdam/Senior-Associate-Employment-Law_737396WD",
+    "checkText": "737396WD",
+    "tags": [
+      "Arbeidsrecht"
+    ],
+    "id": 10,
+    "featured": false,
+    "active": true,
+    "initials": "PwC",
+    "color": "#d04a02",
+    "salary": "",
+    "daysAgo": null,
+    "description": "PwC heeft een openstaande vacature voor Senior Associate Employment Law in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "pwc-senior-associate-employment-law",
+    "detail": {
+      "firmBlurb": "PwC is een van de Big Four en levert advies, audit en fiscale dienstverlening. In Nederland werken duizenden professionals, met een groot kantoor op de Zuidas in Amsterdam.",
+      "firmSite": "https://www.pwc.nl",
+      "intro": "PwC zoekt een Senior Associate Employment Law voor het kantoor in Amsterdam. Het gaat om een functie binnen advocatuur. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van PwC.",
+      "does": [
+        "Clienten adviseren over individueel en collectief arbeidsrecht",
+        "Procedures en onderhandelingen mee behandelen",
+        "Juridische adviezen en contracten opstellen"
+      ],
+      "brings": [
+        "Een masterdiploma rechten",
+        "Interesse of ervaring in arbeidsrecht",
+        "Uitstekende beheersing van het Nederlands en het Engels"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Advocatuur",
+        "Type": "Vaste functie",
+        "Niveau": "Starter / ervaren",
+        "Praktijk": "Arbeidsrecht"
+      }
+    }
+  },
+  {
+    "title": "Senior Manager International Business Reorganisations - Legal Business Solutions",
+    "company": "PwC",
+    "sector": "advocatuur",
+    "type": "graduate",
+    "location": "Amsterdam",
+    "url": "https://pwc.wd3.myworkdayjobs.com/Global_Experienced_Careers/job/Amsterdam/Senior-Manager-International-Business-Reorganisations---Legal-Business-Solutions--Amsterdam-_736238WD",
+    "checkText": "736238WD",
+    "tags": [
+      "Legal",
+      "Reorganisatie"
+    ],
+    "id": 11,
+    "featured": false,
+    "active": true,
+    "initials": "PwC",
+    "color": "#d04a02",
+    "salary": "",
+    "daysAgo": null,
+    "description": "PwC heeft een openstaande vacature voor Senior Manager International Business Reorganisations - Legal Business Solutions in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "pwc-senior-manager-international-business-reorganisations-legal-busine",
+    "detail": {
+      "firmBlurb": "PwC is een van de Big Four en levert advies, audit en fiscale dienstverlening. In Nederland werken duizenden professionals, met een groot kantoor op de Zuidas in Amsterdam.",
+      "firmSite": "https://www.pwc.nl",
+      "intro": "PwC zoekt een Senior Manager International Business Reorganisations - Legal Business Solutions voor het kantoor in Amsterdam. Het gaat om een functie binnen advocatuur. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van PwC.",
+      "does": [
+        "Clienten adviseren over juridische aspecten van internationale reorganisaties",
+        "Herstructureringen van vennootschappen mee vormgeven en uitvoeren",
+        "Samenwerken met fiscale en corporate teams"
+      ],
+      "brings": [
+        "Een masterdiploma rechten",
+        "Ervaring in ondernemingsrecht of legal consulting",
+        "Uitstekende beheersing van het Engels"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Advocatuur",
+        "Type": "Vaste functie",
+        "Niveau": "Starter / ervaren",
+        "Praktijk": "Legal"
+      }
+    }
+  },
+  {
+    "title": "Senior Consultant Accounting & Reporting Advisory",
+    "company": "PwC",
+    "sector": "consulting",
+    "type": "graduate",
+    "location": "Amsterdam",
+    "url": "https://pwc.wd3.myworkdayjobs.com/Global_Experienced_Careers/job/Amsterdam/Senior-Consultant-Accounting---Reporting-Advisory_727645WD-1",
+    "checkText": "727645WD-1",
+    "tags": [
+      "Accounting",
+      "Reporting"
+    ],
+    "id": 12,
+    "featured": false,
+    "active": true,
+    "initials": "PwC",
+    "color": "#d04a02",
+    "salary": "",
+    "daysAgo": null,
+    "description": "PwC heeft een openstaande vacature voor Senior Consultant Accounting & Reporting Advisory in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "pwc-senior-consultant-accounting-en-reporting-advisory",
+    "detail": {
+      "firmBlurb": "PwC is een van de Big Four en levert advies, audit en fiscale dienstverlening. In Nederland werken duizenden professionals, met een groot kantoor op de Zuidas in Amsterdam.",
+      "firmSite": "https://www.pwc.nl",
+      "intro": "PwC zoekt een Senior Consultant Accounting & Reporting Advisory voor het kantoor in Amsterdam. Het gaat om een functie binnen consulting. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van PwC.",
+      "does": [
+        "Clienten adviseren over financiele verslaggeving, ESG-rapportering en assurance",
+        "Complexe rapporteringsvraagstukken analyseren en oplossen",
+        "Ondernemingen begeleiden bij rapporteringstrajecten"
+      ],
+      "brings": [
+        "Een masterdiploma accountancy, economie of een gelijkwaardige richting",
+        "Ervaring in audit, reporting of advisory",
+        "Sterke kennis van verslaggevingsstandaarden en goed Engels"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Consulting",
+        "Type": "Vaste functie",
+        "Niveau": "Starter / ervaren",
+        "Praktijk": "Accounting"
+      }
+    }
+  },
+  {
+    "title": "Senior Associate ESG Assurance",
+    "company": "PwC",
+    "sector": "consulting",
+    "type": "graduate",
+    "location": "Amsterdam",
+    "url": "https://pwc.wd3.myworkdayjobs.com/Global_Experienced_Careers/job/Amsterdam/Senior-Associate-ESG-Assurance_647305WD",
+    "checkText": "647305WD",
+    "tags": [
+      "ESG",
+      "Assurance"
+    ],
+    "id": 13,
+    "featured": false,
+    "active": true,
+    "initials": "PwC",
+    "color": "#d04a02",
+    "salary": "",
+    "daysAgo": null,
+    "description": "PwC heeft een openstaande vacature voor Senior Associate ESG Assurance in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "pwc-senior-associate-esg-assurance",
+    "detail": {
+      "firmBlurb": "PwC is een van de Big Four en levert advies, audit en fiscale dienstverlening. In Nederland werken duizenden professionals, met een groot kantoor op de Zuidas in Amsterdam.",
+      "firmSite": "https://www.pwc.nl",
+      "intro": "PwC zoekt een Senior Associate ESG Assurance voor het kantoor in Amsterdam. Het gaat om een functie binnen consulting. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van PwC.",
+      "does": [
+        "Clienten adviseren over financiele verslaggeving, ESG-rapportering en assurance",
+        "Complexe rapporteringsvraagstukken analyseren en oplossen",
+        "Ondernemingen begeleiden bij rapporteringstrajecten"
+      ],
+      "brings": [
+        "Een masterdiploma accountancy, economie of een gelijkwaardige richting",
+        "Ervaring in audit, reporting of advisory",
+        "Sterke kennis van verslaggevingsstandaarden en goed Engels"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Consulting",
+        "Type": "Vaste functie",
+        "Niveau": "Starter / ervaren",
+        "Praktijk": "ESG"
+      }
+    }
+  },
+  {
+    "title": "Actuarial Services - Manager/Senior Manager",
+    "company": "Oliver Wyman",
+    "sector": "finance",
+    "type": "graduate",
+    "location": "Amsterdam",
+    "url": "https://mmc.wd1.myworkdayjobs.com/MMC/job/Amsterdam---Strawinskylaan-410/Oliver-Wyman---Actuarial-Services---Manager-Senior-Manager---Amsterdam_R_202991-2",
+    "checkText": "202991-2",
+    "tags": [
+      "Actuarieel",
+      "Financial Services"
+    ],
+    "id": 14,
+    "featured": false,
+    "active": true,
+    "initials": "OW",
+    "color": "#002c77",
+    "salary": "",
+    "daysAgo": null,
+    "description": "Oliver Wyman heeft een openstaande vacature voor Actuarial Services - Manager/Senior Manager in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "oliver-wyman-actuarial-services-manager-senior-manager",
+    "detail": {
+      "firmBlurb": "Oliver Wyman is een internationaal strategisch adviesbureau en onderdeel van Marsh McLennan, met een kantoor op de Zuidas in Amsterdam.",
+      "firmSite": "https://www.oliverwyman.com",
+      "intro": "Oliver Wyman zoekt een Actuarial Services - Manager/Senior Manager voor het kantoor in Amsterdam. Het gaat om een functie binnen finance. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van Oliver Wyman.",
+      "does": [
+        "Actuariele analyses en modellen opstellen voor verzekeraars en pensioenfondsen",
+        "Clienten adviseren over risico, reserves en kapitaalvereisten",
+        "Regelgeving zoals Solvency II vertalen naar de praktijk"
+      ],
+      "brings": [
+        "Een masterdiploma actuariaat, econometrie of wiskunde",
+        "Ervaring in een actuariele of kwantitatieve rol",
+        "Sterke analytische en modelleervaardigheden"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Finance",
+        "Type": "Vaste functie",
+        "Niveau": "Starter / ervaren",
+        "Praktijk": "Actuarieel"
+      }
+    }
+  },
+  {
+    "title": "Data & Analytics - (Senior) Analyst",
+    "company": "Oliver Wyman",
+    "sector": "consulting",
+    "type": "graduate",
+    "location": "Amsterdam",
+    "url": "https://mmc.wd1.myworkdayjobs.com/MMC/job/Amsterdam---Strawinskylaan-381/Oliver-Wyman---Data---Analytics----Senior--Analyst---Amsterdam_R_307077-1",
+    "checkText": "307077-1",
+    "tags": [
+      "Data",
+      "Analytics"
+    ],
+    "id": 15,
+    "featured": false,
+    "active": true,
+    "initials": "OW",
+    "color": "#002c77",
+    "salary": "",
+    "daysAgo": null,
+    "description": "Oliver Wyman heeft een openstaande vacature voor Data & Analytics - (Senior) Analyst in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "oliver-wyman-data-en-analytics-senior-analyst",
+    "detail": {
+      "firmBlurb": "Oliver Wyman is een internationaal strategisch adviesbureau en onderdeel van Marsh McLennan, met een kantoor op de Zuidas in Amsterdam.",
+      "firmSite": "https://www.oliverwyman.com",
+      "intro": "Oliver Wyman zoekt een Data & Analytics - (Senior) Analyst voor het kantoor in Amsterdam. Het gaat om een functie binnen consulting. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van Oliver Wyman.",
+      "does": [
+        "Clienten begeleiden bij digitale transformatie, data en AI, van strategie tot implementatie",
+        "Technische oplossingen ontwerpen en teams van consultants aansturen of ondersteunen",
+        "Werken op het snijvlak van technologie en business"
+      ],
+      "brings": [
+        "Een masterdiploma in een technische, wetenschappelijke of bedrijfskundige richting",
+        "Sterke affiniteit met technologie, data en AI",
+        "Uitstekende beheersing van het Engels"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Consulting",
+        "Type": "Vaste functie",
+        "Niveau": "Starter / ervaren",
+        "Praktijk": "Data"
+      }
+    }
+  },
+  {
+    "title": "Consultant",
+    "company": "Oliver Wyman",
+    "sector": "consulting",
+    "type": "graduate",
+    "location": "Amsterdam",
+    "url": "https://mmc.wd1.myworkdayjobs.com/MMC/job/Amsterdam---Strawinskylaan-410/OLIVER-WYMAN---CONSULTANT----M-F-D----NETHERLANDS_R_332047-1",
+    "checkText": "332047-1",
+    "tags": [
+      "Strategy",
+      "Consultant"
+    ],
+    "id": 16,
+    "featured": false,
+    "active": true,
+    "initials": "OW",
+    "color": "#002c77",
+    "salary": "",
+    "daysAgo": null,
+    "description": "Oliver Wyman heeft een openstaande vacature voor Consultant in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "oliver-wyman-consultant",
+    "detail": {
+      "firmBlurb": "Oliver Wyman is een internationaal strategisch adviesbureau en onderdeel van Marsh McLennan, met een kantoor op de Zuidas in Amsterdam.",
+      "firmSite": "https://www.oliverwyman.com",
+      "intro": "Oliver Wyman zoekt een Consultant voor het kantoor in Amsterdam. Het gaat om een functie binnen consulting. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van Oliver Wyman.",
+      "does": [
+        "Deel uitmaken van projectteams die strategische vraagstukken oplossen voor grote ondernemingen",
+        "Analyses uitvoeren, hypotheses toetsen en aanbevelingen formuleren",
+        "Rechtstreeks samenwerken met clienten en senior consultants"
+      ],
+      "brings": [
+        "Een uitstekend academisch dossier, ongeacht de studierichting",
+        "Sterk analytisch en probleemoplossend vermogen",
+        "Uitstekende beheersing van het Engels, Nederlands is een plus"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Consulting",
+        "Type": "Vaste functie",
+        "Niveau": "Starter / ervaren",
+        "Praktijk": "Strategy"
+      }
+    }
+  },
+  {
+    "title": "Intern Consultant - 2026",
+    "company": "Oliver Wyman",
+    "sector": "consulting",
+    "type": "stage",
+    "location": "Amsterdam",
+    "url": "https://mmc.wd1.myworkdayjobs.com/MMC/job/Amsterdam---Strawinskylaan-410/OLIVER-WYMAN---INTERN-CONSULTANT--M-F-D----2026----NETHERLANDS_R_333227-1",
+    "checkText": "333227-1",
+    "tags": [
+      "Strategy",
+      "Stage"
+    ],
+    "id": 17,
+    "featured": false,
+    "active": true,
+    "initials": "OW",
+    "color": "#002c77",
+    "salary": "",
+    "daysAgo": null,
+    "description": "Oliver Wyman heeft een openstaande vacature voor Intern Consultant - 2026 in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "oliver-wyman-intern-consultant-2026",
+    "detail": {
+      "firmBlurb": "Oliver Wyman is een internationaal strategisch adviesbureau en onderdeel van Marsh McLennan, met een kantoor op de Zuidas in Amsterdam.",
+      "firmSite": "https://www.oliverwyman.com",
+      "intro": "Oliver Wyman zoekt een Intern Consultant - 2026 voor het kantoor in Amsterdam. Het gaat om een stageplaats binnen consulting. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van Oliver Wyman.",
+      "does": [
+        "Meedraaien in strategieprojecten voor grote ondernemingen",
+        "Analyses uitvoeren, hypotheses toetsen en aanbevelingen formuleren",
+        "Rechtstreeks samenwerken met clienten en senior consultants"
+      ],
+      "brings": [
+        "Een uitstekend academisch dossier, ongeacht de studierichting",
+        "Sterk analytisch en probleemoplossend vermogen",
+        "Uitstekende beheersing van het Engels, Nederlands is een plus"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Consulting",
+        "Type": "Stage / internship",
+        "Niveau": "Stage / internship",
+        "Praktijk": "Strategy"
+      }
+    }
+  },
+  {
+    "title": "INNOPAY Consultant",
+    "company": "Oliver Wyman",
+    "sector": "consulting",
+    "type": "graduate",
+    "location": "Amsterdam",
+    "url": "https://mmc.wd1.myworkdayjobs.com/MMC/job/Amsterdam---Strawinskylaan-381/INNOPAY-Consultant---Netherlands_R_335633-1",
+    "checkText": "335633-1",
+    "tags": [
+      "Payments",
+      "Consultant"
+    ],
+    "id": 18,
+    "featured": false,
+    "active": true,
+    "initials": "OW",
+    "color": "#002c77",
+    "salary": "",
+    "daysAgo": null,
+    "description": "Oliver Wyman heeft een openstaande vacature voor INNOPAY Consultant in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "oliver-wyman-innopay-consultant",
+    "detail": {
+      "firmBlurb": "Oliver Wyman is een internationaal strategisch adviesbureau en onderdeel van Marsh McLennan, met een kantoor op de Zuidas in Amsterdam.",
+      "firmSite": "https://www.oliverwyman.com",
+      "intro": "Oliver Wyman zoekt een INNOPAY Consultant voor het kantoor in Amsterdam. Het gaat om een functie binnen consulting. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van Oliver Wyman.",
+      "does": [
+        "Clienten adviseren over betaaldiensten, digitale identiteit en open finance",
+        "Markt- en strategieanalyses uitvoeren",
+        "Meewerken aan innovatieprojecten in de betaalsector"
+      ],
+      "brings": [
+        "Een masterdiploma in een economische of technische richting",
+        "Interesse in payments en digitale innovatie",
+        "Uitstekende beheersing van het Engels"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Consulting",
+        "Type": "Vaste functie",
+        "Niveau": "Starter / ervaren",
+        "Praktijk": "Payments"
+      }
+    }
+  },
+  {
+    "title": "Advocaat stagiair(e) Octrooirecht",
+    "company": "Hogan Lovells",
+    "sector": "advocatuur",
+    "type": "stage",
+    "location": "Amsterdam",
+    "url": "https://hoganlovells.wd3.myworkdayjobs.com/Search/job/Amsterdam/Advocaat-stagiair-e--Octrooirecht_R269069",
+    "checkText": "R269069",
+    "tags": [
+      "Octrooirecht",
+      "Stage"
+    ],
+    "id": 19,
+    "featured": false,
+    "active": true,
+    "initials": "HL",
+    "color": "#c8102e",
+    "salary": "",
+    "daysAgo": null,
+    "description": "Hogan Lovells heeft een openstaande vacature voor Advocaat stagiair(e) Octrooirecht in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "hogan-lovells-advocaat-stagiair-e-octrooirecht",
+    "detail": {
+      "firmBlurb": "Hogan Lovells is een internationaal advocatenkantoor met meer dan 2.500 juristen wereldwijd en een kantoor in Amsterdam, sterk in intellectuele eigendom en corporate.",
+      "firmSite": "https://www.hoganlovells.com",
+      "intro": "Hogan Lovells zoekt een Advocaat stagiair(e) Octrooirecht voor het kantoor in Amsterdam. Het gaat om een stageplaats binnen advocatuur. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van Hogan Lovells.",
+      "does": [
+        "Advocaten ondersteunen bij octrooi- en IE-geschillen",
+        "Juridisch en technisch onderzoek doen en processtukken opstellen",
+        "Meewerken aan internationale procedures rond intellectuele eigendom"
+      ],
+      "brings": [
+        "Een masterdiploma rechten",
+        "Sterke interesse in intellectuele eigendom en octrooirecht, affiniteit met techniek is een plus",
+        "Uitstekende beheersing van het Nederlands en het Engels"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Advocatuur",
+        "Type": "Stage / internship",
+        "Niveau": "Stage / internship",
+        "Praktijk": "Octrooirecht"
+      }
+    }
+  },
+  {
+    "title": "Advocaat-medewerker Octrooirecht",
+    "company": "Hogan Lovells",
+    "sector": "advocatuur",
+    "type": "graduate",
+    "location": "Amsterdam",
+    "url": "https://hoganlovells.wd3.myworkdayjobs.com/Search/job/Amsterdam/Advocaat-medewerker-Octrooirecht_R269070",
+    "checkText": "R269070",
+    "tags": [
+      "Octrooirecht",
+      "Advocaat"
+    ],
+    "id": 20,
+    "featured": false,
+    "active": true,
+    "initials": "HL",
+    "color": "#c8102e",
+    "salary": "",
+    "daysAgo": null,
+    "description": "Hogan Lovells heeft een openstaande vacature voor Advocaat-medewerker Octrooirecht in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "hogan-lovells-advocaat-medewerker-octrooirecht",
+    "detail": {
+      "firmBlurb": "Hogan Lovells is een internationaal advocatenkantoor met meer dan 2.500 juristen wereldwijd en een kantoor in Amsterdam, sterk in intellectuele eigendom en corporate.",
+      "firmSite": "https://www.hoganlovells.com",
+      "intro": "Hogan Lovells zoekt een Advocaat-medewerker Octrooirecht voor het kantoor in Amsterdam. Het gaat om een functie binnen advocatuur. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van Hogan Lovells.",
+      "does": [
+        "Clienten adviseren en vertegenwoordigen in octrooi- en IE-geschillen",
+        "Juridisch en technisch onderzoek doen en processtukken opstellen",
+        "Meewerken aan internationale procedures rond intellectuele eigendom"
+      ],
+      "brings": [
+        "Een masterdiploma rechten en inschrijving aan de balie",
+        "Sterke interesse in intellectuele eigendom en octrooirecht, affiniteit met techniek is een plus",
+        "Uitstekende beheersing van het Nederlands en het Engels"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Advocatuur",
+        "Type": "Vaste functie",
+        "Niveau": "Starter / ervaren",
+        "Praktijk": "Octrooirecht"
+      }
+    }
+  },
+  {
+    "title": "Student-stagiair(e)",
+    "company": "Hogan Lovells",
+    "sector": "advocatuur",
+    "type": "stage",
+    "location": "Amsterdam",
+    "url": "https://hoganlovells.wd3.myworkdayjobs.com/Search/job/Amsterdam/Student-stagiaire_R223732",
+    "checkText": "R223732",
+    "tags": [
+      "Advocatuur",
+      "Stage"
+    ],
+    "id": 21,
+    "featured": false,
+    "active": true,
+    "initials": "HL",
+    "color": "#c8102e",
+    "salary": "",
+    "daysAgo": null,
+    "description": "Hogan Lovells heeft een openstaande vacature voor Student-stagiair(e) in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "hogan-lovells-student-stagiair-e",
+    "detail": {
+      "firmBlurb": "Hogan Lovells is een internationaal advocatenkantoor met meer dan 2.500 juristen wereldwijd en een kantoor in Amsterdam, sterk in intellectuele eigendom en corporate.",
+      "firmSite": "https://www.hoganlovells.com",
+      "intro": "Hogan Lovells zoekt een Student-stagiair(e) voor het kantoor in Amsterdam. Het gaat om een stageplaats binnen advocatuur. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van Hogan Lovells.",
+      "does": [
+        "Advocaten ondersteunen bij dossiers over verschillende praktijkgroepen",
+        "Juridisch onderzoek doen en nota's opstellen",
+        "Kennismaken met een internationaal advocatenkantoor"
+      ],
+      "brings": [
+        "Laatstejaarsstudent rechten",
+        "Sterk analytisch vermogen en juridische interesse",
+        "Uitstekende beheersing van het Nederlands en het Engels"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Advocatuur",
+        "Type": "Stage / internship",
+        "Niveau": "Stage / internship",
+        "Praktijk": "Advocatuur"
+      }
+    }
+  },
+  {
+    "title": "student-stagiair(e) arbitrage",
+    "company": "Linklaters",
+    "sector": "advocatuur",
+    "type": "stage",
+    "location": "Amsterdam",
+    "url": "https://linklaters.wd3.myworkdayjobs.com/Linklaters/job/Amsterdam/student-stagiair-e--arbitrage_R00014589",
+    "checkText": "R00014589",
+    "tags": [
+      "Arbitrage",
+      "Stage"
+    ],
+    "id": 22,
+    "featured": false,
+    "active": true,
+    "initials": "LL",
+    "color": "#d21e2b",
+    "salary": "",
+    "daysAgo": null,
+    "description": "Linklaters heeft een openstaande vacature voor student-stagiair(e) arbitrage in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "linklaters-student-stagiair-e-arbitrage",
+    "detail": {
+      "firmBlurb": "Linklaters is een internationaal advocatenkantoor uit de Londense Magic Circle, met een kantoor in Amsterdam.",
+      "firmSite": "https://www.linklaters.com",
+      "intro": "Linklaters zoekt een student-stagiair(e) arbitrage voor het kantoor in Amsterdam. Het gaat om een stageplaats binnen advocatuur. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van Linklaters.",
+      "does": [
+        "Het arbitrageteam ondersteunen bij internationale geschillen",
+        "Juridisch onderzoek doen en processtukken mee opstellen",
+        "Kennismaken met arbitrage binnen een Magic Circle-kantoor"
+      ],
+      "brings": [
+        "Laatstejaarsstudent of pas afgestudeerd meester in de rechten",
+        "Sterke interesse in geschillenbeslechting en arbitrage",
+        "Uitstekende beheersing van het Engels"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Advocatuur",
+        "Type": "Stage / internship",
+        "Niveau": "Stage / internship",
+        "Praktijk": "Arbitrage"
+      }
+    }
+  },
+  {
+    "title": "Student-stagiair(e) Employment",
+    "company": "Linklaters",
+    "sector": "advocatuur",
+    "type": "stage",
+    "location": "Amsterdam",
+    "url": "https://linklaters.wd3.myworkdayjobs.com/Linklaters/job/Amsterdam/Student-stagiair-e--Employment_R00015034-1",
+    "checkText": "R00015034-1",
+    "tags": [
+      "Arbeidsrecht",
+      "Stage"
+    ],
+    "id": 23,
+    "featured": false,
+    "active": true,
+    "initials": "LL",
+    "color": "#d21e2b",
+    "salary": "",
+    "daysAgo": null,
+    "description": "Linklaters heeft een openstaande vacature voor Student-stagiair(e) Employment in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "linklaters-student-stagiair-e-employment",
+    "detail": {
+      "firmBlurb": "Linklaters is een internationaal advocatenkantoor uit de Londense Magic Circle, met een kantoor in Amsterdam.",
+      "firmSite": "https://www.linklaters.com",
+      "intro": "Linklaters zoekt een Student-stagiair(e) Employment voor het kantoor in Amsterdam. Het gaat om een stageplaats binnen advocatuur. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van Linklaters.",
+      "does": [
+        "Clienten adviseren over individueel en collectief arbeidsrecht",
+        "Procedures en onderhandelingen mee behandelen",
+        "Juridische adviezen en contracten opstellen"
+      ],
+      "brings": [
+        "Een masterdiploma rechten",
+        "Interesse of ervaring in arbeidsrecht",
+        "Uitstekende beheersing van het Nederlands en het Engels"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Advocatuur",
+        "Type": "Stage / internship",
+        "Niveau": "Stage / internship",
+        "Praktijk": "Arbeidsrecht"
+      }
+    }
+  },
+  {
+    "title": "Wij zoeken startend notarieel talent",
+    "company": "Linklaters",
+    "sector": "advocatuur",
+    "type": "graduate",
+    "location": "Amsterdam",
+    "url": "https://linklaters.wd3.myworkdayjobs.com/Linklaters/job/Amsterdam/Wij-zoeken-startend-notarieel-talent_R00007981",
+    "checkText": "R00007981",
+    "tags": [
+      "Notariaat",
+      "Starter"
+    ],
+    "id": 24,
+    "featured": false,
+    "active": true,
+    "initials": "LL",
+    "color": "#d21e2b",
+    "salary": "",
+    "daysAgo": null,
+    "description": "Linklaters heeft een openstaande vacature voor Wij zoeken startend notarieel talent in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "linklaters-wij-zoeken-startend-notarieel-talent",
+    "detail": {
+      "firmBlurb": "Linklaters is een internationaal advocatenkantoor uit de Londense Magic Circle, met een kantoor in Amsterdam.",
+      "firmSite": "https://www.linklaters.com",
+      "intro": "Linklaters zoekt een Wij zoeken startend notarieel talent voor het kantoor in Amsterdam. Het gaat om een functie binnen advocatuur. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van Linklaters.",
+      "does": [
+        "Als startend notarieel jurist meewerken aan corporate en vastgoedtransacties",
+        "Akten en juridische documentatie voorbereiden",
+        "Ervaring opbouwen binnen een internationaal kantoor"
+      ],
+      "brings": [
+        "Een masterdiploma notarieel recht",
+        "Sterke juridische schrijfvaardigheid",
+        "Uitstekende beheersing van het Nederlands"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Advocatuur",
+        "Type": "Vaste functie",
+        "Niveau": "Starter / ervaren",
+        "Praktijk": "Notariaat"
+      }
+    }
+  },
+  {
+    "title": "Senior Consultant / Project Manager - Transaction & Investor Services",
+    "company": "Roland Berger",
+    "sector": "consulting",
+    "type": "graduate",
+    "location": "Amsterdam",
+    "url": "https://jobs.smartrecruiters.com/RolandBerger/744000136010309",
+    "checkText": "744000136010309",
+    "tags": [
+      "Strategy",
+      "Transactions"
+    ],
+    "id": 25,
+    "featured": false,
+    "active": true,
+    "initials": "RB",
+    "color": "#0b7285",
+    "salary": "",
+    "daysAgo": null,
+    "description": "Roland Berger heeft een openstaande vacature voor Senior Consultant / Project Manager - Transaction & Investor Services in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "roland-berger-senior-consultant-project-manager-transaction-en-investo",
+    "detail": {
+      "firmBlurb": "Roland Berger is het enige toonaangevende strategieadviesbureau van Europese origine, met wereldwijd meer dan 3.000 medewerkers en een kantoor in Amsterdam.",
+      "firmSite": "https://www.rolandberger.com",
+      "intro": "Roland Berger zoekt een Senior Consultant / Project Manager - Transaction & Investor Services voor het kantoor in Amsterdam. Het gaat om een functie binnen consulting. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van Roland Berger.",
+      "does": [
+        "Financiele of commerciele due diligence uitvoeren bij overnames en investeringen",
+        "Bedrijfscijfers, businessplannen en waarderingen analyseren",
+        "Bevindingen rapporteren aan participatiemaatschappijen en corporate clienten"
+      ],
+      "brings": [
+        "Een masterdiploma in economie, finance, econometrie of accountancy",
+        "Ervaring in transactieadvies, audit of corporate finance",
+        "Sterke analytische vaardigheden en uitstekend Engels"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Consulting",
+        "Type": "Vaste functie",
+        "Niveau": "Starter / ervaren",
+        "Praktijk": "Strategy"
+      }
+    }
+  },
+  {
+    "title": "Project Manager",
+    "company": "Roland Berger",
+    "sector": "consulting",
+    "type": "graduate",
+    "location": "Amsterdam",
+    "url": "https://jobs.smartrecruiters.com/RolandBerger/744000136009193",
+    "checkText": "744000136009193",
+    "tags": [
+      "Strategy",
+      "Project Manager"
+    ],
+    "id": 26,
+    "featured": false,
+    "active": true,
+    "initials": "RB",
+    "color": "#0b7285",
+    "salary": "",
+    "daysAgo": null,
+    "description": "Roland Berger heeft een openstaande vacature voor Project Manager in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "roland-berger-project-manager",
+    "detail": {
+      "firmBlurb": "Roland Berger is het enige toonaangevende strategieadviesbureau van Europese origine, met wereldwijd meer dan 3.000 medewerkers en een kantoor in Amsterdam.",
+      "firmSite": "https://www.rolandberger.com",
+      "intro": "Roland Berger zoekt een Project Manager voor het kantoor in Amsterdam. Het gaat om een functie binnen consulting. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van Roland Berger.",
+      "does": [
+        "Deel uitmaken van projectteams die strategische vraagstukken oplossen voor grote ondernemingen",
+        "Analyses uitvoeren, hypotheses toetsen en aanbevelingen formuleren",
+        "Rechtstreeks samenwerken met clienten en senior consultants"
+      ],
+      "brings": [
+        "Een uitstekend academisch dossier, ongeacht de studierichting",
+        "Sterk analytisch en probleemoplossend vermogen",
+        "Uitstekende beheersing van het Engels, Nederlands is een plus"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Consulting",
+        "Type": "Vaste functie",
+        "Niveau": "Starter / ervaren",
+        "Praktijk": "Strategy"
+      }
+    }
+  },
+  {
+    "title": "Senior Consultant - Circularity",
+    "company": "Roland Berger",
+    "sector": "consulting",
+    "type": "graduate",
+    "location": "Amsterdam",
+    "url": "https://jobs.smartrecruiters.com/RolandBerger/744000136010039",
+    "checkText": "744000136010039",
+    "tags": [
+      "Strategy",
+      "Sustainability"
+    ],
+    "id": 27,
+    "featured": false,
+    "active": true,
+    "initials": "RB",
+    "color": "#0b7285",
+    "salary": "",
+    "daysAgo": null,
+    "description": "Roland Berger heeft een openstaande vacature voor Senior Consultant - Circularity in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "roland-berger-senior-consultant-circularity",
+    "detail": {
+      "firmBlurb": "Roland Berger is het enige toonaangevende strategieadviesbureau van Europese origine, met wereldwijd meer dan 3.000 medewerkers en een kantoor in Amsterdam.",
+      "firmSite": "https://www.rolandberger.com",
+      "intro": "Roland Berger zoekt een Senior Consultant - Circularity voor het kantoor in Amsterdam. Het gaat om een functie binnen consulting. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van Roland Berger.",
+      "does": [
+        "Deel uitmaken van projectteams die strategische vraagstukken oplossen voor grote ondernemingen",
+        "Analyses uitvoeren, hypotheses toetsen en aanbevelingen formuleren",
+        "Rechtstreeks samenwerken met clienten en senior consultants"
+      ],
+      "brings": [
+        "Een uitstekend academisch dossier, ongeacht de studierichting",
+        "Sterk analytisch en probleemoplossend vermogen",
+        "Uitstekende beheersing van het Engels, Nederlands is een plus"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Consulting",
+        "Type": "Vaste functie",
+        "Niveau": "Starter / ervaren",
+        "Praktijk": "Strategy"
+      }
+    }
+  },
+  {
+    "title": "Senior Consultant - Innovation",
+    "company": "Roland Berger",
+    "sector": "consulting",
+    "type": "graduate",
+    "location": "Amsterdam",
+    "url": "https://jobs.smartrecruiters.com/RolandBerger/744000136009869",
+    "checkText": "744000136009869",
+    "tags": [
+      "Strategy",
+      "Innovation"
+    ],
+    "id": 28,
+    "featured": false,
+    "active": true,
+    "initials": "RB",
+    "color": "#0b7285",
+    "salary": "",
+    "daysAgo": null,
+    "description": "Roland Berger heeft een openstaande vacature voor Senior Consultant - Innovation in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "roland-berger-senior-consultant-innovation",
+    "detail": {
+      "firmBlurb": "Roland Berger is het enige toonaangevende strategieadviesbureau van Europese origine, met wereldwijd meer dan 3.000 medewerkers en een kantoor in Amsterdam.",
+      "firmSite": "https://www.rolandberger.com",
+      "intro": "Roland Berger zoekt een Senior Consultant - Innovation voor het kantoor in Amsterdam. Het gaat om een functie binnen consulting. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van Roland Berger.",
+      "does": [
+        "Deel uitmaken van projectteams die strategische vraagstukken oplossen voor grote ondernemingen",
+        "Analyses uitvoeren, hypotheses toetsen en aanbevelingen formuleren",
+        "Rechtstreeks samenwerken met clienten en senior consultants"
+      ],
+      "brings": [
+        "Een uitstekend academisch dossier, ongeacht de studierichting",
+        "Sterk analytisch en probleemoplossend vermogen",
+        "Uitstekende beheersing van het Engels, Nederlands is een plus"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Consulting",
+        "Type": "Vaste functie",
+        "Niveau": "Starter / ervaren",
+        "Praktijk": "Strategy"
+      }
+    }
+  },
+  {
+    "title": "Senior Consultant / Project Manager - Automotive",
+    "company": "Roland Berger",
+    "sector": "consulting",
+    "type": "graduate",
+    "location": "Amsterdam",
+    "url": "https://jobs.smartrecruiters.com/RolandBerger/744000136004550",
+    "checkText": "744000136004550",
+    "tags": [
+      "Strategy",
+      "Project Manager"
+    ],
+    "id": 29,
+    "featured": false,
+    "active": true,
+    "initials": "RB",
+    "color": "#0b7285",
+    "salary": "",
+    "daysAgo": null,
+    "description": "Roland Berger heeft een openstaande vacature voor Senior Consultant / Project Manager - Automotive in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "roland-berger-senior-consultant-project-manager-automotive",
+    "detail": {
+      "firmBlurb": "Roland Berger is het enige toonaangevende strategieadviesbureau van Europese origine, met wereldwijd meer dan 3.000 medewerkers en een kantoor in Amsterdam.",
+      "firmSite": "https://www.rolandberger.com",
+      "intro": "Roland Berger zoekt een Senior Consultant / Project Manager - Automotive voor het kantoor in Amsterdam. Het gaat om een functie binnen consulting. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van Roland Berger.",
+      "does": [
+        "Deel uitmaken van projectteams die strategische vraagstukken oplossen voor grote ondernemingen",
+        "Analyses uitvoeren, hypotheses toetsen en aanbevelingen formuleren",
+        "Rechtstreeks samenwerken met clienten en senior consultants"
+      ],
+      "brings": [
+        "Een uitstekend academisch dossier, ongeacht de studierichting",
+        "Sterk analytisch en probleemoplossend vermogen",
+        "Uitstekende beheersing van het Engels, Nederlands is een plus"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Consulting",
+        "Type": "Vaste functie",
+        "Niveau": "Starter / ervaren",
+        "Praktijk": "Strategy"
+      }
+    }
+  },
+  {
+    "title": "Senior Consultant / Project Manager - Mobility",
+    "company": "Roland Berger",
+    "sector": "consulting",
+    "type": "graduate",
+    "location": "Amsterdam",
+    "url": "https://jobs.smartrecruiters.com/RolandBerger/744000136009679",
+    "checkText": "744000136009679",
+    "tags": [
+      "Strategy",
+      "Project Manager"
+    ],
+    "id": 30,
+    "featured": false,
+    "active": true,
+    "initials": "RB",
+    "color": "#0b7285",
+    "salary": "",
+    "daysAgo": null,
+    "description": "Roland Berger heeft een openstaande vacature voor Senior Consultant / Project Manager - Mobility in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "roland-berger-senior-consultant-project-manager-mobility",
+    "detail": {
+      "firmBlurb": "Roland Berger is het enige toonaangevende strategieadviesbureau van Europese origine, met wereldwijd meer dan 3.000 medewerkers en een kantoor in Amsterdam.",
+      "firmSite": "https://www.rolandberger.com",
+      "intro": "Roland Berger zoekt een Senior Consultant / Project Manager - Mobility voor het kantoor in Amsterdam. Het gaat om een functie binnen consulting. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van Roland Berger.",
+      "does": [
+        "Deel uitmaken van projectteams die strategische vraagstukken oplossen voor grote ondernemingen",
+        "Analyses uitvoeren, hypotheses toetsen en aanbevelingen formuleren",
+        "Rechtstreeks samenwerken met clienten en senior consultants"
+      ],
+      "brings": [
+        "Een uitstekend academisch dossier, ongeacht de studierichting",
+        "Sterk analytisch en probleemoplossend vermogen",
+        "Uitstekende beheersing van het Engels, Nederlands is een plus"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Consulting",
+        "Type": "Vaste functie",
+        "Niveau": "Starter / ervaren",
+        "Praktijk": "Strategy"
+      }
+    }
+  },
+  {
+    "title": "Senior Consultant / Project Manager - Energy",
+    "company": "Roland Berger",
+    "sector": "consulting",
+    "type": "graduate",
+    "location": "Amsterdam",
+    "url": "https://jobs.smartrecruiters.com/RolandBerger/744000136009629",
+    "checkText": "744000136009629",
+    "tags": [
+      "Strategy",
+      "Project Manager"
+    ],
+    "id": 31,
+    "featured": false,
+    "active": true,
+    "initials": "RB",
+    "color": "#0b7285",
+    "salary": "",
+    "daysAgo": null,
+    "description": "Roland Berger heeft een openstaande vacature voor Senior Consultant / Project Manager - Energy in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "roland-berger-senior-consultant-project-manager-energy",
+    "detail": {
+      "firmBlurb": "Roland Berger is het enige toonaangevende strategieadviesbureau van Europese origine, met wereldwijd meer dan 3.000 medewerkers en een kantoor in Amsterdam.",
+      "firmSite": "https://www.rolandberger.com",
+      "intro": "Roland Berger zoekt een Senior Consultant / Project Manager - Energy voor het kantoor in Amsterdam. Het gaat om een functie binnen consulting. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van Roland Berger.",
+      "does": [
+        "Deel uitmaken van projectteams die strategische vraagstukken oplossen voor grote ondernemingen",
+        "Analyses uitvoeren, hypotheses toetsen en aanbevelingen formuleren",
+        "Rechtstreeks samenwerken met clienten en senior consultants"
+      ],
+      "brings": [
+        "Een uitstekend academisch dossier, ongeacht de studierichting",
+        "Sterk analytisch en probleemoplossend vermogen",
+        "Uitstekende beheersing van het Engels, Nederlands is een plus"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Consulting",
+        "Type": "Vaste functie",
+        "Niveau": "Starter / ervaren",
+        "Praktijk": "Strategy"
+      }
+    }
+  },
+  {
+    "title": "Senior Consultant / Project Manager - Retail & FMCG",
+    "company": "Roland Berger",
+    "sector": "consulting",
+    "type": "graduate",
+    "location": "Amsterdam",
+    "url": "https://jobs.smartrecruiters.com/RolandBerger/744000136007650",
+    "checkText": "744000136007650",
+    "tags": [
+      "Strategy",
+      "Project Manager"
+    ],
+    "id": 32,
+    "featured": false,
+    "active": true,
+    "initials": "RB",
+    "color": "#0b7285",
+    "salary": "",
+    "daysAgo": null,
+    "description": "Roland Berger heeft een openstaande vacature voor Senior Consultant / Project Manager - Retail & FMCG in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "roland-berger-senior-consultant-project-manager-retail-en-fmcg",
+    "detail": {
+      "firmBlurb": "Roland Berger is het enige toonaangevende strategieadviesbureau van Europese origine, met wereldwijd meer dan 3.000 medewerkers en een kantoor in Amsterdam.",
+      "firmSite": "https://www.rolandberger.com",
+      "intro": "Roland Berger zoekt een Senior Consultant / Project Manager - Retail & FMCG voor het kantoor in Amsterdam. Het gaat om een functie binnen consulting. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van Roland Berger.",
+      "does": [
+        "Deel uitmaken van projectteams die strategische vraagstukken oplossen voor grote ondernemingen",
+        "Analyses uitvoeren, hypotheses toetsen en aanbevelingen formuleren",
+        "Rechtstreeks samenwerken met clienten en senior consultants"
+      ],
+      "brings": [
+        "Een uitstekend academisch dossier, ongeacht de studierichting",
+        "Sterk analytisch en probleemoplossend vermogen",
+        "Uitstekende beheersing van het Engels, Nederlands is een plus"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Consulting",
+        "Type": "Vaste functie",
+        "Niveau": "Starter / ervaren",
+        "Praktijk": "Strategy"
+      }
+    }
+  },
+  {
+    "title": "Consultant Intern 2027",
+    "company": "Roland Berger",
+    "sector": "consulting",
+    "type": "stage",
+    "location": "Amsterdam",
+    "url": "https://jobs.smartrecruiters.com/RolandBerger/744000135419909",
+    "checkText": "744000135419909",
+    "tags": [
+      "Strategy",
+      "Stage"
+    ],
+    "id": 33,
+    "featured": false,
+    "active": true,
+    "initials": "RB",
+    "color": "#0b7285",
+    "salary": "",
+    "daysAgo": null,
+    "description": "Roland Berger heeft een openstaande vacature voor Consultant Intern 2027 in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "roland-berger-consultant-intern-2027",
+    "detail": {
+      "firmBlurb": "Roland Berger is het enige toonaangevende strategieadviesbureau van Europese origine, met wereldwijd meer dan 3.000 medewerkers en een kantoor in Amsterdam.",
+      "firmSite": "https://www.rolandberger.com",
+      "intro": "Roland Berger zoekt een Consultant Intern 2027 voor het kantoor in Amsterdam. Het gaat om een stageplaats binnen consulting. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van Roland Berger.",
+      "does": [
+        "Meedraaien in strategieprojecten voor grote ondernemingen",
+        "Analyses uitvoeren, hypotheses toetsen en aanbevelingen formuleren",
+        "Rechtstreeks samenwerken met clienten en senior consultants"
+      ],
+      "brings": [
+        "Een uitstekend academisch dossier, ongeacht de studierichting",
+        "Sterk analytisch en probleemoplossend vermogen",
+        "Uitstekende beheersing van het Engels, Nederlands is een plus"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Consulting",
+        "Type": "Stage / internship",
+        "Niveau": "Stage / internship",
+        "Praktijk": "Strategy"
+      }
+    }
+  },
+  {
+    "title": "Consultant",
+    "company": "Roland Berger",
+    "sector": "consulting",
+    "type": "graduate",
+    "location": "Amsterdam",
+    "url": "https://jobs.smartrecruiters.com/RolandBerger/744000135419579",
+    "checkText": "744000135419579",
+    "tags": [
+      "Strategy",
+      "Consultant"
+    ],
+    "id": 34,
+    "featured": false,
+    "active": true,
+    "initials": "RB",
+    "color": "#0b7285",
+    "salary": "",
+    "daysAgo": null,
+    "description": "Roland Berger heeft een openstaande vacature voor Consultant in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "roland-berger-consultant",
+    "detail": {
+      "firmBlurb": "Roland Berger is het enige toonaangevende strategieadviesbureau van Europese origine, met wereldwijd meer dan 3.000 medewerkers en een kantoor in Amsterdam.",
+      "firmSite": "https://www.rolandberger.com",
+      "intro": "Roland Berger zoekt een Consultant voor het kantoor in Amsterdam. Het gaat om een functie binnen consulting. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van Roland Berger.",
+      "does": [
+        "Deel uitmaken van projectteams die strategische vraagstukken oplossen voor grote ondernemingen",
+        "Analyses uitvoeren, hypotheses toetsen en aanbevelingen formuleren",
+        "Rechtstreeks samenwerken met clienten en senior consultants"
+      ],
+      "brings": [
+        "Een uitstekend academisch dossier, ongeacht de studierichting",
+        "Sterk analytisch en probleemoplossend vermogen",
+        "Uitstekende beheersing van het Engels, Nederlands is een plus"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Consulting",
+        "Type": "Vaste functie",
+        "Niveau": "Starter / ervaren",
+        "Praktijk": "Strategy"
+      }
+    }
+  },
+  {
+    "title": "Senior Consultant",
+    "company": "Roland Berger",
+    "sector": "consulting",
+    "type": "graduate",
+    "location": "Amsterdam",
+    "url": "https://jobs.smartrecruiters.com/RolandBerger/744000136009929",
+    "checkText": "744000136009929",
+    "tags": [
+      "Strategy",
+      "Senior Consultant"
+    ],
+    "id": 35,
+    "featured": false,
+    "active": true,
+    "initials": "RB",
+    "color": "#0b7285",
+    "salary": "",
+    "daysAgo": null,
+    "description": "Roland Berger heeft een openstaande vacature voor Senior Consultant in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "roland-berger-senior-consultant",
+    "detail": {
+      "firmBlurb": "Roland Berger is het enige toonaangevende strategieadviesbureau van Europese origine, met wereldwijd meer dan 3.000 medewerkers en een kantoor in Amsterdam.",
+      "firmSite": "https://www.rolandberger.com",
+      "intro": "Roland Berger zoekt een Senior Consultant voor het kantoor in Amsterdam. Het gaat om een functie binnen consulting. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van Roland Berger.",
+      "does": [
+        "Deel uitmaken van projectteams die strategische vraagstukken oplossen voor grote ondernemingen",
+        "Analyses uitvoeren, hypotheses toetsen en aanbevelingen formuleren",
+        "Rechtstreeks samenwerken met clienten en senior consultants"
+      ],
+      "brings": [
+        "Een uitstekend academisch dossier, ongeacht de studierichting",
+        "Sterk analytisch en probleemoplossend vermogen",
+        "Uitstekende beheersing van het Engels, Nederlands is een plus"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Consulting",
+        "Type": "Vaste functie",
+        "Niveau": "Starter / ervaren",
+        "Praktijk": "Strategy"
+      }
+    }
+  },
+  {
+    "title": "Manager Banking",
+    "company": "Sia",
+    "sector": "finance",
+    "type": "graduate",
+    "location": "Amsterdam",
+    "url": "https://jobs.smartrecruiters.com/Sia/744000135500409",
+    "checkText": "744000135500409",
+    "tags": [
+      "Banking",
+      "Consulting"
+    ],
+    "id": 36,
+    "featured": false,
+    "active": true,
+    "initials": "Sia",
+    "color": "#c2185b",
+    "salary": "",
+    "daysAgo": null,
+    "description": "Sia heeft een openstaande vacature voor Manager Banking in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "sia-manager-banking",
+    "detail": {
+      "firmBlurb": "Sia is een internationaal management consulting bureau met wereldwijd meer dan 3.000 consultants en een kantoor in Amsterdam, bijzonder sterk in financial services.",
+      "firmSite": "https://www.sia-partners.com",
+      "intro": "Sia zoekt een Manager Banking voor het kantoor in Amsterdam. Het gaat om een functie binnen finance. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van Sia.",
+      "does": [
+        "Adviesopdrachten leiden voor banken rond strategie, risico, regelgeving en transformatie",
+        "Complexe vraagstukken analyseren en oplossingen uitwerken",
+        "Aanbevelingen presenteren aan het management van clienten"
+      ],
+      "brings": [
+        "Een masterdiploma in een economische, financiele of analytische richting",
+        "Ervaring in of sterke affiniteit met financial services",
+        "Uitstekende beheersing van het Nederlands en het Engels"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Finance",
+        "Type": "Vaste functie",
+        "Niveau": "Starter / ervaren",
+        "Praktijk": "Banking"
+      }
+    }
+  },
+  {
+    "title": "Senior Manager in Banking",
+    "company": "Sia",
+    "sector": "finance",
+    "type": "graduate",
+    "location": "Amsterdam",
+    "url": "https://jobs.smartrecruiters.com/Sia/744000135499210",
+    "checkText": "744000135499210",
+    "tags": [
+      "Banking",
+      "Consulting"
+    ],
+    "id": 37,
+    "featured": false,
+    "active": true,
+    "initials": "Sia",
+    "color": "#c2185b",
+    "salary": "",
+    "daysAgo": null,
+    "description": "Sia heeft een openstaande vacature voor Senior Manager in Banking in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "sia-senior-manager-in-banking",
+    "detail": {
+      "firmBlurb": "Sia is een internationaal management consulting bureau met wereldwijd meer dan 3.000 consultants en een kantoor in Amsterdam, bijzonder sterk in financial services.",
+      "firmSite": "https://www.sia-partners.com",
+      "intro": "Sia zoekt een Senior Manager in Banking voor het kantoor in Amsterdam. Het gaat om een functie binnen finance. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van Sia.",
+      "does": [
+        "Adviesopdrachten leiden voor banken rond strategie, risico, regelgeving en transformatie",
+        "Complexe vraagstukken analyseren en oplossingen uitwerken",
+        "Aanbevelingen presenteren aan het management van clienten"
+      ],
+      "brings": [
+        "Een masterdiploma in een economische, financiele of analytische richting",
+        "Ervaring in of sterke affiniteit met financial services",
+        "Uitstekende beheersing van het Nederlands en het Engels"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Finance",
+        "Type": "Vaste functie",
+        "Niveau": "Starter / ervaren",
+        "Praktijk": "Banking"
+      }
+    }
+  },
+  {
+    "title": "Consultant Financial Services",
+    "company": "Sia",
+    "sector": "finance",
+    "type": "graduate",
+    "location": "Amsterdam",
+    "url": "https://jobs.smartrecruiters.com/Sia/744000135499281",
+    "checkText": "744000135499281",
+    "tags": [
+      "Financial Services",
+      "Consulting"
+    ],
+    "id": 38,
+    "featured": false,
+    "active": true,
+    "initials": "Sia",
+    "color": "#c2185b",
+    "salary": "",
+    "daysAgo": null,
+    "description": "Sia heeft een openstaande vacature voor Consultant Financial Services in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "sia-consultant-financial-services",
+    "detail": {
+      "firmBlurb": "Sia is een internationaal management consulting bureau met wereldwijd meer dan 3.000 consultants en een kantoor in Amsterdam, bijzonder sterk in financial services.",
+      "firmSite": "https://www.sia-partners.com",
+      "intro": "Sia zoekt een Consultant Financial Services voor het kantoor in Amsterdam. Het gaat om een functie binnen finance. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van Sia.",
+      "does": [
+        "Meewerken aan adviesopdrachten voor banken en verzekeraars rond strategie, risico, regelgeving en transformatie",
+        "Complexe vraagstukken analyseren en oplossingen uitwerken",
+        "Aanbevelingen presenteren aan het management van clienten"
+      ],
+      "brings": [
+        "Een masterdiploma in een economische, financiele of analytische richting",
+        "Ervaring in of sterke affiniteit met financial services",
+        "Uitstekende beheersing van het Nederlands en het Engels"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Finance",
+        "Type": "Vaste functie",
+        "Niveau": "Starter / ervaren",
+        "Praktijk": "Financial Services"
+      }
+    }
+  },
+  {
+    "title": "Senior Consultant Financial Services - Risk & Regulatory",
+    "company": "Sia",
+    "sector": "finance",
+    "type": "graduate",
+    "location": "Amsterdam",
+    "url": "https://jobs.smartrecruiters.com/Sia/744000135497699",
+    "checkText": "744000135497699",
+    "tags": [
+      "Financial Services",
+      "Consulting"
+    ],
+    "id": 39,
+    "featured": false,
+    "active": true,
+    "initials": "Sia",
+    "color": "#c2185b",
+    "salary": "",
+    "daysAgo": null,
+    "description": "Sia heeft een openstaande vacature voor Senior Consultant Financial Services - Risk & Regulatory in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "sia-senior-consultant-financial-services-risk-en-regulatory",
+    "detail": {
+      "firmBlurb": "Sia is een internationaal management consulting bureau met wereldwijd meer dan 3.000 consultants en een kantoor in Amsterdam, bijzonder sterk in financial services.",
+      "firmSite": "https://www.sia-partners.com",
+      "intro": "Sia zoekt een Senior Consultant Financial Services - Risk & Regulatory voor het kantoor in Amsterdam. Het gaat om een functie binnen finance. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van Sia.",
+      "does": [
+        "Meewerken aan adviesopdrachten voor banken en verzekeraars rond strategie, risico, regelgeving en transformatie",
+        "Complexe vraagstukken analyseren en oplossingen uitwerken",
+        "Aanbevelingen presenteren aan het management van clienten"
+      ],
+      "brings": [
+        "Een masterdiploma in een economische, financiele of analytische richting",
+        "Ervaring in of sterke affiniteit met financial services",
+        "Uitstekende beheersing van het Nederlands en het Engels"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Finance",
+        "Type": "Vaste functie",
+        "Niveau": "Starter / ervaren",
+        "Praktijk": "Financial Services"
+      }
+    }
+  },
+  {
+    "title": "Manager Insurance",
+    "company": "Sia",
+    "sector": "finance",
+    "type": "graduate",
+    "location": "Amsterdam",
+    "url": "https://jobs.smartrecruiters.com/Sia/744000135500029",
+    "checkText": "744000135500029",
+    "tags": [
+      "Insurance",
+      "Consulting"
+    ],
+    "id": 40,
+    "featured": false,
+    "active": true,
+    "initials": "Sia",
+    "color": "#c2185b",
+    "salary": "",
+    "daysAgo": null,
+    "description": "Sia heeft een openstaande vacature voor Manager Insurance in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "sia-manager-insurance",
+    "detail": {
+      "firmBlurb": "Sia is een internationaal management consulting bureau met wereldwijd meer dan 3.000 consultants en een kantoor in Amsterdam, bijzonder sterk in financial services.",
+      "firmSite": "https://www.sia-partners.com",
+      "intro": "Sia zoekt een Manager Insurance voor het kantoor in Amsterdam. Het gaat om een functie binnen finance. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van Sia.",
+      "does": [
+        "Adviesopdrachten leiden voor verzekeraars rond strategie, risico, regelgeving en transformatie",
+        "Complexe vraagstukken analyseren en oplossingen uitwerken",
+        "Aanbevelingen presenteren aan het management van clienten"
+      ],
+      "brings": [
+        "Een masterdiploma in een economische, financiele of analytische richting",
+        "Ervaring in of sterke affiniteit met financial services",
+        "Uitstekende beheersing van het Nederlands en het Engels"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Finance",
+        "Type": "Vaste functie",
+        "Niveau": "Starter / ervaren",
+        "Praktijk": "Insurance"
+      }
+    }
+  },
+  {
+    "title": "Senior Manager in Insurance",
+    "company": "Sia",
+    "sector": "finance",
+    "type": "graduate",
+    "location": "Amsterdam",
+    "url": "https://jobs.smartrecruiters.com/Sia/744000135499669",
+    "checkText": "744000135499669",
+    "tags": [
+      "Insurance",
+      "Consulting"
+    ],
+    "id": 41,
+    "featured": false,
+    "active": true,
+    "initials": "Sia",
+    "color": "#c2185b",
+    "salary": "",
+    "daysAgo": null,
+    "description": "Sia heeft een openstaande vacature voor Senior Manager in Insurance in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "sia-senior-manager-in-insurance",
+    "detail": {
+      "firmBlurb": "Sia is een internationaal management consulting bureau met wereldwijd meer dan 3.000 consultants en een kantoor in Amsterdam, bijzonder sterk in financial services.",
+      "firmSite": "https://www.sia-partners.com",
+      "intro": "Sia zoekt een Senior Manager in Insurance voor het kantoor in Amsterdam. Het gaat om een functie binnen finance. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van Sia.",
+      "does": [
+        "Adviesopdrachten leiden voor verzekeraars rond strategie, risico, regelgeving en transformatie",
+        "Complexe vraagstukken analyseren en oplossingen uitwerken",
+        "Aanbevelingen presenteren aan het management van clienten"
+      ],
+      "brings": [
+        "Een masterdiploma in een economische, financiele of analytische richting",
+        "Ervaring in of sterke affiniteit met financial services",
+        "Uitstekende beheersing van het Nederlands en het Engels"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Finance",
+        "Type": "Vaste functie",
+        "Niveau": "Starter / ervaren",
+        "Praktijk": "Insurance"
+      }
+    }
+  },
+  {
+    "title": "(Senior) Manager Financial Services",
+    "company": "Sia",
+    "sector": "finance",
+    "type": "graduate",
+    "location": "Amsterdam",
+    "url": "https://jobs.smartrecruiters.com/Sia/744000135499350",
+    "checkText": "744000135499350",
+    "tags": [
+      "Financial Services",
+      "Consulting"
+    ],
+    "id": 42,
+    "featured": false,
+    "active": true,
+    "initials": "Sia",
+    "color": "#c2185b",
+    "salary": "",
+    "daysAgo": null,
+    "description": "Sia heeft een openstaande vacature voor (Senior) Manager Financial Services in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "sia-senior-manager-financial-services",
+    "detail": {
+      "firmBlurb": "Sia is een internationaal management consulting bureau met wereldwijd meer dan 3.000 consultants en een kantoor in Amsterdam, bijzonder sterk in financial services.",
+      "firmSite": "https://www.sia-partners.com",
+      "intro": "Sia zoekt een (Senior) Manager Financial Services voor het kantoor in Amsterdam. Het gaat om een functie binnen finance. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van Sia.",
+      "does": [
+        "Adviesopdrachten leiden voor banken en verzekeraars rond strategie, risico, regelgeving en transformatie",
+        "Complexe vraagstukken analyseren en oplossingen uitwerken",
+        "Aanbevelingen presenteren aan het management van clienten"
+      ],
+      "brings": [
+        "Een masterdiploma in een economische, financiele of analytische richting",
+        "Ervaring in of sterke affiniteit met financial services",
+        "Uitstekende beheersing van het Nederlands en het Engels"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Finance",
+        "Type": "Vaste functie",
+        "Niveau": "Starter / ervaren",
+        "Praktijk": "Financial Services"
+      }
+    }
+  },
+  {
+    "title": "Consultant, Netherlands",
+    "company": "BCG",
+    "sector": "consulting",
+    "type": "graduate",
+    "location": "Amsterdam",
+    "url": "https://careers.bcg.com/global/en/job/BCG1US26391EXTERNALENGLOBAL/Consultant-Netherlands",
+    "checkText": "26391",
+    "tags": [
+      "Strategy",
+      "Consultant"
+    ],
+    "id": 43,
+    "featured": false,
+    "active": true,
+    "initials": "BCG",
+    "color": "#197a56",
+    "salary": "",
+    "daysAgo": null,
+    "description": "BCG heeft een openstaande vacature voor Consultant, Netherlands in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "bcg-consultant-netherlands",
+    "detail": {
+      "firmBlurb": "Boston Consulting Group is een van de drie toonaangevende strategieconsultants ter wereld (MBB), met een kantoor in Amsterdam.",
+      "firmSite": "https://www.bcg.com",
+      "intro": "BCG zoekt een Consultant, Netherlands voor het kantoor in Amsterdam. Het gaat om een functie binnen consulting. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van BCG.",
+      "does": [
+        "Deel uitmaken van projectteams die strategische vraagstukken oplossen voor grote ondernemingen",
+        "Analyses uitvoeren, hypotheses toetsen en aanbevelingen formuleren",
+        "Rechtstreeks samenwerken met clienten en senior consultants"
+      ],
+      "brings": [
+        "Een uitstekend academisch dossier, ongeacht de studierichting",
+        "Sterk analytisch en probleemoplossend vermogen",
+        "Uitstekende beheersing van het Engels, Nederlands is een plus"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Consulting",
+        "Type": "Vaste functie",
+        "Niveau": "Starter / ervaren",
+        "Praktijk": "Strategy"
+      }
+    }
+  },
+  {
+    "title": "Associate, Netherlands",
+    "company": "BCG",
+    "sector": "consulting",
+    "type": "graduate",
+    "location": "Amsterdam",
+    "url": "https://careers.bcg.com/global/en/job/BCG1US26393EXTERNALENGLOBAL/Associate-Netherlands",
+    "checkText": "26393",
+    "tags": [
+      "Strategy",
+      "Associate"
+    ],
+    "id": 44,
+    "featured": false,
+    "active": true,
+    "initials": "BCG",
+    "color": "#197a56",
+    "salary": "",
+    "daysAgo": null,
+    "description": "BCG heeft een openstaande vacature voor Associate, Netherlands in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "bcg-associate-netherlands",
+    "detail": {
+      "firmBlurb": "Boston Consulting Group is een van de drie toonaangevende strategieconsultants ter wereld (MBB), met een kantoor in Amsterdam.",
+      "firmSite": "https://www.bcg.com",
+      "intro": "BCG zoekt een Associate, Netherlands voor het kantoor in Amsterdam. Het gaat om een functie binnen consulting. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van BCG.",
+      "does": [
+        "Deel uitmaken van projectteams die strategische vraagstukken oplossen voor grote ondernemingen",
+        "Analyses uitvoeren, hypotheses toetsen en aanbevelingen formuleren",
+        "Rechtstreeks samenwerken met clienten en senior consultants"
+      ],
+      "brings": [
+        "Een uitstekend academisch dossier, ongeacht de studierichting",
+        "Sterk analytisch en probleemoplossend vermogen",
+        "Uitstekende beheersing van het Engels, Nederlands is een plus"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Consulting",
+        "Type": "Vaste functie",
+        "Niveau": "Starter / ervaren",
+        "Praktijk": "Strategy"
+      }
+    }
+  },
+  {
+    "title": "Senior Associate, Netherlands",
+    "company": "BCG",
+    "sector": "consulting",
+    "type": "graduate",
+    "location": "Amsterdam",
+    "url": "https://careers.bcg.com/global/en/job/BCG1US26701EXTERNALENGLOBAL/Senior-Associate-Netherlands",
+    "checkText": "26701",
+    "tags": [
+      "Strategy",
+      "Senior Associate"
+    ],
+    "id": 45,
+    "featured": false,
+    "active": true,
+    "initials": "BCG",
+    "color": "#197a56",
+    "salary": "",
+    "daysAgo": null,
+    "description": "BCG heeft een openstaande vacature voor Senior Associate, Netherlands in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "bcg-senior-associate-netherlands",
+    "detail": {
+      "firmBlurb": "Boston Consulting Group is een van de drie toonaangevende strategieconsultants ter wereld (MBB), met een kantoor in Amsterdam.",
+      "firmSite": "https://www.bcg.com",
+      "intro": "BCG zoekt een Senior Associate, Netherlands voor het kantoor in Amsterdam. Het gaat om een functie binnen consulting. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van BCG.",
+      "does": [
+        "Deel uitmaken van projectteams die strategische vraagstukken oplossen voor grote ondernemingen",
+        "Analyses uitvoeren, hypotheses toetsen en aanbevelingen formuleren",
+        "Rechtstreeks samenwerken met clienten en senior consultants"
+      ],
+      "brings": [
+        "Een uitstekend academisch dossier, ongeacht de studierichting",
+        "Sterk analytisch en probleemoplossend vermogen",
+        "Uitstekende beheersing van het Engels, Nederlands is een plus"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Consulting",
+        "Type": "Vaste functie",
+        "Niveau": "Starter / ervaren",
+        "Praktijk": "Strategy"
+      }
+    }
+  },
+  {
+    "title": "Senior AI Tech Consultant (Private Equity)",
+    "company": "BCG Platinion",
+    "sector": "consulting",
+    "type": "graduate",
+    "location": "Amsterdam",
+    "url": "https://careers.bcg.com/global/en/job/BCG1US52947EXTERNALENGLOBAL/Senior-AI-Tech-Consultant-Private-Equity-Amsterdam-BCG-Platinion",
+    "checkText": "52947",
+    "tags": [
+      "AI",
+      "Private Equity"
+    ],
+    "id": 46,
+    "featured": false,
+    "active": true,
+    "initials": "BCG",
+    "color": "#197a56",
+    "salary": "",
+    "daysAgo": null,
+    "description": "BCG Platinion heeft een openstaande vacature voor Senior AI Tech Consultant (Private Equity) in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "bcg-platinion-senior-ai-tech-consultant-private-equity",
+    "detail": {
+      "firmBlurb": "BCG Platinion is de technologie- en digitale implementatietak van Boston Consulting Group, met een kantoor in Amsterdam.",
+      "firmSite": "https://www.bcgplatinion.com",
+      "intro": "BCG Platinion zoekt een Senior AI Tech Consultant (Private Equity) voor het kantoor in Amsterdam. Het gaat om een functie binnen consulting. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van BCG Platinion.",
+      "does": [
+        "Clienten begeleiden bij digitale transformatie, data en AI, van strategie tot implementatie",
+        "Technische oplossingen ontwerpen en teams van consultants aansturen of ondersteunen",
+        "Werken op het snijvlak van technologie en business"
+      ],
+      "brings": [
+        "Een masterdiploma in een technische, wetenschappelijke of bedrijfskundige richting",
+        "Sterke affiniteit met technologie, data en AI",
+        "Uitstekende beheersing van het Engels"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Consulting",
+        "Type": "Vaste functie",
+        "Niveau": "Starter / ervaren",
+        "Praktijk": "AI"
+      }
+    }
+  },
+  {
+    "title": "Senior AI Tech Consultant",
+    "company": "BCG Platinion",
+    "sector": "consulting",
+    "type": "graduate",
+    "location": "Amsterdam",
+    "url": "https://careers.bcg.com/global/en/job/BCG1US54530EXTERNALENGLOBAL/Senior-AI-Tech-Consultant-Amsterdam-BCG-Platinion",
+    "checkText": "54530",
+    "tags": [
+      "AI",
+      "Technology"
+    ],
+    "id": 47,
+    "featured": false,
+    "active": true,
+    "initials": "BCG",
+    "color": "#197a56",
+    "salary": "",
+    "daysAgo": null,
+    "description": "BCG Platinion heeft een openstaande vacature voor Senior AI Tech Consultant in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "bcg-platinion-senior-ai-tech-consultant",
+    "detail": {
+      "firmBlurb": "BCG Platinion is de technologie- en digitale implementatietak van Boston Consulting Group, met een kantoor in Amsterdam.",
+      "firmSite": "https://www.bcgplatinion.com",
+      "intro": "BCG Platinion zoekt een Senior AI Tech Consultant voor het kantoor in Amsterdam. Het gaat om een functie binnen consulting. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van BCG Platinion.",
+      "does": [
+        "Clienten begeleiden bij digitale transformatie, data en AI, van strategie tot implementatie",
+        "Technische oplossingen ontwerpen en teams van consultants aansturen of ondersteunen",
+        "Werken op het snijvlak van technologie en business"
+      ],
+      "brings": [
+        "Een masterdiploma in een technische, wetenschappelijke of bedrijfskundige richting",
+        "Sterke affiniteit met technologie, data en AI",
+        "Uitstekende beheersing van het Engels"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Consulting",
+        "Type": "Vaste functie",
+        "Niveau": "Starter / ervaren",
+        "Praktijk": "AI"
+      }
+    }
+  },
+  {
+    "title": "AI Solutions Consultant",
+    "company": "BCG Platinion",
+    "sector": "consulting",
+    "type": "graduate",
+    "location": "Amsterdam",
+    "url": "https://careers.bcg.com/global/en/job/BCG1US54588EXTERNALENGLOBAL/AI-Solutions-Consultant-Amsterdam-BCG-Platinion",
+    "checkText": "54588",
+    "tags": [
+      "AI",
+      "Technology"
+    ],
+    "id": 48,
+    "featured": false,
+    "active": true,
+    "initials": "BCG",
+    "color": "#197a56",
+    "salary": "",
+    "daysAgo": null,
+    "description": "BCG Platinion heeft een openstaande vacature voor AI Solutions Consultant in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "bcg-platinion-ai-solutions-consultant",
+    "detail": {
+      "firmBlurb": "BCG Platinion is de technologie- en digitale implementatietak van Boston Consulting Group, met een kantoor in Amsterdam.",
+      "firmSite": "https://www.bcgplatinion.com",
+      "intro": "BCG Platinion zoekt een AI Solutions Consultant voor het kantoor in Amsterdam. Het gaat om een functie binnen consulting. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van BCG Platinion.",
+      "does": [
+        "Clienten begeleiden bij digitale transformatie, data en AI, van strategie tot implementatie",
+        "Technische oplossingen ontwerpen en teams van consultants aansturen of ondersteunen",
+        "Werken op het snijvlak van technologie en business"
+      ],
+      "brings": [
+        "Een masterdiploma in een technische, wetenschappelijke of bedrijfskundige richting",
+        "Sterke affiniteit met technologie, data en AI",
+        "Uitstekende beheersing van het Engels"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Consulting",
+        "Type": "Vaste functie",
+        "Niveau": "Starter / ervaren",
+        "Praktijk": "AI"
+      }
+    }
+  },
+  {
+    "title": "AI Solutions Architect",
+    "company": "BCG Platinion",
+    "sector": "consulting",
+    "type": "graduate",
+    "location": "Amsterdam",
+    "url": "https://careers.bcg.com/global/en/job/BCG1US54587EXTERNALENGLOBAL/AI-Solutions-Architect-Amsterdam-BCG-Platinion",
+    "checkText": "54587",
+    "tags": [
+      "AI",
+      "Architectuur"
+    ],
+    "id": 49,
+    "featured": false,
+    "active": true,
+    "initials": "BCG",
+    "color": "#197a56",
+    "salary": "",
+    "daysAgo": null,
+    "description": "BCG Platinion heeft een openstaande vacature voor AI Solutions Architect in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "bcg-platinion-ai-solutions-architect",
+    "detail": {
+      "firmBlurb": "BCG Platinion is de technologie- en digitale implementatietak van Boston Consulting Group, met een kantoor in Amsterdam.",
+      "firmSite": "https://www.bcgplatinion.com",
+      "intro": "BCG Platinion zoekt een AI Solutions Architect voor het kantoor in Amsterdam. Het gaat om een functie binnen consulting. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van BCG Platinion.",
+      "does": [
+        "Clienten begeleiden bij digitale transformatie, data en AI, van strategie tot implementatie",
+        "Technische oplossingen ontwerpen en teams van consultants aansturen of ondersteunen",
+        "Werken op het snijvlak van technologie en business"
+      ],
+      "brings": [
+        "Een masterdiploma in een technische, wetenschappelijke of bedrijfskundige richting",
+        "Sterke affiniteit met technologie, data en AI",
+        "Uitstekende beheersing van het Engels"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Consulting",
+        "Type": "Vaste functie",
+        "Niveau": "Starter / ervaren",
+        "Praktijk": "AI"
+      }
+    }
+  },
+  {
+    "title": "Senior Consultant Commercial Due Diligence",
+    "company": "EY-Parthenon",
+    "sector": "consulting",
+    "type": "graduate",
+    "location": "Amsterdam",
+    "url": "https://careers.ey.com/ey/job/Amsterdam-EY-Parthenon-Senior-Consultant-Commercial-Due-Diligence-1083-HP/1409358533/",
+    "checkText": "Amsterdam-EY-Parthenon-Senior-Consultant",
+    "tags": [
+      "Strategy",
+      "Due Diligence"
+    ],
+    "id": 50,
+    "featured": false,
+    "active": true,
+    "initials": "EY",
+    "color": "#2e2e38",
+    "salary": "",
+    "daysAgo": null,
+    "description": "EY-Parthenon heeft een openstaande vacature voor Senior Consultant Commercial Due Diligence in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "ey-parthenon-senior-consultant-commercial-due-diligence",
+    "detail": {
+      "firmBlurb": "EY-Parthenon is de strategie-adviestak van EY en werkt aan strategie, transacties en waardecreatie, met een kantoor in Amsterdam.",
+      "firmSite": "https://www.ey.com/nl_nl/ey-parthenon",
+      "intro": "EY-Parthenon zoekt een Senior Consultant Commercial Due Diligence voor het kantoor in Amsterdam. Het gaat om een functie binnen consulting. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van EY-Parthenon.",
+      "does": [
+        "Financiele of commerciele due diligence uitvoeren bij overnames en investeringen",
+        "Bedrijfscijfers, businessplannen en waarderingen analyseren",
+        "Bevindingen rapporteren aan participatiemaatschappijen en corporate clienten"
+      ],
+      "brings": [
+        "Een masterdiploma in economie, finance, econometrie of accountancy",
+        "Ervaring in transactieadvies, audit of corporate finance",
+        "Sterke analytische vaardigheden en uitstekend Engels"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Consulting",
+        "Type": "Vaste functie",
+        "Niveau": "Starter / ervaren",
+        "Praktijk": "Strategy"
+      }
+    }
+  },
+  {
+    "title": "(Senior) Consultant People Strategy and M&A",
+    "company": "EY-Parthenon",
+    "sector": "consulting",
+    "type": "graduate",
+    "location": "Amsterdam",
+    "url": "https://careers.ey.com/ey/job/Amsterdam-EY-Parthenon-%28Senior%29-Consultant-People-Strategy-and-M&amp;A-1083-HP/1409829533/",
+    "checkText": "Amsterdam-EY-Parthenon-%28Senior%29-Cons",
+    "tags": [
+      "M&A",
+      "People"
+    ],
+    "id": 51,
+    "featured": false,
+    "active": true,
+    "initials": "EY",
+    "color": "#2e2e38",
+    "salary": "",
+    "daysAgo": null,
+    "description": "EY-Parthenon heeft een openstaande vacature voor (Senior) Consultant People Strategy and M&A in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "ey-parthenon-senior-consultant-people-strategy-and-m-en-a",
+    "detail": {
+      "firmBlurb": "EY-Parthenon is de strategie-adviestak van EY en werkt aan strategie, transacties en waardecreatie, met een kantoor in Amsterdam.",
+      "firmSite": "https://www.ey.com/nl_nl/ey-parthenon",
+      "intro": "EY-Parthenon zoekt een (Senior) Consultant People Strategy and M&A voor het kantoor in Amsterdam. Het gaat om een functie binnen consulting. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van EY-Parthenon.",
+      "does": [
+        "Financiele of commerciele due diligence uitvoeren bij overnames en investeringen",
+        "Bedrijfscijfers, businessplannen en waarderingen analyseren",
+        "Bevindingen rapporteren aan participatiemaatschappijen en corporate clienten"
+      ],
+      "brings": [
+        "Een masterdiploma in economie, finance, econometrie of accountancy",
+        "Ervaring in transactieadvies, audit of corporate finance",
+        "Sterke analytische vaardigheden en uitstekend Engels"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Consulting",
+        "Type": "Vaste functie",
+        "Niveau": "Starter / ervaren",
+        "Praktijk": "M&A"
+      }
+    }
+  },
+  {
+    "title": "Manager Forensic Compliance & Investigations",
+    "company": "EY",
+    "sector": "consulting",
+    "type": "graduate",
+    "location": "Amsterdam",
+    "url": "https://careers.ey.com/ey/job/Amsterdam-Manager-Forensic-Compliance-&amp;-Investigations-1083-HP/1406556533/",
+    "checkText": "Amsterdam-Manager-Forensic-Compliance-&a",
+    "tags": [
+      "Forensic",
+      "Compliance"
+    ],
+    "id": 52,
+    "featured": false,
+    "active": true,
+    "initials": "EY",
+    "color": "#2e2e38",
+    "salary": "",
+    "daysAgo": null,
+    "description": "EY heeft een openstaande vacature voor Manager Forensic Compliance & Investigations in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "ey-manager-forensic-compliance-en-investigations",
+    "detail": {
+      "firmBlurb": "EY is een van de Big Four en biedt audit, fiscale en adviesdiensten, met een groot kantoor in Amsterdam.",
+      "firmSite": "https://www.ey.com/nl_nl",
+      "intro": "EY zoekt een Manager Forensic Compliance & Investigations voor het kantoor in Amsterdam. Het gaat om een functie binnen consulting. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van EY.",
+      "does": [
+        "Onderzoek doen naar fraude, compliance en financiele onregelmatigheden",
+        "Data en transacties analyseren en bevindingen rapporteren",
+        "Clienten adviseren over integriteit en compliance"
+      ],
+      "brings": [
+        "Een masterdiploma in economie, accountancy, rechten of een gelijkwaardige richting",
+        "Analytisch sterk en nauwkeurig",
+        "Uitstekende beheersing van het Nederlands en het Engels"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Consulting",
+        "Type": "Vaste functie",
+        "Niveau": "Starter / ervaren",
+        "Praktijk": "Forensic"
+      }
+    }
+  },
+  {
+    "title": "(Senior) Manager - Financial Planning & Analysis - Finance Business Consulting",
+    "company": "EY",
+    "sector": "consulting",
+    "type": "graduate",
+    "location": "Amsterdam",
+    "url": "https://careers.ey.com/ey/job/Amsterdam-%28Senior%29-Manager-Financial-Planning-&amp;-Analysis-Finance-Business-Consulting-1083-HP/1251575301/",
+    "checkText": "Amsterdam-%28Senior%29-Manager-Financial",
+    "tags": [
+      "Finance",
+      "FP&A"
+    ],
+    "id": 53,
+    "featured": false,
+    "active": true,
+    "initials": "EY",
+    "color": "#2e2e38",
+    "salary": "",
+    "daysAgo": null,
+    "description": "EY heeft een openstaande vacature voor (Senior) Manager - Financial Planning & Analysis - Finance Business Consulting in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "ey-senior-manager-financial-planning-en-analysis-finance-business-cons",
+    "detail": {
+      "firmBlurb": "EY is een van de Big Four en biedt audit, fiscale en adviesdiensten, met een groot kantoor in Amsterdam.",
+      "firmSite": "https://www.ey.com/nl_nl",
+      "intro": "EY zoekt een (Senior) Manager - Financial Planning & Analysis - Finance Business Consulting voor het kantoor in Amsterdam. Het gaat om een functie binnen consulting. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van EY.",
+      "does": [
+        "Clienten adviseren over financiele planning, analyse en sturing",
+        "Rapportages, forecasts en dashboards opzetten en verbeteren",
+        "Finance-afdelingen begeleiden bij transformatie"
+      ],
+      "brings": [
+        "Een masterdiploma in finance, economie of bedrijfskunde",
+        "Ervaring in finance of consulting",
+        "Uitstekende beheersing van het Engels"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Consulting",
+        "Type": "Vaste functie",
+        "Niveau": "Starter / ervaren",
+        "Praktijk": "Finance"
+      }
+    }
+  },
+  {
+    "title": "Manager Corporate Reporting & Accounting",
+    "company": "EY",
+    "sector": "consulting",
+    "type": "graduate",
+    "location": "Amsterdam",
+    "url": "https://careers.ey.com/ey/job/Amsterdam-Manager-Corporate-Reporting-&amp;-Accounting-1083-HP/1409718433/",
+    "checkText": "Amsterdam-Manager-Corporate-Reporting-&a",
+    "tags": [
+      "Accounting",
+      "Reporting"
+    ],
+    "id": 54,
+    "featured": false,
+    "active": true,
+    "initials": "EY",
+    "color": "#2e2e38",
+    "salary": "",
+    "daysAgo": null,
+    "description": "EY heeft een openstaande vacature voor Manager Corporate Reporting & Accounting in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "ey-manager-corporate-reporting-en-accounting",
+    "detail": {
+      "firmBlurb": "EY is een van de Big Four en biedt audit, fiscale en adviesdiensten, met een groot kantoor in Amsterdam.",
+      "firmSite": "https://www.ey.com/nl_nl",
+      "intro": "EY zoekt een Manager Corporate Reporting & Accounting voor het kantoor in Amsterdam. Het gaat om een functie binnen consulting. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van EY.",
+      "does": [
+        "Clienten adviseren over financiele verslaggeving, ESG-rapportering en assurance",
+        "Complexe rapporteringsvraagstukken analyseren en oplossen",
+        "Ondernemingen begeleiden bij rapporteringstrajecten"
+      ],
+      "brings": [
+        "Een masterdiploma accountancy, economie of een gelijkwaardige richting",
+        "Ervaring in audit, reporting of advisory",
+        "Sterke kennis van verslaggevingsstandaarden en goed Engels"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Consulting",
+        "Type": "Vaste functie",
+        "Niveau": "Starter / ervaren",
+        "Praktijk": "Accounting"
+      }
+    }
+  },
+  {
+    "title": "Manager Real Estate Advisory Services Waarderingen",
+    "company": "EY",
+    "sector": "consulting",
+    "type": "graduate",
+    "location": "Amsterdam",
+    "url": "https://careers.ey.com/ey/job/Amsterdam-Manager-Real-Estate-Advisory-Services-Waarderingen-1083-HP/1410167533/",
+    "checkText": "Amsterdam-Manager-Real-Estate-Advisory-S",
+    "tags": [
+      "Real Estate",
+      "Valuation"
+    ],
+    "id": 55,
+    "featured": false,
+    "active": true,
+    "initials": "EY",
+    "color": "#2e2e38",
+    "salary": "",
+    "daysAgo": null,
+    "description": "EY heeft een openstaande vacature voor Manager Real Estate Advisory Services Waarderingen in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "ey-manager-real-estate-advisory-services-waarderingen",
+    "detail": {
+      "firmBlurb": "EY is een van de Big Four en biedt audit, fiscale en adviesdiensten, met een groot kantoor in Amsterdam.",
+      "firmSite": "https://www.ey.com/nl_nl",
+      "intro": "EY zoekt een Manager Real Estate Advisory Services Waarderingen voor het kantoor in Amsterdam. Het gaat om een functie binnen consulting. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van EY.",
+      "does": [
+        "Vastgoed en vastgoedportefeuilles waarderen en analyseren",
+        "Clienten adviseren over investeringen en transacties in vastgoed",
+        "Waarderingsrapporten opstellen en presenteren"
+      ],
+      "brings": [
+        "Een masterdiploma in finance, vastgoedkunde of een gelijkwaardige richting",
+        "Ervaring in vastgoedadvies of waardering",
+        "Uitstekende beheersing van het Nederlands en het Engels"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Consulting",
+        "Type": "Vaste functie",
+        "Niveau": "Starter / ervaren",
+        "Praktijk": "Real Estate"
+      }
+    }
+  },
+  {
+    "title": "Equity Options Trader",
+    "company": "IMC",
+    "sector": "finance",
+    "type": "graduate",
+    "location": "Amsterdam",
+    "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4594570101",
+    "checkText": "4594570101",
+    "tags": [
+      "Trading",
+      "Quant"
+    ],
+    "id": 56,
+    "featured": false,
+    "active": true,
+    "initials": "IMC",
+    "color": "#0a1f44",
+    "salary": "",
+    "daysAgo": null,
+    "description": "IMC heeft een openstaande vacature voor Equity Options Trader in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "imc-equity-options-trader",
+    "detail": {
+      "firmBlurb": "IMC is een van de grootste marktmakers ter wereld, opgericht in Amsterdam, met meer dan 1.000 medewerkers die met eigen technologie en kapitaal op beurzen handelen.",
+      "firmSite": "https://www.imc.com",
+      "intro": "IMC zoekt een Equity Options Trader voor het kantoor in Amsterdam. Het gaat om een functie binnen finance. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van IMC.",
+      "does": [
+        "Handelen in opties, ETF's of andere financiele producten op internationale beurzen",
+        "Handelsstrategieen en prijsmodellen mee ontwikkelen en verbeteren",
+        "Markten en risico's realtime opvolgen en beslissingen nemen onder tijdsdruk"
+      ],
+      "brings": [
+        "Een sterk academisch dossier in een kwantitatieve richting (econometrie, wiskunde, natuurkunde, informatica)",
+        "Uitstekend cijfermatig inzicht en snel kunnen beslissen",
+        "Uitstekende beheersing van het Engels"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Finance",
+        "Type": "Vaste functie",
+        "Niveau": "Starter / ervaren",
+        "Praktijk": "Trading"
+      }
+    }
+  },
+  {
+    "title": "Index Options Volatility Trader",
+    "company": "IMC",
+    "sector": "finance",
+    "type": "graduate",
+    "location": "Amsterdam",
+    "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4573232101",
+    "checkText": "4573232101",
+    "tags": [
+      "Trading",
+      "Quant"
+    ],
+    "id": 57,
+    "featured": false,
+    "active": true,
+    "initials": "IMC",
+    "color": "#0a1f44",
+    "salary": "",
+    "daysAgo": null,
+    "description": "IMC heeft een openstaande vacature voor Index Options Volatility Trader in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "imc-index-options-volatility-trader",
+    "detail": {
+      "firmBlurb": "IMC is een van de grootste marktmakers ter wereld, opgericht in Amsterdam, met meer dan 1.000 medewerkers die met eigen technologie en kapitaal op beurzen handelen.",
+      "firmSite": "https://www.imc.com",
+      "intro": "IMC zoekt een Index Options Volatility Trader voor het kantoor in Amsterdam. Het gaat om een functie binnen finance. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van IMC.",
+      "does": [
+        "Handelen in opties, ETF's of andere financiele producten op internationale beurzen",
+        "Handelsstrategieen en prijsmodellen mee ontwikkelen en verbeteren",
+        "Markten en risico's realtime opvolgen en beslissingen nemen onder tijdsdruk"
+      ],
+      "brings": [
+        "Een sterk academisch dossier in een kwantitatieve richting (econometrie, wiskunde, natuurkunde, informatica)",
+        "Uitstekend cijfermatig inzicht en snel kunnen beslissen",
+        "Uitstekende beheersing van het Engels"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Finance",
+        "Type": "Vaste functie",
+        "Niveau": "Starter / ervaren",
+        "Praktijk": "Trading"
+      }
+    }
+  },
+  {
+    "title": "Digital Assets Trader",
+    "company": "Flow Traders",
+    "sector": "finance",
+    "type": "graduate",
+    "location": "Amsterdam",
+    "url": "https://job-boards.greenhouse.io/flowtraders/jobs/3234877",
+    "checkText": "3234877",
+    "tags": [
+      "Trading",
+      "Quant"
+    ],
+    "id": 58,
+    "featured": false,
+    "active": true,
+    "initials": "FT",
+    "color": "#e8480c",
+    "salary": "",
+    "daysAgo": null,
+    "description": "Flow Traders heeft een openstaande vacature voor Digital Assets Trader in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "flow-traders-digital-assets-trader",
+    "detail": {
+      "firmBlurb": "Flow Traders is een beursgenoteerde, in Amsterdam opgerichte marktmaker in ETF's en andere financiele producten, actief op beurzen wereldwijd.",
+      "firmSite": "https://www.flowtraders.com",
+      "intro": "Flow Traders zoekt een Digital Assets Trader voor het kantoor in Amsterdam. Het gaat om een functie binnen finance. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van Flow Traders.",
+      "does": [
+        "Handelen in digital assets en crypto-gerelateerde producten op internationale beurzen",
+        "Handelsstrategieen en prijsmodellen mee ontwikkelen en verbeteren",
+        "Markten en risico's realtime opvolgen en beslissingen nemen onder tijdsdruk"
+      ],
+      "brings": [
+        "Een sterk academisch dossier in een kwantitatieve richting (econometrie, wiskunde, natuurkunde, informatica)",
+        "Uitstekend cijfermatig inzicht en snel kunnen beslissen",
+        "Uitstekende beheersing van het Engels"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Finance",
+        "Type": "Vaste functie",
+        "Niveau": "Starter / ervaren",
+        "Praktijk": "Trading"
+      }
+    }
+  },
+  {
+    "title": "Experienced Trader",
+    "company": "Flow Traders",
+    "sector": "finance",
+    "type": "graduate",
+    "location": "Amsterdam",
+    "url": "https://job-boards.greenhouse.io/flowtraders/jobs/7745133",
+    "checkText": "7745133",
+    "tags": [
+      "Trading",
+      "Quant"
+    ],
+    "id": 59,
+    "featured": false,
+    "active": true,
+    "initials": "FT",
+    "color": "#e8480c",
+    "salary": "",
+    "daysAgo": null,
+    "description": "Flow Traders heeft een openstaande vacature voor Experienced Trader in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "flow-traders-experienced-trader",
+    "detail": {
+      "firmBlurb": "Flow Traders is een beursgenoteerde, in Amsterdam opgerichte marktmaker in ETF's en andere financiele producten, actief op beurzen wereldwijd.",
+      "firmSite": "https://www.flowtraders.com",
+      "intro": "Flow Traders zoekt een Experienced Trader voor het kantoor in Amsterdam. Het gaat om een functie binnen finance. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van Flow Traders.",
+      "does": [
+        "Handelen in opties, ETF's of andere financiele producten op internationale beurzen",
+        "Handelsstrategieen en prijsmodellen mee ontwikkelen en verbeteren",
+        "Markten en risico's realtime opvolgen en beslissingen nemen onder tijdsdruk"
+      ],
+      "brings": [
+        "Een sterk academisch dossier in een kwantitatieve richting (econometrie, wiskunde, natuurkunde, informatica)",
+        "Uitstekend cijfermatig inzicht en snel kunnen beslissen",
+        "Uitstekende beheersing van het Engels"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Finance",
+        "Type": "Vaste functie",
+        "Niveau": "Starter / ervaren",
+        "Praktijk": "Trading"
+      }
+    }
+  },
+  {
+    "title": "Graduate Trader",
+    "company": "Flow Traders",
+    "sector": "finance",
+    "type": "stage",
+    "location": "Amsterdam",
+    "url": "https://job-boards.greenhouse.io/flowtraders/jobs/7507482",
+    "checkText": "7507482",
+    "tags": [
+      "Trading",
+      "Quant"
+    ],
+    "id": 60,
+    "featured": false,
+    "active": true,
+    "initials": "FT",
+    "color": "#e8480c",
+    "salary": "",
+    "daysAgo": null,
+    "description": "Flow Traders heeft een openstaande vacature voor Graduate Trader in Amsterdam. Bekijk de volledige functieomschrijving en solliciteer via de officiele vacaturepagina.",
+    "slug": "flow-traders-graduate-trader",
+    "detail": {
+      "firmBlurb": "Flow Traders is een beursgenoteerde, in Amsterdam opgerichte marktmaker in ETF's en andere financiele producten, actief op beurzen wereldwijd.",
+      "firmSite": "https://www.flowtraders.com",
+      "intro": "Flow Traders zoekt een Graduate Trader voor het kantoor in Amsterdam. Het gaat om een stageplaats binnen finance. Hieronder lees je wat de rol inhoudt en wat je meebrengt; solliciteren doe je rechtstreeks via de officiele vacaturepagina van Flow Traders.",
+      "does": [
+        "Handelen in opties, ETF's of andere financiele producten op internationale beurzen",
+        "Handelsstrategieen en prijsmodellen mee ontwikkelen en verbeteren",
+        "Markten en risico's realtime opvolgen en beslissingen nemen onder tijdsdruk"
+      ],
+      "brings": [
+        "Een sterk academisch dossier in een kwantitatieve richting (econometrie, wiskunde, natuurkunde, informatica)",
+        "Uitstekend cijfermatig inzicht en snel kunnen beslissen",
+        "Uitstekende beheersing van het Engels"
+      ],
+      "facts": {
+        "Locatie": "Amsterdam, Nederland",
+        "Sector": "Finance",
+        "Type": "Stage / internship",
+        "Niveau": "Stage / internship",
+        "Praktijk": "Trading"
+      }
+    }
+  }
+]
+</script>
+
   <script>
     /* ── JOB DATA ─────────────────────────── */
-    const JOBS = [
-      // ── FINANCE ──────────────────────────
-      {
-        id: 1, featured: true,
-        title: "Investment Banking Analyst",
-        company: "Goldman Sachs", initials: "GS", color: "#003087",
-        sector: "finance", type: "graduate", location: "Amsterdam",
-        salary: "€80k – €110k", daysAgo: 1,
-        description: "Werk aan grensoverschrijdende M&A-transacties en kapitaalmarktdeals voor toonaangevende Europese bedrijven. Bouw financiële modellen, schrijf pitchbooks en ondersteun senior bankers bij deal execution.",
-        tags: ["M&A", "DCF", "Pitchbooks", "LBO"]
-      },
-      {
-        id: 2, featured: true,
-        title: "Investment Banking Analyst",
-        company: "J.P. Morgan", initials: "JPM", color: "#00468b",
-        sector: "finance", type: "graduate", location: "Amsterdam",
-        salary: "€85k – €115k", daysAgo: 2,
-        description: "Sluit je aan bij het Europese team van 's werelds grootste investment bank. Werk aan deals in energie, technologie en industrials, en ontwikkel je skills in financieel modelleren en cliëntpresentaties.",
-        tags: ["DCM", "ECM", "M&A", "Modelling"]
-      },
-      {
-        id: 3, featured: false,
-        title: "M&A Analyst",
-        company: "Rothschild & Co", initials: "R&C", color: "#1c1c3c",
-        sector: "finance", type: "graduate", location: "Amsterdam",
-        salary: "€75k – €95k", daysAgo: 3,
-        description: "Rothschild is het leidende onafhankelijke M&A-advieskantoor. Begeleid complexe fusies en overnames voor midcap en large-cap cliënten, volledig onafhankelijk van bankeigenbelang.",
-        tags: ["M&A", "Valuations", "Deal Execution"]
-      },
-      {
-        id: 4, featured: false,
-        title: "Equity Research Analyst",
-        company: "Kempen & Co", initials: "KC", color: "#c0392b",
-        sector: "finance", type: "graduate", location: "Amsterdam",
-        salary: "€65k – €85k", daysAgo: 5,
-        description: "Analyseer beursgenoteerde bedrijven in de Benelux en schrijf gedetailleerde beleggingsaanbevelingen voor institutionele beleggers. Presenteer je bevindingen aan portfolio managers bij toonaangevende fondsen.",
-        tags: ["Equity Research", "Bloomberg", "Valuations"]
-      },
-      {
-        id: 5, featured: false,
-        title: "Corporate Finance Stage",
-        company: "ABN AMRO", initials: "AA", color: "#00a650",
-        sector: "finance", type: "stage", location: "Amsterdam",
-        salary: "€600 – €900/mnd", daysAgo: 1,
-        description: "Ondersteun ons Corporate Finance team bij due diligence, financiële modellen en transactiedocumentatie. Werk mee aan echte deals en leer alles over het M&A-proces van binnenuit.",
-        tags: ["Excel", "PowerPoint", "Due Diligence"]
-      },
-      {
-        id: 6, featured: false,
-        title: "Leveraged Finance Analyst",
-        company: "NIBC", initials: "NB", color: "#e67e22",
-        sector: "finance", type: "graduate", location: "Den Haag",
-        salary: "€70k – €90k", daysAgo: 4,
-        description: "Analyseer en structureer leveraged buy-out financieringen voor private equity-gedreven transacties. Beoordeel kredietrisico, onderhandel leningdocumentatie en werk nauw samen met PE-huizen.",
-        tags: ["LBO", "Credit Analysis", "Debt Structuring"]
-      },
-      {
-        id: 7, featured: false,
-        title: "Structured Finance Analyst",
-        company: "Rabobank", initials: "RB", color: "#f57c00",
-        sector: "finance", type: "graduate", location: "Utrecht",
-        salary: "€65k – €80k", daysAgo: 6,
-        description: "Ontwikkel en analyseer complexe financieringsstructuren voor internationale agri- en voedselprojecten. Werk met cliënten wereldwijd en draag bij aan duurzame financieringsoplossingen.",
-        tags: ["Project Finance", "Structured Finance", "Agri"]
-      },
-      {
-        id: 8, featured: false,
-        title: "Capital Markets Stage",
-        company: "ING", initials: "ING", color: "#ff6600",
-        sector: "finance", type: "stage", location: "Amsterdam",
-        salary: "€600 – €900/mnd", daysAgo: 2,
-        description: "Maak kennis met obligatie-emissies, aandelenplaatsingen en financiële derivaten. Ondersteun het team bij transactievoorbereiding, due diligence en dagelijkse marktactiviteiten.",
-        tags: ["DCM", "ECM", "Derivatives"]
-      },
-
-      // ── ADVOCATUUR ───────────────────────
-      {
-        id: 9, featured: true,
-        title: "Stage Advocaat M&A",
-        company: "De Brauw Blackstone Westbroek", initials: "DB", color: "#1e3a5f",
-        sector: "advocatuur", type: "stage", location: "Amsterdam",
-        salary: "€800 – €1.100/mnd", daysAgo: 1,
-        description: "Stage bij de best gerangschikte M&A-praktijkgroep van Nederland. Werk mee aan grensoverschrijdende transacties en leer van de meest ervaren corporate advocaten in de Benelux.",
-        tags: ["M&A", "Corporate Law", "Due Diligence"]
-      },
-      {
-        id: 10, featured: false,
-        title: "Associate Corporate Law",
-        company: "NautaDutilh", initials: "ND", color: "#2c3e50",
-        sector: "advocatuur", type: "graduate", location: "Amsterdam",
-        salary: "€70k – €88k", daysAgo: 3,
-        description: "Versterk ons corporate-team en adviseer nationale en internationale cliënten bij fusies, overnames en herstructureringen. Groei door richting associate partner in een dynamische praktijk.",
-        tags: ["Corporate Law", "M&A", "Vennootschapsrecht"]
-      },
-      {
-        id: 11, featured: true,
-        title: "Trainee Advocaat",
-        company: "Freshfields", initials: "FF", color: "#8b0000",
-        sector: "advocatuur", type: "stage", location: "Amsterdam",
-        salary: "€900 – €1.200/mnd", daysAgo: 2,
-        description: "Internationaal traineeship bij een van de meest prestigieuze Magic Circle-kantoren. Roteer door meerdere praktijkgebieden en bouw een breed juridisch fundament op met internationale exposure.",
-        tags: ["International Law", "Finance", "M&A"]
-      },
-      {
-        id: 12, featured: false,
-        title: "Legal Trainee Banking",
-        company: "Allen & Overy", initials: "A&O", color: "#4a0e8f",
-        sector: "advocatuur", type: "stage", location: "Amsterdam",
-        salary: "€800 – €1.050/mnd", daysAgo: 4,
-        description: "Werk aan complexe financierings- en herstructureringstransacties voor internationale banken en corporate cliënten. Sluit je aan bij een van de meest toonaangevende Magic Circle-kantoren ter wereld.",
-        tags: ["Banking Law", "Finance", "Restructuring"]
-      },
-      {
-        id: 13, featured: false,
-        title: "Associate Banking & Finance",
-        company: "Hogan Lovells", initials: "HL", color: "#c0392b",
-        sector: "advocatuur", type: "graduate", location: "Amsterdam",
-        salary: "€72k – €90k", daysAgo: 5,
-        description: "Adviseer cliënten in de financiële sector bij leningstructuren, obligaties en complexe financiële producten. Bouw expertise op in een internationaal team met focus op Europese financieringstransacties.",
-        tags: ["Finance Law", "Bonds", "Loans"]
-      },
-      {
-        id: 14, featured: false,
-        title: "Stage Advocaat Arbeidsrecht",
-        company: "Stibbe", initials: "SB", color: "#16213e",
-        sector: "advocatuur", type: "stage", location: "Amsterdam",
-        salary: "€750 – €950/mnd", daysAgo: 7,
-        description: "Stage bij de arbeidsrechtpraktijk van een van de meest toonaangevende kantoren in de Benelux. Adviseer cliënten bij ontslagzaken, arbeidsovereenkomsten en reorganisaties.",
-        tags: ["Arbeidsrecht", "Employment Law", "HR Advies"]
-      },
-
-      // ── CONSULTING ───────────────────────
-      {
-        id: 15, featured: true,
-        title: "Business Analyst",
-        company: "McKinsey & Company", initials: "MC", color: "#003366",
-        sector: "consulting", type: "graduate", location: "Amsterdam",
-        salary: "€78k – €98k", daysAgo: 1,
-        description: "Los strategische vraagstukken op voor toonaangevende Nederlandse en internationale bedrijven. Werk in diverse teams, wissel snel van industrie en groei snel door naar Junior Associate.",
-        tags: ["Strategy", "Data Analysis", "Problem Solving"]
-      },
-      {
-        id: 16, featured: true,
-        title: "Junior Consultant",
-        company: "Boston Consulting Group", initials: "BCG", color: "#006e6d",
-        sector: "consulting", type: "graduate", location: "Amsterdam",
-        salary: "€75k – €92k", daysAgo: 2,
-        description: "Ontwikkel innovatieve oplossingen voor complexe bedrijfsvraagstukken als onderdeel van diverse projectteams. BCG biedt een unieke mix van strategische diepgang, data-gedreven inzichten en menselijke impact.",
-        tags: ["Strategy", "Innovation", "Data"]
-      },
-      {
-        id: 17, featured: false,
-        title: "Associate Consultant",
-        company: "Bain & Company", initials: "BC", color: "#c0392b",
-        sector: "consulting", type: "graduate", location: "Amsterdam",
-        salary: "€74k – €92k", daysAgo: 3,
-        description: "Werk samen met senior partners aan strategische transformaties voor Europa's grootste bedrijven. Bain scoort als #1 werkgever in Nederland en biedt een unieke cultuur van collegialiteit en impact.",
-        tags: ["Private Equity", "Strategy", "Operations"]
-      },
-      {
-        id: 18, featured: false,
-        title: "Strategy Consultant",
-        company: "Roland Berger", initials: "RB", color: "#003087",
-        sector: "consulting", type: "graduate", location: "Amsterdam",
-        salary: "€65k – €82k", daysAgo: 5,
-        description: "Europa's enige toonaangevende onafhankelijke strategieconsultancy. Adviseer Europese topbedrijven bij transformaties in automotive, energie en industrie. Sterke groei- en doorstroommogelijkheden.",
-        tags: ["Transformation", "Operations", "Strategy"]
-      },
-      {
-        id: 19, featured: false,
-        title: "Analyst",
-        company: "Oliver Wyman", initials: "OW", color: "#0077b6",
-        sector: "consulting", type: "graduate", location: "Amsterdam",
-        salary: "€68k – €85k", daysAgo: 4,
-        description: "Gespecialiseerde strategische adviesdiensten voor de financiële sector. Werk aan vraagstukken rondom risicomanagement, digitale transformatie en het verdienmodel van banken en verzekeraars.",
-        tags: ["Financial Services", "Risk", "Digital"]
-      },
-      {
-        id: 20, featured: false,
-        title: "Consultant Strategy&",
-        company: "Strategy& (PwC)", initials: "S&", color: "#d4380d",
-        sector: "consulting", type: "graduate", location: "Rotterdam",
-        salary: "€65k – €80k", daysAgo: 6,
-        description: "Word onderdeel van de strategische tak van PwC en werk aan digitale transformaties en M&A-strategie. Combineer de schaal van PwC met de intensiteit van boutique strategieconsultancy.",
-        tags: ["Digital", "M&A Strategy", "Operations"]
-      }
-    ];
+    const JOBS = JSON.parse(document.getElementById('jobs-data').textContent).filter(j => j.active !== false);
 
     /* ── RENDER & FILTER LOGIC ─────────────── */
-    const sectorMap  = { finance: "Finance", advocatuur: "Advocatuur", consulting: "Consulting" };
-    const typeMap    = { graduate: "Graduate", stage: "Stage" };
+    const sectorMap  = { finance: "Finance", advocatuur: "Law", consulting: "Consulting" };
+    const typeMap    = { graduate: "Graduate", stage: "Internship" };
     const sectorBadgeClass = { finance: "badge--finance", advocatuur: "badge--advocatuur", consulting: "badge--consulting" };
     const typeBadgeClass   = { graduate: "badge--graduate", stage: "badge--stage" };
 
     function timeLabel(days) {
+      if (days == null) return (window.CURRENT_LANG||'nl')==='nl' ? 'Openstaand' : 'Open';
       const lang = window.CURRENT_LANG || 'en';
       if (lang === 'nl') {
         if (days === 0) return "Vandaag";
@@ -993,11 +3444,11 @@
           <div class="job-body">
             <div class="job-top">
               <div>
-                <h3 class="job-title">${job.title}</h3>
+                <h3 class="job-title"><a href="vacatures/${job.slug}.html">${job.title}</a></h3>
                 <p class="job-company">${job.company}</p>
               </div>
               <div class="job-badges">
-                ${job.featured ? `<span class="badge badge--featured">⭐ ${featuredLabel}</span>` : ''}
+                ${job.featured ? `<span class="badge badge--featured">${featuredLabel}</span>` : ''}
                 <span class="badge ${sectorBadgeClass[job.sector]}">${sectorMap[job.sector]}</span>
                 <span class="badge ${typeBadgeClass[job.type]}">${typeMap[job.type]}</span>
               </div>
@@ -1011,10 +3462,10 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
                 ${typeMap[job.type]}
               </span>
-              <span class="job-meta-item">
+              ${job.salary ? `<span class="job-meta-item">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
                 ${job.salary}
-              </span>
+              </span>` : ''}
               <span class="job-meta-item">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                 ${timeLabel(job.daysAgo)}
@@ -1023,7 +3474,7 @@
             <p class="job-description">${job.description}</p>
             <div class="job-footer">
               <div class="job-tags">${job.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
-              <a href="#" class="btn-job">
+              <a href="vacatures/${job.slug}.html" class="btn-job">
                 ${applyLabel}
                 <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg>
               </a>
@@ -1037,6 +3488,7 @@
         search:    document.getElementById('searchInput').value.trim().toLowerCase(),
         location:  document.getElementById('locationFilter').value,
         sectors:   [...document.querySelectorAll('input[name="sector"]:checked')].map(el => el.value),
+        locations: [...document.querySelectorAll('input[name="location"]:checked')].map(el => el.value),
         types:     [...document.querySelectorAll('input[name="type"]:checked')].map(el => el.value),
         sort:      document.getElementById('sortSelect').value
       };
@@ -1046,7 +3498,8 @@
       const f = getActiveFilters();
       let results = JOBS.filter(job => {
         if (f.search && !job.title.toLowerCase().includes(f.search) && !job.company.toLowerCase().includes(f.search)) return false;
-        if (f.location && job.location !== f.location) return false;
+        const locs = f.locations.length ? f.locations : (f.location ? [f.location] : []);
+        if (locs.length && !locs.includes(job.location)) return false;
         if (f.sectors.length && !f.sectors.includes(job.sector)) return false;
         if (f.types.length && !f.types.includes(job.type)) return false;
         return true;
