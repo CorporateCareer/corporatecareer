@@ -1,0 +1,62 @@
+name: Dagelijkse vacaturecontrole
+
+# Controleert dagelijks of elke vacature nog open staat, regenereert de
+# detailpagina's en publiceert de wijzigingen. De .nl-site draait op de
+# gh-pages-branch, dus na het bijwerken van main wordt gh-pages gesynct.
+
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: vacature-sync
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Controleer vacatures
+        run: python scripts/check_vacancies.py
+
+      - name: Genereer detailpagina's
+        run: python scripts/build_vacature_pages.py
+
+      - name: Commit naar main
+        run: |
+          git config user.name "vacature-check"
+          git config user.email "actions@github.com"
+          git add jobs.html scripts/vacancy_state.json scripts/vacancy_seen.json vacatures sitemap.xml
+          if git diff --cached --quiet; then
+            echo "Geen wijzigingen."
+          else
+            git commit -m "Automatische vacaturecontrole: status en detailpagina's bijgewerkt"
+            git push origin main
+          fi
+
+      - name: Sync gh-pages vanaf main
+        run: |
+          git fetch origin gh-pages
+          git checkout -B gh-pages origin/gh-pages
+          git archive main | tar -x
+          git add -A
+          if git diff --cached --quiet; then
+            echo "gh-pages al in sync."
+          else
+            git commit -m "sync: dagelijkse vacaturecontrole vanaf main"
+            git push origin gh-pages
+          fi
