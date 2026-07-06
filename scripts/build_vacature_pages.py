@@ -47,12 +47,12 @@ def related_block(job, active):
         return ""
     items = "\n".join(
         f'          <li>{CHECK_SVG}<a href="{esc(j["slug"])}.html">{esc(j["title"])}</a>'
-        f' <span style="color:var(--gray-500)">bij {esc(j["company"])}</span></li>'
+        f' <span style="color:var(--gray-500)">at {esc(j["company"])}</span></li>'
         for j in same)
     label = job["detail"]["facts"]["Sector"].lower()
     return f"""
         <section class="vac-block">
-          <h2>Meer vacatures in {esc(label)}</h2>
+          <h2>More jobs in {esc(label)}</h2>
           <ul class="vac-list">
 {items}
           </ul>
@@ -72,9 +72,9 @@ def build_page(job, nav, footer, first_seen, active):
     tags_html = "".join(f'<span class="vac-tag">{esc(t)}</span>' for t in job["tags"])
 
     # Omschrijving voor de structuurdata (eigen tekst)
-    desc_parts = [f"<p>{esc(d['intro'])}</p>", "<p><strong>Wat je gaat doen:</strong></p><ul>"]
+    desc_parts = [f"<p>{esc(d['intro'])}</p>", "<p><strong>What you will do:</strong></p><ul>"]
     desc_parts += [f"<li>{esc(x)}</li>" for x in d["does"]]
-    desc_parts += ["</ul><p><strong>Wat we vragen:</strong></p><ul>"]
+    desc_parts += ["</ul><p><strong>What we are looking for:</strong></p><ul>"]
     desc_parts += [f"<li>{esc(x)}</li>" for x in d["brings"]]
     desc_parts += ["</ul>", f"<p>{esc(d['firmBlurb'])}</p>"]
     desc_html = "".join(desc_parts)
@@ -108,16 +108,16 @@ def build_page(job, nav, footer, first_seen, active):
         "@type": "BreadcrumbList",
         "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "Home", "item": SITE + "/"},
-            {"@type": "ListItem", "position": 2, "name": "Vacatures", "item": SITE + "/jobs.html"},
+            {"@type": "ListItem", "position": 2, "name": "Jobs", "item": SITE + "/jobs.html"},
             {"@type": "ListItem", "position": 3, "name": job["title"], "item": url},
         ],
     }
 
-    meta_desc = f"{job['title']} bij {job['company']} in {job['location']}. Bekijk de functie en solliciteer via de officiele vacaturepagina."
-    page_title = f"{job['title']} bij {job['company']} in {job['location']} | CorporateCareer"
+    meta_desc = f"{job['title']} at {job['company']} in {job['location']}. View the role and apply via the official job page."
+    page_title = f"{job['title']} at {job['company']} in {job['location']} | CorporateCareer"
 
     return f"""<!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -158,7 +158,7 @@ def build_page(job, nav, footer, first_seen, active):
 
   <div class="vac-wrap">
     <nav class="vac-breadcrumb" aria-label="Breadcrumb">
-      <a href="../index.html">Home</a><span>/</span><a href="../jobs.html">Vacatures</a><span>/</span>{esc(job['title'])}
+      <a href="../index.html">Home</a><span>/</span><a href="../jobs.html">Jobs</a><span>/</span>{esc(job['title'])}
     </nav>
 
     <header class="vac-hero">
@@ -168,7 +168,7 @@ def build_page(job, nav, footer, first_seen, active):
         <h1 class="vac-title">{esc(job['title'])}</h1>
         <div class="vac-badges">
           <span class="vac-badge vac-badge--sector">{esc(job['detail']['facts']['Sector'])}</span>
-          <span class="vac-badge vac-badge--type">{esc('Stage' if job['type']=='stage' else 'Vaste functie')}</span>
+          <span class="vac-badge vac-badge--type">{esc('Internship' if job['type']=='stage' else 'Permanent')}</span>
           <span class="vac-badge vac-badge--loc">{esc(job['location'])}</span>
         </div>
       </div>
@@ -181,21 +181,21 @@ def build_page(job, nav, footer, first_seen, active):
         </section>
 
         <section class="vac-block">
-          <h2>Wat je gaat doen</h2>
+          <h2>What you will do</h2>
           <ul class="vac-list">
 {li_list(d['does'])}
           </ul>
         </section>
 
         <section class="vac-block">
-          <h2>Wat we vragen</h2>
+          <h2>What we are looking for</h2>
           <ul class="vac-list">
 {li_list(d['brings'])}
           </ul>
         </section>
 
         <section class="vac-block">
-          <h2>Over {esc(job['company'])}</h2>
+          <h2>About {esc(job['company'])}</h2>
           <p>{esc(d['firmBlurb'])}</p>
           <div class="vac-tags">{tags_html}</div>
         </section>
@@ -208,10 +208,10 @@ def build_page(job, nav, footer, first_seen, active):
 {facts_html}
           </dl>
           <a class="vac-apply" href="{esc(job['url'])}" target="_blank" rel="noopener">
-            Solliciteer op de officiele site {ARROW_SVG}
+            Apply on the official site {ARROW_SVG}
           </a>
-          <p class="vac-apply-note">Je wordt doorgestuurd naar de vacaturepagina van {esc(job['company'])}.</p>
-          <p class="vac-disclaimer">CorporateCareer verzamelt en controleert deze vacature dagelijks. Solliciteren verloopt rechtstreeks bij {esc(job['company'])}, wij zijn geen tussenpersoon in de sollicitatieprocedure.</p>
+          <p class="vac-apply-note">You will be redirected to the job page of {esc(job['company'])}.</p>
+          <p class="vac-disclaimer">CorporateCareer collects and checks this vacancy daily. You apply directly with {esc(job['company'])}; we are not an intermediary in the application process.</p>
         </div>
       </aside>
     </div>
