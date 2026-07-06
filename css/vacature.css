@@ -1,0 +1,94 @@
+/* ── Vacature-detailpagina ──────────────────────────────────────────── */
+.vac-wrap { background: var(--gray-50); min-height: 100vh; }
+
+.vac-breadcrumb {
+  max-width: 1100px; margin: 0 auto; padding: 110px 24px 0;
+  font-size: 0.85rem; color: var(--gray-500);
+}
+.vac-breadcrumb a { color: var(--gray-500); text-decoration: none; }
+.vac-breadcrumb a:hover { color: var(--blue-600); }
+.vac-breadcrumb span { color: var(--gray-400); margin: 0 8px; }
+
+.vac-hero {
+  max-width: 1100px; margin: 0 auto; padding: 28px 24px 8px;
+  display: flex; gap: 24px; align-items: flex-start;
+}
+.vac-logo {
+  flex: none; width: 76px; height: 76px; border-radius: 16px;
+  display: grid; place-items: center;
+  color: #fff; font-weight: 800; font-size: 1.5rem; letter-spacing: -0.5px;
+  box-shadow: var(--shadow-md);
+}
+.vac-hero-main { flex: 1; min-width: 0; }
+.vac-company { font-weight: 600; color: var(--gray-500); margin: 2px 0 4px; }
+.vac-title {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: clamp(1.6rem, 3.4vw, 2.4rem); line-height: 1.15;
+  color: var(--navy-950); margin: 0 0 14px;
+}
+.vac-badges { display: flex; flex-wrap: wrap; gap: 8px; }
+.vac-badge {
+  font-size: 0.74rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.4px; padding: 5px 11px; border-radius: 999px;
+}
+.vac-badge--sector { background: #e8f0ff; color: #1d4ed8; }
+.vac-badge--type   { background: var(--gray-100); color: var(--gray-600); }
+.vac-badge--loc    { background: #eef6ee; color: #2f7a43; }
+
+.vac-layout {
+  max-width: 1100px; margin: 0 auto; padding: 24px 24px 80px;
+  display: grid; grid-template-columns: 1fr 340px; gap: 40px; align-items: start;
+}
+.vac-main { min-width: 0; }
+.vac-block { margin-bottom: 34px; }
+.vac-block h2 {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 1.3rem; color: var(--navy-950); margin: 0 0 12px;
+}
+.vac-block p { color: var(--gray-700); line-height: 1.75; margin: 0 0 12px; }
+.vac-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.vac-list li {
+  position: relative; padding-left: 30px;
+  color: var(--gray-700); line-height: 1.6;
+}
+.vac-list li svg {
+  position: absolute; left: 0; top: 3px; width: 18px; height: 18px;
+  color: var(--blue-500); flex: none;
+}
+.vac-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+.vac-tag {
+  font-size: 0.8rem; font-weight: 500; color: var(--gray-600);
+  background: var(--gray-100); border: 1px solid var(--gray-200);
+  padding: 5px 12px; border-radius: 8px;
+}
+
+/* Sidebar */
+.vac-aside { position: sticky; top: 96px; display: grid; gap: 20px; }
+.vac-card {
+  background: #fff; border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg); padding: 26px; box-shadow: var(--shadow-sm);
+}
+.vac-facts { display: grid; gap: 14px; margin-bottom: 22px; }
+.vac-fact { display: flex; justify-content: space-between; gap: 16px; font-size: 0.92rem; }
+.vac-fact dt { color: var(--gray-500); flex: none; }
+.vac-fact dd { color: var(--navy-950); font-weight: 600; margin: 0; text-align: right; }
+.vac-apply {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  width: 100%; padding: 15px 20px; border-radius: 12px;
+  background: var(--navy-950); color: #fff; font-weight: 700;
+  text-decoration: none; transition: background .2s, transform .2s;
+}
+.vac-apply:hover { background: var(--blue-600); transform: translateY(-1px); }
+.vac-apply svg { width: 18px; height: 18px; }
+.vac-apply-note { font-size: 0.8rem; color: var(--gray-500); text-align: center; margin: 12px 0 0; }
+.vac-disclaimer {
+  font-size: 0.82rem; color: var(--gray-500); line-height: 1.6;
+  border-top: 1px solid var(--gray-200); padding-top: 16px; margin-top: 4px;
+}
+
+@media (max-width: 880px) {
+  .vac-layout { grid-template-columns: 1fr; gap: 28px; }
+  .vac-aside { position: static; }
+  .vac-hero { gap: 16px; }
+  .vac-logo { width: 60px; height: 60px; font-size: 1.2rem; }
+}
