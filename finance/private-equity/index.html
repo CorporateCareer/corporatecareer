@@ -137,6 +137,19 @@
     .pe-vac-card{display:flex;flex-direction:column;gap:4px;background:#fff;border:1px solid var(--gray-200);border-radius:12px;padding:16px 20px;text-decoration:none;transition:box-shadow .2s,transform .2s}
     .pe-vac-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
     .pe-vac-t{font-weight:700;color:var(--navy-900);font-size:.95rem}.pe-vac-c{font-size:.83rem;color:var(--gray-500)}
+    .pe-prose{max-width:768px}
+    .pe-prose .section-label{margin-bottom:12px}
+    .pe-prose h3{font-size:1.12rem;font-weight:800;color:var(--navy-900);margin:24px 0 10px}
+    .pe-prose p{color:var(--gray-700);line-height:1.8;font-size:1rem;margin:0 0 16px}
+    .pe-prose p:last-child{margin-bottom:0}
+    .pe-note{font-size:.82rem;color:var(--gray-500);margin:6px 0 0}
+    .pe-table-wrap{overflow-x:auto;margin:22px 0 4px}
+    .pe-table{width:100%;max-width:620px;border-collapse:collapse;font-size:.92rem}
+    .pe-table th,.pe-table td{text-align:left;padding:12px 16px;border-bottom:1px solid var(--gray-200);white-space:nowrap}
+    .pe-table th{font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;color:var(--blue-600);font-weight:700}
+    .pe-table td{color:var(--gray-700)}
+    .pe-table tr:last-child td{border-bottom:none}
+    .pe-table td:first-child{font-weight:700;color:var(--navy-900)}
     @media(max-width:980px){.pe-firm-grid{grid-template-columns:repeat(3,1fr)}.pe-grid{grid-template-columns:repeat(2,1fr)}.pe-types,.pe-roles,.pe-res-grid,.pe-related{grid-template-columns:repeat(2,1fr)}.pe-columns{grid-template-columns:1fr;gap:28px}}
     @media(max-width:640px){.pe-grid,.pe-types,.pe-roles,.pe-list,.pe-prep,.pe-res-grid,.pe-related,.ph-grid,.pe-firm-grid,.pe-vac-grid{grid-template-columns:1fr}}
   </style>
@@ -380,6 +393,54 @@
         </div>
     </div>
   </div></section>
+
+  <section class="page-section gray"><div class="container"><div class="pe-prose">
+      <p class="section-label" data-i18n="pe.money.label">The business</p>
+      <h2 class="section-title" data-i18n="pe.money.title">How private equity firms make money</h2>
+      <p data-i18n="pe.money.p1">A private equity firm raises money from investors and pools it into a fund. Those investors, the limited partners, are usually pension funds, insurers and wealthy individuals. The firm acts as the general partner: it manages the fund, chooses the investments and steers the companies it buys.</p>
+      <p data-i18n="pe.money.p2">Most firms earn money through a model often called two and twenty. They charge a yearly management fee of around two percent of the money they manage, which pays for salaries, offices and running the fund. On top of that they keep about twenty percent of the profit the fund makes, but only after investors have earned back their money plus an agreed minimum return.</p>
+      <p data-i18n="pe.money.p3">The management fee is steady and does not depend on how the investments perform. The profit share, called carried interest, only pays out when the fund does well. Some firms also charge the companies they own separate transaction fees for buying them and monitoring fees for advising them.</p>
+      <p data-i18n="pe.money.p4">The firm makes its biggest gains when it sells a company for more than it paid. If the sale clears the agreed threshold, the firm receives its share of the profit, and that is where most of the real money is made.</p>
+  </div></div></section>
+
+  <section class="page-section"><div class="container"><div class="pe-prose">
+      <p class="section-label" data-i18n="pe.comp.label">Compensation</p>
+      <h2 class="section-title" data-i18n="pe.comp.title">Private equity compensation</h2>
+      <p data-i18n="pe.comp.p1">Private equity is one of the best paid paths in finance, which is a major reason so many investment bankers try to move into it. Pay usually sits above investment banking, and the work carries real prestige: you help decide which companies to buy and then work to make them more valuable.</p>
+      <p data-i18n="pe.comp.p2">At every level, pay is made up of at least a base salary and a bonus. As you become more senior, the bonus grows as a share of the base, and a third part, carried interest, starts to matter more.</p>
+      <p data-i18n="pe.comp.p3">The figures below give a rough sense of total pay at large private equity firms in the United States, where compensation is highest. Pay in Europe, including the Netherlands, is typically lower, and smaller funds usually pay less than the big names. Treat these as an illustration, not a promise.</p>
+      <div class="pe-table-wrap">
+        <table class="pe-table">
+          <thead><tr><th data-i18n="pe.comp.th1">Level</th><th data-i18n="pe.comp.th2">Base salary</th><th data-i18n="pe.comp.th3">Total compensation</th></tr></thead>
+          <tbody>
+            <tr><td>Analyst</td><td>around $100,000</td><td>$100,000 to $150,000</td></tr>
+            <tr><td>Associate</td><td>$150,000 to $200,000</td><td>$250,000 to $400,000</td></tr>
+            <tr><td>Vice President</td><td>around $500,000</td><td>$500,000 to $1,000,000</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="pe-note" data-i18n="pe.comp.note">Figures are illustrative, in US dollars, for large US firms. Analysts and associates rarely receive carried interest; from vice president upward it becomes a growing part of total pay.</p>
+  </div></div></section>
+
+  <section class="page-section gray"><div class="container"><div class="pe-prose">
+      <p class="section-label" data-i18n="pe.carry.label">Carried interest</p>
+      <h2 class="section-title" data-i18n="pe.carry.title">Carried interest, the senior payoff</h2>
+      <p data-i18n="pe.carry.p1">Carried interest is the share of a fund's profit that goes to the private equity team, usually around twenty percent of the gains. At junior levels it plays little or no role, but higher up it can become the largest part of someone's pay and, in a strong fund, run into the millions.</p>
+      <p data-i18n="pe.carry.p2">It is earned over time and often paid out only years later, once the fund has done well enough. In a whole-fund model, the team receives nothing until investors have recovered their money plus the agreed minimum return. In a deal-by-deal model, shares can be paid earlier, per successful deal, which is why funds often add a clawback so investors can be repaid if later deals disappoint.</p>
+      <h3 data-i18n="pe.carry.h3">How it works, a simple example</h3>
+      <p data-i18n="pe.carry.p3">Imagine a fund raises one billion from its investors and, five years later, sells everything for three billion. That is a profit of two billion, and the firm is entitled to twenty percent of it.</p>
+      <p data-i18n="pe.carry.p4">First, investors get their one billion back. Next they receive a preferred return, the agreed minimum. At eight percent per year over five years, that adds roughly 469 million, so investors have now received close to 1.47 billion.</p>
+      <p data-i18n="pe.carry.p5">The firm then receives a catch-up, a slice designed to bring its share up to twenty percent of the profit so far. The profit that remains after that is split roughly eighty percent to investors and twenty percent to the firm.</p>
+      <p data-i18n="pe.carry.p6">Across the whole deal the firm ends up with about 400 million, which is twenty percent of the two billion profit. If a managing director holds a carried interest of half a percent, their share would be around two million.</p>
+  </div></div></section>
+
+  <section class="page-section"><div class="container"><div class="pe-prose">
+      <p class="section-label" data-i18n="pe.pay.label">What drives pay</p>
+      <h2 class="section-title" data-i18n="pe.pay.title">What influences private equity pay</h2>
+      <p data-i18n="pe.pay.p1">Three things move pay the most. The first is performance, both your own and the fund's: if the fund does poorly, there is less to share, however well you did. The second is location, with the United States and major financial centres paying more than most of Europe and Asia. The third is firm size, since the largest funds manage more money, run bigger and more complex deals, and tend to pay accordingly.</p>
+      <p data-i18n="pe.pay.p2">Pay has been strong in recent years, helped by low interest rates that fuelled buyouts. Whether that continues as rates rise is an open question. One thing to watch is the tax treatment of carried interest, which in some countries is taxed more lightly than salary and is a recurring subject of political debate.</p>
+      <p data-i18n="pe.pay.p3">In short, private equity pays well because the work is demanding: long hours, high responsibility and real risk. For people who enjoy investing and thrive under pressure, it can be one of the most rewarding paths in finance.</p>
+  </div></div></section>
 
   <section class="page-section gray"><div class="container">
     <div class="pe-columns">
