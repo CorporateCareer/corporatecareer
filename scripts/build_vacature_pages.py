@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
-"""Genereert een detailpagina per actieve vacature.
+"""Genereert een detailpagina per actieve vacature (tweetalig EN/NL).
 
 Leest het jobs-data blok in jobs.html en schrijft voor elke actieve vacature
-een statische pagina naar vacatures/<slug>.html, met een eigen omschrijving
-(geen brontekst gekopieerd), JobPosting-structuurdata en een knop naar de
-officiele vacature. Pagina's van niet langer actieve vacatures worden
-opgeruimd en de sitemap wordt bijgewerkt. Wordt dagelijks door de
-GitHub Action uitgevoerd, na de vacaturecontrole.
+een statische pagina naar vacatures/<slug>.html. De omschrijving (eigen tekst,
+gebaseerd op de officiele vacature) staat in het Engels en het Nederlands en
+schakelt mee met de taalknop van de site. Bevat JobPosting-structuurdata en
+een knop naar de officiele vacature. Pagina's van niet langer actieve
+vacatures worden opgeruimd en de sitemap wordt bijgewerkt. Wordt dagelijks
+door de GitHub Action uitgevoerd, na de vacaturecontrole.
 """
 import json, os, re, html as H
 from datetime import date, timedelta
@@ -19,6 +20,11 @@ SEEN = os.path.join(BASE, "scripts", "vacancy_seen.json")
 SITE = "https://corporatecareer.nl"
 
 def esc(s): return H.escape(str(s), quote=True)
+
+def bi(en, nl):
+    """Inline tweetalige tekst: toont Engels of Nederlands via de taalknop."""
+    return (f'<span data-l="en">{esc(en)}</span>'
+            f'<span data-l="nl" hidden>{esc(nl)}</span>')
 
 def read_island():
     html = open(JOBS_HTML, encoding="utf-8").read()
@@ -36,7 +42,11 @@ ARROW_SVG = ('<svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">'
              '<path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.6L10.2 5.3a.75.75 0 111-1.1l5.5 5.25a.75.75 0 010 1.1l-5.5 5.25a.75.75 0 11-1-1.1l4.15-3.95H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg>')
 
 def li_list(items):
-    return "\n".join(f'          <li>{CHECK_SVG}{esc(x)}</li>' for x in items)
+    return "\n".join(f'            <li>{CHECK_SVG}{esc(x)}</li>' for x in items)
+
+def dual_list(does):
+    return (f'          <ul class="vac-list" data-l="en">\n{li_list(does["en"])}\n          </ul>\n'
+            f'          <ul class="vac-list" data-l="nl" hidden>\n{li_list(does["nl"])}\n          </ul>')
 
 EMP_TYPE = {"stage": "INTERN", "graduate": "FULL_TIME"}
 
@@ -47,16 +57,24 @@ def related_block(job, active):
         return ""
     items = "\n".join(
         f'          <li>{CHECK_SVG}<a href="{esc(j["slug"])}.html">{esc(j["title"])}</a>'
-        f' <span style="color:var(--gray-500)">at {esc(j["company"])}</span></li>'
+        f' <span style="color:var(--gray-500)">{bi("at "+j["company"], "bij "+j["company"])}</span></li>'
         for j in same)
-    label = job["detail"]["facts"]["Sector"].lower()
+    label_en = job["detail"]["facts"]["en"]["Sector"].lower()
+    label_nl = job["detail"]["facts"]["nl"]["Sector"].lower()
     return f"""
         <section class="vac-block">
-          <h2>More jobs in {esc(label)}</h2>
+          <h2>{bi("More jobs in "+label_en, "Meer vacatures in "+label_nl)}</h2>
           <ul class="vac-list">
 {items}
           </ul>
         </section>"""
+
+def facts_dl(facts, lang, hidden):
+    rows = "\n".join(
+        f'            <div class="vac-fact"><dt>{esc(k)}</dt><dd>{esc(v)}</dd></div>'
+        for k, v in facts[lang].items())
+    h = ' hidden' if hidden else ''
+    return f'          <dl class="vac-facts" data-l="{lang}"{h}>\n{rows}\n          </dl>'
 
 def build_page(job, nav, footer, first_seen, active):
     d = job["detail"]
@@ -65,56 +83,36 @@ def build_page(job, nav, footer, first_seen, active):
     posted = first_seen.get(str(job["id"]), date.today().isoformat())
     valid = (date.fromisoformat(posted) + timedelta(days=90)).isoformat()
 
-    facts_html = "\n".join(
-        f'            <div class="vac-fact"><dt>{esc(k)}</dt><dd>{esc(v)}</dd></div>'
-        for k, v in d["facts"].items())
-
     tags_html = "".join(f'<span class="vac-tag">{esc(t)}</span>' for t in job["tags"])
 
-    # Omschrijving voor de structuurdata (eigen tekst)
-    desc_parts = [f"<p>{esc(d['intro'])}</p>", "<p><strong>What you will do:</strong></p><ul>"]
-    desc_parts += [f"<li>{esc(x)}</li>" for x in d["does"]]
+    # JobPosting-structuurdata: Engelse tekst (standaardtaal van de site)
+    desc_parts = [f"<p>{esc(d['intro']['en'])}</p>", "<p><strong>What you will do:</strong></p><ul>"]
+    desc_parts += [f"<li>{esc(x)}</li>" for x in d["does"]["en"]]
     desc_parts += ["</ul><p><strong>What we are looking for:</strong></p><ul>"]
-    desc_parts += [f"<li>{esc(x)}</li>" for x in d["brings"]]
-    desc_parts += ["</ul>", f"<p>{esc(d['firmBlurb'])}</p>"]
+    desc_parts += [f"<li>{esc(x)}</li>" for x in d["brings"]["en"]]
+    desc_parts += ["</ul>", f"<p>{esc(d['firmBlurb']['en'])}</p>"]
     desc_html = "".join(desc_parts)
 
     jobposting = {
-        "@context": "https://schema.org",
-        "@type": "JobPosting",
-        "title": job["title"],
-        "description": desc_html,
-        "datePosted": posted,
-        "validThrough": valid,
+        "@context": "https://schema.org", "@type": "JobPosting",
+        "title": job["title"], "description": desc_html,
+        "datePosted": posted, "validThrough": valid,
         "employmentType": EMP_TYPE[job["type"]],
-        "hiringOrganization": {
-            "@type": "Organization",
-            "name": job["company"],
-            "sameAs": d["firmSite"],
-        },
-        "jobLocation": {
-            "@type": "Place",
-            "address": {
-                "@type": "PostalAddress",
-                "addressLocality": job["location"],
-                "addressCountry": "BE",
-            },
-        },
-        "directApply": False,
-        "url": url,
+        "hiringOrganization": {"@type": "Organization", "name": job["company"], "sameAs": d["firmSite"]},
+        "jobLocation": {"@type": "Place", "address": {"@type": "PostalAddress", "addressLocality": job["location"], "addressCountry": "NL"}},
+        "directApply": False, "url": url,
     }
     breadcrumb = {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
+        "@context": "https://schema.org", "@type": "BreadcrumbList",
         "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "Home", "item": SITE + "/"},
             {"@type": "ListItem", "position": 2, "name": "Jobs", "item": SITE + "/jobs.html"},
             {"@type": "ListItem", "position": 3, "name": job["title"], "item": url},
         ],
     }
-
     meta_desc = f"{job['title']} at {job['company']} in {job['location']}. View the role and apply via the official job page."
     page_title = f"{job['title']} at {job['company']} in {job['location']} | CorporateCareer"
+    sector_en = d["facts"]["en"]["Sector"]; sector_nl = d["facts"]["nl"]["Sector"]
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -130,7 +128,7 @@ def build_page(job, nav, footer, first_seen, active):
   <meta property="og:title" content="{esc(page_title)}">
   <meta property="og:description" content="{esc(meta_desc)}">
   <meta property="og:url" content="{url}">
-  <meta property="og:locale" content="nl_BE">
+  <meta property="og:locale" content="nl_NL">
   <script type="application/ld+json">
 {json.dumps(jobposting, ensure_ascii=False, indent=2)}
   </script>
@@ -158,7 +156,7 @@ def build_page(job, nav, footer, first_seen, active):
 
   <div class="vac-wrap">
     <nav class="vac-breadcrumb" aria-label="Breadcrumb">
-      <a href="../index.html">Home</a><span>/</span><a href="../jobs.html">Jobs</a><span>/</span>{esc(job['title'])}
+      <a href="../index.html">Home</a><span>/</span><a href="../jobs.html">{bi("Jobs","Vacatures")}</a><span>/</span>{esc(job['title'])}
     </nav>
 
     <header class="vac-hero">
@@ -167,8 +165,8 @@ def build_page(job, nav, footer, first_seen, active):
         <p class="vac-company">{esc(job['company'])}</p>
         <h1 class="vac-title">{esc(job['title'])}</h1>
         <div class="vac-badges">
-          <span class="vac-badge vac-badge--sector">{esc(job['detail']['facts']['Sector'])}</span>
-          <span class="vac-badge vac-badge--type">{esc('Internship' if job['type']=='stage' else 'Permanent')}</span>
+          <span class="vac-badge vac-badge--sector">{bi(sector_en, sector_nl)}</span>
+          <span class="vac-badge vac-badge--type">{bi('Internship' if job['type']=='stage' else 'Permanent', 'Stage' if job['type']=='stage' else 'Vaste functie')}</span>
           <span class="vac-badge vac-badge--loc">{esc(job['location'])}</span>
         </div>
       </div>
@@ -177,26 +175,22 @@ def build_page(job, nav, footer, first_seen, active):
     <div class="vac-layout">
       <main class="vac-main">
         <section class="vac-block">
-          <p>{esc(d['intro'])}</p>
+          <p>{bi(d['intro']['en'], d['intro']['nl'])}</p>
         </section>
 
         <section class="vac-block">
-          <h2>What you will do</h2>
-          <ul class="vac-list">
-{li_list(d['does'])}
-          </ul>
+          <h2>{bi("What you will do", "Wat je gaat doen")}</h2>
+{dual_list(d['does'])}
         </section>
 
         <section class="vac-block">
-          <h2>What we are looking for</h2>
-          <ul class="vac-list">
-{li_list(d['brings'])}
-          </ul>
+          <h2>{bi("What we are looking for", "Wat we vragen")}</h2>
+{dual_list(d['brings'])}
         </section>
 
         <section class="vac-block">
-          <h2>About {esc(job['company'])}</h2>
-          <p>{esc(d['firmBlurb'])}</p>
+          <h2>{bi("About "+job['company'], "Over "+job['company'])}</h2>
+          <p>{bi(d['firmBlurb']['en'], d['firmBlurb']['nl'])}</p>
           <div class="vac-tags">{tags_html}</div>
         </section>
 {related_block(job, active)}
@@ -204,14 +198,13 @@ def build_page(job, nav, footer, first_seen, active):
 
       <aside class="vac-aside">
         <div class="vac-card">
-          <dl class="vac-facts">
-{facts_html}
-          </dl>
+{facts_dl(d['facts'], 'en', False)}
+{facts_dl(d['facts'], 'nl', True)}
           <a class="vac-apply" href="{esc(job['url'])}" target="_blank" rel="noopener">
-            Apply on the official site {ARROW_SVG}
+            {bi("Apply on the official site", "Solliciteer op de officiele site")} {ARROW_SVG}
           </a>
-          <p class="vac-apply-note">You will be redirected to the job page of {esc(job['company'])}.</p>
-          <p class="vac-disclaimer">CorporateCareer collects and checks this vacancy daily. You apply directly with {esc(job['company'])}; we are not an intermediary in the application process.</p>
+          <p class="vac-apply-note">{bi("You will be redirected to the job page of "+job['company']+".", "Je wordt doorgestuurd naar de vacaturepagina van "+job['company']+".")}</p>
+          <p class="vac-disclaimer">{bi("CorporateCareer collects and checks this vacancy daily. You apply directly with "+job['company']+"; we are not an intermediary in the application process.", "CorporateCareer verzamelt en controleert deze vacature dagelijks. Solliciteren verloopt rechtstreeks bij "+job['company']+", wij zijn geen tussenpersoon in de sollicitatieprocedure.")}</p>
         </div>
       </aside>
     </div>
@@ -221,6 +214,19 @@ def build_page(job, nav, footer, first_seen, active):
 
   <script src="../js/i18n.js"></script>
   <script src="../js/main.js"></script>
+  <script>
+    (function () {{
+      function apply(l) {{
+        document.querySelectorAll('[data-l]').forEach(function (e) {{
+          e.hidden = e.getAttribute('data-l') !== l;
+        }});
+      }}
+      function cur() {{ return window.CURRENT_LANG || localStorage.getItem('cc-lang') || 'en'; }}
+      apply(cur());
+      var tg = document.getElementById('langToggle');
+      if (tg) tg.addEventListener('click', function () {{ setTimeout(function () {{ apply(cur()); }}, 20); }});
+    }})();
+  </script>
 </body>
 </html>
 """
@@ -245,8 +251,6 @@ def main():
     active = [j for j in jobs if j.get("active", True) is not False and j.get("slug") and j.get("detail")]
 
     html = open(JOBS_HTML, encoding="utf-8").read()
-    # Nav en footer staan in de hoofdmap; vanuit vacatures/ moeten interne
-    # links een ../ voorvoegsel krijgen (externe links, ankers en mailto niet).
     def reroot(frag):
         return re.sub(r'href="(?!\.\./|https?:|#|mailto:)([^"]+)"', r'href="../\1"', frag)
     nav = reroot(fragment(html, '<!-- ── NAVBAR', "</nav>"))
