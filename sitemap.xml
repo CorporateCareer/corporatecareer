@@ -151,6 +151,79 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- FINANCEPATHS:START -->
+  <url>
+    <loc>https://corporatecareer.nl/finance/investment-banking/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/finance/ma/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/finance/corporate-finance/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/finance/private-equity/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/finance/venture-capital/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/finance/asset-management/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/finance/equity-research/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/finance/corporate-development/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/finance/valuation/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/finance/transaction-services/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/finance/debt-advisory/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/finance/real-estate-finance/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/finance/infrastructure-finance/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/finance/family-office/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- FINANCEPATHS:END -->
+
   <!-- VACATURES:START -->
   <url>
     <loc>https://corporatecareer.nl/vacatures/pwc-manager-sale-en-purchase-agreement-transaction-services.html</loc>
