@@ -126,8 +126,19 @@
     .page-cta .btn-row{display:flex;gap:13px;justify-content:center;flex-wrap:wrap}
     .page-cta .btn-primary{background:#fff;color:var(--blue-600);padding:14px 30px;border-radius:8px;font-weight:700;font-size:.93rem;text-decoration:none}
     .page-cta .btn-outline{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.45);padding:14px 30px;border-radius:8px;font-weight:600;font-size:.93rem;text-decoration:none}
-    @media(max-width:980px){.pe-grid{grid-template-columns:repeat(2,1fr)}.pe-types,.pe-roles,.pe-res-grid,.pe-related{grid-template-columns:repeat(2,1fr)}.pe-columns{grid-template-columns:1fr;gap:28px}}
-    @media(max-width:640px){.pe-grid,.pe-types,.pe-roles,.pe-list,.pe-prep,.pe-res-grid,.pe-related,.ph-grid{grid-template-columns:1fr}}
+    .pe-emp-wrap{margin-top:34px;display:flex;flex-direction:column;gap:30px}
+    .pe-emp-cat{font-size:.9rem;font-weight:700;color:var(--navy-900);margin:0 0 14px;padding-bottom:9px;border-bottom:1px solid var(--gray-200)}
+    .pe-firm-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+    .pe-firm{display:flex;flex-direction:column;align-items:center;text-align:center;gap:11px;background:#fff;border:1px solid var(--gray-200);border-radius:12px;padding:18px 12px}
+    .pe-firm-i{width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:.78rem;letter-spacing:.02em}
+    .pe-firm-n{font-size:.8rem;font-weight:600;color:var(--navy-900);line-height:1.3}
+    .pe-emp-note{font-size:.85rem;color:var(--gray-400);margin:0}
+    .pe-vac-grid{display:none;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:24px}
+    .pe-vac-card{display:flex;flex-direction:column;gap:4px;background:#fff;border:1px solid var(--gray-200);border-radius:12px;padding:16px 20px;text-decoration:none;transition:box-shadow .2s,transform .2s}
+    .pe-vac-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
+    .pe-vac-t{font-weight:700;color:var(--navy-900);font-size:.95rem}.pe-vac-c{font-size:.83rem;color:var(--gray-500)}
+    @media(max-width:980px){.pe-firm-grid{grid-template-columns:repeat(3,1fr)}.pe-grid{grid-template-columns:repeat(2,1fr)}.pe-types,.pe-roles,.pe-res-grid,.pe-related{grid-template-columns:repeat(2,1fr)}.pe-columns{grid-template-columns:1fr;gap:28px}}
+    @media(max-width:640px){.pe-grid,.pe-types,.pe-roles,.pe-list,.pe-prep,.pe-res-grid,.pe-related,.ph-grid,.pe-firm-grid,.pe-vac-grid{grid-template-columns:1fr}}
   </style>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TXBG97YW6Y"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-TXBG97YW6Y');</script>
@@ -436,23 +447,81 @@
   <section class="page-section"><div class="container">
     <p class="section-label" data-i18n="pe.emp.label">Employers</p>
     <h2 class="section-title" data-i18n="pe.emp.title">Private equity employers in the Netherlands</h2>
-    <p class="section-text" data-i18n="pe.emp.text">We only list firms we have checked ourselves, so this overview is coming soon. It will be organised by the categories below.</p>
-    <div class="ph-grid">
-        <div class="ph-card"><span data-i18n="pe.empcat.0">Large international funds</span><small data-i18n="pe.res.soon">Coming soon</small></div>
-        <div class="ph-card"><span data-i18n="pe.empcat.1">Dutch mid-market funds</span><small data-i18n="pe.res.soon">Coming soon</small></div>
-        <div class="ph-card"><span data-i18n="pe.empcat.2">Small-cap funds</span><small data-i18n="pe.res.soon">Coming soon</small></div>
-        <div class="ph-card"><span data-i18n="pe.empcat.3">Growth equity funds</span><small data-i18n="pe.res.soon">Coming soon</small></div>
-        <div class="ph-card"><span data-i18n="pe.empcat.4">Family offices</span><small data-i18n="pe.res.soon">Coming soon</small></div>
-        <div class="ph-card"><span data-i18n="pe.empcat.5">Search funds</span><small data-i18n="pe.res.soon">Coming soon</small></div>
+    <p class="section-text" data-i18n="pe.emp.text">A selection of well-known private equity firms active in the Netherlands, grouped by type. We only list firms we have verified, and we add more over time.</p>
+    <div class="pe-emp-wrap">
+      <div class="pe-emp-group">
+        <h3 class="pe-emp-cat" data-i18n="pe.empcat.0">Large international funds</h3>
+        <div class="pe-firm-grid">
+        <div class="pe-firm"><span class="pe-firm-i" style="background:#234b7e">CVC</span><span class="pe-firm-n">CVC Capital Partners</span></div>
+        <div class="pe-firm"><span class="pe-firm-i" style="background:#1d4ed8">IK</span><span class="pe-firm-n">IK Partners</span></div>
+        </div>
+      </div>
+      <div class="pe-emp-group">
+        <h3 class="pe-emp-cat" data-i18n="pe.empcat.1">Dutch mid-market funds</h3>
+        <div class="pe-firm-grid">
+        <div class="pe-firm"><span class="pe-firm-i" style="background:#2563eb">WL</span><span class="pe-firm-n">Waterland</span></div>
+        <div class="pe-firm"><span class="pe-firm-i" style="background:#1e40af">RV</span><span class="pe-firm-n">Rivean Capital</span></div>
+        <div class="pe-firm"><span class="pe-firm-i" style="background:#4f46e5">GEM</span><span class="pe-firm-n">Gilde Equity Management</span></div>
+        <div class="pe-firm"><span class="pe-firm-i" style="background:#142a45">EG</span><span class="pe-firm-n">Egeria</span></div>
+        <div class="pe-firm"><span class="pe-firm-i" style="background:#1d3150">BC</span><span class="pe-firm-n">Bencis</span></div>
+        <div class="pe-firm"><span class="pe-firm-i" style="background:#234b7e">NPM</span><span class="pe-firm-n">NPM Capital</span></div>
+        <div class="pe-firm"><span class="pe-firm-i" style="background:#1d4ed8">H2</span><span class="pe-firm-n">H2 Equity Partners</span></div>
+        <div class="pe-firm"><span class="pe-firm-i" style="background:#2563eb">NC</span><span class="pe-firm-n">Nordian Capital Partners</span></div>
+        <div class="pe-firm"><span class="pe-firm-i" style="background:#1e40af">AV</span><span class="pe-firm-n">Avedon Capital Partners</span></div>
+        <div class="pe-firm"><span class="pe-firm-i" style="background:#4f46e5">TX</span><span class="pe-firm-n">Torqx Capital Partners</span></div>
+        </div>
+      </div>
+      <div class="pe-emp-group">
+        <h3 class="pe-emp-cat" data-i18n="pe.empcat.2">Small-cap funds</h3>
+        <div class="pe-firm-grid">
+        <div class="pe-firm"><span class="pe-firm-i" style="background:#142a45">AC</span><span class="pe-firm-n">Active Capital Company</span></div>
+        <div class="pe-firm"><span class="pe-firm-i" style="background:#1d3150">KK</span><span class="pe-firm-n">Karmijn Kapitaal</span></div>
+        </div>
+      </div>
+      <div class="pe-emp-group">
+        <h3 class="pe-emp-cat" data-i18n="pe.empcat.3">Growth equity funds</h3>
+        <div class="pe-firm-grid">
+        <div class="pe-firm"><span class="pe-firm-i" style="background:#234b7e">MC</span><span class="pe-firm-n">Main Capital Partners</span></div>
+        </div>
+      </div>
+      <div class="pe-emp-group">
+        <h3 class="pe-emp-cat" data-i18n="pe.empcat.4">Family offices</h3>
+        <p class="pe-emp-note" data-i18n="pe.emp.pending">We add these once verified.</p>
+      </div>
+      <div class="pe-emp-group">
+        <h3 class="pe-emp-cat" data-i18n="pe.empcat.5">Search funds</h3>
+        <p class="pe-emp-note" data-i18n="pe.emp.pending">We add these once verified.</p>
+      </div>
     </div>
   </div></section>
 
   <section class="page-section gray"><div class="container">
     <p class="section-label" data-i18n="pe.vac.label">Vacancies</p>
     <h2 class="section-title" data-i18n="pe.vac.title">Private equity vacancies</h2>
-    <p class="section-text" data-i18n="pe.vac.text">We only show real, current openings with a link to the employer. Internships, working student roles, analyst roles and off-cycle internships will appear here. In the meantime, browse all current vacancies.</p>
-    <div class="ph-grid"><div class="ph-card"><span data-i18n="pe.vac.title">Private equity vacancies</span><small data-i18n="pe.res.soon">Coming soon</small></div></div>
+    <p class="section-text" id="peVacMsg" data-i18n="pe.vac.text">We only show real, current openings with a link to the employer. Internships, working student roles, analyst roles and off-cycle internships will appear here. In the meantime, browse all current vacancies.</p>
+    <div class="pe-vac-grid" id="peVac"></div>
     <a class="link-arrow" href="/jobs.html" data-i18n="pe.vac.all" style="color:var(--blue-600);font-weight:700;text-decoration:none;display:inline-block;margin-top:18px">View all vacancies</a>
+    <script>
+    (function(){
+      var PE_FIRMS=["CVC Capital Partners","IK Partners","Waterland","Rivean Capital","Gilde Equity Management","Egeria","Bencis","NPM Capital","H2 Equity Partners","Nordian Capital Partners","Avedon Capital Partners","Torqx Capital Partners","Active Capital Company","Karmijn Kapitaal","Main Capital Partners"];
+      fetch('/jobs.html').then(function(r){return r.text();}).then(function(t){
+        var node=new DOMParser().parseFromString(t,'text/html').getElementById('jobs-data');
+        if(!node) return;
+        var jobs=JSON.parse(node.textContent).filter(function(j){return j.active!==false;});
+        var pe=jobs.filter(function(j){return PE_FIRMS.indexOf(j.company)!==-1;});
+        if(!pe.length) return;
+        var wrap=document.getElementById('peVac'), msg=document.getElementById('peVacMsg');
+        pe.forEach(function(j){
+          var a=document.createElement('a'); a.className='pe-vac-card'; a.href='/vacatures/'+j.slug+'.html';
+          var t=document.createElement('span'); t.className='pe-vac-t'; t.textContent=j.title;
+          var c=document.createElement('span'); c.className='pe-vac-c'; c.textContent=j.company+(j.location?' \u00b7 '+j.location:'');
+          a.appendChild(t); a.appendChild(c); wrap.appendChild(a);
+        });
+        wrap.style.display='grid';
+        if(msg) msg.style.display='none';
+      }).catch(function(){});
+    })();
+    </script>
   </div></section>
 
   <section class="page-section"><div class="container">
