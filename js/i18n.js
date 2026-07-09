@@ -284,6 +284,23 @@ const TRANSLATIONS = {
     'pe.rel.title': 'Related finance paths',
     'pe.end.title': 'Start your private equity journey',
     'pe.end.sub': 'Browse open vacancies or explore the other finance career paths.',
+    'pe.val.label': 'Value creation',
+    'pe.val.title': 'How private equity creates value',
+    'pe.val.p1': 'Buying a company is only the start. A firm earns its return by making the business genuinely more valuable over the years it owns it, usually in several ways at once: growing revenue by expanding into new markets or products, cutting costs and improving how the company runs, sharpening its strategy toward more profitable areas, and strengthening the management team where needed.',
+    'pe.val.p2': 'Most firms hold a company for roughly four to seven years, long enough to carry out that plan. When it is time to sell, there are a few common routes: a sale to a larger company in the same industry, a sale to another private equity firm, or a stock market listing through an IPO. The exit is where the profit is finally realised.',
+    'pe.dia.a1': 'Investors (LPs)',
+    'pe.dia.a1b': 'pension funds, insurers',
+    'pe.dia.a2': 'Private equity fund',
+    'pe.dia.a2b': 'run by the firm (GP)',
+    'pe.dia.a3': 'Portfolio companies',
+    'pe.dia.acap': 'capital',
+    'pe.dia.aprofit': 'profit',
+    'pe.dia.acaption': 'How the money flows: investors put capital into the fund, the firm invests it in companies, and the profit flows back.',
+    'pe.dia.b1': 'Buy',
+    'pe.dia.b2': 'Improve',
+    'pe.dia.b2b': '4 to 7 years',
+    'pe.dia.b3': 'Sell',
+    'pe.dia.bcaption': 'The heart of every deal: buy a company, improve it over several years, then sell it.',
     'pe.tl.label': 'Career timeline',
     'pe.tl.title': 'How long each step takes',
     'pe.tl.p1': 'Private equity does not follow one fixed ladder, and the timing depends on the firm, the country and how you join. As a rough guide, the path from your first year to partner tends to look like this.',
@@ -899,6 +916,23 @@ const TRANSLATIONS = {
     'pe.rel.title': 'Gerelateerde finance-paden',
     'pe.end.title': 'Start je private equity-reis',
     'pe.end.sub': 'Bekijk openstaande vacatures of ontdek de andere finance-carrièrepaden.',
+    'pe.val.label': 'Waardecreatie',
+    'pe.val.title': 'Hoe private equity waarde creëert',
+    'pe.val.p1': 'Een bedrijf kopen is nog maar het begin. Een firma verdient haar rendement door de onderneming in de jaren dat ze die bezit echt waardevoller te maken, meestal op meerdere manieren tegelijk: de omzet laten groeien door nieuwe markten of producten, kosten verlagen en de bedrijfsvoering verbeteren, de strategie richten op winstgevendere onderdelen, en het managementteam versterken waar nodig.',
+    'pe.val.p2': 'De meeste firma\'s houden een bedrijf ongeveer vier tot zeven jaar vast, lang genoeg om dat plan uit te voeren. Als het tijd is om te verkopen, zijn er een paar gebruikelijke routes: een verkoop aan een groter bedrijf in dezelfde sector, een verkoop aan een andere private equity-firma, of een beursgang via een IPO. Bij de exit wordt de winst uiteindelijk gerealiseerd.',
+    'pe.dia.a1': 'Investeerders (LPs)',
+    'pe.dia.a1b': 'pensioenfondsen, verzekeraars',
+    'pe.dia.a2': 'Private equity-fonds',
+    'pe.dia.a2b': 'beheerd door de firma (GP)',
+    'pe.dia.a3': 'Portefeuillebedrijven',
+    'pe.dia.acap': 'kapitaal',
+    'pe.dia.aprofit': 'winst',
+    'pe.dia.acaption': 'Hoe het geld stroomt: investeerders steken kapitaal in het fonds, de firma investeert dat in bedrijven, en de winst stroomt terug.',
+    'pe.dia.b1': 'Kopen',
+    'pe.dia.b2': 'Verbeteren',
+    'pe.dia.b2b': '4 tot 7 jaar',
+    'pe.dia.b3': 'Verkopen',
+    'pe.dia.bcaption': 'De kern van elke deal: koop een bedrijf, verbeter het over meerdere jaren en verkoop het daarna.',
     'pe.tl.label': 'Carrièretijdlijn',
     'pe.tl.title': 'Hoe lang elke stap duurt',
     'pe.tl.p1': 'Private equity kent geen vaste ladder, en de timing hangt af van de firma, het land en hoe je instroomt. Als ruwe richtlijn ziet het pad van je eerste jaar tot partner er ongeveer zo uit.',
@@ -1280,8 +1314,8 @@ function applyLanguage(lang) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Apply saved or default language
-  const saved = localStorage.getItem('cc-lang') || 'en';
+  // Apply saved language, else the page default (window.__ccDefaultLang), else English
+  const saved = localStorage.getItem('cc-lang') || window.__ccDefaultLang || 'en';
   applyLanguage(saved);
 
   // Wire up toggle button
