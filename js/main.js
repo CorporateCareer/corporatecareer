@@ -44,6 +44,18 @@ document.addEventListener('keydown', e => {
   }
 });
 
+// ── Finance dropdown submenu (mobile expand / accessible toggle) ──
+document.querySelectorAll('.nav-sub-toggle').forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.preventDefault();
+    e.stopPropagation();
+    const item = btn.closest('.nav-dropdown');
+    if (!item) return;
+    const open = item.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+});
+
 // ── Scroll-triggered fade-up animations ──────
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -62,7 +74,7 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 // ── Email form ────────────────────────────────
 const form = document.getElementById('ctaForm');
 
-form.addEventListener('submit', e => {
+if (form) form.addEventListener('submit', e => {
   e.preventDefault();
 
   const input = form.querySelector('input[type="email"]');
