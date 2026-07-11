@@ -50,6 +50,23 @@ def dual_list(does):
 
 EMP_TYPE = {"stage": "INTERN", "graduate": "FULL_TIME"}
 
+# Provincie afgeleid van de plaats, alleen voor plaatsen die we zeker weten.
+# Onbekende plaatsen krijgen geen addressRegion; we gokken niet.
+NL_REGION = {
+    "Amsterdam": "Noord-Holland", "Amstelveen": "Noord-Holland",
+    "Hoofddorp": "Noord-Holland", "Haarlem": "Noord-Holland",
+    "Zaandam": "Noord-Holland", "Diemen": "Noord-Holland",
+    "Rotterdam": "Zuid-Holland", "Den Haag": "Zuid-Holland",
+    "The Hague": "Zuid-Holland", "Leiden": "Zuid-Holland", "Delft": "Zuid-Holland",
+    "Utrecht": "Utrecht", "Amersfoort": "Utrecht",
+    "Eindhoven": "Noord-Brabant", "'s-Hertogenbosch": "Noord-Brabant",
+    "Den Bosch": "Noord-Brabant", "Tilburg": "Noord-Brabant", "Breda": "Noord-Brabant",
+    "Groningen": "Groningen", "Arnhem": "Gelderland", "Nijmegen": "Gelderland",
+    "Maastricht": "Limburg", "Enschede": "Overijssel", "Zwolle": "Overijssel",
+    "Almere": "Flevoland", "Leeuwarden": "Friesland", "Assen": "Drenthe",
+    "Middelburg": "Zeeland",
+}
+
 def related_block(job, active):
     same = [j for j in active if j["id"] != job["id"] and j["sector"] == job["sector"]]
     same = same[:5] if len(same) >= 3 else [j for j in active if j["id"] != job["id"]][:5]
@@ -93,13 +110,19 @@ def build_page(job, nav, footer, first_seen, active):
     desc_parts += ["</ul>", f"<p>{esc(d['firmBlurb']['en'])}</p>"]
     desc_html = "".join(desc_parts)
 
+    job_address = {"@type": "PostalAddress", "addressLocality": job["location"]}
+    _region = NL_REGION.get(job["location"])
+    if _region:
+        job_address["addressRegion"] = _region
+    job_address["addressCountry"] = "NL"
+
     jobposting = {
         "@context": "https://schema.org", "@type": "JobPosting",
         "title": job["title"], "description": desc_html,
         "datePosted": posted, "validThrough": valid,
         "employmentType": EMP_TYPE[job["type"]],
         "hiringOrganization": {"@type": "Organization", "name": job["company"], "sameAs": d["firmSite"]},
-        "jobLocation": {"@type": "Place", "address": {"@type": "PostalAddress", "addressLocality": job["location"], "addressCountry": "NL"}},
+        "jobLocation": {"@type": "Place", "address": job_address},
         "directApply": False, "url": url,
     }
     breadcrumb = {
