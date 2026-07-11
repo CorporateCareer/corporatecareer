@@ -3741,6 +3741,12 @@ function applyLanguage(lang) {
     if (t[key] !== undefined) el.placeholder = t[key];
   });
 
+  // aria-label updates (leaves element children intact, unlike textContent)
+  document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+    const key = el.getAttribute('data-i18n-aria');
+    if (t[key] !== undefined) el.setAttribute('aria-label', t[key]);
+  });
+
   // Sync toggle button active state
   const btnEn = document.querySelector('.lang-btn--en');
   const btnNl = document.querySelector('.lang-btn--nl');
