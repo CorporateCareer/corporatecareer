@@ -527,4 +527,32 @@
   </url>
   <!-- VACATURES:END -->
 
+  <!-- BEDRIJVEN:START -->
+  <url>
+    <loc>https://corporatecareer.nl/finance/bedrijven/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/bedrijven/abn-amro/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/bedrijven/deloitte/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/bedrijven/optiver/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/bedrijven/robeco/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- BEDRIJVEN:END -->
+
 </urlset>
