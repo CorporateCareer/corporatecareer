@@ -160,8 +160,8 @@ def build_page(job, nav, footer, first_seen, active):
   </script>
   <title>{esc(page_title)}</title>
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,300..900&display=swap" rel="stylesheet">
+  <link rel="preload" href="/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/vacature.css">
   <!-- Google Analytics (GA4) -->
@@ -235,7 +235,7 @@ def build_page(job, nav, footer, first_seen, active):
 
 {footer}
 
-  <script src="../js/i18n.js"></script>
+  <script src="../js/i18n.min.js"></script>
   <script src="../js/main.js"></script>
   <script>
     (function () {{
