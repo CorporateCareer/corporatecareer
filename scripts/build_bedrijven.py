@@ -322,7 +322,7 @@ def hub_page():
   <section class="page-hero" style="background:linear-gradient(135deg,#142a45,#234b7e)"><div class="container inner">
     <span class="badge">{bi('Companies','Bedrijven')}</span>
     <h1>{bi('Finance companies in the Netherlands','Finance-bedrijven in Nederland')}</h1>
-    <p class="lead">{bi('The large finance firms active in the Netherlands, from banks and trading firms to asset managers and advisory firms. Filter by type and open a company to read what it does and see its vacancies.','De grote finance-kantoren die actief zijn in Nederland, van banken en tradingfirma\\'s tot vermogensbeheerders en advieskantoren. Filter op type en open een bedrijf om te lezen wat het doet en de vacatures te zien.')}</p>
+    <p class="lead">{bi('The large finance firms active in the Netherlands, from banks and trading firms to asset managers and advisory firms. Filter by type and open a company to read what it does and see its vacancies.',"De grote finance-kantoren die actief zijn in Nederland, van banken en tradingfirma's tot vermogensbeheerders en advieskantoren. Filter op type en open een bedrijf om te lezen wat het doet en de vacatures te zien.")}</p>
   </div></section>
 
   <main>
@@ -358,6 +358,29 @@ def hub_page():
 </html>
 """
 
+# ── sitemap ──
+SITEMAP = os.path.join(ROOT, "sitemap.xml")
+
+def update_sitemap():
+    xml = io.open(SITEMAP, encoding="utf-8").read()
+    urls = [f"""  <url>
+    <loc>{SITE}/finance/bedrijven/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>"""]
+    for c in sorted(COMPANIES, key=lambda x: x["slug"]):
+        urls.append(f"""  <url>
+    <loc>{SITE}/bedrijven/{c['slug']}/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>""")
+    marked = "  <!-- BEDRIJVEN:START -->\n" + "\n".join(urls) + "\n  <!-- BEDRIJVEN:END -->"
+    if "<!-- BEDRIJVEN:START -->" in xml:
+        xml = re.sub(r"  <!-- BEDRIJVEN:START -->[\s\S]*?  <!-- BEDRIJVEN:END -->", marked, xml)
+    else:
+        xml = xml.replace("</urlset>", marked + "\n\n</urlset>")
+    io.open(SITEMAP, "w", encoding="utf-8").write(xml)
+
 # ── write ──
 add_css()
 os.makedirs(os.path.join(ROOT,"finance","bedrijven"), exist_ok=True)
@@ -365,4 +388,5 @@ io.open(os.path.join(ROOT,"finance","bedrijven","index.html"),"w",encoding="utf-
 for c in COMPANIES:
     d = os.path.join(ROOT,"bedrijven",c["slug"]); os.makedirs(d, exist_ok=True)
     io.open(os.path.join(d,"index.html"),"w",encoding="utf-8").write(company_page(c))
+update_sitemap()
 print("hub + bedrijfspagina's:", len(COMPANIES), "->", [c["slug"] for c in COMPANIES])
