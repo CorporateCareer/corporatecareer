@@ -34,7 +34,9 @@
   </script>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,300..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,300..900&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,300..900&display=swap"></noscript>
   <link rel="stylesheet" href="css/style.css">
   <style>
     .page-hero{background:linear-gradient(135deg,#0a0a1a 0%,#1a1535 100%);padding:140px 0 80px;text-align:center;position:relative;overflow:hidden;}
@@ -130,6 +132,8 @@
       <button class="hamburger" id="hamburger" aria-label="Open menu" data-i18n-aria="nav.hamburger.open"><span></span><span></span><span></span></button>
     </div>
   </nav>
+
+  <main>
 
   <section class="page-hero">
     <div class="container">
@@ -268,6 +272,8 @@
     </div>
   </section>
 
+  </main>
+
   <footer class="footer">
     <div class="container footer-inner">
       <div class="footer-brand">
@@ -275,9 +281,9 @@
         <p data-i18n="footer.tagline">Your route to the top of Dutch business.</p>
       </div>
       <nav class="footer-links" aria-label="Footer navigation">
-        <div class="footer-col"><h5 data-i18n="footer.col1.title">Career Paths</h5><a href="finance.html">Finance</a><a href="consulting.html">Consulting</a><a href="legal.html">Legal</a></div>
-        <div class="footer-col"><h5 data-i18n="footer.col2.title">Platform</h5><a href="jobs.html">Careers</a><a href="partners.html">Partners</a><a href="over-ons.html">About Us</a></div>
-        <div class="footer-col"><h5 data-i18n="footer.col3.title">Legal</h5><a href="#">Privacy Policy</a><a href="#">Terms &amp; Conditions</a><a href="#">Cookies</a></div>
+        <div class="footer-col"><h2 data-i18n="footer.col1.title">Career Paths</h2><a href="finance.html">Finance</a><a href="consulting.html">Consulting</a><a href="legal.html">Legal</a></div>
+        <div class="footer-col"><h2 data-i18n="footer.col2.title">Platform</h2><a href="jobs.html">Careers</a><a href="partners.html">Partners</a><a href="over-ons.html">About Us</a></div>
+        <div class="footer-col"><h2 data-i18n="footer.col3.title">Legal</h2><a href="#">Privacy Policy</a><a href="#">Terms &amp; Conditions</a><a href="#">Cookies</a></div>
       </nav>
     </div>
     <div class="footer-bottom"><div class="container footer-bottom-inner"><span data-i18n="footer.copy">© 2025 CorporateCareer, All rights reserved</span><div class="footer-bottom-right">

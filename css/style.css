@@ -902,7 +902,7 @@ h1, h2 {
   box-shadow: 0 6px 20px rgba(10,22,40,0.28);
 }
 
-.step h4 {
+.step h3 {
   font-size: 1rem;
   font-weight: 700;
   color: var(--navy-950);
@@ -1121,7 +1121,7 @@ h1, h2 {
 }
 
 .footer-brand p {
-  color: rgba(255,255,255,0.38);
+  color: rgba(255,255,255,0.64);
   font-size: 0.855rem;
   line-height: 1.65;
   max-width: 260px;
@@ -1134,22 +1134,23 @@ h1, h2 {
   max-width: 280px;
 }
 
-.footer-about h5 {
+.footer-about h2 {
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--blue-500);
+  color: var(--blue-300);
   margin-bottom: 10px;
 }
 
 .footer-about p {
   max-width: 280px;
   margin-bottom: 8px;
+  color: rgba(255,255,255,0.64);
 }
 
 .footer-about p:last-child {
-  color: rgba(255,255,255,0.55);
+  color: rgba(255,255,255,0.78);
   font-weight: 500;
   margin-bottom: 0;
 }
@@ -1161,8 +1162,8 @@ h1, h2 {
   padding-top: 4px;
 }
 
-.footer-col h5 {
-  color: rgba(255,255,255,0.55);
+.footer-col h2 {
+  color: rgba(255,255,255,0.74);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -1172,7 +1173,7 @@ h1, h2 {
 
 .footer-col a {
   display: block;
-  color: rgba(255,255,255,0.42);
+  color: rgba(255,255,255,0.64);
   text-decoration: none;
   font-size: 0.875rem;
   font-weight: 400;
@@ -1194,7 +1195,7 @@ h1, h2 {
 }
 
 .footer-bottom span {
-  color: rgba(255,255,255,0.27);
+  color: rgba(255,255,255,0.64);
   font-size: 0.78rem;
 }
 
