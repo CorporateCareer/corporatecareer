@@ -17,6 +17,7 @@ const TRANSLATIONS = {
     'nav.careers':          'Careers',
     'nav.partners':         'Partners',
     'nav.articles':         'Articles',
+    'nav.companies':        'Companies',
 
     /* Hero (FCP homepage) */
     'hero.badge':           'The #1 Career Platform for Finance, Consulting & Law',
@@ -1873,6 +1874,7 @@ const TRANSLATIONS = {
     'nav.careers':          'Vacatures',
     'nav.partners':         'Partners',
     'nav.articles':         'Artikelen',
+    'nav.companies':        'Bedrijven',
 
     /* Hero (FCP homepage) */
     'hero.badge':           'Het #1 Carrièreplatform voor Finance, Consulting & Recht',
