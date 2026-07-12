@@ -213,12 +213,17 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/finance/infrastructure-finance/</loc>
+    <loc>https://corporatecareer.nl/finance/trading/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/finance/family-office/</loc>
+    <loc>https://corporatecareer.nl/finance/wealth-management/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/finance/risk-management/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
