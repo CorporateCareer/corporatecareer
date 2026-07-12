@@ -1508,3 +1508,10 @@ h1, h2 {
 .bedrijf-card-tags { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; }
 .bedrijf-card-tags span { font-size: 0.7rem; font-weight: 600; padding: 3px 9px; border-radius: 999px; background: var(--gray-100); color: var(--gray-600); }
 .bedrijf-empty { color: var(--gray-500); padding: 20px 0; display: none; }
+.bedrijf-faq { display: flex; flex-direction: column; gap: 10px; max-width: 760px; }
+.bedrijf-faq-item { background: var(--white); border: 1px solid var(--gray-200); border-radius: 12px; padding: 16px 20px; }
+.bedrijf-faq-item summary { cursor: pointer; font-weight: 700; color: var(--navy-950); list-style: none; }
+.bedrijf-faq-item summary::-webkit-details-marker { display: none; }
+.bedrijf-faq-item summary::after { content: "+"; float: right; color: var(--blue-600); font-weight: 700; }
+.bedrijf-faq-item[open] summary::after { content: "\2212"; }
+.bedrijf-faq-item p { margin-top: 12px; color: var(--gray-700); line-height: 1.6; }
