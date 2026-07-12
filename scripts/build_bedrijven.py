@@ -1047,7 +1047,7 @@ FONTS = ('  <link rel="preload" href="/fonts/fraunces-latin.woff2" as="font" typ
          '  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>')
 TOGGLE = """  <script>
   (function(){
-    function apply(l){document.querySelectorAll('[data-l]').forEach(function(e){e.hidden=e.getAttribute('data-l')!==l;});}
+    function apply(l){document.querySelectorAll('[data-l]').forEach(function(e){if(e.getAttribute('data-l')!==l){e.setAttribute('hidden','');}else{e.removeAttribute('hidden');}});}
     function cur(){return window.CURRENT_LANG||localStorage.getItem('cc-lang')||'nl';}
     apply(cur());
     var t=document.getElementById('langToggle');

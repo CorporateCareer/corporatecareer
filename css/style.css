@@ -1518,3 +1518,4 @@ h1, h2 {
 .bedrijf-badge-logo { background: #fff; padding: 10px; box-shadow: 0 6px 20px rgba(10,22,40,0.16); }
 .bedrijf-card-badge.bedrijf-badge-logo { padding: 7px; box-shadow: none; border: 1px solid var(--gray-200); }
 .bedrijf-badge-logo img { width: 100%; height: 100%; object-fit: contain; display: block; }
+svg [data-l][hidden] { display: none; }
