@@ -9,6 +9,13 @@ ROOT = "/home/user/corporatecareer"
 PE = os.path.join(ROOT, "finance", "private-equity", "index.html")
 CSS = os.path.join(ROOT, "css", "style.css")
 SITE = "https://corporatecareer.nl"
+LOGOS_DIR = os.path.join(ROOT, "img", "logos")
+
+def logo_url(slug):
+    for ext in ("svg", "png"):
+        if os.path.isfile(os.path.join(LOGOS_DIR, f"{slug}.{ext}")):
+            return f"/img/logos/{slug}.{ext}"
+    return None
 
 def esc(s): return html.escape(s, quote=False)
 def bi(en, nl):
@@ -1017,6 +1024,9 @@ BEDRIJF_CSS = """
 .bedrijf-faq-item summary::after { content: "+"; float: right; color: var(--blue-600); font-weight: 700; }
 .bedrijf-faq-item[open] summary::after { content: "\\2212"; }
 .bedrijf-faq-item p { margin-top: 12px; color: var(--gray-700); line-height: 1.6; }
+.bedrijf-badge-logo { background: #fff; padding: 10px; box-shadow: 0 6px 20px rgba(10,22,40,0.16); }
+.bedrijf-card-badge.bedrijf-badge-logo { padding: 7px; box-shadow: none; border: 1px solid var(--gray-200); }
+.bedrijf-badge-logo img { width: 100%; height: 100%; object-fit: contain; display: block; }
 """
 
 def add_css():
@@ -1136,11 +1146,14 @@ def company_page(c):
     paths = "".join(f'<a class="pe-rel-card fade-up" href="/finance/{s}/"><span>{esc(NAMES[s])}</span>'
       '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>' for s,_ in c["paths"])
     faq_html = "".join(f'<details class="bedrijf-faq-item"><summary>{bi(q_en,q_nl)}</summary><p>{bi(a_en,a_nl)}</p></details>' for q_en,q_nl,a_en,a_nl in faqs)
+    logo = logo_url(c["slug"])
+    badge = (f'<span class="bedrijf-badge bedrijf-badge-logo"><img src="{logo}" alt="{esc(c["name"])} logo" width="60" height="60" loading="eager"></span>'
+      if logo else f'<span class="bedrijf-badge" style="background:{c["color"]}">{esc(c["initials"])}</span>')
     return head(title, desc, url, ld) + f"""
 {bc([("Home","/index.html"),("Finance","/finance.html"),("Bedrijven","/finance/bedrijven/"),(c["name"],None)])}
 
   <section class="page-hero" style="background:linear-gradient(135deg,#142a45,#234b7e)"><div class="container inner">
-    <span class="bedrijf-badge" style="background:{c['color']}">{esc(c['initials'])}</span>
+    {badge}
     <h1>{esc(c['name'])}</h1>
     <p class="lead">{bi(c['tagline_en'], c['tagline_nl'])}</p>
     <div class="bedrijf-tags">{tags}<span class="bedrijf-tag">{esc(c['city'])}</span></div>
@@ -1246,8 +1259,11 @@ def hub_page():
     for c in sorted(COMPANIES, key=lambda x: x["name"].lower()):
         tp = " ".join(c["types"])
         ctags = "".join(f'<span>{esc(FLABEL[t][1])}</span>' for t in c["types"])
+        logo = logo_url(c["slug"])
+        card_badge = (f'<span class="bedrijf-card-badge bedrijf-badge-logo"><img src="{logo}" alt="{esc(c["name"])} logo" width="46" height="46" loading="lazy"></span>'
+          if logo else f'<span class="bedrijf-card-badge" style="background:{c["color"]}">{esc(c["initials"])}</span>')
         cards += (f'<a class="bedrijf-card fade-up" href="/bedrijven/{c["slug"]}/" data-types="{tp}">'
-          f'<span class="bedrijf-card-badge" style="background:{c["color"]}">{esc(c["initials"])}</span>'
+          f'{card_badge}'
           f'<span class="bedrijf-card-name">{esc(c["name"])}</span>'
           f'<span class="bedrijf-card-meta">{esc(c["city"])}</span>'
           f'<span class="bedrijf-card-tags">{ctags}</span></a>\n')
