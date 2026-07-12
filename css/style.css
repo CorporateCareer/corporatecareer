@@ -1515,3 +1515,6 @@ h1, h2 {
 .bedrijf-faq-item summary::after { content: "+"; float: right; color: var(--blue-600); font-weight: 700; }
 .bedrijf-faq-item[open] summary::after { content: "\2212"; }
 .bedrijf-faq-item p { margin-top: 12px; color: var(--gray-700); line-height: 1.6; }
+.bedrijf-badge-logo { background: #fff; padding: 10px; box-shadow: 0 6px 20px rgba(10,22,40,0.16); }
+.bedrijf-card-badge.bedrijf-badge-logo { padding: 7px; box-shadow: none; border: 1px solid var(--gray-200); }
+.bedrijf-badge-logo img { width: 100%; height: 100%; object-fit: contain; display: block; }
