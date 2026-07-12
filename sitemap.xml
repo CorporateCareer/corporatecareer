@@ -212,16 +212,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-  <url>
-    <loc>https://corporatecareer.nl/finance/infrastructure-finance/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/finance/family-office/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
   <!-- FINANCEPATHS:END -->
 
   <!-- VACATURES:START -->
