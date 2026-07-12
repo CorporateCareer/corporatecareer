@@ -1010,6 +1010,13 @@ BEDRIJF_CSS = """
 .bedrijf-card-tags { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; }
 .bedrijf-card-tags span { font-size: 0.7rem; font-weight: 600; padding: 3px 9px; border-radius: 999px; background: var(--gray-100); color: var(--gray-600); }
 .bedrijf-empty { color: var(--gray-500); padding: 20px 0; display: none; }
+.bedrijf-faq { display: flex; flex-direction: column; gap: 10px; max-width: 760px; }
+.bedrijf-faq-item { background: var(--white); border: 1px solid var(--gray-200); border-radius: 12px; padding: 16px 20px; }
+.bedrijf-faq-item summary { cursor: pointer; font-weight: 700; color: var(--navy-950); list-style: none; }
+.bedrijf-faq-item summary::-webkit-details-marker { display: none; }
+.bedrijf-faq-item summary::after { content: "+"; float: right; color: var(--blue-600); font-weight: 700; }
+.bedrijf-faq-item[open] summary::after { content: "\\2212"; }
+.bedrijf-faq-item p { margin-top: 12px; color: var(--gray-700); line-height: 1.6; }
 """
 
 def add_css():
@@ -1086,11 +1093,31 @@ NAMES = {"private-equity":"Private Equity","ma":"M&A","venture-capital":"Venture
  "debt-advisory":"Debt Advisory","family-office":"Family Office","infrastructure-finance":"Infrastructure Finance",
  "real-estate-finance":"Real Estate Finance"}
 
+def faq_items(c):
+    head_office = next((ve for le,ln,ve,vn in c["facts"] if le=="Head office"), c["city"])
+    head_office_nl = next((vn for le,ln,ve,vn in c["facts"] if le=="Head office"), c["city"])
+    path_names = [NAMES[s] for s,_ in c["paths"]]
+    def joinlist(items, sep_last):
+        if len(items)==1: return items[0]
+        return ", ".join(items[:-1]) + f" {sep_last} " + items[-1]
+    paths_en = joinlist(path_names, "and") if path_names else "finance"
+    paths_nl = joinlist(path_names, "en") if path_names else "finance"
+    return [
+      (f"What does {c['name']} do?", f"Wat doet {c['name']}?",
+       c["tagline_en"], c["tagline_nl"]),
+      (f"How do I get an internship or graduate role at {c['name']}?", f"Hoe kom ik aan een stage of traineeship bij {c['name']}?",
+       c["join_en"], c["join_nl"]),
+      (f"Which finance career paths are relevant at {c['name']}?", f"Welke finance-paden zijn relevant bij {c['name']}?",
+       f"At {c['name']}, the most relevant finance career paths are {paths_en}.", f"Bij {c['name']} zijn de meest relevante finance-paden {paths_nl}."),
+      (f"Where is {c['name']} based in the Netherlands?", f"Waar zit {c['name']} in Nederland?",
+       f"Head office: {head_office}.", f"Hoofdkantoor: {head_office_nl}."),
+    ]
+
 def company_page(c):
     url = f"{SITE}/bedrijven/{c['slug']}/"
     firms_js = '"'+c["name"]+'"'
-    title = f"Werken bij {c['name']}: {FLABEL[c['types'][0]][1].lower()} in {c['city']} | CorporateCareer"
-    desc = c["tagline_nl"]
+    title = f"Werken bij {c['name']}: stage, traineeship en vacatures | CorporateCareer"
+    desc = f"{c['tagline_nl']} Bekijk stages, traineeships en vacatures bij {c['name']}."
     org = {"@context":"https://schema.org","@type":"Organization","name":c["name"],"url":c["site"],
       "address":{"@type":"PostalAddress","addressLocality":c["city"],"addressCountry":"NL"},"sameAs":[c["site"]]}
     crumb = {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
@@ -1098,12 +1125,17 @@ def company_page(c):
       {"@type":"ListItem","position":2,"name":"Finance","item":SITE+"/finance.html"},
       {"@type":"ListItem","position":3,"name":"Bedrijven","item":SITE+"/finance/bedrijven/"},
       {"@type":"ListItem","position":4,"name":c["name"],"item":url}]}
+    faqs = faq_items(c)
+    faqpage = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":q_nl,"acceptedAnswer":{"@type":"Answer","text":a_nl}} for q_en,q_nl,a_en,a_nl in faqs]}
     ld = ('  <script type="application/ld+json">\n'+json.dumps(org,ensure_ascii=False,indent=2)+'\n  </script>\n'
-          '  <script type="application/ld+json">\n'+json.dumps(crumb,ensure_ascii=False,indent=2)+'\n  </script>')
+          '  <script type="application/ld+json">\n'+json.dumps(crumb,ensure_ascii=False,indent=2)+'\n  </script>\n'
+          '  <script type="application/ld+json">\n'+json.dumps(faqpage,ensure_ascii=False,indent=2)+'\n  </script>')
     tags = "".join(f'<span class="bedrijf-tag">{esc(FLABEL[t][1])}</span>' for t in c["types"])
     facts = "".join(f'<div class="bedrijf-fact"><dt>{bi(le,ln)}</dt><dd>{bi(ve,vn)}</dd></div>' for le,ln,ve,vn in c["facts"])
     paths = "".join(f'<a class="pe-rel-card fade-up" href="/finance/{s}/"><span>{esc(NAMES[s])}</span>'
       '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>' for s,_ in c["paths"])
+    faq_html = "".join(f'<details class="bedrijf-faq-item"><summary>{bi(q_en,q_nl)}</summary><p>{bi(a_en,a_nl)}</p></details>' for q_en,q_nl,a_en,a_nl in faqs)
     return head(title, desc, url, ld) + f"""
 {bc([("Home","/index.html"),("Finance","/finance.html"),("Bedrijven","/finance/bedrijven/"),(c["name"],None)])}
 
@@ -1174,6 +1206,12 @@ def company_page(c):
     <p class="section-label">{bi('Related','Gerelateerd')}</p>
     <h2 class="section-title">{bi('Relevant finance paths','Relevante finance-paden')}</h2>
     <div class="pe-related">{paths}</div>
+  </div></section>
+
+  <section class="page-section gray"><div class="container">
+    <p class="section-label">{bi('FAQ','Veelgestelde vragen')}</p>
+    <h2 class="section-title">{bi('Frequently asked questions about '+c['name'],'Veelgestelde vragen over '+c['name'])}</h2>
+    <div class="bedrijf-faq">{faq_html}</div>
   </div></section>
 
   <section class="page-cta"><div class="container">
