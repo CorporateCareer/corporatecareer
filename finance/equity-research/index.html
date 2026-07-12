@@ -346,11 +346,14 @@
           <defs><marker id="ahB" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0 0l6 3-6 3z" fill="#647182"/></marker></defs>
           <style>.sb{fill:#fff;stroke:#cdd4de}.st{fill:#142a45;font:700 17px Inter,sans-serif}.sln{stroke:#94a0b0;stroke-width:1.6;fill:none}</style>
           <rect class="sb" x="20" y="35" width="200" height="80" rx="14"/>
-          <text x="120" y="82" text-anchor="middle" class="st"><tspan data-l="en" hidden="hidden">Model</tspan><tspan data-l="nl">Modelleren</tspan></text>
+          <text x="120" y="82" text-anchor="middle" class="st" data-l="en" hidden>Model</text>
+          <text x="120" y="82" text-anchor="middle" class="st" data-l="nl">Modelleren</text>
           <rect class="sb" x="290" y="35" width="200" height="80" rx="14"/>
-          <text x="390" y="82" text-anchor="middle" class="st"><tspan data-l="en" hidden="hidden">Analyse</tspan><tspan data-l="nl">Analyseren</tspan></text>
+          <text x="390" y="82" text-anchor="middle" class="st" data-l="en" hidden>Analyse</text>
+          <text x="390" y="82" text-anchor="middle" class="st" data-l="nl">Analyseren</text>
           <rect class="sb" x="560" y="35" width="200" height="80" rx="14"/>
-          <text x="660" y="82" text-anchor="middle" class="st"><tspan data-l="en" hidden="hidden">Publish</tspan><tspan data-l="nl">Publiceren</tspan></text>
+          <text x="660" y="82" text-anchor="middle" class="st" data-l="en" hidden>Publish</text>
+          <text x="660" y="82" text-anchor="middle" class="st" data-l="nl">Publiceren</text>
           <line class="sln" x1="222" y1="75" x2="288" y2="75" marker-end="url(#ahB)"/>
           <line class="sln" x1="492" y1="75" x2="558" y2="75" marker-end="url(#ahB)"/>
         </svg>
@@ -676,7 +679,7 @@
   <script src="/js/main.js"></script>
   <script>
   (function(){
-    function apply(l){document.querySelectorAll('[data-l]').forEach(function(e){e.hidden=e.getAttribute('data-l')!==l;});}
+    function apply(l){document.querySelectorAll('[data-l]').forEach(function(e){if(e.getAttribute('data-l')!==l){e.setAttribute('hidden','');}else{e.removeAttribute('hidden');}});}
     function cur(){return window.CURRENT_LANG||localStorage.getItem('cc-lang')||'nl';}
     apply(cur());
     var t=document.getElementById('langToggle');
