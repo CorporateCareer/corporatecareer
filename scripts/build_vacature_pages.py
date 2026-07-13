@@ -102,6 +102,15 @@ def build_page(job, nav, footer, first_seen, active):
 
     tags_html = "".join(f'<span class="vac-tag">{esc(t)}</span>' for t in job["tags"])
 
+    if job.get("logo"):
+        vac_logo_class = "vac-logo vac-logo-img"
+        vac_logo_style = ""
+        vac_logo_inner = f'<img src="{esc(job["logo"])}" alt="{esc(job["company"])} logo">'
+    else:
+        vac_logo_class = "vac-logo"
+        vac_logo_style = f' style="background:{esc(job["color"])}"'
+        vac_logo_inner = esc(job["initials"])
+
     # JobPosting-structuurdata: Engelse tekst (standaardtaal van de site)
     desc_parts = [f"<p>{esc(d['intro']['en'])}</p>", "<p><strong>What you will do:</strong></p><ul>"]
     desc_parts += [f"<li>{esc(x)}</li>" for x in d["does"]["en"]]
@@ -183,7 +192,7 @@ def build_page(job, nav, footer, first_seen, active):
     </nav>
 
     <header class="vac-hero">
-      <div class="vac-logo" style="background:{esc(job['color'])}">{esc(job['initials'])}</div>
+      <div class="{vac_logo_class}"{vac_logo_style}>{vac_logo_inner}</div>
       <div class="vac-hero-main">
         <p class="vac-company">{esc(job['company'])}</p>
         <h1 class="vac-title">{esc(job['title'])}</h1>
