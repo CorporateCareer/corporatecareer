@@ -450,6 +450,7 @@
         <div class="pe-firm-grid">
           <div class="pe-firm"><span class="pe-firm-i" style="background:#4f46e5">RC</span><span class="pe-firm-n">Rothschild & Co</span></div>
           <div class="pe-firm"><span class="pe-firm-i" style="background:#142a45">LAZ</span><span class="pe-firm-n">Lazard</span></div>
+          <div class="pe-firm"><span class="pe-firm-i" style="background:#7f1d1d">EQ</span><span class="pe-firm-n">EQT</span></div>
         </div></div>
       <div class="pe-emp-group"><h3 class="pe-emp-cat" data-i18n="ma.empcat.2">Nederlandse banken</h3>
         <div class="pe-firm-grid">
@@ -476,7 +477,7 @@
     <a class="link-arrow" href="/jobs.html" data-i18n="ma.vac.all" style="color:var(--blue-600);font-weight:700;text-decoration:none;display:inline-block;margin-top:18px">Bekijk alle vacatures</a>
     <script>
     (function(){
-      var MA_FIRMS=["Goldman Sachs","J.P. Morgan","Morgan Stanley","BNP Paribas","Rothschild & Co","Lazard","ABN AMRO","ING","Rabobank","Marktlink","Oaklins","JBR","Nielen Schuman","Clearwater International"];
+      var MA_FIRMS=["Goldman Sachs","J.P. Morgan","Morgan Stanley","BNP Paribas","Rothschild & Co","Lazard","EQT","ABN AMRO","ING","Rabobank","Marktlink","Oaklins","JBR","Nielen Schuman","Clearwater International"];
       fetch('/jobs.html').then(function(r){return r.text();}).then(function(t){
         var node=new DOMParser().parseFromString(t,'text/html').getElementById('jobs-data');
         if(!node) return;

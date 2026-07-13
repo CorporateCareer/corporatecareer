@@ -448,6 +448,7 @@
           <div class="pe-firm"><span class="pe-firm-i" style="background:#234b7e">GS</span><span class="pe-firm-n">Goldman Sachs</span></div>
           <div class="pe-firm"><span class="pe-firm-i" style="background:#1d4ed8">JPM</span><span class="pe-firm-n">J.P. Morgan</span></div>
           <div class="pe-firm"><span class="pe-firm-i" style="background:#2563eb">MS</span><span class="pe-firm-n">Morgan Stanley</span></div>
+          <div class="pe-firm"><span class="pe-firm-i" style="background:#0018a8">DB</span><span class="pe-firm-n">Deutsche Bank</span></div>
         </div></div>
       <div class="pe-emp-group"><h3 class="pe-emp-cat" data-i18n="ib.empcat.1">Wereldwijd advies en boutiques</h3>
         <div class="pe-firm-grid">
@@ -478,7 +479,7 @@
     <a class="link-arrow" href="/jobs.html" data-i18n="ib.vac.all" style="color:var(--blue-600);font-weight:700;text-decoration:none;display:inline-block;margin-top:18px">Bekijk alle vacatures</a>
     <script>
     (function(){
-      var IB_FIRMS=["Goldman Sachs","J.P. Morgan","Morgan Stanley","Rothschild & Co","Lazard","ABN AMRO","ING","Rabobank","NIBC","Van Lanschot Kempen","Nielen Schuman","AXECO"];
+      var IB_FIRMS=["Goldman Sachs","J.P. Morgan","Morgan Stanley","Deutsche Bank","Rothschild & Co","Lazard","ABN AMRO","ING","Rabobank","NIBC","Van Lanschot Kempen","Nielen Schuman","AXECO"];
       fetch('/jobs.html').then(function(r){return r.text();}).then(function(t){
         var node=new DOMParser().parseFromString(t,'text/html').getElementById('jobs-data');
         if(!node) return;
