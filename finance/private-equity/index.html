@@ -591,6 +591,7 @@
         <div class="pe-firm-grid">
         <div class="pe-firm"><span class="pe-firm-i" style="background:#234b7e">CVC</span><span class="pe-firm-n">CVC Capital Partners</span></div>
         <div class="pe-firm"><span class="pe-firm-i" style="background:#1d4ed8">IK</span><span class="pe-firm-n">IK Partners</span></div>
+        <div class="pe-firm"><span class="pe-firm-i" style="background:#7f1d1d">EQ</span><span class="pe-firm-n">EQT</span></div>
         </div>
       </div>
       <div class="pe-emp-group">
@@ -640,7 +641,7 @@
     <a class="link-arrow" href="/jobs.html" data-i18n="pe.vac.all" style="color:var(--blue-600);font-weight:700;text-decoration:none;display:inline-block;margin-top:18px">Bekijk alle vacatures</a>
     <script>
     (function(){
-      var PE_FIRMS=["CVC Capital Partners","IK Partners","Waterland","Rivean Capital","Gilde Equity Management","Egeria","Bencis","NPM Capital","H2 Equity Partners","Nordian Capital Partners","Avedon Capital Partners","Torqx Capital Partners","Active Capital Company","Karmijn Kapitaal","Main Capital Partners"];
+      var PE_FIRMS=["CVC Capital Partners","IK Partners","EQT","Waterland","Rivean Capital","Gilde Equity Management","Egeria","Bencis","NPM Capital","H2 Equity Partners","Nordian Capital Partners","Avedon Capital Partners","Torqx Capital Partners","Active Capital Company","Karmijn Kapitaal","Main Capital Partners"];
       fetch('/jobs.html').then(function(r){return r.text();}).then(function(t){
         var node=new DOMParser().parseFromString(t,'text/html').getElementById('jobs-data');
         if(!node) return;
