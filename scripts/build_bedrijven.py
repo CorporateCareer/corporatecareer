@@ -17,6 +17,17 @@ def logo_url(slug):
             return f"/img/logos/{slug}.{ext}"
     return None
 
+# Logos with their own solid (non-white) background - skip the white padding box
+# that's designed for transparent-background logos, or it shows as an ugly frame.
+FLUSH_LOGO_SLUGS = {"da-vinci-trading"}
+
+def badge_classes(slug, card=False):
+    base = "bedrijf-card-badge" if card else "bedrijf-badge"
+    cls = f"{base} bedrijf-badge-logo"
+    if slug in FLUSH_LOGO_SLUGS:
+        cls += " bedrijf-badge-flush"
+    return cls
+
 def esc(s): return html.escape(s, quote=False)
 def bi(en, nl):
     return f'<span data-l="en" hidden>{esc(en)}</span><span data-l="nl">{esc(nl)}</span>'
@@ -1147,7 +1158,7 @@ def company_page(c):
       '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>' for s,_ in c["paths"])
     faq_html = "".join(f'<details class="bedrijf-faq-item"><summary>{bi(q_en,q_nl)}</summary><p>{bi(a_en,a_nl)}</p></details>' for q_en,q_nl,a_en,a_nl in faqs)
     logo = logo_url(c["slug"])
-    badge = (f'<span class="bedrijf-badge bedrijf-badge-logo"><img src="{logo}" alt="{esc(c["name"])} logo" width="60" height="60" loading="eager"></span>'
+    badge = (f'<span class="{badge_classes(c["slug"])}"><img src="{logo}" alt="{esc(c["name"])} logo" width="60" height="60" loading="eager"></span>'
       if logo else f'<span class="bedrijf-badge" style="background:{c["color"]}">{esc(c["initials"])}</span>')
     return head(title, desc, url, ld) + f"""
 {bc([("Home","/index.html"),("Finance","/finance.html"),("Bedrijven","/finance/bedrijven/"),(c["name"],None)])}
@@ -1260,7 +1271,7 @@ def hub_page():
         tp = " ".join(c["types"])
         ctags = "".join(f'<span>{esc(FLABEL[t][1])}</span>' for t in c["types"])
         logo = logo_url(c["slug"])
-        card_badge = (f'<span class="bedrijf-card-badge bedrijf-badge-logo"><img src="{logo}" alt="{esc(c["name"])} logo" width="46" height="46" loading="lazy"></span>'
+        card_badge = (f'<span class="{badge_classes(c["slug"], card=True)}"><img src="{logo}" alt="{esc(c["name"])} logo" width="46" height="46" loading="lazy"></span>'
           if logo else f'<span class="bedrijf-card-badge" style="background:{c["color"]}">{esc(c["initials"])}</span>')
         cards += (f'<a class="bedrijf-card fade-up" href="/bedrijven/{c["slug"]}/" data-types="{tp}">'
           f'{card_badge}'
