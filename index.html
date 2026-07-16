@@ -108,6 +108,18 @@
       letter-spacing: -0.5px;
     }
 
+    .company-logo.has-logo { background: white; border: 1px solid var(--gray-200); padding: 6px; }
+    .company-logo.has-logo img { width: 100%; height: 100%; object-fit: contain; display: block; }
+
+    .new-vacancies-empty {
+      text-align: center;
+      color: var(--gray-400);
+      padding: 24px 0;
+      display: none;
+    }
+
+    .compact-location svg { vertical-align: -2px; margin-right: 4px; }
+
     .job-card-title {
       flex: 1;
     }
@@ -769,73 +781,56 @@
         <h2 data-i18n="home.new.title">New This Week</h2>
       </div>
 
-      <div class="jobs-grid-2x2">
+      <div class="jobs-grid-2x2" id="newWeekGrid"></div>
+      <p class="new-vacancies-empty" id="newWeekEmpty" data-i18n="home.new.empty">No open vacancies right now. Check back soon.</p>
 
-        <!-- J.P. Morgan -->
-        <div class="job-card-compact fade-up">
-          <div class="company-logo" style="background:#0a2d6e;">JP</div>
-          <div class="compact-info">
-            <span class="compact-title">Global Markets Traineeship</span>
-            <span class="compact-company">J.P. Morgan</span>
-            <div class="job-badges">
-              <span class="badge-pill badge-pill--type">Finance</span>
-            </div>
-          </div>
-          <div class="compact-right">
-            <span class="compact-location">📍 Amsterdam</span>
-            <a href="jobs.html" class="job-link">View →</a>
-          </div>
-        </div>
+      <script>
+      (function(){
+        var SECTOR_LABEL = {finance:'Finance', consulting:'Consulting', advocatuur:'Legal'};
+        var PIN_SVG = '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>';
 
-        <!-- BCG -->
-        <div class="job-card-compact fade-up">
-          <div class="company-logo" style="background:#00823d;">BC</div>
-          <div class="compact-info">
-            <span class="compact-title">Associate</span>
-            <span class="compact-company">BCG</span>
-            <div class="job-badges">
-              <span class="badge-pill badge-pill--type">Consulting</span>
-            </div>
-          </div>
-          <div class="compact-right">
-            <span class="compact-location">📍 Amsterdam</span>
-            <a href="jobs.html" class="job-link">View →</a>
-          </div>
-        </div>
+        function cardHtml(j){
+          var logo = j.logo
+            ? '<div class="company-logo has-logo"><img src="'+j.logo+'" alt="'+j.company+' logo" loading="lazy"></div>'
+            : '<div class="company-logo" style="background:'+(j.color||'#142a45')+'">'+(j.initials||'')+'</div>';
+          var sectorLabel = SECTOR_LABEL[j.sector] || j.sector || '';
+          var href = j.slug ? ('vacatures/'+j.slug+'.html') : (j.url || 'jobs.html');
+          return '<a class="job-card-compact fade-up" href="'+href+'">'
+            + logo
+            + '<div class="compact-info">'
+            +   '<span class="compact-title">'+j.title+'</span>'
+            +   '<span class="compact-company">'+j.company+'</span>'
+            +   '<div class="job-badges"><span class="badge-pill badge-pill--type">'+sectorLabel+'</span></div>'
+            + '</div>'
+            + '<div class="compact-right">'
+            +   '<span class="compact-location">'+PIN_SVG+(j.location||'')+'</span>'
+            +   '<span class="job-link">View &rarr;</span>'
+            + '</div>'
+            + '</a>';
+        }
 
-        <!-- NautaDutilh -->
-        <div class="job-card-compact fade-up">
-          <div class="company-logo" style="background:#2c3e7a;">ND</div>
-          <div class="compact-info">
-            <span class="compact-title">Trainee</span>
-            <span class="compact-company">NautaDutilh</span>
-            <div class="job-badges">
-              <span class="badge-pill badge-pill--type">Legal</span>
-            </div>
-          </div>
-          <div class="compact-right">
-            <span class="compact-location">📍 Amsterdam</span>
-            <a href="jobs.html" class="job-link">View →</a>
-          </div>
-        </div>
-
-        <!-- Rothschild -->
-        <div class="job-card-compact fade-up">
-          <div class="company-logo" style="background:#8b0000;">Ro</div>
-          <div class="compact-info">
-            <span class="compact-title">M&amp;A Analyst</span>
-            <span class="compact-company">Rothschild &amp; Co</span>
-            <div class="job-badges">
-              <span class="badge-pill badge-pill--type">Finance</span>
-            </div>
-          </div>
-          <div class="compact-right">
-            <span class="compact-location">📍 Amsterdam</span>
-            <a href="jobs.html" class="job-link">View →</a>
-          </div>
-        </div>
-
-      </div>
+        fetch('jobs.html').then(function(r){ return r.text(); }).then(function(t){
+          var n = new DOMParser().parseFromString(t, 'text/html').getElementById('jobs-data');
+          if (!n) return;
+          var jobs = JSON.parse(n.textContent).filter(function(j){ return j.active !== false; });
+          jobs.sort(function(a,b){ return b.id - a.id; });
+          var picked = [], seenSectors = {};
+          ['finance','consulting','advocatuur'].forEach(function(sector){
+            var match = jobs.find(function(j){ return j.sector === sector; });
+            if (match) { picked.push(match); seenSectors[match.id] = true; }
+          });
+          for (var i = 0; i < jobs.length && picked.length < 4; i++) {
+            if (!seenSectors[jobs[i].id]) { picked.push(jobs[i]); seenSectors[jobs[i].id] = true; }
+          }
+          picked.sort(function(a,b){ return b.id - a.id; });
+          var grid = document.getElementById('newWeekGrid'), empty = document.getElementById('newWeekEmpty');
+          if (!picked.length) { empty.style.display = 'block'; return; }
+          grid.innerHTML = picked.slice(0,4).map(cardHtml).join('');
+        }).catch(function(){
+          document.getElementById('newWeekEmpty').style.display = 'block';
+        });
+      })();
+      </script>
     </div>
   </section>
 

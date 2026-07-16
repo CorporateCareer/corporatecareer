@@ -32,6 +32,7 @@ const TRANSLATIONS = {
     'home.partners.sub':    '100+ prestigious partners',
     'home.partners.viewall':'View all partners →',
     'home.new.title':       'New This Week',
+    'home.new.empty':       'No open vacancies right now. Check back soon.',
     'home.articles.title':  'Career Guides & Articles',
     'home.articles.viewall':'View all articles →',
 
@@ -1964,6 +1965,7 @@ const TRANSLATIONS = {
     'home.partners.sub':    '100+ prestigieuze partners',
     'home.partners.viewall':'Alle partners bekijken →',
     'home.new.title':       'Nieuw deze week',
+    'home.new.empty':       'Op dit moment geen openstaande vacatures. Kom snel terug.',
     'home.articles.title':  'Carrièregidsen & Artikelen',
     'home.articles.viewall':'Alle artikelen bekijken →',
 
