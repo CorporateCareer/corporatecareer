@@ -67,6 +67,41 @@ NL_REGION = {
     "Middelburg": "Zeeland",
 }
 
+# Echte kantooradressen (straat + postcode), per bedrijf en plaats, overgenomen
+# van de eigen contact-/vestigingenpagina van het bedrijf. Alleen invullen als
+# het adres met een officiele bron is geverifieerd; onbekende combinaties
+# krijgen geen straatadres, we gokken niet.
+OFFICE_ADDRESS = {
+    ("BCG", "Amsterdam"): ("Hildegard von Bingenstraat 16-20", "1081 LH"),
+    ("BCG Platinion", "Amsterdam"): ("Gustav Mahlerlaan 40", "1082 MC"),
+    ("BDO Netherlands", "Eindhoven"): ("Philitelaan 73", "5617 AM"),
+    ("BNP Paribas", "Amsterdam"): ("Parnassusweg 789", "1082 LZ"),
+    ("Baker Tilly Netherlands", "Amsterdam"): ("Laarderhoogtweg 25", "1101 EB"),
+    ("Crowe Foederer", "Eindhoven"): ("Beukenlaan 60", "5651 CD"),
+    ("Da Vinci Trading", "Amsterdam"): ("Hildegard von Bingenstraat 12", "1081 LH"),
+    ("Deloitte", "Amsterdam"): ("Gustav Mahlerlaan 2970", "1081 LA"),
+    ("Deutsche Bank", "Amsterdam"): ("De Entree 195", "1101 HE"),
+    ("EQT", "Amsterdam"): ("Johannes Vermeerplein 9", "1071 DV"),
+    ("EY Netherlands", "Amsterdam"): ("Antonio Vivaldistraat 150", "1083 HP"),
+    ("EY-Parthenon", "Amsterdam"): ("Antonio Vivaldistraat 150", "1083 HP"),
+    ("Flow Traders", "Amsterdam"): ("Jacob Bontiusplaats 9", "1018 LL"),
+    ("Goldman Sachs", "The Hague"): ("Prinses Beatrixlaan 35", "2595 AK"),
+    ("Hogan Lovells", "Amsterdam"): ("Strawinskylaan 4129", "1077 ZX"),
+    ("IMC Trading", "Amsterdam"): ("Amstelveenseweg 500", "1081 KL"),
+    ("ING", "Amsterdam"): ("Bijlmerdreef 24", "1102 CT"),
+    ("Linklaters", "Amsterdam"): ("Zuidplein 180", "1077 XV"),
+    ("MUFG Bank", "Amsterdam"): ("Strawinskylaan 1887", "1077 XX"),
+    ("Marktlink", "Amsterdam"): ("Trompenburgstraat 2C", "1079 TX"),
+    ("Oliver Wyman", "Amsterdam"): ("Strawinskylaan 4101", "1077 ZX"),
+    ("Optiver", "Amsterdam"): ("Strawinskylaan 3095", "1077 ZX"),
+    ("PwC Netherlands", "Amsterdam"): ("Thomas R. Malthusstraat 5", "1066 JR"),
+    ("PwC Netherlands", "Rotterdam"): ("Fascinatio Boulevard 350", "3065 WB"),
+    ("RSM Netherlands", "Utrecht"): ("Oorsprongpark 12", "3581 ET"),
+    ("Roland Berger", "Amsterdam"): ("Strawinskylaan 581", "1077 XW"),
+    ("Sia", "Amsterdam"): ("Amstelplein 1", "1096 HA"),
+    ("Van Lanschot Kempen", "Amsterdam"): ("Beethovenstraat 300", "1077 WZ"),
+}
+
 def related_block(job, active):
     same = [j for j in active if j["id"] != job["id"] and j["sector"] == job["sector"]]
     same = same[:5] if len(same) >= 3 else [j for j in active if j["id"] != job["id"]][:5]
@@ -120,6 +155,10 @@ def build_page(job, nav, footer, first_seen, active):
     desc_html = "".join(desc_parts)
 
     job_address = {"@type": "PostalAddress", "addressLocality": job["location"]}
+    _office = OFFICE_ADDRESS.get((job["company"], job["location"]))
+    if _office:
+        job_address["streetAddress"] = _office[0]
+        job_address["postalCode"] = _office[1]
     _region = NL_REGION.get(job["location"])
     if _region:
         job_address["addressRegion"] = _region
