@@ -229,6 +229,84 @@
   </url>
   <!-- FINANCEPATHS:END -->
 
+  <!-- LEGALPATHS:START -->
+  <url>
+    <loc>https://corporatecareer.nl/legal/bedrijven/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/legal/administrative-law/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/legal/antitrust-competition-trade/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/legal/banking-finance/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/legal/commercial/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/legal/corporate-ma/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/legal/dispute-resolution/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/legal/employment-labour-pensions/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/legal/esg/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/legal/intellectual-property/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/legal/public-procurement/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/legal/real-estate/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/legal/restructuring-insolvency/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/legal/tax/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/legal/artificial-intelligence-digital-regulation/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- LEGALPATHS:END -->
+
   <!-- VACATURES:START -->
   <url>
     <loc>https://corporatecareer.nl/vacatures/pwc-manager-sale-en-purchase-agreement-transaction-services.html</loc>
