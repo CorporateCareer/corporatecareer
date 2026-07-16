@@ -173,6 +173,16 @@ def build_page(job, nav, footer, first_seen, active):
         "jobLocation": {"@type": "Place", "address": job_address},
         "directApply": False, "url": url,
     }
+    bs = job.get("baseSalary")
+    if bs:
+        jobposting["baseSalary"] = {
+            "@type": "MonetaryAmount", "currency": bs["currency"],
+            "value": {
+                "@type": "QuantitativeValue",
+                "minValue": bs["min"], "maxValue": bs["max"],
+                "unitText": bs["period"],
+            },
+        }
     breadcrumb = {
         "@context": "https://schema.org", "@type": "BreadcrumbList",
         "itemListElement": [
