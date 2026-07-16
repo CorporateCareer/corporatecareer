@@ -98,6 +98,22 @@
         "@type": "Answer",
         "text": "Hoofdkantoor: Rotterdam."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat maakt AKD anders dan een puur Nederlands kantoor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AKD combineert vestigingen in Nederland, Belgie en Luxemburg binnen een kantoor, waardoor grensoverschrijdende zaken door een enkel team kunnen worden behandeld in plaats van aparte lokale advocaten per land."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Heeft AKD een notariele praktijk?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. AKD combineert advocaten, fiscalisten en notarissen binnen dezelfde organisatie, wat gebruikelijk is bij de grotere full-service Nederlandse kantoren."
+      }
     }
   ]
 }
@@ -124,6 +140,29 @@
     .section-label{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-600);margin-bottom:12px}
     .section-title{font-size:clamp(1.5rem,3vw,2rem);font-weight:800;color:var(--navy-900);line-height:1.25;margin-bottom:16px}
     .pe-prose{max-width:768px}.pe-prose p{color:var(--gray-700);line-height:1.8;font-size:1rem;margin:0}
+    .pe-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
+    .pe-card{background:#fff;border:1px solid var(--gray-200);border-radius:14px;padding:22px}
+    .pe-card-t{display:block;font-weight:700;color:var(--navy-900);font-size:.98rem;margin-bottom:6px}
+    .pe-card-d{display:block;font-size:.87rem;color:var(--gray-600);line-height:1.6}
+    .pe-office-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:36px}
+    .pe-office{background:#fff;border:1px solid var(--gray-200);border-radius:12px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+    .pe-office-city{font-weight:700;color:var(--navy-900);font-size:.94rem}
+    .pe-office-country{font-size:.72rem;font-weight:600;color:var(--gray-500);background:var(--gray-100);border-radius:999px;padding:3px 10px}
+    .pe-steps{display:flex;flex-direction:column;gap:0;margin-top:36px;max-width:720px;position:relative}
+    .pe-steps::before{content:'';position:absolute;top:18px;bottom:18px;left:17px;width:2px;background:var(--gray-200)}
+    .pe-step{display:flex;gap:20px;padding-bottom:28px;position:relative}
+    .pe-step:last-child{padding-bottom:0}
+    .pe-step-n{flex-shrink:0;width:36px;height:36px;border-radius:50%;background:var(--blue-600);color:#fff;font-weight:800;font-size:.88rem;display:flex;align-items:center;justify-content:center;position:relative;z-index:1}
+    .pe-step-t{font-weight:700;color:var(--navy-900);font-size:.98rem}
+    .pe-step-d{font-size:.86rem;color:var(--gray-500);margin-top:2px}
+    .pe-table-wrap{overflow-x:auto;margin-top:36px}
+    .pe-table{width:100%;max-width:600px;border-collapse:collapse;font-size:.92rem}
+    .pe-table th,.pe-table td{text-align:left;padding:12px 16px;border-bottom:1px solid var(--gray-200);white-space:nowrap}
+    .pe-table th{font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;color:var(--blue-600);font-weight:700}
+    .pe-table td{color:var(--gray-700)}
+    .pe-table tr:last-child td{border-bottom:none}
+    .pe-table td:first-child{font-weight:700;color:var(--navy-900)}
+    .pe-note{font-size:.82rem;color:var(--gray-500);margin-top:10px}
     .pe-related{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:40px}
     .pe-rel-card{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#fff;border:1px solid var(--gray-200);border-radius:12px;padding:18px 22px;text-decoration:none;color:var(--navy-900);font-weight:700;font-size:.95rem;transition:box-shadow .2s,transform .2s,color .2s}
     .pe-rel-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px);color:var(--blue-600)}
@@ -160,8 +199,8 @@
     .bedrijf-card-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:2px}
     .bedrijf-card-tags span{font-size:.68rem;font-weight:600;color:var(--gray-600);background:var(--gray-100);border-radius:999px;padding:3px 9px}
     .bedrijf-empty{display:none;text-align:center;color:var(--gray-400);margin-top:32px}
-    @media(max-width:980px){.bedrijf-grid{grid-template-columns:repeat(2,1fr)}.bedrijf-facts,.pe-related{grid-template-columns:1fr}}
-    @media(max-width:640px){.bedrijf-grid{grid-template-columns:1fr}}
+    @media(max-width:980px){.bedrijf-grid{grid-template-columns:repeat(2,1fr)}.bedrijf-facts,.pe-related{grid-template-columns:1fr}.pe-grid,.pe-office-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:640px){.bedrijf-grid{grid-template-columns:1fr}.pe-grid,.pe-office-grid{grid-template-columns:1fr}}
   </style>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TXBG97YW6Y"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-TXBG97YW6Y');</script>
@@ -258,18 +297,65 @@
     <p class="section-label"><span data-l="en" hidden>The organisation</span><span data-l="nl">De organisatie</span></p>
     <h2 class="section-title"><span data-l="en" hidden>What AKD does</span><span data-l="nl">Wat AKD doet</span></h2>
     <p><span data-l="en" hidden>AKD traces its roots to the early 1900s and has grown, through mergers and expansion, into a full-service Benelux firm combining a legal, tax and notarial practice. It advises on Dutch, Belgian and Luxembourg matters across a broad range of practice areas.</span><span data-l="nl">AKD gaat terug tot het begin van de twintigste eeuw en groeide door fusies en uitbreiding uit tot een full-service Benelux-kantoor dat een juridische, fiscale en notariele praktijk combineert. Het adviseert over Nederlandse, Belgische en Luxemburgse zaken op een breed scala aan rechtsgebieden.</span></p>
+    <div class="pe-grid">
+      <div class="pe-card fade-up"><span class="pe-card-t"><span data-l="en" hidden>Full-service</span><span data-l="nl">Full-service</span></span><span class="pe-card-d"><span data-l="en" hidden>A broad practice covering corporate, real estate, employment, tax and dispute work, rather than a single specialisation.</span><span data-l="nl">Een brede praktijk met ondernemingsrecht, vastgoed, arbeidsrecht, fiscaal recht en procesvoering, in plaats van een enkele specialisatie.</span></span></div>
+      <div class="pe-card fade-up"><span class="pe-card-t"><span data-l="en" hidden>Benelux-wide</span><span data-l="nl">Benelux-breed</span></span><span class="pe-card-d"><span data-l="en" hidden>Offices in the Netherlands, Belgium and Luxembourg allow the firm to run cross-border matters with a single team.</span><span data-l="nl">Vestigingen in Nederland, Belgie en Luxemburg maken het mogelijk grensoverschrijdende zaken met een enkel team te behandelen.</span></span></div>
+      <div class="pe-card fade-up"><span class="pe-card-t"><span data-l="en" hidden>Legal, tax &amp; notarial</span><span data-l="nl">Legal, tax &amp; notarial</span></span><span class="pe-card-d"><span data-l="en" hidden>Lawyers, tax advisers and civil-law notaries work within the same organisation rather than as separate firms.</span><span data-l="nl">Advocaten, fiscalisten en notarissen werken binnen dezelfde organisatie in plaats van als aparte kantoren.</span></span></div>
+    </div>
   </div></div></section>
 
   <section class="page-section gray"><div class="container"><div class="pe-prose">
     <p class="section-label"><span data-l="en" hidden>In the Netherlands</span><span data-l="nl">In Nederland</span></p>
     <h2 class="section-title"><span data-l="en" hidden>AKD in the Netherlands</span><span data-l="nl">AKD in Nederland</span></h2>
     <p><span data-l="en" hidden>AKD has offices in Amsterdam, Rotterdam, Breda and Eindhoven in the Netherlands, plus Brussels and Luxembourg, with over 600 lawyers, tax advisers, notaries and staff combined.</span><span data-l="nl">AKD heeft vestigingen in Amsterdam, Rotterdam, Breda en Eindhoven in Nederland, plus Brussel en Luxemburg, met ruim 600 advocaten, fiscalisten, notarissen en medewerkers samen.</span></p>
+    <div class="pe-office-grid">
+      <div class="pe-office fade-up"><span class="pe-office-city">Amsterdam</span><span class="pe-office-country">NL</span></div>
+      <div class="pe-office fade-up"><span class="pe-office-city">Rotterdam</span><span class="pe-office-country"><span data-l="en" hidden>NL &middot; HQ</span><span data-l="nl">NL &middot; hoofdkantoor</span></span></div>
+      <div class="pe-office fade-up"><span class="pe-office-city">Breda</span><span class="pe-office-country">NL</span></div>
+      <div class="pe-office fade-up"><span class="pe-office-city">Eindhoven</span><span class="pe-office-country">NL</span></div>
+      <div class="pe-office fade-up"><span class="pe-office-city">Brussels</span><span class="pe-office-country">BE</span></div>
+      <div class="pe-office fade-up"><span class="pe-office-city">Luxembourg</span><span class="pe-office-country">LU</span></div>
+    </div>
   </div></div></section>
 
   <section class="page-section"><div class="container"><div class="pe-prose">
     <p class="section-label"><span data-l="en" hidden>Structure</span><span data-l="nl">Structuur</span></p>
     <h2 class="section-title"><span data-l="en" hidden>Practice groups and where you work</span><span data-l="nl">Praktijkgroepen en waar je werkt</span></h2>
     <p><span data-l="en" hidden>Practice groups span employment, administrative law, real estate, tax, corporate M&amp;A and notarial services, organised jointly with the Belgian and Luxembourg offices for cross-border work.</span><span data-l="nl">Praktijkgroepen omvatten arbeidsrecht, bestuursrecht, vastgoed, fiscaal recht, corporate M&amp;A en notariele dienstverlening, gezamenlijk georganiseerd met de Belgische en Luxemburgse vestigingen voor grensoverschrijdend werk.</span></p>
+    <div class="pe-grid">
+      <div class="pe-card fade-up"><span class="pe-card-t"><span data-l="en" hidden>Employment</span><span data-l="nl">Arbeidsrecht</span></span><span class="pe-card-d"><span data-l="en" hidden>Advising on hiring, dismissal, reorganisations and collective labour matters.</span><span data-l="nl">Advies over aannemen, ontslag, reorganisaties en collectieve arbeidszaken.</span></span></div>
+      <div class="pe-card fade-up"><span class="pe-card-t"><span data-l="en" hidden>Administrative law</span><span data-l="nl">Bestuursrecht</span></span><span class="pe-card-d"><span data-l="en" hidden>Permits, licensing and disputes between businesses and government bodies.</span><span data-l="nl">Vergunningen en geschillen tussen bedrijven en overheidsinstanties.</span></span></div>
+      <div class="pe-card fade-up"><span class="pe-card-t"><span data-l="en" hidden>Real estate</span><span data-l="nl">Vastgoed</span></span><span class="pe-card-d"><span data-l="en" hidden>Property transactions, development and commercial leases.</span><span data-l="nl">Vastgoedtransacties, ontwikkeling en commerciele huur.</span></span></div>
+      <div class="pe-card fade-up"><span class="pe-card-t"><span data-l="en" hidden>Tax</span><span data-l="nl">Fiscaal recht</span></span><span class="pe-card-d"><span data-l="en" hidden>Corporate and transactional tax advice across the three jurisdictions.</span><span data-l="nl">Fiscaal advies voor bedrijven en transacties in de drie rechtsgebieden.</span></span></div>
+      <div class="pe-card fade-up"><span class="pe-card-t"><span data-l="en" hidden>Corporate/M&amp;A</span><span data-l="nl">Corporate/M&amp;A</span></span><span class="pe-card-d"><span data-l="en" hidden>Mergers, acquisitions, joint ventures and corporate restructuring.</span><span data-l="nl">Fusies, overnames, joint ventures en herstructurering.</span></span></div>
+      <div class="pe-card fade-up"><span class="pe-card-t"><span data-l="en" hidden>Notarial services</span><span data-l="nl">Notariele dienstverlening</span></span><span class="pe-card-d"><span data-l="en" hidden>Deeds for incorporations, real estate transfers and corporate transactions.</span><span data-l="nl">Akten voor oprichtingen, vastgoedoverdrachten en bedrijfstransacties.</span></span></div>
+    </div>
+  </div></div></section>
+
+  <section class="page-section gray"><div class="container"><div class="pe-prose">
+    <p class="section-label"><span data-l="en" hidden>Career path</span><span data-l="nl">Carrièrepad</span></p>
+    <h2 class="section-title"><span data-l="en" hidden>Path to partner</span><span data-l="nl">Pad naar partner</span></h2>
+    <p><span data-l="en" hidden>Like most full-service Dutch firms, AKD follows a fairly standard track from graduate to partner. Progression depends on performance rather than a fixed timeline, so the years below are typical ranges, not guarantees.</span><span data-l="nl">Zoals bij de meeste full-service Nederlandse kantoren volgt AKD een vrij standaard traject van starter tot partner. Doorgroei hangt af van prestatie in plaats van een vast tijdpad, dus de jaren hieronder zijn gebruikelijke bandbreedtes, geen garantie.</span></p>
+    <div class="pe-steps">
+      <div class="pe-step"><div class="pe-step-n">1</div><div><div class="pe-step-t"><span data-l="en" hidden>LLM (master's degree)</span><span data-l="nl">Master rechten (LLM)</span></div><div class="pe-step-d"><span data-l="en" hidden>Strong grades expected, often combined with an internship</span><span data-l="nl">Goede cijfers verwacht, vaak gecombineerd met een stage</span></div></div></div>
+      <div class="pe-step"><div class="pe-step-n">2</div><div><div class="pe-step-t"><span data-l="en" hidden>Trainee / junior associate</span><span data-l="nl">Advocaat-stagiair / junior medewerker</span></div><div class="pe-step-d"><span data-l="en" hidden>2-3 years, rotation across practice groups</span><span data-l="nl">2-3 jaar, rotatie langs praktijkgroepen</span></div></div></div>
+      <div class="pe-step"><div class="pe-step-n">3</div><div><div class="pe-step-t"><span data-l="en" hidden>Associate</span><span data-l="nl">Medewerker</span></div><div class="pe-step-d"><span data-l="en" hidden>3-5 years, specialisation in one practice group</span><span data-l="nl">3-5 jaar, specialisatie binnen een praktijkgroep</span></div></div></div>
+      <div class="pe-step"><div class="pe-step-n">4</div><div><div class="pe-step-t"><span data-l="en" hidden>Senior associate</span><span data-l="nl">Senior medewerker</span></div><div class="pe-step-d"><span data-l="en" hidden>2-3 years, leads matters with less supervision</span><span data-l="nl">2-3 jaar, leidt zaken met minder toezicht</span></div></div></div>
+      <div class="pe-step"><div class="pe-step-n">5</div><div><div class="pe-step-t"><span data-l="en" hidden>Partner track</span><span data-l="nl">Partnertraject</span></div><div class="pe-step-d"><span data-l="en" hidden>Builds an own client base and practice</span><span data-l="nl">Bouwt een eigen klantenkring en praktijk op</span></div></div></div>
+    </div>
+  </div></div></section>
+
+  <section class="page-section"><div class="container"><div class="pe-prose">
+    <p class="section-label"><span data-l="en" hidden>Compensation</span><span data-l="nl">Beloning</span></p>
+    <h2 class="section-title"><span data-l="en" hidden>What full-service firms like AKD tend to pay</span><span data-l="nl">Wat full-service kantoren zoals AKD doorgaans betalen</span></h2>
+    <p><span data-l="en" hidden>AKD does not publish firm-specific salary figures. The ranges below are general indications for full-service Dutch law firms and are meant as orientation, not a promise for any specific role at AKD.</span><span data-l="nl">AKD publiceert geen kantoor-specifieke salariscijfers. De bandbreedtes hieronder zijn algemene indicaties voor full-service Nederlandse kantoren, bedoeld ter orientatie, geen belofte voor een specifieke functie bij AKD.</span></p>
+    <div class="pe-table-wrap"><table class="pe-table"><thead><tr><th><span data-l="en" hidden>Level</span><span data-l="nl">Niveau</span></th><th><span data-l="en" hidden>Indicative annual salary</span><span data-l="nl">Indicatief jaarsalaris</span></th></tr></thead><tbody>
+      <tr><td><span data-l="en" hidden>Trainee</span><span data-l="nl">Stagiair</span></td><td>&euro;60,000 &ndash; &euro;75,000</td></tr>
+      <tr><td><span data-l="en" hidden>Associate</span><span data-l="nl">Medewerker</span></td><td>&euro;75,000 &ndash; &euro;110,000</td></tr>
+      <tr><td><span data-l="en" hidden>Senior associate</span><span data-l="nl">Senior medewerker</span></td><td>&euro;120,000 &ndash; &euro;160,000</td></tr>
+      <tr><td><span data-l="en" hidden>Partner</span><span data-l="nl">Partner</span></td><td>&euro;200,000 &ndash; &euro;500,000+</td></tr>
+    </tbody></table></div>
+    <p class="pe-note"><span data-l="en" hidden>Illustrative ranges for full-service Dutch law firms generally, not AKD-specific figures.</span><span data-l="nl">Illustratieve bandbreedtes voor full-service Nederlandse kantoren in het algemeen, geen AKD-specifieke cijfers.</span></p>
   </div></div></section>
 
   <section class="page-section gray"><div class="container"><div class="pe-prose">
@@ -281,7 +367,7 @@
   <section class="page-section"><div class="container">
     <p class="section-label"><span data-l="en" hidden>Key facts</span><span data-l="nl">Kerngegevens</span></p>
     <h2 class="section-title"><span data-l="en" hidden>At a glance</span><span data-l="nl">In het kort</span></h2>
-    <dl class="bedrijf-facts"><div class="bedrijf-fact"><dt><span data-l="en" hidden>Type</span><span data-l="nl">Type</span></dt><dd><span data-l="en" hidden>Full-service law firm &amp; Notarial practice</span><span data-l="nl">Full-service advocatenkantoor &amp; Notariele praktijk</span></dd></div><div class="bedrijf-fact"><dt><span data-l="en" hidden>Head office</span><span data-l="nl">Hoofdkantoor</span></dt><dd><span data-l="en" hidden>Rotterdam</span><span data-l="nl">Rotterdam</span></dd></div><div class="bedrijf-fact"><dt><span data-l="en" hidden>Founded</span><span data-l="nl">Opgericht</span></dt><dd><span data-l="en" hidden>early 1900s</span><span data-l="nl">early 1900s</span></dd></div><div class="bedrijf-fact"><dt><span data-l="en" hidden>Size</span><span data-l="nl">Omvang</span></dt><dd><span data-l="en" hidden>219 lawyers (Advocatie); 600+ across the Benelux</span><span data-l="nl">219 advocaten (Advocatie); 600+ in de hele Benelux</span></dd></div></dl>
+    <dl class="bedrijf-facts"><div class="bedrijf-fact"><dt><span data-l="en" hidden>Type</span><span data-l="nl">Type</span></dt><dd><span data-l="en" hidden>Full-service law firm &amp; Notarial practice</span><span data-l="nl">Full-service advocatenkantoor &amp; Notariele praktijk</span></dd></div><div class="bedrijf-fact"><dt><span data-l="en" hidden>Head office</span><span data-l="nl">Hoofdkantoor</span></dt><dd><span data-l="en" hidden>Rotterdam</span><span data-l="nl">Rotterdam</span></dd></div><div class="bedrijf-fact"><dt><span data-l="en" hidden>Founded</span><span data-l="nl">Opgericht</span></dt><dd><span data-l="en" hidden>early 1900s</span><span data-l="nl">early 1900s</span></dd></div><div class="bedrijf-fact"><dt><span data-l="en" hidden>Size</span><span data-l="nl">Omvang</span></dt><dd><span data-l="en" hidden>219 lawyers (Advocatie); 600+ across the Benelux</span><span data-l="nl">219 advocaten (Advocatie); 600+ in de hele Benelux</span></dd></div><div class="bedrijf-fact"><dt><span data-l="en" hidden>Ownership</span><span data-l="nl">Eigendom</span></dt><dd><span data-l="en" hidden>Independent partnership</span><span data-l="nl">Onafhankelijk partnerschap</span></dd></div><div class="bedrijf-fact"><dt><span data-l="en" hidden>Countries</span><span data-l="nl">Landen</span></dt><dd><span data-l="en" hidden>Netherlands, Belgium, Luxembourg</span><span data-l="nl">Nederland, Belgie, Luxemburg</span></dd></div></dl>
   </div></section>
 
   <section class="page-section gray" id="vacatures"><div class="container">
@@ -309,15 +395,25 @@
   </div></section>
 
   <section class="page-section"><div class="container">
+    <p class="section-label"><span data-l="en" hidden>Similar firms</span><span data-l="nl">Vergelijkbare kantoren</span></p>
+    <h2 class="section-title"><span data-l="en" hidden>Other full-service Benelux firms</span><span data-l="nl">Andere full-service Benelux-kantoren</span></h2>
+    <div class="pe-related">
+      <a class="pe-rel-card fade-up" href="/bedrijven/van-doorne/"><span>Van Doorne</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="pe-rel-card fade-up" href="/bedrijven/cms/"><span>CMS</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="pe-rel-card fade-up" href="/bedrijven/dla-piper/"><span>DLA Piper</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div></section>
+
+  <section class="page-section gray"><div class="container">
     <p class="section-label"><span data-l="en" hidden>Related</span><span data-l="nl">Gerelateerd</span></p>
     <h2 class="section-title"><span data-l="en" hidden>Relevant legal practice areas</span><span data-l="nl">Relevante praktijkgebieden</span></h2>
     <div class="pe-related"><a class="pe-rel-card fade-up" href="/legal/employment-labour-pensions/"><span>Employment, Labour &amp; Pensions</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="pe-rel-card fade-up" href="/legal/real-estate/"><span>Real Estate</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="pe-rel-card fade-up" href="/legal/tax/"><span>Tax</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </div></section>
 
-  <section class="page-section gray"><div class="container">
+  <section class="page-section"><div class="container">
     <p class="section-label"><span data-l="en" hidden>FAQ</span><span data-l="nl">Veelgestelde vragen</span></p>
     <h2 class="section-title"><span data-l="en" hidden>Frequently asked questions about AKD</span><span data-l="nl">Veelgestelde vragen over AKD</span></h2>
-    <div class="bedrijf-faq"><details class="bedrijf-faq-item"><summary><span data-l="en" hidden>What does AKD do?</span><span data-l="nl">Wat doet AKD?</span></summary><p><span data-l="en" hidden>A Benelux firm with roots to the early 20th century, combining lawyers, tax advisers and civil-law notaries across the Netherlands, Belgium and Luxembourg.</span><span data-l="nl">Een Benelux-kantoor met wortels in het begin van de twintigste eeuw, met advocaten, fiscalisten en notarissen in Nederland, Belgie en Luxemburg.</span></p></details><details class="bedrijf-faq-item"><summary><span data-l="en" hidden>How do I get an internship or traineeship at AKD?</span><span data-l="nl">Hoe kom ik aan een stage of traineeship bij AKD?</span></summary><p><span data-l="en" hidden>Students usually start through an internship or trainee position in one of the Dutch offices, with the option to rotate into the notarial or tax practice.</span><span data-l="nl">Studenten starten meestal via een stage of traineeship in een van de Nederlandse vestigingen, met de mogelijkheid om mee te draaien in de notariele of fiscale praktijk.</span></p></details><details class="bedrijf-faq-item"><summary><span data-l="en" hidden>Which legal practice areas are relevant at AKD?</span><span data-l="nl">Welke praktijkgebieden zijn relevant bij AKD?</span></summary><p><span data-l="en" hidden>At AKD, the most relevant practice areas are Employment, Labour &amp; Pensions, Real Estate and Tax.</span><span data-l="nl">Bij AKD zijn de meest relevante praktijkgebieden Employment, Labour &amp; Pensions, Real Estate en Tax.</span></p></details><details class="bedrijf-faq-item"><summary><span data-l="en" hidden>Where is AKD based in the Netherlands?</span><span data-l="nl">Waar zit AKD in Nederland?</span></summary><p><span data-l="en" hidden>Head office: Rotterdam.</span><span data-l="nl">Hoofdkantoor: Rotterdam.</span></p></details></div>
+    <div class="bedrijf-faq"><details class="bedrijf-faq-item"><summary><span data-l="en" hidden>What does AKD do?</span><span data-l="nl">Wat doet AKD?</span></summary><p><span data-l="en" hidden>A Benelux firm with roots to the early 20th century, combining lawyers, tax advisers and civil-law notaries across the Netherlands, Belgium and Luxembourg.</span><span data-l="nl">Een Benelux-kantoor met wortels in het begin van de twintigste eeuw, met advocaten, fiscalisten en notarissen in Nederland, Belgie en Luxemburg.</span></p></details><details class="bedrijf-faq-item"><summary><span data-l="en" hidden>How do I get an internship or traineeship at AKD?</span><span data-l="nl">Hoe kom ik aan een stage of traineeship bij AKD?</span></summary><p><span data-l="en" hidden>Students usually start through an internship or trainee position in one of the Dutch offices, with the option to rotate into the notarial or tax practice.</span><span data-l="nl">Studenten starten meestal via een stage of traineeship in een van de Nederlandse vestigingen, met de mogelijkheid om mee te draaien in de notariele of fiscale praktijk.</span></p></details><details class="bedrijf-faq-item"><summary><span data-l="en" hidden>Which legal practice areas are relevant at AKD?</span><span data-l="nl">Welke praktijkgebieden zijn relevant bij AKD?</span></summary><p><span data-l="en" hidden>At AKD, the most relevant practice areas are Employment, Labour &amp; Pensions, Real Estate and Tax.</span><span data-l="nl">Bij AKD zijn de meest relevante praktijkgebieden Employment, Labour &amp; Pensions, Real Estate en Tax.</span></p></details><details class="bedrijf-faq-item"><summary><span data-l="en" hidden>Where is AKD based in the Netherlands?</span><span data-l="nl">Waar zit AKD in Nederland?</span></summary><p><span data-l="en" hidden>Head office: Rotterdam.</span><span data-l="nl">Hoofdkantoor: Rotterdam.</span></p></details><details class="bedrijf-faq-item"><summary><span data-l="en" hidden>What makes AKD different from a purely Dutch firm?</span><span data-l="nl">Wat maakt AKD anders dan een puur Nederlands kantoor?</span></summary><p><span data-l="en" hidden>AKD combines offices in the Netherlands, Belgium and Luxembourg under one firm, so cross-border matters can be handled by a single team instead of separate local counsel in each country.</span><span data-l="nl">AKD combineert vestigingen in Nederland, Belgie en Luxemburg binnen een kantoor, waardoor grensoverschrijdende zaken door een enkel team kunnen worden behandeld in plaats van aparte lokale advocaten per land.</span></p></details><details class="bedrijf-faq-item"><summary><span data-l="en" hidden>Does AKD have a notarial practice?</span><span data-l="nl">Heeft AKD een notariele praktijk?</span></summary><p><span data-l="en" hidden>Yes. AKD combines lawyers, tax advisers and civil-law notaries in the same organisation, which is common among the larger full-service Dutch firms.</span><span data-l="nl">Ja. AKD combineert advocaten, fiscalisten en notarissen binnen dezelfde organisatie, wat gebruikelijk is bij de grotere full-service Nederlandse kantoren.</span></p></details></div>
   </div></section>
 
   <section class="page-cta"><div class="container">
