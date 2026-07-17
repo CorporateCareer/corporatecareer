@@ -708,11 +708,11 @@
             <h4 data-i18n="jobs.filter.sector">Sector</h4>
             <label class="filter-label">
               <input type="checkbox" name="sector" value="finance">
-              Finance <span class="filter-count">19</span>
+              Finance <span class="filter-count">35</span>
             </label>
             <label class="filter-label">
               <input type="checkbox" name="sector" value="advocatuur">
-              Law <span class="filter-count">8</span>
+              Law <span class="filter-count">179</span>
             </label>
             <label class="filter-label">
               <input type="checkbox" name="sector" value="consulting">
@@ -724,11 +724,11 @@
             <h4 data-i18n="jobs.filter.type">Type</h4>
             <label class="filter-label">
               <input type="checkbox" name="type" value="graduate">
-              Graduate <span class="filter-count">53</span>
+              Graduate <span class="filter-count">153</span>
             </label>
             <label class="filter-label">
               <input type="checkbox" name="type" value="stage">
-              Stage / Internship <span class="filter-count">7</span>
+              Stage / Internship <span class="filter-count">94</span>
             </label>
           </div>
 
@@ -736,11 +736,11 @@
             <h4>Location</h4>
             <label class="filter-label">
               <input type="checkbox" name="location" value="Amsterdam">
-              Amsterdam <span class="filter-count">59</span>
+              Amsterdam <span class="filter-count">169</span>
             </label>
             <label class="filter-label">
               <input type="checkbox" name="location" value="Rotterdam">
-              Rotterdam <span class="filter-count">1</span>
+              Rotterdam <span class="filter-count">16</span>
             </label>
           </div>
         </aside>
@@ -749,7 +749,7 @@
       <!-- MAIN JOBS LIST -->
       <main class="jobs-main">
         <div class="jobs-header">
-          <span id="jobCount"><strong>60</strong> positions found</span>
+          <span id="jobCount"><strong>247</strong> positions found</span>
           <div class="sort-wrap">
             <label for="sortSelect" data-i18n="jobs.sort.label">Sort by:</label>
             <select id="sortSelect" onchange="applyFilters()" aria-label="Sort">
@@ -21377,6 +21377,48 @@
     const typeMap    = { graduate: "Graduate", stage: "Internship" };
     const sectorBadgeClass = { finance: "badge--finance", advocatuur: "badge--advocatuur", consulting: "badge--consulting" };
     const typeBadgeClass   = { graduate: "badge--graduate", stage: "badge--stage" };
+
+    function populateFilters() {
+      const sectorCounts = {}, typeCounts = {}, locCounts = {};
+      JOBS.forEach(function (j) {
+        sectorCounts[j.sector] = (sectorCounts[j.sector] || 0) + 1;
+        typeCounts[j.type] = (typeCounts[j.type] || 0) + 1;
+        locCounts[j.location] = (locCounts[j.location] || 0) + 1;
+      });
+      document.querySelectorAll('input[name="sector"]').forEach(function (cb) {
+        const span = cb.closest('label').querySelector('.filter-count');
+        if (span) span.textContent = sectorCounts[cb.value] || 0;
+      });
+      document.querySelectorAll('input[name="type"]').forEach(function (cb) {
+        const span = cb.closest('label').querySelector('.filter-count');
+        if (span) span.textContent = typeCounts[cb.value] || 0;
+      });
+      const firstLocInput = document.querySelector('input[name="location"]');
+      if (firstLocInput) {
+        const locGroup = firstLocInput.closest('.filter-group');
+        const checkedLocs = [...document.querySelectorAll('input[name="location"]:checked')].map(function (cb) { return cb.value; });
+        locGroup.querySelectorAll('.filter-label').forEach(function (el) { el.remove(); });
+        Object.keys(locCounts)
+          .sort(function (a, b) { return locCounts[b] - locCounts[a]; })
+          .forEach(function (loc) {
+            const label = document.createElement('label');
+            label.className = 'filter-label';
+            const input = document.createElement('input');
+            input.type = 'checkbox';
+            input.name = 'location';
+            input.value = loc;
+            input.checked = checkedLocs.indexOf(loc) !== -1;
+            const span = document.createElement('span');
+            span.className = 'filter-count';
+            span.textContent = locCounts[loc];
+            label.appendChild(input);
+            label.appendChild(document.createTextNode(' ' + loc + ' '));
+            label.appendChild(span);
+            locGroup.appendChild(label);
+          });
+      }
+    }
+    populateFilters();
 
     function timeLabel(days) {
       if (days == null) return (window.CURRENT_LANG||'nl')==='nl' ? 'Openstaand' : 'Open';
