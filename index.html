@@ -755,6 +755,9 @@
           var grid = document.getElementById('newWeekGrid'), empty = document.getElementById('newWeekEmpty');
           if (!picked.length) { empty.style.display = 'block'; return; }
           grid.innerHTML = picked.slice(0,4).map(cardHtml).join('');
+          // Cards are inserted after the page's fade-up IntersectionObserver already
+          // ran its initial scan, so they'd otherwise stay stuck at opacity:0 forever.
+          grid.querySelectorAll('.fade-up').forEach(function(el){ el.classList.add('visible'); });
         }).catch(function(){
           document.getElementById('newWeekEmpty').style.display = 'block';
         });
