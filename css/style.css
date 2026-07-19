@@ -1113,7 +1113,7 @@ h1, h2 {
   display: grid;
   grid-template-columns: 240px 1fr;
   gap: 80px;
-  padding: 64px 0 56px;
+  padding: 64px 24px 56px;
 }
 
 .footer-brand .logo {
@@ -1200,7 +1200,7 @@ h1, h2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 22px 0;
+  padding: 22px 24px;
 }
 
 .footer-bottom span {
@@ -1389,7 +1389,7 @@ h1, h2 {
   .footer-inner {
     grid-template-columns: 1fr;
     gap: 40px;
-    padding: 48px 0 40px;
+    padding: 48px 24px 40px;
   }
 
   .footer-brand p { max-width: 100%; }
