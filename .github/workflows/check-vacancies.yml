@@ -1,12 +1,13 @@
-name: Dagelijkse vacaturecontrole
+name: Wekelijkse vacaturecontrole
 
-# Controleert dagelijks of elke vacature nog open staat, regenereert de
-# detailpagina's en publiceert de wijzigingen. De .nl-site draait op de
-# gh-pages-branch, dus na het bijwerken van main wordt gh-pages gesynct.
+# Controleert wekelijks (maandag) of elke vacature nog open staat,
+# regenereert de detailpagina's en publiceert de wijzigingen. De .nl-site
+# draait op de gh-pages-branch, dus na het bijwerken van main wordt
+# gh-pages gesynct.
 
 on:
   schedule:
-    - cron: "0 6 * * *"
+    - cron: "0 6 * * 1"
   workflow_dispatch:
 
 permissions:
@@ -75,7 +76,7 @@ jobs:
               synced=true
               break
             fi
-            git commit -m "sync: dagelijkse vacaturecontrole vanaf main"
+            git commit -m "sync: wekelijkse vacaturecontrole vanaf main"
             if git push origin gh-pages; then
               synced=true
               break
