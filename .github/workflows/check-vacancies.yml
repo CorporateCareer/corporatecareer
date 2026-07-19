@@ -1,12 +1,13 @@
-name: Dagelijkse vacaturecontrole
+name: Wekelijkse vacaturecontrole
 
-# Controleert dagelijks of elke vacature nog open staat, regenereert de
-# detailpagina's en publiceert de wijzigingen. De .nl-site draait op de
-# gh-pages-branch, dus na het bijwerken van main wordt gh-pages gesynct.
+# Controleert wekelijks (maandag) of elke vacature nog open staat,
+# regenereert de detailpagina's en publiceert de wijzigingen. De .nl-site
+# draait op de gh-pages-branch, dus na het bijwerken van main wordt
+# gh-pages gesynct.
 
 on:
   schedule:
-    - cron: "0 6 * * *"
+    - cron: "0 6 * * 1"
   workflow_dispatch:
 
 permissions:
@@ -43,20 +44,47 @@ jobs:
           git add jobs.html scripts/vacancy_state.json scripts/vacancy_seen.json vacatures sitemap.xml
           if git diff --cached --quiet; then
             echo "Geen wijzigingen."
-          else
-            git commit -m "Automatische vacaturecontrole: status en detailpagina's bijgewerkt"
-            git push origin main
+            exit 0
+          fi
+          git commit -m "Automatische vacaturecontrole: status en detailpagina's bijgewerkt"
+          pushed=false
+          for i in 1 2 3 4 5; do
+            if git push origin main; then
+              pushed=true
+              break
+            fi
+            echo "Push afgewezen (waarschijnlijk main verschoven), rebasen en opnieuw proberen..."
+            git fetch origin main
+            git rebase origin/main
+            sleep $((i * 5))
+          done
+          if [ "$pushed" != "true" ]; then
+            echo "::error::Kon niet naar main pushen na meerdere pogingen."
+            exit 1
           fi
 
       - name: Sync gh-pages vanaf main
         run: |
-          git fetch origin gh-pages
-          git checkout -B gh-pages origin/gh-pages
-          git archive main | tar -x
-          git add -A
-          if git diff --cached --quiet; then
-            echo "gh-pages al in sync."
-          else
-            git commit -m "sync: dagelijkse vacaturecontrole vanaf main"
-            git push origin gh-pages
+          synced=false
+          for i in 1 2 3 4 5; do
+            git fetch origin gh-pages main
+            git checkout -B gh-pages origin/gh-pages
+            git archive origin/main | tar -x
+            git add -A
+            if git diff --cached --quiet; then
+              echo "gh-pages al in sync."
+              synced=true
+              break
+            fi
+            git commit -m "sync: wekelijkse vacaturecontrole vanaf main"
+            if git push origin gh-pages; then
+              synced=true
+              break
+            fi
+            echo "Push afgewezen (waarschijnlijk gh-pages verschoven elders), opnieuw proberen..."
+            sleep $((i * 5))
+          done
+          if [ "$synced" != "true" ]; then
+            echo "::error::Kon gh-pages niet synchroniseren na meerdere pogingen."
+            exit 1
           fi
