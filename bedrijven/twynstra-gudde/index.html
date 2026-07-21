@@ -278,7 +278,7 @@
     <a class="link-arrow" href="/jobs.html" style="color:var(--blue-600);font-weight:700;text-decoration:none;display:inline-block;margin-top:18px"><span data-l="en" hidden>View all vacancies</span><span data-l="nl">Bekijk alle vacatures</span></a>
     <script>
     (function(){
-      var FIRMS=["TwynstraGudde"];
+      var FIRMS=["Twynstra Gudde"];
       fetch('/jobs.html').then(function(r){return r.text();}).then(function(t){
         var n=new DOMParser().parseFromString(t,'text/html').getElementById('jobs-data'); if(!n)return;
         var jobs=JSON.parse(n.textContent).filter(function(j){return j.active!==false;});
