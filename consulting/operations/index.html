@@ -522,7 +522,7 @@
     <a class="link-arrow" href="/jobs.html" data-i18n="cop.vac.all" style="color:var(--blue-600);font-weight:700;text-decoration:none;display:inline-block;margin-top:18px">Bekijk alle vacatures</a>
     <script>
     (function(){
-      var TAX_FIRMS=["Kearney","TwynstraGudde","EFESO Management Consultants","Accenture"];
+      var TAX_FIRMS=["Kearney","Twynstra Gudde","EFESO Management Consultants","Accenture"];
       fetch('/jobs.html').then(function(r){return r.text();}).then(function(t){
         var node=new DOMParser().parseFromString(t,'text/html').getElementById('jobs-data');
         if(!node) return;
