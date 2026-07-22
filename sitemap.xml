@@ -957,16 +957,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/vacatures/barentskrans-senior-advocaat-medewerker-corporate-commercial-en-financial-litiga.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/barentskrans-advocaat-medewerker-aanbestedingsrecht-eu-en-competition.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/vacatures/barentskrans-werkstudent-arbeidsrecht.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -1013,11 +1003,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/vacatures/cms-advocaat-stagiaire-corporate-en-m-en-a.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/cms-advocaat-stagiaire-bestuursrecht.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
