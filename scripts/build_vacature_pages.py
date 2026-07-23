@@ -171,6 +171,8 @@ def build_page(job, nav, footer, first_seen, active):
         "employmentType": EMP_TYPE[job["type"]],
         "hiringOrganization": {"@type": "Organization", "name": job["company"], "sameAs": d["firmSite"]},
         "jobLocation": {"@type": "Place", "address": job_address},
+        "identifier": {"@type": "PropertyValue", "name": job["company"],
+                       "value": str(job.get("checkText") or job["id"])},
         "directApply": False, "url": url,
     }
     bs = job.get("baseSalary")
