@@ -687,8 +687,6 @@
             </svg>
             <select id="locationFilter" aria-label="Filter by location">
               <option value="" data-i18n="jobs.location.all">All locations</option>
-              <option value="Amsterdam">Amsterdam</option>
-              <option value="Rotterdam">Rotterdam</option>
             </select>
           </div>
           <button class="btn-search" onclick="applyFilters()">Search</button>
@@ -28078,6 +28076,21 @@
             label.appendChild(span);
             locGroup.appendChild(label);
           });
+      }
+      // Populate the search-bar location dropdown from the real data (was hardcoded to two cities)
+      const locSel = document.getElementById('locationFilter');
+      if (locSel) {
+        const current = locSel.value;
+        locSel.querySelectorAll('option:not([value=""])').forEach(function (o) { o.remove(); });
+        Object.keys(locCounts)
+          .sort(function (a, b) { return locCounts[b] - locCounts[a]; })
+          .forEach(function (loc) {
+            const o = document.createElement('option');
+            o.value = loc;
+            o.textContent = loc + ' (' + locCounts[loc] + ')';
+            locSel.appendChild(o);
+          });
+        locSel.value = current;
       }
     }
     populateFilters();
