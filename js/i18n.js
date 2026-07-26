@@ -15730,17 +15730,24 @@ function applyLanguage(lang) {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  // Apply saved language, else the page default (window.__ccDefaultLang), else English
-  const saved = localStorage.getItem('cc-lang') || window.__ccDefaultLang || 'en';
-  applyLanguage(saved);
+// The language is determined by the URL: pages under /en/ are English, all
+// others are Dutch. Each page declares its language via window.__ccDefaultLang,
+// so we render that and the toggle navigates to the other language's URL.
+function ccOtherLangUrl() {
+  const p = window.location.pathname;
+  const isEn = p === '/en' || p.indexOf('/en/') === 0;
+  const target = isEn ? (p.replace(/^\/en/, '') || '/') : ('/en' + p);
+  return target + window.location.search + window.location.hash;
+}
 
-  // Wire up toggle button
+document.addEventListener('DOMContentLoaded', () => {
+  applyLanguage(window.__ccDefaultLang || 'nl');
+
+  // The toggle navigates to the other language's URL (separate URLs per language)
   const toggle = document.getElementById('langToggle');
   if (toggle) {
     toggle.addEventListener('click', () => {
-      const current = window.CURRENT_LANG || 'en';
-      applyLanguage(current === 'en' ? 'nl' : 'en');
+      window.location.href = ccOtherLangUrl();
     });
   }
 });
