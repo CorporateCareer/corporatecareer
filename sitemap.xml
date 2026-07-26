@@ -50,6 +50,30 @@
   </url>
 
   <url>
+    <loc>https://corporatecareer.nl/resources/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://corporatecareer.nl/resources/sollicitatiegids/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://corporatecareer.nl/resources/case-interview/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://corporatecareer.nl/resources/finance-interview/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://corporatecareer.nl/investment-banking-nederland.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
