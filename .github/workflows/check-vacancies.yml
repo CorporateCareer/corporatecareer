@@ -50,7 +50,7 @@ jobs:
         run: |
           git config user.name "vacature-check"
           git config user.email "actions@github.com"
-          git add jobs.html scripts/vacancy_state.json scripts/vacancy_seen.json vacatures sitemap.xml
+          git add jobs.html scripts/vacancy_state.json scripts/vacancy_seen.json vacatures en/vacatures sitemap.xml
           if git diff --cached --quiet; then
             echo "Geen wijzigingen."
             exit 0

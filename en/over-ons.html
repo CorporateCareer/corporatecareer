@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script>window.__ccDefaultLang='en';</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- ── SEO ──────────────────────────────── -->
+  <meta name="keywords" content="corporatecareer over ons, carrièreplatform nederland, onafhankelijke carrièregids, over ons finance platform">
+  <meta name="author" content="CorporateCareer">
+  <meta name="robots" content="index, follow">
+  <link rel="alternate" hreflang="nl" href="https://corporatecareer.nl/over-ons.html">
+  <link rel="alternate" hreflang="en" href="https://corporatecareer.nl/en/over-ons.html">
+  <link rel="alternate" hreflang="x-default" href="https://corporatecareer.nl/over-ons.html">
+  <link rel="canonical" href="https://corporatecareer.nl/en/over-ons.html">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CorporateCareer">
+  <meta property="og:title" content="About CorporateCareer">
+  <meta property="og:description" content="About CorporateCareer: an independent career guide for students in finance, consulting and law in the Netherlands.">
+  <meta property="og:url" content="https://corporatecareer.nl/en/over-ons.html">
+  <meta property="og:image" content="https://corporatecareer.nl/img/og-cover.jpg">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:locale:alternate" content="nl_NL">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About CorporateCareer">
+  <meta name="twitter:description" content="About CorporateCareer: an independent career guide for students in finance, consulting and law in the Netherlands.">
+  <meta name="twitter:image" content="https://corporatecareer.nl/img/og-cover.jpg">
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+    {
+      "@type": "AboutPage",
+      "@id": "https://corporatecareer.nl/over-ons.html#page",
+      "name": "Over CorporateCareer",
+      "description": "CorporateCareer is een onafhankelijk platform met carrièregidsen voor finance, consulting en de advocatuur in Nederland.",
+      "url": "https://corporatecareer.nl/over-ons.html",
+      "publisher": {"@id": "https://corporatecareer.nl/#organization"}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://corporatecareer.nl/"},
+        {"@type": "ListItem", "position": 2, "name": "About Us", "item": "https://corporatecareer.nl/over-ons.html"}
+      ]
+    }
+  ]
+  }
+  </script>
+  <meta name="description" content="About CorporateCareer: an independent career guide for students in finance, consulting and law in the Netherlands.">
+  <title>About CorporateCareer | CorporateCareer</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preload" href="/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    /* ── Page hero ── */
+    .about-hero {
+      background: linear-gradient(135deg, var(--navy-950) 0%, var(--navy-800) 100%);
+      padding: 140px 0 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(37,99,235,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .about-hero .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(37,99,235,0.15);
+      border: 1px solid rgba(37,99,235,0.3);
+      color: var(--blue-300);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 999px;
+      margin-bottom: 24px;
+    }
+    .about-hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .about-hero h1 span {
+      background: linear-gradient(90deg, var(--blue-400), var(--blue-300));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .about-hero p {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.60);
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ── Sections ── */
+    .about-section {
+      padding: 80px 0;
+    }
+    .about-section + .about-section {
+      border-top: 1px solid var(--gray-200);
+    }
+    .about-section.dark {
+      background: var(--navy-900);
+      border-top: none;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .about-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--blue-600);
+      margin-bottom: 12px;
+    }
+    .about-section.dark .about-label { color: var(--blue-400); }
+
+    .about-section h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 800;
+      color: var(--navy-900);
+      line-height: 1.25;
+      margin-bottom: 18px;
+    }
+    .about-section.dark h2 { color: var(--white); }
+
+    .about-section p {
+      color: var(--gray-600);
+      line-height: 1.75;
+      margin-bottom: 16px;
+      font-size: 1rem;
+    }
+    .about-section p:last-child { margin-bottom: 0; }
+    .about-section.dark p { color: rgba(255,255,255,0.55); }
+
+    /* ── Stat blocks ── */
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .about-stat {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: 12px;
+      padding: 28px 24px;
+      text-align: center;
+    }
+    .about-stat .stat-number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--navy-900);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .about-stat .stat-label {
+      font-size: 0.82rem;
+      color: var(--gray-500);
+      font-weight: 500;
+    }
+
+    /* ── Team cards ── */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 48px;
+    }
+    .team-card {
+      background: var(--navy-800);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 32px 24px;
+      text-align: center;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .team-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(37,99,235,0.35);
+    }
+    .team-avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue-600), var(--violet));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--white);
+      margin: 0 auto 16px;
+    }
+    .team-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+    .team-role {
+      font-size: 0.8rem;
+      color: var(--blue-400);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .team-bio {
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.65;
+    }
+
+    /* ── Values ── */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .value-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 14px;
+      padding: 28px;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      transition: box-shadow 0.2s;
+    }
+    .value-card:hover { box-shadow: var(--shadow-md); }
+    .value-icon {
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      border-radius: 10px;
+      background: rgba(37,99,235,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+    .value-card h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--navy-900);
+      margin-bottom: 6px;
+    }
+    .value-card p {
+      font-size: 0.83rem;
+      color: var(--gray-500);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* ── CTA strip ── */
+    .about-cta {
+      background: linear-gradient(150deg, #142a45 0%, #1b3a66 60%, #234b7e 100%);
+      padding: 72px 0;
+      text-align: center;
+    }
+    .about-cta h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 14px;
+    }
+    .about-cta p {
+      color: rgba(255,255,255,0.72);
+      font-size: 1rem;
+      margin-bottom: 32px;
+    }
+    .about-cta .btn-row {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .about-cta .btn-primary {
+      background: var(--white);
+      color: var(--blue-600);
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .about-cta .btn-primary:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.2); transform: translateY(-2px); }
+    .about-cta .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255,255,255,0.45);
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .about-cta .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.08); }
+
+    @media (max-width: 768px) {
+      .about-grid { grid-template-columns: 1fr; gap: 36px; }
+      .about-stats { grid-template-columns: 1fr 1fr; }
+      .team-grid { grid-template-columns: 1fr; }
+      .values-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TXBG97YW6Y"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TXBG97YW6Y');
+  </script>
+</head>
+<body>
+
+  <!-- ── NAVIGATION ─────────────────────── -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="/en/index.html" class="logo">
+        <span class="logo-icon">CC</span>
+        <span class="logo-text">CorporateCareer</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li class="nav-dropdown">
+          <span class="nav-dropdown-head">
+            <a href="/en/finance.html" data-i18n="nav.finance">Finance</a>
+            <button class="nav-sub-toggle" type="button" aria-label="Toggle finance submenu" aria-expanded="false"><svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          </span>
+          <ul class="nav-dropdown-menu">
+            <li><a href="/en/finance/bedrijven" data-i18n="nav.companies">Bedrijven</a></li>
+            <li class="nav-dropdown-divider" role="separator"></li>
+            <li><a href="/en/finance/investment-banking">Investment Banking</a></li>
+            <li><a href="/en/finance/ma">M&amp;A</a></li>
+            <li><a href="/en/finance/corporate-finance">Corporate Finance</a></li>
+            <li><a href="/en/finance/private-equity">Private Equity</a></li>
+            <li><a href="/en/finance/venture-capital">Venture Capital</a></li>
+            <li><a href="/en/finance/asset-management">Asset Management</a></li>
+            <li><a href="/en/finance/equity-research">Equity Research</a></li>
+            <li><a href="/en/finance/corporate-development">Corporate Development</a></li>
+            <li><a href="/en/finance/valuation">Valuation</a></li>
+            <li><a href="/en/finance/transaction-services">Transaction Services</a></li>
+            <li><a href="/en/finance/debt-advisory">Debt Advisory</a></li>
+            <li><a href="/en/finance/real-estate-finance">Real Estate Finance</a></li>
+            <li><a href="/en/finance/trading">Trading</a></li>
+            <li><a href="/en/finance/wealth-management">Wealth Management &amp; Private Banking</a></li>
+            <li><a href="/en/finance/risk-management">Risk Management</a></li>
+          </ul>
+        </li>
+        <li class="nav-dropdown">
+          <span class="nav-dropdown-head">
+            <a href="/en/consulting.html" data-i18n="nav.consulting">Consulting</a>
+            <button class="nav-sub-toggle" type="button" aria-label="Toggle consulting submenu" aria-expanded="false"><svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          </span>
+          <ul class="nav-dropdown-menu">
+            <li><a href="/en/consulting/bedrijven" data-i18n="nav.companies">Bedrijven</a></li>
+            <li class="nav-dropdown-divider" role="separator"></li>
+            <li><a href="/en/consulting/strategy">Strategy</a></li>
+            <li><a href="/en/consulting/technology-digital">Technology &amp; Digital</a></li>
+            <li><a href="/en/consulting/data-analytics">Data &amp; Analytics</a></li>
+            <li><a href="/en/consulting/financial-deal-advisory">Financial &amp; Deal Advisory</a></li>
+            <li><a href="/en/consulting/operations">Operations</a></li>
+            <li><a href="/en/consulting/risk-regulatory">Risk &amp; Regulatory</a></li>
+            <li><a href="/en/consulting/sustainability">Sustainability</a></li>
+            <li><a href="/en/consulting/people-organisation">People &amp; Organisation</a></li>
+          </ul>
+        </li>
+        <li class="nav-dropdown">
+          <span class="nav-dropdown-head">
+            <a href="/en/legal.html" data-i18n="nav.legal">Legal</a>
+            <button class="nav-sub-toggle" type="button" aria-label="Toggle legal submenu" aria-expanded="false"><svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          </span>
+          <ul class="nav-dropdown-menu">
+            <li><a href="/en/legal/bedrijven" data-i18n="nav.companies">Bedrijven</a></li>
+            <li class="nav-dropdown-divider" role="separator"></li>
+            <li><a href="/en/legal/administrative-law">Administrative Law</a></li>
+            <li><a href="/en/legal/antitrust-competition-trade">Antitrust, Competition &amp; Trade</a></li>
+            <li><a href="/en/legal/banking-finance">Banking &amp; Finance</a></li>
+            <li><a href="/en/legal/commercial">Commercial</a></li>
+            <li><a href="/en/legal/corporate-ma">Corporate/M&amp;A</a></li>
+            <li><a href="/en/legal/dispute-resolution">Dispute Resolution</a></li>
+            <li><a href="/en/legal/employment-labour-pensions">Employment, Labour &amp; Pensions</a></li>
+            <li><a href="/en/legal/esg">ESG</a></li>
+            <li><a href="/en/legal/intellectual-property">Intellectual Property</a></li>
+            <li><a href="/en/legal/public-procurement">Public Procurement</a></li>
+            <li><a href="/en/legal/real-estate">Real Estate</a></li>
+            <li><a href="/en/legal/restructuring-insolvency">Restructuring &amp; Insolvency</a></li>
+            <li><a href="/en/legal/tax">Tax</a></li>
+            <li><a href="/en/legal/artificial-intelligence-digital-regulation">Artificial Intelligence &amp; Digital Regulation</a></li>
+          </ul>
+        </li>
+        <li><a href="/en/jobs.html" data-i18n="nav.careers">Careers</a></li>
+        <li><a href="/en/partners.html" data-i18n="nav.partners">Partners</a></li>
+        <li><a href="/en/resources/" data-i18n="nav.resources">Resources</a></li><li><a href="/en/over-ons.html" class="active" data-i18n="nav.about">About Us</a></li>
+        <li>
+          <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+            <span class="lang-btn lang-btn--en lang-active">EN</span>
+            <span class="lang-btn lang-btn--nl">NL</span>
+          </button>
+        </li>
+        <li><a href="/en/index.html#start" class="btn-nav" data-i18n="nav.cta">Get Started</a></li>
+        <li><a href="/en/word-partner.html" class="btn-nav-partner">Become a partner</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" data-i18n-aria="nav.hamburger.open">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+
+  <!-- ── HERO ──────────────────────────── -->
+  <section class="about-hero">
+    <div class="container">
+      <span class="badge" data-i18n="about.badge">Ons verhaal</span>
+      <h1 data-i18n-html="about.title">Eerlijke informatie<br><span>voor ambitieuze studenten</span></h1>
+      <p data-i18n="about.subtitle">We weten hoe het voelt om niet te weten waar je moet beginnen. Daarom bouwden we het platform dat wij zelf hadden willen hebben.</p>
+    </div>
+  </section>
+
+  <!-- ── MISSION ────────────────────────── -->
+  <section class="about-section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="fade-up">
+          <p class="about-label" data-i18n="about.mission.label">Onze missie</p>
+          <h2 data-i18n="about.mission.title">Gelijke kansen voor elk ambitieus talent</h2>
+          <p data-i18n="about.mission.p1">In Nederland weten te veel studenten niet hoe ze kunnen doorbreken bij kantoren als Goldman Sachs, McKinsey of De Brauw Blackstone Westbroek. Niet omdat ze niet goed genoeg zijn, maar simpelweg omdat ze niet weten hoe het traject werkt.</p>
+          <p data-i18n="about.mission.p2">CorporateCareer geeft iedereen toegang tot dezelfde informatie en voorbereiding, ongeacht wie je toevallig al kent.</p>
+          <p data-i18n="about.mission.p3">Veel van die informatie is versnipperd, verouderd of verstopt achter dure trajecten. Wij brengen het overzichtelijk en gratis samen, zodat je zelf een onderbouwde keuze kunt maken.</p>
+        </div>
+        <div class="about-stats fade-up" style="grid-column: span 1;">
+          <div class="about-stat">
+            <div class="stat-number" data-i18n="about.stat1.value">3 sectoren</div>
+            <div class="stat-label" data-i18n="about.stat1.label">Finance, Consulting &amp; Recht</div>
+          </div>
+          <div class="about-stat">
+            <div class="stat-number" data-i18n-html="about.stat2.value">30<span style="font-size:0.55em;font-weight:700;">+</span></div>
+            <div class="stat-label" data-i18n="about.stat2.label">specialisaties uitgediept</div>
+          </div>
+          <div class="about-stat">
+            <div class="stat-number" data-i18n-html="about.stat3.value">100<span style="font-size:0.55em;font-weight:700;">%</span></div>
+            <div class="stat-label" data-i18n="about.stat3.label">gratis en onafhankelijk</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHAT YOU'LL FIND ───────────────── -->
+  <section class="about-section">
+    <div class="container">
+      <div style="text-align:center; margin-bottom: 0;">
+        <p class="about-label" data-i18n="about.find.label">Wat je hier vindt</p>
+        <h2 data-i18n="about.find.title">Vier onderdelen, één overzicht</h2>
+      </div>
+      <div class="values-grid">
+        <div class="value-card fade-up">
+          <div class="value-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+          <div>
+            <h4 data-i18n="about.find1.title">Werkgevers en kantoren</h4>
+            <p data-i18n="about.find1.desc">Overzichten van werkgevers en kantoren in finance, consulting en de advocatuur, inclusief de structuur van functies en teams.</p>
+          </div>
+        </div>
+        <div class="value-card fade-up">
+          <div class="value-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+          <div>
+            <h4 data-i18n="about.find2.title">Salarisindicaties</h4>
+            <p data-i18n="about.find2.desc">Gebaseerd op openbare bronnen en vacaturegegevens, met bronvermelding waar mogelijk.</p>
+          </div>
+        </div>
+        <div class="value-card fade-up">
+          <div class="value-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 20l-5.5-2V4L9 6m0 14l6-2m-6 2V6m6 12l5.5 2V6L15 4m0 16V4M9 6l6-2"/></svg></div>
+          <div>
+            <h4 data-i18n="about.find3.title">Instaproutes</h4>
+            <p data-i18n="about.find3.desc">Van studiekeuze en pre-master tot traineeships en junior functies.</p>
+          </div>
+        </div>
+        <div class="value-card fade-up">
+          <div class="value-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+          <div>
+            <h4 data-i18n="about.find4.title">Sollicitatiegidsen</h4>
+            <p data-i18n="about.find4.desc">Praktische gidsen voor het sollicitatietraject: cv, motivatie, gesprekken en assessments.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── HOW WE WORK ────────────────────── -->
+  <section class="about-section dark">
+    <div class="container">
+      <div style="text-align:center; margin-bottom: 0;">
+        <p class="about-label" style="color:var(--blue-400);" data-i18n="about.team.label">Onze aanpak</p>
+        <h2 data-i18n="about.team.title">Hoe we onze informatie samenstellen</h2>
+        <p style="color:rgba(255,255,255,0.5); max-width:520px; margin:0 auto;" data-i18n="about.team.subtitle">Geen verzonnen verhalen. Alleen informatie die we kunnen onderbouwen.</p>
+        <p style="color:rgba(255,255,255,0.5); max-width:600px; margin:16px auto 0; font-size:0.9rem; line-height:1.7;" data-i18n-html="about.team.intro">We baseren ons op openbare bronnen en eigen ervaring in de sector. Salarissen, functienamen en kantoorstructuren veranderen; we geven aan wanneer iets een indicatie is en actualiseren waar we kunnen. Kom je iets tegen dat niet klopt? <a href="mailto:info@corporatecareer.nl" style="color:var(--blue-300);">Laat het ons weten</a>.</p>
+      </div>
+      <div class="team-grid">
+        <div class="team-card fade-up">
+          <div class="team-avatar"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+          <div class="team-name" data-i18n="about.team1.role">Geverifieerde werkgeversinformatie</div>
+          <div class="team-bio" data-i18n="about.team1.bio">We nemen een kantoor of bank pas op in een gids als we kunnen bevestigen dat de praktijkgroep of sector daadwerkelijk actief is in Nederland.</div>
+        </div>
+        <div class="team-card fade-up" style="animation-delay: 0.1s">
+          <div class="team-avatar"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+          <div class="team-name" data-i18n="about.team2.role">Praktijkgebieden in detail</div>
+          <div class="team-bio" data-i18n="about.team2.bio">Elke gids beschrijft wat het werk inhoudt, de carrièreladder en de beloning, per praktijkgebied en per sector.</div>
+        </div>
+        <div class="team-card fade-up" style="animation-delay: 0.2s">
+          <div class="team-avatar"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.5 2v6h-6M2.5 22v-6h6"/><path d="M2 11.5a10 10 0 0 1 18.5-4.5M22 12.5a10 10 0 0 1-18.5 4.5"/></svg></div>
+          <div class="team-name" data-i18n="about.team3.role">Continu bijgewerkt</div>
+          <div class="team-bio" data-i18n="about.team3.bio">Vacatures en bedrijfsinformatie worden regelmatig gecontroleerd en bijgewerkt, zodat de informatie actueel blijft.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── VALUES ────────────────────────── -->
+  <section class="about-section">
+    <div class="container">
+      <div style="text-align:center; margin-bottom: 0;">
+        <p class="about-label" data-i18n="about.values.label">Onze waarden</p>
+        <h2 data-i18n="about.values.title">Waar we voor staan</h2>
+      </div>
+      <div class="values-grid">
+        <div class="value-card fade-up">
+          <div class="value-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></div>
+          <div>
+            <h4 data-i18n="about.val1.title">Eerlijkheid boven verkooppraatje</h4>
+            <p data-i18n="about.val1.desc">We schrijven over wat het werk daadwerkelijk inhoudt, niet over wat goed klinkt in een advertentie. Geen loze beloftes, alleen concrete informatie.</p>
+          </div>
+        </div>
+        <div class="value-card fade-up">
+          <div class="value-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+          <div>
+            <h4 data-i18n="about.val2.title">Diepgang in plaats van oppervlakkigheid</h4>
+            <p data-i18n="about.val2.desc">Onze gidsen gaan verder dan een lijstje functienamen: we leggen uit wat het werk dagelijks inhoudt, van junior tot partner.</p>
+          </div>
+        </div>
+        <div class="value-card fade-up">
+          <div class="value-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+          <div>
+            <h4 data-i18n="about.val3.title">Concreet in plaats van vaag</h4>
+            <p data-i18n="about.val3.desc">Onze gidsen geven concrete informatie over taken, vaardigheden en salarisbandbreedtes, in plaats van algemene carrièretips.</p>
+          </div>
+        </div>
+        <div class="value-card fade-up">
+          <div class="value-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a13.5 13.5 0 0 1 0 18M12 3a13.5 13.5 0 0 0 0 18"/></svg></div>
+          <div>
+            <h4 data-i18n="about.val4.title">Gelijke toegang</h4>
+            <p data-i18n="about.val4.desc">Of je nu aan een hbo of universiteit studeert, iedereen krijgt toegang tot dezelfde informatie en voorbereiding.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ───────────────────────────── -->
+  <section class="about-cta">
+    <div class="container">
+      <h2 data-i18n="about.cta.title">Klaar om te beginnen?</h2>
+      <p data-i18n="about.cta.subtitle">Ontdek de gratis carrièrepaden voor finance, consulting en de advocatuur.</p>
+      <div class="btn-row">
+        <a href="/en/index.html#start" class="btn-primary" data-i18n="about.cta.primary">Ontvang gratis stappenplan</a>
+        <a href="/en/jobs.html" class="btn-outline" data-i18n="about.cta.secondary">Bekijk vacatures</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ─────────────────────────── -->
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="/en/index.html" class="logo" aria-label="CorporateCareer homepage">
+          <span class="logo-icon">CC</span>
+          <span class="logo-text">CorporateCareer</span>
+        </a>
+        <p data-i18n="footer.tagline">Your route to the top of Dutch business.</p>
+        <div class="footer-about">
+          <h2><a href="/en/over-ons.html" style="color:inherit;text-decoration:none;" data-i18n="footer.about.heading">About Us</a></h2>
+          <p data-i18n="footer.about.text">CorporateCareer was founded by alumni from Erasmus, UvA and VU who found their own way to Goldman Sachs, McKinsey and De Brauw. We help ambitious Dutch students break through in investment banking, law and consulting.</p>
+        </div>
+      </div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <div class="footer-col">
+          <h2 data-i18n="footer.col1.title">Career Paths</h2>
+          <a href="/en/finance.html" data-i18n="nav.finance">Finance</a>
+          <a href="/en/consulting.html" data-i18n="nav.consulting">Consulting</a>
+          <a href="/en/legal.html" data-i18n="nav.legal">Legal</a>
+        </div>
+        <div class="footer-col">
+          <h2 data-i18n="footer.col2.title">Platform</h2>
+          <a href="/en/over-ons.html" data-i18n="footer.col2.about">About Us</a>
+          <a href="#" data-i18n="footer.col2.blog">Blog</a>
+          <a href="mailto:info@corporatecareer.nl" data-i18n="footer.col2.contact">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h2 data-i18n="footer.col3.title">Legal</h2>
+          <a href="#" data-i18n="footer.col3.privacy">Privacy Policy</a>
+          <a href="#" data-i18n="footer.col3.terms">Terms &amp; Conditions</a>
+          <a href="#" data-i18n="footer.col3.cookies">Cookies</a>
+        </div>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <span data-i18n="footer.copy">© 2025 CorporateCareer, All rights reserved</span>
+        <div class="footer-bottom-right">
+          <div class="footer-social" aria-label="Social media">
+            <a href="https://www.instagram.com/corporatecareernetwork/" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.15" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://www.facebook.com/profile.php?id=61591469713609" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5H16.7V3.6C16.4 3.56 15.4 3.47 14.2 3.47c-2.5 0-4.2 1.53-4.2 4.33V9.9H7.3V13h2.7v8z"/></svg></a>
+            <a href="https://www.linkedin.com/company/corporatecareer" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.2 8.65 21 10.9 21 14v7h-4v-6.2c0-1.48-.03-3.4-2.07-3.4-2.07 0-2.4 1.62-2.4 3.29V21H9z"/></svg></a>
+          </div>
+          <span data-i18n="footer.location">Amsterdam, Netherlands</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/i18n.min.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

@@ -9,10 +9,14 @@ een knop naar de officiele vacature. Pagina's van niet langer actieve
 vacatures worden opgeruimd en de sitemap wordt bijgewerkt. Wordt dagelijks
 door de GitHub Action uitgevoerd, na de vacaturecontrole.
 """
-import json, os, re, html as H
+import json, os, re, sys, html as H
 from datetime import date, timedelta
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import gen_en
+
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+EN_VAC_DIR = os.path.join(BASE, "en", "vacatures")
 JOBS_HTML = os.path.join(BASE, "jobs.html")
 VAC_DIR = os.path.join(BASE, "vacatures")
 SITEMAP = os.path.join(BASE, "sitemap.xml")
@@ -328,6 +332,18 @@ def update_sitemap(active):
         xml = re.sub(r"  <!-- VACATURES:START -->[\s\S]*?  <!-- VACATURES:END -->", marked, xml)
     else:
         xml = xml.replace("</urlset>", marked + "\n\n</urlset>")
+
+    en_block = "\n".join(
+        f"""  <url>
+    <loc>{SITE}/en/vacatures/{j['slug']}.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>""" for j in active)
+    en_marked = f"  <!-- EN_VACATURES:START -->\n{en_block}\n  <!-- EN_VACATURES:END -->"
+    if "<!-- EN_VACATURES:START -->" in xml:
+        xml = re.sub(r"  <!-- EN_VACATURES:START -->[\s\S]*?  <!-- EN_VACATURES:END -->", en_marked, xml)
+    else:
+        xml = xml.replace("</urlset>", en_marked + "\n\n</urlset>")
     open(SITEMAP, "w", encoding="utf-8").write(xml)
 
 def main():
@@ -349,17 +365,25 @@ def main():
         first_seen.setdefault(str(j["id"]), today)
 
     os.makedirs(VAC_DIR, exist_ok=True)
+    os.makedirs(EN_VAC_DIR, exist_ok=True)
     wanted = set()
     for j in active:
         fn = f"{j['slug']}.html"
         wanted.add(fn)
-        open(os.path.join(VAC_DIR, fn), "w", encoding="utf-8").write(
-            build_page(j, nav, footer, first_seen, active))
+        site_path = f"/vacatures/{fn}"
+        nl_html = gen_en.add_hreflang_nl(build_page(j, nav, footer, first_seen, active), site_path)
+        open(os.path.join(VAC_DIR, fn), "w", encoding="utf-8").write(nl_html)
+        en_title = f"{j['title']} at {j['company']} in {j['location']} | CorporateCareer"
+        en_desc = (f"{j['title']} at {j['company']} in {j['location']}. "
+                   "View the role and apply via the official job page.")
+        open(os.path.join(EN_VAC_DIR, fn), "w", encoding="utf-8").write(
+            gen_en.to_en(nl_html, site_path, en_title, en_desc))
 
     removed = 0
-    for f in os.listdir(VAC_DIR):
-        if f.endswith(".html") and f not in wanted:
-            os.remove(os.path.join(VAC_DIR, f)); removed += 1
+    for d in (VAC_DIR, EN_VAC_DIR):
+        for f in os.listdir(d):
+            if f.endswith(".html") and f not in wanted:
+                os.remove(os.path.join(d, f)); removed += 1
 
     update_sitemap(active)
     json.dump(first_seen, open(SEEN, "w", encoding="utf-8"), indent=2)
