@@ -31,7 +31,16 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Nieuwe Adzuna-vacatures ophalen
+        env:
+          ADZUNA_APP_ID: ${{ secrets.ADZUNA_APP_ID }}
+          ADZUNA_APP_KEY: ${{ secrets.ADZUNA_APP_KEY }}
+        run: python scripts/source_adzuna.py
+
       - name: Controleer vacatures
+        env:
+          ADZUNA_APP_ID: ${{ secrets.ADZUNA_APP_ID }}
+          ADZUNA_APP_KEY: ${{ secrets.ADZUNA_APP_KEY }}
         run: python scripts/check_vacancies.py
 
       - name: Genereer detailpagina's

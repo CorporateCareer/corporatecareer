@@ -15,7 +15,7 @@ Na twee opeenvolgende mislukte controles gaat de vacature op inactief;
 zodra de bron weer klopt wordt ze automatisch hersteld. De tellerstand per
 vacature staat in scripts/vacancy_state.json.
 """
-import json, re, sys, urllib.error, urllib.request
+import json, os, re, sys, urllib.error, urllib.request
 
 JOBS_HTML = "jobs.html"
 STATE = "scripts/vacancy_state.json"
@@ -35,6 +35,23 @@ def fetch(url):
         return e.code, ""
     except Exception as e:
         return None, str(e)
+
+def adzuna_ids(firm_key, app_id, app_key):
+    """Haalt de huidige Adzuna-advertentie-ids op voor een bedrijf (NL)."""
+    ids = set()
+    for page in (1, 2, 3):
+        url = (f"https://api.adzuna.com/v1/api/jobs/nl/search/{page}?app_id={app_id}"
+               f"&app_key={app_key}&results_per_page=50&what_phrase={firm_key}"
+               f"&content-type=application/json")
+        status, body = fetch(url)
+        if status != 200:
+            continue
+        try:
+            for r in json.loads(body).get("results", []):
+                ids.add(str(r.get("id")))
+        except Exception:
+            pass
+    return ids
 
 def workday_cxs(url):
     """Zet een publieke Workday-vacature-URL om naar het CXS-endpoint."""
@@ -59,9 +76,33 @@ def main():
         state = {}
 
     cache = {}
+    adz_cache = {}
     changed = False
     for job in jobs:
         url, key = job.get("url"), str(job["id"])
+        # Adzuna-vacatures: de bronpagina rate-limit (429) bot-verzoeken, dus
+        # controleer via de Adzuna-API of de advertentie nog in de resultaten
+        # van het bedrijf staat. Zonder API-sleutel slaan we de controle over
+        # (de vacature blijft ongewijzigd) zodat een ontbrekende sleutel de
+        # Adzuna-vacatures niet ten onrechte op inactief zet.
+        if job.get("source") == "adzuna":
+            akey = job.get("adzunaKey")
+            aid, akk = os.environ.get("ADZUNA_APP_ID"), os.environ.get("ADZUNA_APP_KEY")
+            if not (akey and aid and akk):
+                print(f"[{job['company']}] {job['title']}: adzuna-controle overgeslagen (geen sleutel)")
+                continue
+            if akey not in adz_cache:
+                adz_cache[akey] = adzuna_ids(akey, aid, akk)
+            ok = str(job.get("checkText")) in adz_cache[akey]
+            fails = 0 if ok else state.get(key, 0) + 1
+            state[key] = fails
+            should_be_active = fails < FAIL_LIMIT
+            if job.get("active", True) != should_be_active:
+                job["active"] = should_be_active; changed = True
+                print(f"[{job['company']}] {job['title']}: actief -> {should_be_active} (fails={fails})")
+            else:
+                print(f"[{job['company']}] {job['title']}: ok={ok} fails={fails}")
+            continue
         cxs = workday_cxs(url)
         target = cxs or url
         if target not in cache:
