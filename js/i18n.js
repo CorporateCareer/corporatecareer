@@ -17,6 +17,7 @@ const TRANSLATIONS = {
     'nav.careers':          'Careers',
     'nav.partners':         'Partners',
     'nav.articles':         'Articles',
+    'nav.resources':      'Resources',
     'nav.companies':        'Companies',
 
     /* Hero (FCP homepage) */
@@ -7855,6 +7856,7 @@ const TRANSLATIONS = {
     'nav.careers':          'Vacatures',
     'nav.partners':         'Partners',
     'nav.articles':         'Artikelen',
+    'nav.resources':      'Hulpmiddelen',
     'nav.companies':        'Bedrijven',
 
     /* Hero (FCP homepage) */
