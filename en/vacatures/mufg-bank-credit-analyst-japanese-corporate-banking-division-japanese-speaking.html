@@ -352,10 +352,7 @@
           e.hidden = e.getAttribute('data-l') !== l;
         });
       }
-      function cur() { return window.CURRENT_LANG || localStorage.getItem('cc-lang') || (window.__ccDefaultLang || 'nl'); }
-      apply(cur());
-      var tg = document.getElementById('langToggle');
-      if (tg) tg.addEventListener('click', function () { setTimeout(function () { apply(cur()); }, 20); });
+      apply(window.__ccDefaultLang || 'nl');
     })();
   </script>
 </body>
