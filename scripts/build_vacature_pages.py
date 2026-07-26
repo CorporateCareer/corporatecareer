@@ -193,14 +193,15 @@ def build_page(job, nav, footer, first_seen, active):
             {"@type": "ListItem", "position": 3, "name": job["title"], "item": url},
         ],
     }
-    meta_desc = f"{job['title']} at {job['company']} in {job['location']}. View the role and apply via the official job page."
-    page_title = f"{job['title']} at {job['company']} in {job['location']} | CorporateCareer"
+    meta_desc = f"{job['title']} bij {job['company']} in {job['location']}. Bekijk de vacature en solliciteer via de officiele vacaturepagina."
+    page_title = f"{job['title']} bij {job['company']} in {job['location']} | CorporateCareer"
     sector_en = d["facts"]["en"]["Sector"]; sector_nl = d["facts"]["nl"]["Sector"]
 
     return f"""<!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
   <meta charset="UTF-8">
+  <script>window.__ccDefaultLang='nl';</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="{esc(meta_desc)}">
   <meta name="author" content="CorporateCareer">
@@ -304,7 +305,7 @@ def build_page(job, nav, footer, first_seen, active):
           e.hidden = e.getAttribute('data-l') !== l;
         }});
       }}
-      function cur() {{ return window.CURRENT_LANG || localStorage.getItem('cc-lang') || 'en'; }}
+      function cur() {{ return window.CURRENT_LANG || localStorage.getItem('cc-lang') || (window.__ccDefaultLang || 'nl'); }}
       apply(cur());
       var tg = document.getElementById('langToggle');
       if (tg) tg.addEventListener('click', function () {{ setTimeout(function () {{ apply(cur()); }}, 20); }});
