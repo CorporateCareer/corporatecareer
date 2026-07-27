@@ -1054,7 +1054,7 @@ STYLE = pe[pe.index('  <style>'):pe.index('</style>')+len('</style>')]
 GTAG = ('  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TXBG97YW6Y"></script>\n'
         "  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}"
         "gtag('js',new Date());gtag('config','G-TXBG97YW6Y');</script>")
-FONTS = ('  <link rel="preload" href="/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>\n'
+FONTS = ('  <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>\n'
          '  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>')
 TOGGLE = """  <script>
   (function(){
