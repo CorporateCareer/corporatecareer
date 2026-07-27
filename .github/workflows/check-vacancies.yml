@@ -36,15 +36,18 @@ jobs:
       - name: Genereer detailpagina's
         run: python scripts/build_vacature_pages.py
 
+      - name: Werk de homepage bij
+        run: python scripts/build_home.py
+
       - name: Commit naar main
         run: |
           git config user.name "vacature-check"
           git config user.email "actions@github.com"
-          git add jobs.html scripts/vacancy_state.json scripts/vacancy_seen.json vacatures sitemap.xml
+          git add jobs.html index.html scripts/vacancy_state.json scripts/vacancy_seen.json vacatures sitemap.xml
           if git diff --cached --quiet; then
             echo "Geen wijzigingen."
           else
-            git commit -m "Automatische vacaturecontrole: status en detailpagina's bijgewerkt"
+            git commit -m "Automatische vacaturecontrole: status, detailpagina's en homepage bijgewerkt"
             git push origin main
           fi
 

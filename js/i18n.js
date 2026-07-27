@@ -19,20 +19,31 @@ const TRANSLATIONS = {
     'nav.articles':         'Articles',
 
     /* Hero (FCP homepage) */
-    'hero.badge':           'The #1 Career Platform for Finance, Consulting & Law',
+    'hero.badge':           'Vacancies, employers and career guides for finance, consulting and law',
     'hero.title':           'Your career<br><span class="gradient-text">starts here</span>',
-    'hero.cta.primary':     'View all vacancies',
+    'hero.search.label':    'Search vacancies',
+    'hero.search.placeholder': 'Job title or employer, for example analyst or PwC',
+    'hero.search.btn':      'Search',
+    'hero.quick.label':     'Quick links',
+    'hero.quick.finance':   'Finance',
+    'hero.quick.consulting':'Consulting',
+    'hero.quick.law':       'Law',
+    'hero.quick.internships':'Internships',
 
     /* Homepage sections */
-    'home.featured.tag':    'Featured',
-    'home.featured.title':  'Open Positions',
-    'home.featured.viewall':'View all vacancies →',
-    'home.partners.title':  'Discover top-tier employers',
-    'home.partners.sub':    '100+ prestigious partners',
-    'home.partners.viewall':'View all partners →',
-    'home.new.title':       'New This Week',
-    'home.articles.title':  'Career Guides & Articles',
-    'home.articles.viewall':'View all articles →',
+    'home.jobs.tag':        'Vacancies',
+    'home.jobs.title':      'Open positions right now',
+    'home.jobs.subtitle':   'Every vacancy links through to the employer\'s own application page. Positions that close are removed automatically.',
+    'home.jobs.viewall':    'View all vacancies',
+    'home.sectors.tag':     'Career paths',
+    'home.sectors.title':   'Three sectors, one route in',
+    'home.sectors.subtitle':'Choose the direction that fits you, then work through the guides and the open vacancies in that field.',
+    'home.employers.title': 'Employers on the platform',
+    'home.employers.directory': 'Employer directory',
+    'home.employers.viewall':'All vacancies',
+    'home.guides.tag':      'Guides',
+    'home.guides.title':    'Know the field before you apply',
+    'home.guides.subtitle': 'Per specialism: what the work involves, which employers are active in the Netherlands and how people get in.',
 
     /* Articles page */
     'articles.badge':       'Knowledge Hub',
@@ -89,12 +100,7 @@ const TRANSLATIONS = {
     'partners.cta.btn':            'Get in Touch',
 
     /* Hero (continued) */
-    'hero.subtitle':        'CorporateCareer gives you the exact roadmap to break into the top of law, investment banking or consulting, and land your first offer.',
-    'hero.cta.secondary':   'How it works',
-    'hero.stat1.label':     'Students helped',
-    'hero.stat2.label':     'Offer rate',
-    'hero.stat3.label':     'Avg. salary',
-    'hero.float.placed':    '+128 students placed',
+    'hero.subtitle':        'Find open positions at employers in the Netherlands, checked daily against their own career pages, and read how the work and the selection process really look before you apply.',
 
     /* Career Paths section */
     'paths.tag':            'Choose Your Route',
@@ -155,18 +161,16 @@ const TRANSLATIONS = {
 
     /* CTA section */
     'cta.title':            'Ready to Start Your Career?',
-    'cta.subtitle':         'Choose your path and receive your free, personalised roadmap.',
-    'cta.email.label':      'Email address',
-    'cta.email.placeholder':'your@email.com',
-    'cta.btn':              'Get Free Roadmap',
-    'cta.note':             'No spam. Unsubscribe at any time.',
-    'cta.success':          'Sent!',
+    'cta.subtitle':         'Start with the open vacancies, or read up on the employers behind them first.',
+    'cta.btn':              'View all vacancies',
+    'cta.secondary':        'Employer directory',
+    'cta.partner':          'Recruiting yourself? <a href="word-partner.html">Become a partner</a>.',
 
     /* Footer */
     'footer.tagline':       'Your route to the top of Dutch business.',
     'footer.about.heading': 'About Us',
     'footer.about.text':    'CorporateCareer was founded by alumni from Erasmus, UvA and VU who found their own way to Goldman Sachs, McKinsey and De Brauw. We help ambitious Dutch students break through in investment banking, law and consulting.',
-    'footer.about.stat':    'Over 2,400 students came before you.',
+    'footer.about.stat':    'Your career starts here.',
     'footer.col1.title':    'Career Paths',
     'footer.col1.law':      'Law',
     'footer.col2.title':    'Platform',
@@ -1875,20 +1879,31 @@ const TRANSLATIONS = {
     'nav.articles':         'Artikelen',
 
     /* Hero (FCP homepage) */
-    'hero.badge':           'Het #1 Carrièreplatform voor Finance, Consulting & Recht',
+    'hero.badge':           'Vacatures, werkgevers en carrièregidsen voor finance, consulting en advocatuur',
     'hero.title':           'Jouw carrière<br><span class="gradient-text">begint hier</span>',
-    'hero.cta.primary':     'Bekijk alle vacatures',
+    'hero.search.label':    'Zoek vacatures',
+    'hero.search.placeholder': 'Functie of werkgever, bijvoorbeeld analyst of PwC',
+    'hero.search.btn':      'Zoeken',
+    'hero.quick.label':     'Snel naar',
+    'hero.quick.finance':   'Finance',
+    'hero.quick.consulting':'Consulting',
+    'hero.quick.law':       'Advocatuur',
+    'hero.quick.internships':'Stages',
 
     /* Homepage sections */
-    'home.featured.tag':    'Uitgelicht',
-    'home.featured.title':  'Open Vacatures',
-    'home.featured.viewall':'Alle vacatures bekijken →',
-    'home.partners.title':  'Ontdek topwerkgevers',
-    'home.partners.sub':    '100+ prestigieuze partners',
-    'home.partners.viewall':'Alle partners bekijken →',
-    'home.new.title':       'Nieuw deze week',
-    'home.articles.title':  'Carrièregidsen & Artikelen',
-    'home.articles.viewall':'Alle artikelen bekijken →',
+    'home.jobs.tag':        'Vacatures',
+    'home.jobs.title':      'Nu openstaande vacatures',
+    'home.jobs.subtitle':   'Elke vacature verwijst door naar de eigen sollicitatiepagina van de werkgever. Vacatures die sluiten verdwijnen automatisch.',
+    'home.jobs.viewall':    'Alle vacatures bekijken',
+    'home.sectors.tag':     'Carrièrepaden',
+    'home.sectors.title':   'Drie sectoren, één route naar binnen',
+    'home.sectors.subtitle':'Kies de richting die bij je past en werk daarna de gidsen en de open vacatures in dat vakgebied door.',
+    'home.employers.title': 'Werkgevers op het platform',
+    'home.employers.directory': 'Bedrijvengids',
+    'home.employers.viewall':'Alle vacatures',
+    'home.guides.tag':      'Gidsen',
+    'home.guides.title':    'Ken het vakgebied voordat je solliciteert',
+    'home.guides.subtitle': 'Per specialisme: wat het werk inhoudt, welke werkgevers actief zijn in Nederland en hoe mensen er binnenkomen.',
 
     /* Articles page */
     'articles.badge':       'Kenniscentrum',
@@ -1945,12 +1960,7 @@ const TRANSLATIONS = {
     'partners.cta.btn':            'Neem contact op',
 
     /* Hero (continued) */
-    'hero.subtitle':        'CorporateCareer geeft je het exacte stappenplan om door te stoten naar de top van advocatuur, investment banking of consulting, en jouw eerste aanbod binnen te halen.',
-    'hero.cta.secondary':   'Hoe het werkt',
-    'hero.stat1.label':     'Studenten geholpen',
-    'hero.stat2.label':     'Succesratio',
-    'hero.stat3.label':     'Gemiddeld salaris',
-    'hero.float.placed':    '+128 studenten geplaatst',
+    'hero.subtitle':        'Vind openstaande functies bij werkgevers in Nederland, dagelijks gecontroleerd op hun eigen carrièrepagina, en lees hoe het werk en de selectie er echt uitzien voordat je solliciteert.',
 
     /* Career Paths section */
     'paths.tag':            'Kies je route',
@@ -2011,18 +2021,16 @@ const TRANSLATIONS = {
 
     /* CTA section */
     'cta.title':            'Klaar om jouw carrière te starten?',
-    'cta.subtitle':         'Kies je pad en ontvang direct je gratis, gepersonaliseerde stappenplan.',
-    'cta.email.label':      'E-mailadres',
-    'cta.email.placeholder':'jouw@email.nl',
-    'cta.btn':              'Ontvang gratis stappenplan',
-    'cta.note':             'Geen spam. Altijd uitschrijven mogelijk.',
-    'cta.success':          'Verstuurd!',
+    'cta.subtitle':         'Begin bij de openstaande vacatures, of lees je eerst in over de werkgevers erachter.',
+    'cta.btn':              'Alle vacatures bekijken',
+    'cta.secondary':        'Bedrijvengids',
+    'cta.partner':          'Zelf op zoek naar talent? <a href="word-partner.html">Word partner</a>.',
 
     /* Footer */
     'footer.tagline':       'Jouw route naar de top van het Nederlandse bedrijfsleven.',
     'footer.about.heading': 'Over ons',
     'footer.about.text':    'CorporateCareer is opgericht door oud-studenten van Erasmus, UvA en VU die zelf de weg hebben gevonden naar Goldman Sachs, McKinsey en De Brauw. Wij helpen ambitieuze Nederlandse studenten met eerlijke informatie, gerichte voorbereiding en een sterk netwerk om door te breken in investment banking, advocatuur en consulting.',
-    'footer.about.stat':    'Meer dan 2.400 studenten gingen je voor.',
+    'footer.about.stat':    'Jouw carrière begint hier.',
     'footer.col1.title':    'Carrièrepaden',
     'footer.col1.law':      'Advocatuur',
     'footer.col2.title':    'Platform',
