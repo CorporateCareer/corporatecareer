@@ -94,11 +94,12 @@ def main():
         en_html=gen_en.to_en(html, site_path, title, desc)
         out=os.path.join(BASE,"en",rel); os.makedirs(os.path.dirname(out),exist_ok=True)
         open(out,"w",encoding="utf-8").write(en_html)
-        new_nl=gen_en.add_hreflang_nl(html, site_path)
+        new_nl=gen_en.add_hreflang_nl(gen_en.bake(html, "nl"), site_path)
         if new_nl!=html: open(src,"w",encoding="utf-8").write(new_nl)
         n+=1
     update_sitemap(rels)
-    print(f"build_en: {n} content/bedrijf-paginas -> /en/ + hreflang op NL + sitemap")
+    gen_en.write_runtime()
+    print(f"build_en: {n} content/bedrijf-paginas -> /en/ + hreflang op NL + sitemap; mini-runtime geschreven")
 
 if __name__=="__main__":
     main()
