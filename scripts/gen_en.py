@@ -2,18 +2,91 @@
 """Herbruikbare transformer: maak van een NL-pagina de Engelse /en/-variant,
 en injecteer hreflang in de NL-pagina. Gebruikt door scripts/build_en.py
 (content + bedrijven) en scripts/build_vacature_pages.py (vacatures)."""
-import re, os, posixpath
+import re, os, posixpath, html as _H
 
 BASE=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE="https://corporatecareer.nl"
 ASSET_PREFIXES=("css/","js/","img/","fonts/")
 ASSET_EXT=(".css",".js",".woff2",".woff",".svg",".png",".jpg",".jpeg",".webp",".ico",".gif")
 
+def _parse_block(body):
+    pairs=re.findall(r"'((?:[^'\\]|\\.)*)'\s*:\s*'((?:[^'\\]|\\.)*)'", body)
+    return {k.replace("\\'","'"):v.replace("\\'","'") for k,v in pairs}
+
 def en_dict():
     src=open(os.path.join(BASE,"js","i18n.js"),encoding="utf-8").read()
-    m=re.search(r"\ben:\s*\{(.*?)\n\s*\},\s*\n\s*nl:\s*\{", src, re.S)
-    pairs=re.findall(r"'((?:[^'\\]|\\.)*)'\s*:\s*'((?:[^'\\]|\\.)*)'", m.group(1))
-    return {k.replace("\\'","'"):v.replace("\\'","'") for k,v in pairs}
+    return _parse_block(re.search(r"\ben:\s*\{(.*?)\n\s*\},\s*\n\s*nl:\s*\{", src, re.S).group(1))
+
+def nl_dict():
+    src=open(os.path.join(BASE,"js","i18n.js"),encoding="utf-8").read()
+    return _parse_block(re.search(r"\bnl:\s*\{(.*)\}\s*\};", src, re.S).group(1))
+
+_DICTS={}
+def _dict(lang):
+    if lang not in _DICTS:
+        _DICTS[lang]=en_dict() if lang=="en" else nl_dict()
+    return _DICTS[lang]
+
+def bake(html, lang):
+    """Bakt de vertaalbare tekst in de gekozen taal in de ruwe HTML in, zodat
+    de pagina de juiste taal toont zonder het runtime-vertaalbestand.
+    Verwerkt data-i18n (tekst), data-i18n-html (html), data-i18n-placeholder,
+    data-i18n-aria en de zichtbaarheid van data-l-blokken."""
+    D=_dict(lang)
+    # data-i18n-html: vervang de binnen-HTML, nesting-bewust (het element kan
+    # een geneste tag van hetzelfde type bevatten, bv. <span> in <span>).
+    open_re=re.compile(r'<(\w+)[^>]*\bdata-i18n-html="([^"]+)"[^>]*>')
+    out=[]; i=0
+    while True:
+        m=open_re.search(html, i)
+        if not m:
+            out.append(html[i:]); break
+        tag, key = m.group(1), m.group(2)
+        out.append(html[i:m.end()])
+        close="</"+tag+">"; tag_open=re.compile(r'<'+tag+r'(?:\s|>|/)')
+        depth=1; j=m.end()
+        while depth>0:
+            nc=html.find(close, j); no=tag_open.search(html, j)
+            if nc==-1: j=len(html); break
+            if no and no.start()<nc: depth+=1; j=no.end()
+            else: depth-=1; j=nc+len(close)
+        inner_close=j-len(close)
+        v=D.get(key)
+        out.append(v if v is not None else html[m.end():inner_close])
+        out.append(close); i=j
+    html="".join(out)
+    def rep_txt(m):
+        v=D.get(m.group(2)); return f'{m.group(1)}{_H.escape(v)}<' if v is not None else m.group(0)
+    html=re.sub(r'(<[^>]*\bdata-i18n="([^"]+)"[^>]*>)([^<]*)<', rep_txt, html)
+    for attr, htmlattr in (("data-i18n-placeholder","placeholder"), ("data-i18n-aria","aria-label")):
+        def rep_attr(m, a=htmlattr):
+            v=D.get(m.group('k'));  tag=m.group(0)
+            if v is None: return tag
+            if re.search(a+r'="[^"]*"', tag):
+                return re.sub(a+r'="[^"]*"', a+'="'+_H.escape(v, quote=True)+'"', tag, count=1)
+            return tag[:-1]+f' {a}="{_H.escape(v, quote=True)}">'
+        html=re.sub(r'<[^>]*\b'+attr+r'="(?P<k>[^"]+)"[^>]*>', rep_attr, html)
+    # data-l zichtbaarheid: toon de gekozen taal, verberg de andere
+    other="nl" if lang=="en" else "en"
+    html=html.replace(f'data-l="{lang}" hidden>', f'data-l="{lang}">')
+    html=html.replace(f'data-l="{other}">', f'data-l="{other}" hidden>')
+    return html
+
+# Mini-runtime die het 1,3 MB vertaalbestand vervangt: zet de paginataal,
+# levert de paar sleutels die main.js nodig heeft, en laat de toggle naar de
+# andere taal-URL navigeren. De paginatekst is verder ingebakken (zie bake()).
+RUNTIME_KEYS=("nav.hamburger.open","nav.hamburger.close","cta.success","cta.btn")
+def runtime_js():
+    en, nl = en_dict(), nl_dict()
+    def obj(d): return "{"+",".join("'%s':'%s'"%(k, d.get(k,"").replace("'","\\'")) for k in RUNTIME_KEYS)+"}"
+    return ("window.CURRENT_LANG=window.__ccDefaultLang||'nl';"
+            "var TRANSLATIONS={en:"+obj(en)+",nl:"+obj(nl)+"};"
+            "function ccOtherLangUrl(){var p=location.pathname,e=p==='/en'||p.indexOf('/en/')===0,"
+            "t=e?(p.replace(/^\\/en/,'')||'/'):('/en'+p);return t+location.search+location.hash;}"
+            "document.addEventListener('DOMContentLoaded',function(){var t=document.getElementById('langToggle');"
+            "if(t)t.addEventListener('click',function(){location.href=ccOtherLangUrl();});});\n")
+def write_runtime():
+    open(os.path.join(BASE,"js","i18n.min.js"),"w",encoding="utf-8").write(runtime_js())
 
 def _is_asset(ab):
     p=ab.lstrip("/")
@@ -59,6 +132,7 @@ def to_en(html, site_path, title, desc):
             html=re.sub(r'(  <link rel="canonical"[^>]*>\n)',_hreflang(site_path)+r'\1',html,count=1)
         else:
             html=html.replace('</head>',_hreflang(site_path)+'</head>',1)
+    html=bake(html, "en")
     return html
 
 def add_hreflang_nl(html, site_path):
