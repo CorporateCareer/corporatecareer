@@ -78,6 +78,11 @@ jobs:
           for i in 1 2 3 4 5; do
             git fetch origin gh-pages main
             git checkout -B gh-pages origin/gh-pages
+            # Eerst de tracked bestanden weghalen: git archive | tar -x voegt
+            # alleen toe en overschrijft, het verwijdert nooit. Zonder deze stap
+            # blijven in main verwijderde bestanden (bijvoorbeeld de pagina van
+            # een gesloten vacature) op gh-pages staan en dus live.
+            git rm -rq .
             git archive origin/main | tar -x
             git add -A
             if git diff --cached --quiet; then
