@@ -387,7 +387,7 @@ def main():
         fn = f"{j['slug']}.html"
         wanted.add(fn)
         site_path = f"/vacatures/{fn}"
-        nl_html = gen_en.add_hreflang_nl(build_page(j, nav, footer, first_seen, active), site_path)
+        nl_html = gen_en.add_hreflang_nl(gen_en.bake(build_page(j, nav, footer, first_seen, active), "nl"), site_path)
         open(os.path.join(VAC_DIR, fn), "w", encoding="utf-8").write(nl_html)
         en_title = f"{j['title']} at {j['company']} in {j['location']} | CorporateCareer"
         en_desc = (f"{j['title']} at {j['company']} in {j['location']}. "

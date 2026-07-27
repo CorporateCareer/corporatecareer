@@ -1,44 +1,16 @@
 #!/usr/bin/env python3
-"""Minifyt js/i18n.js naar js/i18n.min.js.
-
-Verwijdert commentaarregels, inspringing en lege regels. Elke regel blijft
-een eigen regel (veilig voor automatic semicolon insertion) en de inhoud van
-strings wordt niet aangeraakt. i18n.js blijft de leesbare bron; draai dit
-script na elke wijziging aan i18n.js zodat i18n.min.js meeloopt.
+"""Schrijft js/i18n.min.js: de kleine runtime die het grote vertaalbestand
+vervangt. De paginatekst wordt bij de build in de juiste taal ingebakken
+(zie scripts/gen_en.py: bake), dus de browser heeft de volledige
+vertaaltabel niet meer nodig. js/i18n.js blijft de bron van de vertalingen
+en wordt bij de build gebruikt om in te bakken en om de paar sleutels voor
+de runtime op te halen.
 """
-import io, os
+import os, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import gen_en
 
-BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SRC = os.path.join(BASE, "js", "i18n.js")
-OUT = os.path.join(BASE, "js", "i18n.min.js")
-
-src = io.open(SRC, encoding="utf-8").read()
-out = []
-in_block = False
-for line in src.split("\n"):
-    st = line.strip()
-    if in_block:
-        if "*/" in st:
-            in_block = False
-            st = st.split("*/", 1)[1].strip()
-            if not st:
-                continue
-        else:
-            continue
-    if st.startswith("/*"):
-        if "*/" in st:
-            st = st.split("*/", 1)[1].strip()
-            if not st:
-                continue
-        else:
-            in_block = True
-            continue
-    if st.startswith("//"):
-        continue
-    if st == "":
-        continue
-    out.append(st)
-
-mini = "\n".join(out) + "\n"
-io.open(OUT, "w", encoding="utf-8").write(mini)
-print(f"i18n.min.js: {len(mini)} bytes (bron {len(src)} bytes)")
+if __name__ == "__main__":
+    gen_en.write_runtime()
+    size = os.path.getsize(os.path.join(gen_en.BASE, "js", "i18n.min.js"))
+    print(f"js/i18n.min.js (mini-runtime): {size} bytes")
