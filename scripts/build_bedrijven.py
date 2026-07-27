@@ -1087,7 +1087,6 @@ def head(title, desc, url, extra_ld=""):
   <meta name="description" content="{esc(desc)}">
   <title>{esc(title)}</title>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 {FONTS}
   <link rel="stylesheet" href="/css/style.css">
 {STYLE}
