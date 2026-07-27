@@ -14,6 +14,7 @@ from datetime import date, timedelta
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import gen_en
+import vacancy_pillars
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 EN_VAC_DIR = os.path.join(BASE, "en", "vacatures")
@@ -120,6 +121,23 @@ def related_block(job, active):
     return f"""
         <section class="vac-block">
           <h2>{bi("More jobs in "+label_en, "Meer vacatures in "+label_nl)}</h2>
+          <ul class="vac-list">
+{items}
+          </ul>
+        </section>"""
+
+def pillar_block(job):
+    """Blok 'Bekijk ook' met 2 tot 4 interne links naar relevante pijler-
+    en categoriepagina's, afgeleid uit de sector en tags van de vacature."""
+    links = vacancy_pillars.pillars_for(job)
+    if len(links) < 2:
+        return ""
+    items = "\n".join(
+        f'          <li>{CHECK_SVG}<a href="{url}">{bi(en, nl)}</a></li>'
+        for url, en, nl in links)
+    return f"""
+        <section class="vac-block">
+          <h2>{bi("See also", "Bekijk ook")}</h2>
           <ul class="vac-list">
 {items}
           </ul>
@@ -282,6 +300,7 @@ def build_page(job, nav, footer, first_seen, active):
           <div class="vac-tags">{tags_html}</div>
         </section>
 {related_block(job, active)}
+{pillar_block(job)}
       </main>
 
       <aside class="vac-aside">
