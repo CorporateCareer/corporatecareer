@@ -62,6 +62,12 @@
   </url>
 
   <url>
+    <loc>https://corporatecareer.nl/resources/legal-interview/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://corporatecareer.nl/resources/case-interview/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -3896,6 +3902,11 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/en/resources/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/resources/legal-interview/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
