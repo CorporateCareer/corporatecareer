@@ -53,13 +53,19 @@ CURATED={
    "Learn the consulting case interview: how to structure and solve a business problem, the main case types, mental maths, market sizing and four worked practice cases."),
  "resources/finance-interview/index.html":("Finance interview guide: private equity, M&A and corporate finance | CorporateCareer",
    "The complete guide to finance interviews in private equity, M&A and corporate finance: the process, financial statements, valuation and the finance case types with worked examples."),
+ "resources/legal-interview/index.html":("Law firm application guide: interviews and the route to trainee | CorporateCareer",
+   "How applications at Dutch law firms work: the route to becoming a trainee lawyer, the interview components, practice areas, commercial awareness and a worked legal case."),
 }
 
+# Paginas die geen /en/-variant, hreflang of sitemap-entry horen te krijgen.
+# 404.html is een noindex-foutpagina die GitHub Pages op elk pad serveert.
+EXCLUDE={"404.html"}
+
 def page_list():
-    p=[os.path.basename(f) for f in glob.glob(os.path.join(BASE,"*.html"))]
+    p=[os.path.basename(f) for f in glob.glob(os.path.join(BASE,"*.html")) if os.path.basename(f) not in EXCLUDE]
     for pat in ("finance/*/index.html","consulting/*/index.html","legal/*/index.html","bedrijven/*/index.html"):
         p+=[os.path.relpath(f,BASE) for f in glob.glob(os.path.join(BASE,pat))]
-    p+=["resources/index.html","resources/sollicitatiegids/index.html","resources/case-interview/index.html","resources/finance-interview/index.html"]
+    p+=["resources/index.html","resources/sollicitatiegids/index.html","resources/case-interview/index.html","resources/finance-interview/index.html","resources/legal-interview/index.html"]
     return sorted(set(p))
 
 def en_url(rel):
