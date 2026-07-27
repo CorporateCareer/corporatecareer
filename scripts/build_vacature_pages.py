@@ -243,7 +243,7 @@ def build_page(job, nav, footer, first_seen, active):
   </script>
   <title>{esc(page_title)}</title>
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-  <link rel="preload" href="/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/vacature.css">
