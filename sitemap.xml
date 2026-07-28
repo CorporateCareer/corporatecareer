@@ -2455,11 +2455,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/vacatures/mufg-bank-emea-structured-finance-lawyer.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/vacatures/mufg-bank-associate-fx-desk-treasury.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -5595,11 +5590,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/en/vacatures/mufg-bank-vice-president-credit-officer-project-finance.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/mufg-bank-emea-structured-finance-lawyer.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
