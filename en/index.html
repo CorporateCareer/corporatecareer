@@ -495,7 +495,7 @@
     .hero-door-t svg{opacity:0;transform:translateX(-4px);transition:opacity var(--t) var(--ease),transform var(--t) var(--ease)}
     .hero-door:hover .hero-door-t svg{opacity:1;transform:translateX(0)}
     .hero-door-d{font-size:.86rem;color:var(--blue-300);line-height:1.5}
-    .hero-door-n{font-size:.8rem;color:var(--gold);font-variant-numeric:tabular-nums;margin-top:2px}
+    .hero-door-n{font-size:.8rem;color:var(--emerald-soft);font-variant-numeric:tabular-nums;margin-top:2px}
     @media (max-width:860px){.hero-doors{grid-template-columns:1fr;gap:10px}}
 
     .section-sub{font-size:1rem;color:var(--gray-500);line-height:1.65;max-width:62ch;margin-top:10px}
@@ -530,7 +530,7 @@
     /* ── GIDSEN ────────────────────────────────── */
     .home-guides{padding:84px 0;background:var(--gray-50);border-top:1px solid var(--gray-200)}
     .guide-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:30px}
-    .guide-card{background:#fff;border:1px solid var(--gray-200);border-top:3px solid var(--gold);
+    .guide-card{background:#fff;border:1px solid var(--gray-200);border-top:3px solid var(--emerald);
       border-radius:12px;padding:22px;display:flex;flex-direction:column;gap:8px;text-decoration:none;
       transition:box-shadow var(--t) var(--ease),transform var(--t) var(--ease)}
     .guide-card:hover{box-shadow:var(--shadow-md);transform:translateY(-3px)}
@@ -570,7 +570,7 @@
   <nav class="navbar" id="navbar">
     <div class="container nav-inner">
       <a href="/en/" class="logo">
-        <span class="logo-icon">C</span>
+        <span class="logo-icon" aria-hidden="true"></span>
         <span class="logo-text"><span class="logo-top">Corporate</span><span class="logo-bot">Career</span></span>
       </a>
       <ul class="nav-links" id="navLinks">
@@ -966,7 +966,7 @@
     <div class="container footer-inner">
       <div class="footer-brand">
         <a href="/en/" class="logo" aria-label="CorporateCareer homepage">
-          <span class="logo-icon">C</span>
+          <span class="logo-icon" aria-hidden="true"></span>
           <span class="logo-text"><span class="logo-top">Corporate</span><span class="logo-bot">Career</span></span>
         </a>
         <p data-i18n="footer.tagline">Your route to the top of Dutch business.</p>
