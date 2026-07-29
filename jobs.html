@@ -34433,6 +34433,14 @@
     document.getElementById('searchInput').addEventListener('input', applyFilters);
     document.getElementById('locationFilter').addEventListener('change', applyFilters);
 
+    // Zoekterm uit de URL overnemen, zodat het zoekveld in de navigatiebalk
+    // van andere pagina's hier naartoe kan verwijzen met ?q=...
+    var q = new URLSearchParams(location.search).get('q');
+    if (q) {
+      document.getElementById('searchInput').value = q;
+      applyFilters();
+    }
+
     document.getElementById('clearFilters').addEventListener('click', () => {
       document.querySelectorAll('.filters-sidebar input[type="checkbox"]').forEach(cb => cb.checked = false);
       document.getElementById('searchInput').value = '';
