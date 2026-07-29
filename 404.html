@@ -17,7 +17,7 @@
     .nf-inner{max-width:640px;width:100%;}
     .nf-code{font-family:var(--font-display);font-weight:600;line-height:1;
       font-size:clamp(6rem,22vw,11rem);letter-spacing:-.02em;
-      background:linear-gradient(120deg,var(--gold-soft),var(--gold));
+      background:linear-gradient(120deg,var(--emerald-soft),var(--emerald));
       -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
       margin:0 0 8px;}
     .nf-title{font-family:var(--font-display);font-weight:600;font-size:clamp(1.5rem,4vw,2.25rem);
@@ -32,11 +32,11 @@
     .nf-links a:hover{color:var(--white);}
     .nf-logo{display:inline-flex;align-items:center;gap:10px;justify-content:center;
       margin-bottom:34px;text-decoration:none;color:var(--white);}
-    .nf-logo .logo-icon{background:var(--gold);color:var(--navy-950);font-weight:700;
+    .nf-logo .logo-icon{background:var(--emerald);color:var(--navy-950);font-weight:700;
       width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;
       font-family:var(--font-display);letter-spacing:-.02em;}
     .nf-logo .logo-text{font-family:var(--font-display);font-weight:600;font-size:1.25rem;letter-spacing:-.01em;}
-    .nf-main .btn-primary{background:var(--gold);color:var(--navy-950);border:none;}
+    .nf-main .btn-primary{background:var(--emerald);color:#fff;border:none;}
     .nf-main .btn-ghost{border:1px solid rgba(255,255,255,.28);color:var(--white);}
   </style>
 </head>
@@ -44,7 +44,7 @@
   <main class="nf-main">
     <div class="nf-inner">
       <a href="/" class="nf-logo">
-        <span class="logo-icon">C</span>
+        <span class="logo-icon" aria-hidden="true"></span>
         <span class="logo-text"><span class="logo-top">Corporate</span><span class="logo-bot">Career</span></span>
       </a>
       <p class="nf-code">404</p>
