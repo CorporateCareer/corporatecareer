@@ -325,6 +325,8 @@
       align-items: center;
       gap: 16px;
       min-width: 0;
+      text-decoration: none;
+      color: inherit;
       transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
     }
 
@@ -475,6 +477,83 @@
         display: none;
       }
     }
+
+    /* Hero is nu volle breedte: de fotokolom is vervangen door de drie
+       sectordeuren, dus het tweekolomsraster van .hero-content vervalt hier. */
+    .hero-content--wide{display:block}
+    .hero-content--wide .hero-title{font-size:clamp(2.4rem,5vw,4rem);max-width:17ch;margin-bottom:20px}
+    .hero-content--wide .hero-subtitle{max-width:60ch;margin-bottom:0}
+
+    /* ── DRIE SECTORDEUREN ─────────────────────── */
+    .hero-doors{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:30px 0 26px}
+    .hero-door{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:14px;
+      padding:20px 22px;display:flex;flex-direction:column;gap:7px;text-decoration:none;color:inherit;
+      transition:background var(--t) var(--ease),border-color var(--t) var(--ease),transform var(--t) var(--ease)}
+    .hero-door:hover{background:rgba(255,255,255,.11);border-color:rgba(255,255,255,.3);transform:translateY(-2px)}
+    .hero-door-t{font-family:var(--font-display);font-size:1.4rem;font-weight:600;color:#fff;letter-spacing:-.01em;
+      display:flex;align-items:center;gap:9px}
+    .hero-door-t svg{opacity:0;transform:translateX(-4px);transition:opacity var(--t) var(--ease),transform var(--t) var(--ease)}
+    .hero-door:hover .hero-door-t svg{opacity:1;transform:translateX(0)}
+    .hero-door-d{font-size:.86rem;color:var(--blue-300);line-height:1.5}
+    .hero-door-n{font-size:.8rem;color:var(--gold);font-variant-numeric:tabular-nums;margin-top:2px}
+    @media (max-width:860px){.hero-doors{grid-template-columns:1fr;gap:10px}}
+
+    .section-sub{font-size:1rem;color:var(--gray-500);line-height:1.65;max-width:62ch;margin-top:10px}
+
+    /* ── SPECIALISATIES ────────────────────────── */
+    .home-specs{padding:84px 0;background:var(--gray-50);border-top:1px solid var(--gray-200);
+      border-bottom:1px solid var(--gray-200)}
+    .spec-group{margin-top:26px}
+    .spec-group-h{font-size:.76rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+      color:var(--navy-950);margin-bottom:11px}
+    .spec-chips{display:flex;flex-wrap:wrap;gap:8px}
+    .spec-chip{font-size:.86rem;border:1px solid var(--gray-200);background:#fff;border-radius:999px;
+      padding:8px 15px;color:var(--gray-700);text-decoration:none;
+      transition:border-color var(--t) var(--ease),color var(--t) var(--ease),background var(--t) var(--ease)}
+    .spec-chip:hover{border-color:var(--blue-500);color:var(--blue-600);background:rgba(37,99,235,.04)}
+    .spec-chip--all{border-color:var(--blue-500);color:var(--blue-600);font-weight:600}
+
+    /* ── WERKGEVERS ────────────────────────────── */
+    .home-emp{padding:84px 0}
+    .emp-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:30px}
+    .emp-card{border:1px solid var(--gray-200);background:#fff;border-radius:12px;padding:18px 10px;
+      display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;text-decoration:none;
+      transition:border-color var(--t) var(--ease),box-shadow var(--t) var(--ease),transform var(--t) var(--ease)}
+    .emp-card:hover{border-color:var(--gray-300);box-shadow:var(--shadow-md);transform:translateY(-2px)}
+    .emp-logo{width:42px;height:42px;border-radius:9px;background:var(--gray-50);border:1px solid var(--gray-200);
+      display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .emp-logo img{max-width:30px;max-height:30px;object-fit:contain}
+    .emp-name{font-size:.78rem;color:var(--gray-700);line-height:1.35;font-weight:500}
+    @media (max-width:1000px){.emp-grid{grid-template-columns:repeat(4,1fr)}}
+    @media (max-width:620px){.emp-grid{grid-template-columns:repeat(3,1fr)}}
+
+    /* ── GIDSEN ────────────────────────────────── */
+    .home-guides{padding:84px 0;background:var(--gray-50);border-top:1px solid var(--gray-200)}
+    .guide-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:30px}
+    .guide-card{background:#fff;border:1px solid var(--gray-200);border-top:3px solid var(--gold);
+      border-radius:12px;padding:22px;display:flex;flex-direction:column;gap:8px;text-decoration:none;
+      transition:box-shadow var(--t) var(--ease),transform var(--t) var(--ease)}
+    .guide-card:hover{box-shadow:var(--shadow-md);transform:translateY(-3px)}
+    .guide-t{font-family:var(--font-display);font-size:1.05rem;font-weight:600;color:var(--navy-950);line-height:1.25}
+    .guide-d{font-size:.84rem;color:var(--gray-500);line-height:1.55}
+    .guide-more{font-size:.82rem;color:var(--blue-600);font-weight:600;margin-top:auto;padding-top:8px}
+    @media (max-width:980px){.guide-grid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:560px){.guide-grid{grid-template-columns:1fr}}
+
+    /* ── SECTIE-VOETLINK ───────────────────────── */
+    .sec-more{display:inline-flex;align-items:center;gap:7px;margin-top:26px;font-size:.9rem;font-weight:600;
+      color:var(--blue-600);text-decoration:none}
+    .sec-more:hover{color:var(--navy-950)}
+
+    /* ── ZOEKVELD IN DE BALK ───────────────────── */
+    .nav-search{display:flex;align-items:center;gap:7px;border:1px solid var(--gray-200);border-radius:999px;
+      padding:7px 14px;background:var(--gray-50);min-width:210px}
+    .nav-search svg{color:var(--gray-400);flex-shrink:0}
+    .nav-search input{border:0;background:transparent;outline:none;font:inherit;font-size:.82rem;
+      color:var(--gray-700);width:100%;min-width:0}
+    .nav-search input::placeholder{color:var(--gray-400)}
+    .nav-search:focus-within{border-color:var(--blue-400);background:#fff}
+    @media (max-width:1280px){.nav-search{min-width:160px}}
   </style>
   <!-- Google Analytics (GA4) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TXBG97YW6Y"></script>
@@ -567,6 +646,12 @@
         <li><a href="/resources/" data-i18n="nav.resources">Hulpmiddelen</a></li>
         <li class="nav-hide-md"><a href="articles.html" data-i18n="nav.articles">Artikelen</a></li>
         <li class="nav-hide-md"><a href="over-ons.html" data-i18n="nav.about">Over ons</a></li>
+        <li class="nav-hide-md">
+          <form class="nav-search" action="jobs.html" method="get" role="search">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+            <input type="search" name="q" aria-label="Zoek een functie of kantoor" data-i18n-placeholder="nav.search.placeholder" placeholder="Zoek een functie of kantoor">
+          </form>
+        </li>
         <li>
           <button class="lang-toggle" id="langToggle" aria-label="Switch language">
             <span class="lang-btn lang-btn--en lang-active">EN</span>
@@ -591,134 +676,181 @@
       <div class="hero-glow hero-glow--right"></div>
       <div class="hero-glow hero-glow--left"></div>
     </div>
-    <div class="container hero-content">
+    <div class="container hero-content hero-content--wide">
       <div class="hero-text">
         <div class="hero-badge fade-up">
           <span class="badge-dot"></span>
-          <span data-i18n="hero.badge">Carrièregids voor finance, consulting &amp; recht</span>
+          <span><span data-l="en" hidden>Finance &middot; Consulting &middot; Law</span><span data-l="nl">Finance &middot; Consulting &middot; Advocatuur</span></span>
         </div>
-        <h1 class="hero-title fade-up" data-i18n-html="hero.title">Jouw route naar de top<br><span class="gradient-text">begint hier</span></h1>
-        <p class="hero-subtitle fade-up" data-i18n="hero.subtitle">Onafhankelijke, gratis roadmaps voor investment banking, consulting en de advocatuur in Nederland: van eerste oriëntatie tot je eerste aanbod.</p>
-        <div class="hero-cta fade-up">
-          <a href="finance.html" class="btn-primary">
-            <span data-i18n="hero.cta.primary">Ontdek de carrièrepaden</span>
-            <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg>
+        <h1 class="hero-title fade-up"><span data-l="en" hidden>Your career in finance, consulting and law</span><span data-l="nl">Jouw carri&egrave;re in finance, consulting en de advocatuur</span></h1>
+        <p class="hero-subtitle fade-up"><span data-l="en" hidden>Independent guides, employer profiles and current vacancies at the firms you want to join.</span><span data-l="nl">Onafhankelijke gidsen, werkgeversprofielen en actuele vacatures bij de kantoren waar je binnen wilt komen.</span></p>
+
+        <div class="hero-doors">
+          <a class="hero-door fade-up" href="finance.html">
+            <span class="hero-door-t">Finance<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            <span class="hero-door-d"><span data-l="en" hidden>Investment banking, M&amp;A, private equity, venture capital and more</span><span data-l="nl">Investment banking, M&amp;A, private equity, venture capital en meer</span></span>
+            <span class="hero-door-n" data-count="finance">101 vacatures</span>
           </a>
-          <a href="#how-it-works" class="btn-ghost" data-i18n="hero.cta.secondary">Zo werkt het</a>
+          <a class="hero-door fade-up" href="consulting.html">
+            <span class="hero-door-t">Consulting<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            <span class="hero-door-d"><span data-l="en" hidden>Strategy, technology, operations, deal advisory and more</span><span data-l="nl">Strategie, technologie, operations, deal advisory en meer</span></span>
+            <span class="hero-door-n" data-count="consulting">109 vacatures</span>
+          </a>
+          <a class="hero-door fade-up" href="legal.html">
+            <span class="hero-door-t">Legal<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            <span class="hero-door-d"><span data-l="en" hidden>Corporate/M&amp;A, dispute resolution, competition, IP and more</span><span data-l="nl">Corporate/M&amp;A, procesrecht, mededinging, IE en meer</span></span>
+            <span class="hero-door-n" data-count="legal">160 vacatures</span>
+          </a>
         </div>
+
         <div class="hero-stats fade-up">
           <div class="stat">
-            <span class="stat-number" data-i18n="hero.stat1.value">3 sectoren</span>
-            <span class="stat-label" data-i18n="hero.stat1.label">Finance, Consulting &amp; Recht</span>
+            <span class="stat-number" data-count="employers">128</span>
+            <span class="stat-label"><span data-l="en" hidden>employers profiled</span><span data-l="nl">werkgevers met profiel</span></span>
           </div>
           <div class="stat-divider"></div>
           <div class="stat">
-            <span class="stat-number" data-i18n-html="hero.stat2.value">30<span class="stat-plus">+</span> specialisaties</span>
-            <span class="stat-label" data-i18n="hero.stat2.label">Uitgediept in eigen gidsen</span>
+            <span class="stat-number" data-count="specialisations">37</span>
+            <span class="stat-label"><span data-l="en" hidden>specialisations covered</span><span data-l="nl">specialisaties uitgediept</span></span>
           </div>
           <div class="stat-divider"></div>
           <div class="stat">
-            <span class="stat-number" data-i18n-html="hero.stat3.value">100<span class="stat-plus">%</span> gratis</span>
-            <span class="stat-label" data-i18n="hero.stat3.label">Onafhankelijk, zonder verkooppraatje</span>
+            <span class="stat-number" data-count="vacancies">370</span>
+            <span class="stat-label"><span data-l="en" hidden>current vacancies</span><span data-l="nl">actuele vacatures</span></span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-number">4</span>
+            <span class="stat-label"><span data-l="en" hidden>in-depth guides</span><span data-l="nl">uitgebreide gidsen</span></span>
           </div>
         </div>
       </div>
-
-      <div class="hero-visual fade-up">
-        <div class="hero-image-frame">
-          <img
-            class="hero-img"
-            src="/img/cd-strategy-meeting.webp"
-            width="1400"
-            height="933"
-            alt="Studenten en professionals in overleg tijdens een carrièregesprek"
-            loading="eager"
-          >
-          <div class="hero-float-card hero-float-card--top">
-            <div class="float-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg>
-            </div>
-            <div class="float-info">
-              <strong>Investment Banking</strong>
-              <span data-i18n="hero.float.top.sub">Carrièrepad in Nederland</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="hero-scroll" aria-hidden="true">
-      <span>Scroll</span>
-      <div class="scroll-arrow"></div>
     </div>
   </section>
 
-  <!-- ── PARTNER LOGOS ──────────────────────── -->
-  <section class="partners-strip fade-up">
-    <div class="partners-strip-header">
-      <h3 data-i18n="home.partners.title">Werkgevers die we behandelen</h3>
-      <p data-i18n="home.partners.sub">De banken, kantoren en adviesbureaus die we in onze gidsen bespreken.</p>
-    </div>
-
-    <div class="logo-rows">
-      <!-- Row 1: Finance -->
-      <div class="logo-row-track">
-        <div class="logo-row-inner">
-          <!-- Original set -->
-          <div class="logo-chip"><div class="chip-initial" style="background:#b5922e;">GS</div><span class="chip-name">Goldman Sachs</span></div>
-          <div class="logo-chip"><div class="chip-initial" style="background:#0a2d6e;">JP</div><span class="chip-name">J.P. Morgan</span></div>
-          <div class="logo-chip"><div class="chip-initial" style="background:#8b0000;">Ro</div><span class="chip-name">Rothschild</span></div>
-          <div class="logo-chip"><div class="chip-initial" style="background:#1a3a5c;">Lz</div><span class="chip-name">Lazard</span></div>
-          <div class="logo-chip"><div class="chip-initial" style="background:#005a9e;">AB</div><span class="chip-name">ABN AMRO</span></div>
-          <div class="logo-chip"><div class="chip-initial" style="background:#00447c;">Km</div><span class="chip-name">Kempen</span></div>
-          <div class="logo-chip"><div class="chip-initial" style="background:#004288;">NI</div><span class="chip-name">NIBC</span></div>
-          <div class="logo-chip"><div class="chip-initial" style="background:#e8502a;">Ra</div><span class="chip-name">Rabobank</span></div>
-          <div class="logo-chip"><div class="chip-initial" style="background:#ff6200;">IN</div><span class="chip-name">ING</span></div>
-          <div class="logo-chip"><div class="chip-initial" style="background:#86bc25;">De</div><span class="chip-name">Deloitte</span></div>
-          <!-- Duplicate for seamless loop -->
-          <div class="logo-chip"><div class="chip-initial" style="background:#b5922e;">GS</div><span class="chip-name">Goldman Sachs</span></div>
-          <div class="logo-chip"><div class="chip-initial" style="background:#0a2d6e;">JP</div><span class="chip-name">J.P. Morgan</span></div>
-          <div class="logo-chip"><div class="chip-initial" style="background:#8b0000;">Ro</div><span class="chip-name">Rothschild</span></div>
-          <div class="logo-chip"><div class="chip-initial" style="background:#1a3a5c;">Lz</div><span class="chip-name">Lazard</span></div>
-          <div class="logo-chip"><div class="chip-initial" style="background:#005a9e;">AB</div><span class="chip-name">ABN AMRO</span></div>
-          <div class="logo-chip"><div class="chip-initial" style="background:#00447c;">Km</div><span class="chip-name">Kempen</span></div>
-          <div class="logo-chip"><div class="chip-initial" style="background:#004288;">NI</div><span class="chip-name">NIBC</span></div>
-          <div class="logo-chip"><div class="chip-initial" style="background:#e8502a;">Ra</div><span class="chip-name">Rabobank</span></div>
-          <div class="logo-chip"><div class="chip-initial" style="background:#ff6200;">IN</div><span class="chip-name">ING</span></div>
-          <div class="logo-chip"><div class="chip-initial" style="background:#86bc25;">De</div><span class="chip-name">Deloitte</span></div>
-        </div>
+  <section class="home-specs">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-tag"><span data-l="en" hidden>Choose a direction</span><span data-l="nl">Kies een richting</span></span>
+        <h2><span data-l="en" hidden>37 specialisations, in depth</span><span data-l="nl">37 specialisaties, uitgediept</span></h2>
+        <p class="section-sub"><span data-l="en" hidden>Every specialisation has its own page: what the work involves, which firms are active in it and what is currently open.</span><span data-l="nl">Elke specialisatie heeft een eigen pagina: wat het werk inhoudt, welke kantoren erin actief zijn en wat er nu open staat.</span></p>
       </div>
-
-      <!-- Row 2: Consulting / Law -->
-      <div class="logo-row-track">
-        <div class="logo-row-inner" style="animation-direction: reverse;">
-          <!-- Original set -->
-          <div class="logo-chip"><div class="chip-initial" style="background:#003366;">Mc</div><span class="chip-name">McKinsey</span></div>
-          <div class="logo-chip"><div class="chip-initial" style="background:#00823d;">BC</div><span class="chip-name">BCG</span></div>
-          <div class="logo-chip"><div class="chip-initial" style="background:#cc0000;">Ba</div><span class="chip-name">Bain</span></div>
-          <div class="logo-chip"><div class="chip-initial" style="background:#1d3461;">RB</div><span class="chip-name">Roland Berger</span></div>
-          <div class="logo-chip"><div class="chip-initial" style="background:#0072b1;">OW</div><span class="chip-name">Oliver Wyman</span></div>
-          <div class="logo-chip"><div class="chip-initial" style="background:#1a1a5e;">DB</div><span class="chip-name">De Brauw</span></div>
-          <div class="logo-chip"><div class="chip-initial" style="background:#2c3e7a;">ND</div><span class="chip-name">NautaDutilh</span></div>
-          <div class="logo-chip"><div class="chip-initial" style="background:#002D62;">Fr</div><span class="chip-name">Freshfields</span></div>
-          <div class="logo-chip"><div class="chip-initial" style="background:#1e3a5f;">AO</div><span class="chip-name">Allen &amp; Overy</span></div>
-          <div class="logo-chip"><div class="chip-initial" style="background:#004a77;">St</div><span class="chip-name">Stibbe</span></div>
-          <!-- Duplicate for seamless loop -->
-          <div class="logo-chip"><div class="chip-initial" style="background:#003366;">Mc</div><span class="chip-name">McKinsey</span></div>
-          <div class="logo-chip"><div class="chip-initial" style="background:#00823d;">BC</div><span class="chip-name">BCG</span></div>
-          <div class="logo-chip"><div class="chip-initial" style="background:#cc0000;">Ba</div><span class="chip-name">Bain</span></div>
-          <div class="logo-chip"><div class="chip-initial" style="background:#1d3461;">RB</div><span class="chip-name">Roland Berger</span></div>
-          <div class="logo-chip"><div class="chip-initial" style="background:#0072b1;">OW</div><span class="chip-name">Oliver Wyman</span></div>
-          <div class="logo-chip"><div class="chip-initial" style="background:#1a1a5e;">DB</div><span class="chip-name">De Brauw</span></div>
-          <div class="logo-chip"><div class="chip-initial" style="background:#2c3e7a;">ND</div><span class="chip-name">NautaDutilh</span></div>
-          <div class="logo-chip"><div class="chip-initial" style="background:#002D62;">Fr</div><span class="chip-name">Freshfields</span></div>
-          <div class="logo-chip"><div class="chip-initial" style="background:#1e3a5f;">AO</div><span class="chip-name">Allen &amp; Overy</span></div>
-          <div class="logo-chip"><div class="chip-initial" style="background:#004a77;">St</div><span class="chip-name">Stibbe</span></div>
+        <div class="spec-group">
+          <div class="spec-group-h"><span data-l="en" hidden>Finance</span><span data-l="nl">Finance</span></div>
+          <div class="spec-chips">
+            <a class="spec-chip" href="finance/investment-banking/">Investment Banking</a>
+            <a class="spec-chip" href="finance/ma/">M&amp;A</a>
+            <a class="spec-chip" href="finance/corporate-finance/">Corporate Finance</a>
+            <a class="spec-chip" href="finance/private-equity/">Private Equity</a>
+            <a class="spec-chip" href="finance/venture-capital/">Venture Capital</a>
+            <a class="spec-chip" href="finance/asset-management/">Asset Management</a>
+            <a class="spec-chip" href="finance/equity-research/">Equity Research</a>
+            <a class="spec-chip" href="finance/corporate-development/">Corporate Development</a>
+            <a class="spec-chip" href="finance/valuation/">Valuation</a>
+            <a class="spec-chip" href="finance/transaction-services/">Transaction Services</a>
+            <a class="spec-chip" href="finance/debt-advisory/">Debt Advisory</a>
+            <a class="spec-chip" href="finance/real-estate-finance/">Real Estate Finance</a>
+            <a class="spec-chip" href="finance/trading/">Trading</a>
+            <a class="spec-chip" href="finance/wealth-management/">Wealth Management &amp; Private Banking</a>
+            <a class="spec-chip" href="finance/risk-management/">Risk Management</a>
+            <a class="spec-chip spec-chip--all" href="finance.html"><span data-l="en" hidden>all 15</span><span data-l="nl">alle 15</span></a>
+          </div>
         </div>
-      </div>
+        <div class="spec-group">
+          <div class="spec-group-h"><span data-l="en" hidden>Consulting</span><span data-l="nl">Consulting</span></div>
+          <div class="spec-chips">
+            <a class="spec-chip" href="consulting/strategy/">Strategy</a>
+            <a class="spec-chip" href="consulting/technology-digital/">Technology &amp; Digital</a>
+            <a class="spec-chip" href="consulting/data-analytics/">Data &amp; Analytics</a>
+            <a class="spec-chip" href="consulting/financial-deal-advisory/">Financial &amp; Deal Advisory</a>
+            <a class="spec-chip" href="consulting/operations/">Operations</a>
+            <a class="spec-chip" href="consulting/risk-regulatory/">Risk &amp; Regulatory</a>
+            <a class="spec-chip" href="consulting/sustainability/">Sustainability</a>
+            <a class="spec-chip" href="consulting/people-organisation/">People &amp; Organisation</a>
+            <a class="spec-chip spec-chip--all" href="consulting.html"><span data-l="en" hidden>all 8</span><span data-l="nl">alle 8</span></a>
+          </div>
+        </div>
+        <div class="spec-group">
+          <div class="spec-group-h"><span data-l="en" hidden>Legal</span><span data-l="nl">Legal</span></div>
+          <div class="spec-chips">
+            <a class="spec-chip" href="legal/administrative-law/">Administrative Law</a>
+            <a class="spec-chip" href="legal/antitrust-competition-trade/">Antitrust, Competition &amp; Trade</a>
+            <a class="spec-chip" href="legal/banking-finance/">Banking &amp; Finance</a>
+            <a class="spec-chip" href="legal/commercial/">Commercial</a>
+            <a class="spec-chip" href="legal/corporate-ma/">Corporate/M&amp;A</a>
+            <a class="spec-chip" href="legal/dispute-resolution/">Dispute Resolution</a>
+            <a class="spec-chip" href="legal/employment-labour-pensions/">Employment, Labour &amp; Pensions</a>
+            <a class="spec-chip" href="legal/esg/">ESG</a>
+            <a class="spec-chip" href="legal/intellectual-property/">Intellectual Property</a>
+            <a class="spec-chip" href="legal/public-procurement/">Public Procurement</a>
+            <a class="spec-chip" href="legal/real-estate/">Real Estate</a>
+            <a class="spec-chip" href="legal/restructuring-insolvency/">Restructuring &amp; Insolvency</a>
+            <a class="spec-chip" href="legal/tax/">Tax</a>
+            <a class="spec-chip" href="legal/artificial-intelligence-digital-regulation/">Artificial Intelligence &amp; Digital Regulation</a>
+            <a class="spec-chip spec-chip--all" href="legal.html"><span data-l="en" hidden>all 14</span><span data-l="nl">alle 14</span></a>
+          </div>
+        </div>
     </div>
+  </section>
 
-    <div class="partners-strip-footer">
-      <a href="partners.html" class="view-all-link" data-i18n="home.partners.viewall">Bekijk alle werkgevers →</a>
+  <section class="home-emp">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-tag"><span data-l="en" hidden>Employers</span><span data-l="nl">Werkgevers</span></span>
+        <h2><span data-l="en" hidden>128 firms, profiled</span><span data-l="nl">128 kantoren, met profiel</span></h2>
+        <p class="section-sub"><span data-l="en" hidden>What they do, which teams there are, how the recruitment process works and what is currently open.</span><span data-l="nl">Wat ze doen, welke teams er zijn, hoe het sollicitatietraject verloopt en wat er nu open staat.</span></p>
+      </div>
+      <div class="emp-grid">
+        <a class="emp-card fade-up" href="/bedrijven/goldman-sachs/">
+          <span class="emp-logo"><img src="/img/logos/goldman-sachs.svg" alt="Goldman Sachs logo" width="30" height="30" loading="lazy"></span>
+          <span class="emp-name">Goldman Sachs</span>
+        </a>
+        <a class="emp-card fade-up" href="/bedrijven/morgan-stanley/">
+          <span class="emp-logo"><img src="/img/logos/morgan-stanley.svg" alt="Morgan Stanley logo" width="30" height="30" loading="lazy"></span>
+          <span class="emp-name">Morgan Stanley</span>
+        </a>
+        <a class="emp-card fade-up" href="/bedrijven/jane-street/">
+          <span class="emp-logo"><img src="/img/logos/jane-street.svg" alt="Jane Street logo" width="30" height="30" loading="lazy"></span>
+          <span class="emp-name">Jane Street</span>
+        </a>
+        <a class="emp-card fade-up" href="/bedrijven/flow-traders/">
+          <span class="emp-logo"><img src="/img/logos/flow-traders.png" alt="Flow Traders logo" width="30" height="30" loading="lazy"></span>
+          <span class="emp-name">Flow Traders</span>
+        </a>
+        <a class="emp-card fade-up" href="/bedrijven/mckinsey/">
+          <span class="emp-logo"><img src="/img/logos/mckinsey.svg" alt="McKinsey &amp; Company logo" width="30" height="30" loading="lazy"></span>
+          <span class="emp-name">McKinsey &amp; Company</span>
+        </a>
+        <a class="emp-card fade-up" href="/bedrijven/bcg/">
+          <span class="emp-logo"><img src="/img/logos/bcg.svg" alt="Boston Consulting Group logo" width="30" height="30" loading="lazy"></span>
+          <span class="emp-name">Boston Consulting Group</span>
+        </a>
+        <a class="emp-card fade-up" href="/bedrijven/bain/">
+          <span class="emp-logo"><img src="/img/logos/bain.svg" alt="Bain &amp; Company logo" width="30" height="30" loading="lazy"></span>
+          <span class="emp-name">Bain &amp; Company</span>
+        </a>
+        <a class="emp-card fade-up" href="/bedrijven/oliver-wyman/">
+          <span class="emp-logo"><img src="/img/logos/oliver-wyman.svg" alt="Oliver Wyman logo" width="30" height="30" loading="lazy"></span>
+          <span class="emp-name">Oliver Wyman</span>
+        </a>
+        <a class="emp-card fade-up" href="/bedrijven/de-brauw/">
+          <span class="emp-logo"><img src="/img/logos/de-brauw.png" alt="De Brauw Blackstone Westbroek logo" width="30" height="30" loading="lazy"></span>
+          <span class="emp-name">De Brauw Blackstone Westbroek</span>
+        </a>
+        <a class="emp-card fade-up" href="/bedrijven/nautadutilh/">
+          <span class="emp-logo"><img src="/img/logos/nautadutilh.svg" alt="NautaDutilh logo" width="30" height="30" loading="lazy"></span>
+          <span class="emp-name">NautaDutilh</span>
+        </a>
+        <a class="emp-card fade-up" href="/bedrijven/stibbe/">
+          <span class="emp-logo"><img src="/img/logos/stibbe.jpg" alt="Stibbe logo" width="30" height="30" loading="lazy"></span>
+          <span class="emp-name">Stibbe</span>
+        </a>
+        <a class="emp-card fade-up" href="/bedrijven/clifford-chance/">
+          <span class="emp-logo"><img src="/img/logos/clifford-chance.svg" alt="Clifford Chance logo" width="30" height="30" loading="lazy"></span>
+          <span class="emp-name">Clifford Chance</span>
+        </a>
+      </div>
+      <a class="sec-more" href="/finance/bedrijven/"><span data-l="en" hidden>All employers in finance, consulting and law</span><span data-l="nl">Alle werkgevers in finance, consulting en de advocatuur</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
   </section>
 
@@ -726,117 +858,53 @@
   <section class="new-vacancies">
     <div class="container">
       <div class="section-header fade-up">
-        <h2 data-i18n="home.new.title">Nieuw deze week</h2>
+        <span class="section-tag"><span data-l="en" hidden>Open now</span><span data-l="nl">Nu open</span></span>
+        <h2><span data-l="en" hidden>New this week</span><span data-l="nl">Nieuw deze week</span></h2>
       </div>
-
-      <div class="jobs-grid-2x2" id="newWeekGrid"></div>
-      <p class="new-vacancies-empty" id="newWeekEmpty" data-i18n="home.new.empty">Op dit moment geen openstaande vacatures. Kom snel terug.</p>
-
-      <script>
-      (function(){
-        var SECTOR_LABEL = {finance:'Finance', consulting:'Consulting', advocatuur:'Legal'};
-        var PIN_SVG = '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>';
-
-        function cardHtml(j){
-          var logo = j.logo
-            ? '<div class="company-logo has-logo"><img src="'+j.logo+'" alt="'+j.company+' logo" loading="lazy"></div>'
-            : '<div class="company-logo" style="background:'+(j.color||'#142a45')+'">'+(j.initials||'')+'</div>';
-          var sectorLabel = SECTOR_LABEL[j.sector] || j.sector || '';
-          var href = j.slug ? ('vacatures/'+j.slug+'.html') : (j.url || 'jobs.html');
-          return '<a class="job-card-compact fade-up" href="'+href+'">'
-            + logo
-            + '<div class="compact-info">'
-            +   '<span class="compact-title">'+j.title+'</span>'
-            +   '<span class="compact-company">'+j.company+'</span>'
-            +   '<div class="job-badges"><span class="badge-pill badge-pill--type">'+sectorLabel+'</span></div>'
-            + '</div>'
-            + '<div class="compact-right">'
-            +   '<span class="compact-location">'+PIN_SVG+(j.location||'')+'</span>'
-            +   '<span class="job-link">View &rarr;</span>'
-            + '</div>'
-            + '</a>';
-        }
-
-        fetch('jobs.html').then(function(r){ return r.text(); }).then(function(t){
-          var n = new DOMParser().parseFromString(t, 'text/html').getElementById('jobs-data');
-          if (!n) return;
-          var jobs = JSON.parse(n.textContent).filter(function(j){ return j.active !== false; });
-          jobs.sort(function(a,b){ return b.id - a.id; });
-          var picked = [], seenSectors = {};
-          ['finance','consulting','advocatuur'].forEach(function(sector){
-            var match = jobs.find(function(j){ return j.sector === sector; });
-            if (match) { picked.push(match); seenSectors[match.id] = true; }
-          });
-          for (var i = 0; i < jobs.length && picked.length < 4; i++) {
-            if (!seenSectors[jobs[i].id]) { picked.push(jobs[i]); seenSectors[jobs[i].id] = true; }
-          }
-          picked.sort(function(a,b){ return b.id - a.id; });
-          var grid = document.getElementById('newWeekGrid'), empty = document.getElementById('newWeekEmpty');
-          if (!picked.length) { empty.style.display = 'block'; return; }
-          grid.innerHTML = picked.slice(0,4).map(cardHtml).join('');
-          // Cards are inserted after the page's fade-up IntersectionObserver already
-          // ran its initial scan, so they'd otherwise stay stuck at opacity:0 forever.
-          grid.querySelectorAll('.fade-up').forEach(function(el){ el.classList.add('visible'); });
-        }).catch(function(){
-          document.getElementById('newWeekEmpty').style.display = 'block';
-        });
-      })();
-      </script>
+      <div class="jobs-grid-2x2" id="newWeekGrid">
+<!-- NIEUWSTE-VACATURES:START -->
+        <a class="job-card-compact fade-up" href="vacatures/nibc-bank-bi-engineer-power-bi-microsoft-fabric.html"><div class="company-logo has-logo"><img src="/img/logos/nibc-bank.svg" alt="NIBC Bank logo" loading="lazy"></div><div class="compact-info"><span class="compact-title">BI Engineer (Power BI &amp; Microsoft Fabric)</span><span class="compact-company">NIBC Bank</span><div class="job-badges"><span class="badge-pill badge-pill--type">Finance</span></div></div><div class="compact-right"><span class="compact-location"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>Den Haag</span><span class="job-link">View &rarr;</span></div></a>
+        <a class="job-card-compact fade-up" href="vacatures/accenture-afstudeerstage-data-ai.html"><div class="company-logo has-logo"><img src="/img/logos/accenture.svg" alt="Accenture logo" loading="lazy"></div><div class="compact-info"><span class="compact-title">afstudeerstage Data &amp; AI</span><span class="compact-company">Accenture</span><div class="job-badges"><span class="badge-pill badge-pill--type">Consulting</span></div></div><div class="compact-right"><span class="compact-location"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>Netherlands</span><span class="job-link">View &rarr;</span></div></a>
+        <a class="job-card-compact fade-up" href="vacatures/clifford-chance-advocaat-stagiaire-disputes.html"><div class="company-logo has-logo"><img src="/img/logos/clifford-chance.svg" alt="Clifford Chance logo" loading="lazy"></div><div class="compact-info"><span class="compact-title">Advocaat-stagiaire Disputes</span><span class="compact-company">Clifford Chance</span><div class="job-badges"><span class="badge-pill badge-pill--type">Legal</span></div></div><div class="compact-right"><span class="compact-location"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>Amsterdam</span><span class="job-link">View &rarr;</span></div></a>
+        <a class="job-card-compact fade-up" href="vacatures/robeco-power-platform-ai-engineer.html"><div class="company-logo has-logo"><img src="/img/logos/robeco.svg" alt="Robeco logo" loading="lazy"></div><div class="compact-info"><span class="compact-title">Power Platform &amp; AI Engineer</span><span class="compact-company">Robeco</span><div class="job-badges"><span class="badge-pill badge-pill--type">Finance</span></div></div><div class="compact-right"><span class="compact-location"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>Netherlands</span><span class="job-link">View &rarr;</span></div></a>
+<!-- NIEUWSTE-VACATURES:END -->
+      </div>
+      <a class="sec-more" href="jobs.html"><span data-l="en" hidden>All vacancies, with filters</span><span data-l="nl">Alle vacatures, met filters</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
   </section>
 
-  <!-- ── ARTICLES ───────────────────────────── -->
-  <section class="home-articles">
+  <section class="home-guides">
     <div class="container">
       <div class="section-header fade-up">
-        <span class="section-tag" data-i18n="home.articles.tag">Inzichten</span>
-        <h2 data-i18n="home.articles.title">Carrièregidsen &amp; Artikelen</h2>
+        <span class="section-tag"><span data-l="en" hidden>Preparation</span><span data-l="nl">Voorbereiding</span></span>
+        <h2><span data-l="en" hidden>The guides</span><span data-l="nl">De gidsen</span></h2>
+        <p class="section-sub"><span data-l="en" hidden>Where the difference is made between applying and being hired.</span><span data-l="nl">Waar je het verschil maakt tussen solliciteren en aangenomen worden.</span></p>
       </div>
-
-      <div class="article-cards-grid">
-
-        <!-- Article 1: IB -->
-        <article class="article-card fade-up">
-          <div class="article-accent" style="background:#2563eb;"></div>
-          <div class="article-card-body">
-            <span class="article-category" style="background:rgba(37,99,235,0.08);color:#2563eb;" data-i18n="home.articles.1.cat">Investment Banking</span>
-            <h3 class="article-title" data-i18n="home.articles.1.title">Doorbreken in Investment Banking in Nederland</h3>
-            <p class="article-excerpt" data-i18n="home.articles.1.excerpt">Alles over het sollicitatieproces, spring weeks en zomerstages bij bulge bracket en elite boutique banken.</p>
-            <a href="finance/investment-banking/" class="article-read-more" data-i18n="home.articles.readmore">Lees de gids →</a>
-          </div>
-        </article>
-
-        <!-- Article 2: Consulting -->
-        <article class="article-card fade-up">
-          <div class="article-accent" style="background:#16a34a;"></div>
-          <div class="article-card-body">
-            <span class="article-category" style="background:rgba(22,163,74,0.08);color:#16a34a;" data-i18n="home.articles.2.cat">Consulting</span>
-            <h3 class="article-title" data-i18n="home.articles.2.title">Zo kraak je het case-interview</h3>
-            <p class="article-excerpt" data-i18n="home.articles.2.excerpt">Een stap-voor-stap gids om het case-interview onder de knie te krijgen, van market sizing tot profitability cases.</p>
-            <a href="consulting.html" class="article-read-more" data-i18n="home.articles.readmore">Lees de gids →</a>
-          </div>
-        </article>
-
-        <!-- Article 3: Legal -->
-        <article class="article-card fade-up">
-          <div class="article-accent" style="background:#7c3aed;"></div>
-          <div class="article-card-body">
-            <span class="article-category" style="background:rgba(124,58,237,0.08);color:#7c3aed;" data-i18n="home.articles.3.cat">Legal</span>
-            <h3 class="article-title" data-i18n="home.articles.3.title">Jouw route naar een traineeship in de advocatuur</h3>
-            <p class="article-excerpt" data-i18n="home.articles.3.excerpt">Hoe je jezelf positioneert voor een traineeship, van je master tot je eerste werkdag.</p>
-            <a href="legal.html" class="article-read-more" data-i18n="home.articles.readmore">Lees de gids →</a>
-          </div>
-        </article>
-
-      </div>
-
-      <div class="view-all-center fade-up">
-        <a href="articles.html" class="view-all-link" data-i18n="home.articles.viewall">Alle artikelen bekijken →</a>
+      <div class="guide-grid">
+        <a class="guide-card fade-up" href="/resources/case-interview/">
+          <span class="guide-t"><span data-l="en" hidden>Case interview guide</span><span data-l="nl">Case-interviewgids</span></span>
+          <span class="guide-d"><span data-l="en" hidden>Structuring, case types, mental maths and four practice cases with worked solutions.</span><span data-l="nl">Structureren, casetypes, hoofdrekenen en vier oefencases met uitwerking.</span></span>
+          <span class="guide-more"><span data-l="en" hidden>Read the guide</span><span data-l="nl">Lees de gids</span> &rarr;</span>
+        </a>
+        <a class="guide-card fade-up" href="/resources/finance-interview/">
+          <span class="guide-t"><span data-l="en" hidden>Finance interview guide</span><span data-l="nl">Finance-interviewgids</span></span>
+          <span class="guide-d"><span data-l="en" hidden>Financial statements, valuation, the paper LBO and the finance case types.</span><span data-l="nl">De jaarrekening, waardering, de paper LBO en de finance-casetypes.</span></span>
+          <span class="guide-more"><span data-l="en" hidden>Read the guide</span><span data-l="nl">Lees de gids</span> &rarr;</span>
+        </a>
+        <a class="guide-card fade-up" href="/resources/legal-interview/">
+          <span class="guide-t"><span data-l="en" hidden>Law firm application guide</span><span data-l="nl">Sollicitatiegids advocatuur</span></span>
+          <span class="guide-d"><span data-l="en" hidden>The route to trainee lawyer, what the interviews consist of and a worked legal case.</span><span data-l="nl">De route naar advocaat-stagiair, waar de gesprekken uit bestaan en een uitgewerkte casus.</span></span>
+          <span class="guide-more"><span data-l="en" hidden>Read the guide</span><span data-l="nl">Lees de gids</span> &rarr;</span>
+        </a>
+        <a class="guide-card fade-up" href="/resources/sollicitatiegids/">
+          <span class="guide-t"><span data-l="en" hidden>Application guide</span><span data-l="nl">Sollicitatiegids</span></span>
+          <span class="guide-d"><span data-l="en" hidden>CV, cover letter, online assessments and the process from application to offer.</span><span data-l="nl">Cv, motivatiebrief, online assessments en het traject van sollicitatie tot aanbod.</span></span>
+          <span class="guide-more"><span data-l="en" hidden>Read the guide</span><span data-l="nl">Lees de gids</span> &rarr;</span>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- ── HOW IT WORKS ────────────────────── -->
   <section class="aanpak" id="how-it-works">
     <div class="container">
       <div class="section-header section-header--light fade-up">

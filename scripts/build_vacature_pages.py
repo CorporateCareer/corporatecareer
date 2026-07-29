@@ -362,6 +362,75 @@ def update_sitemap(active):
         xml = xml.replace("</urlset>", en_marked + "\n\n</urlset>")
     open(SITEMAP, "w", encoding="utf-8").write(xml)
 
+HOME = os.path.join(BASE, "index.html")
+SECTOR_LABEL = {"finance": "Finance", "consulting": "Consulting", "advocatuur": "Legal"}
+PIN_SVG = ('<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+           'stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+           '<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>')
+
+
+def update_home(active, first_seen):
+    """Zet de vier nieuwste vacatures en de actuele aantallen in de voorpagina.
+    Stonden die kaarten voorheen niet in de HTML: ze werden in de browser
+    opgebouwd door het volledige jobs.html (1,6 MB) op te halen, waardoor
+    crawlers een lege div zagen en de bezoeker onnodig veel downloadde."""
+    if not os.path.exists(HOME):
+        return
+    html = open(HOME, encoding="utf-8").read()
+
+    # Nieuwste eerst, maar hoogstens een vacature per werkgever en zo veel
+    # mogelijk verschillende sectoren, anders toont de etalage vier keer
+    # dezelfde bank.
+    ordered = sorted(active, key=lambda j: (first_seen.get(str(j["id"]), ""), j["id"]), reverse=True)
+    newest, seen_co, seen_sec = [], set(), set()
+    for pool in (True, False):          # eerste ronde: ook nieuwe sector eisen
+        for j in ordered:
+            if len(newest) == 4:
+                break
+            if j in newest or j["company"] in seen_co:
+                continue
+            if pool and j.get("sector") in seen_sec:
+                continue
+            newest.append(j); seen_co.add(j["company"]); seen_sec.add(j.get("sector"))
+    for j in ordered:                   # aanvullen als er te weinig overblijft
+        if len(newest) == 4:
+            break
+        if j not in newest:
+            newest.append(j)
+    cards = []
+    for j in newest:
+        logo = (f'<div class="company-logo has-logo"><img src="{j["logo"]}" alt="{esc(j["company"])} logo" loading="lazy"></div>'
+                if j.get("logo") else
+                f'<div class="company-logo" style="background:{j.get("color", "#142a45")}">{esc(j.get("initials", ""))}</div>')
+        cards.append(
+            f'        <a class="job-card-compact fade-up" href="vacatures/{j["slug"]}.html">{logo}'
+            f'<div class="compact-info"><span class="compact-title">{esc(j["title"])}</span>'
+            f'<span class="compact-company">{esc(j["company"])}</span>'
+            f'<div class="job-badges"><span class="badge-pill badge-pill--type">'
+            f'{SECTOR_LABEL.get(j.get("sector"), j.get("sector", ""))}</span></div></div>'
+            f'<div class="compact-right"><span class="compact-location">{PIN_SVG}{esc(j.get("location", ""))}</span>'
+            f'<span class="job-link">View &rarr;</span></div></a>')
+    html = re.sub(r'(<!-- NIEUWSTE-VACATURES:START -->)[\s\S]*?(<!-- NIEUWSTE-VACATURES:END -->)',
+                  lambda m: m.group(1) + "\n" + "\n".join(cards) + "\n" + m.group(2), html, count=1)
+
+    # aantallen: totaal en per sector, zodat de cijfers altijd kloppen
+    per = {"finance": 0, "consulting": 0, "advocatuur": 0}
+    for j in active:
+        if j.get("sector") in per:
+            per[j["sector"]] += 1
+    counts = {
+        "vacancies": str(len(active)),
+        "finance": f'{per["finance"]} vacatures',
+        "consulting": f'{per["consulting"]} vacatures',
+        "legal": f'{per["advocatuur"]} vacatures',
+    }
+    for key, val in counts.items():
+        html = re.sub(r'(data-count="' + key + r'"[^>]*>)[^<]*(<)', lambda m, v=val: m.group(1) + v + m.group(2), html)
+    open(HOME, "w", encoding="utf-8").write(html)
+    print(f"voorpagina bijgewerkt: 4 vacaturekaarten, {len(active)} vacatures "
+          f"(finance {per['finance']}, consulting {per['consulting']}, legal {per['advocatuur']})")
+
+
 def main():
     jobs = read_island()
     active = [j for j in jobs if j.get("active", True) is not False and j.get("slug") and j.get("detail")]
@@ -402,6 +471,7 @@ def main():
                 os.remove(os.path.join(d, f)); removed += 1
 
     update_sitemap(active)
+    update_home(active, first_seen)
     json.dump(first_seen, open(SEEN, "w", encoding="utf-8"), indent=2)
     print(f"{len(wanted)} pagina's geschreven, {removed} verwijderd")
 
