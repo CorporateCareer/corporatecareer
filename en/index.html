@@ -547,13 +547,13 @@
 
     /* ── ZOEKVELD IN DE BALK ───────────────────── */
     .nav-search{display:flex;align-items:center;gap:7px;border:1px solid var(--gray-200);border-radius:999px;
-      padding:7px 14px;background:var(--gray-50);min-width:210px}
+      padding:7px 13px;background:var(--gray-50);flex:0 0 auto;width:190px}
     .nav-search svg{color:var(--gray-400);flex-shrink:0}
     .nav-search input{border:0;background:transparent;outline:none;font:inherit;font-size:.82rem;
       color:var(--gray-700);width:100%;min-width:0}
     .nav-search input::placeholder{color:var(--gray-400)}
     .nav-search:focus-within{border-color:var(--blue-400);background:#fff}
-    @media (max-width:1280px){.nav-search{min-width:160px}}
+    
   </style>
   <!-- Google Analytics (GA4) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TXBG97YW6Y"></script>
@@ -646,10 +646,10 @@
         <li><a href="/en/resources/" data-i18n="nav.resources">Resources</a></li>
         <li class="nav-hide-md"><a href="/en/articles.html" data-i18n="nav.articles">Articles</a></li>
         <li class="nav-hide-md"><a href="/en/over-ons.html" data-i18n="nav.about">About Us</a></li>
-        <li class="nav-hide-md">
+        <li class="nav-search-li">
           <form class="nav-search" action="jobs.html" method="get" role="search">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
-            <input type="search" name="q" aria-label="Zoek een functie of kantoor" data-i18n-placeholder="nav.search.placeholder" placeholder="Zoek een functie of kantoor">
+            <input type="search" name="q" aria-label="Zoek vacatures en kantoren" placeholder="Zoek vacatures">
           </form>
         </li>
         <li>
