@@ -173,18 +173,29 @@ table,
 
 /* Het woordmerk is opgebouwd uit dezelfde twee lettertypen als de rest van de
    site: Corporate in Inter, klein en gespatieerd, en Career in Source Serif 4.
-   Het merkteken zijn twee C's die door elkaar heen lopen: de initialen van de
-   naam, met een over-en-onder bij het kruispunt. De uiteinden staan acht graden
-   schuin afgesneden, zoals de C van een schreefletter, zodat het teken bij
-   Source Serif 4 past. Het staat als data-URI zodat het geen extra request kost
-   en op een plek staat in plaats van in elke pagina. De over-en-onder is een los
-   derde pad in plaats van een clipPath, omdat een id in een data-URI kan botsen
-   tussen achtergrondafbeeldingen. De donkere variant staat verderop bij de
-   footer. */
+   Het merkteken zijn twee rechtopstaande C's die elkaar overlappen: de
+   initialen van de naam. De monden zijn bewust wijd. Staan ze nauwer, dan
+   verdwijnt de opening van de eerste C achter de tweede en leest de vorm als
+   OC in plaats van CC. Een eerdere versie loste dat op door de C's schuin te
+   zetten, maar dat gaf het teken iets terloops.
+
+   Rechtop op een lijn kruisen de twee middellijnen elkaar niet op de boog:
+   dat kruispunt valt in de mond. Het derde pad, de over-en-onder, zit daarom
+   bij het onderste uiteinde van de eerste C. Dat ligt op de band van de
+   tweede en komt er dus overheen, terwijl de bovenkant eronderdoor gaat.
+
+   De tweede C is iets groter en dunner dan de eerste: hierarchie in plaats
+   van herhaling, en het houdt de vorm open onder de twintig pixels. De
+   uiteinden staan acht graden schuin afgesneden, zoals de C van een
+   schreefletter, zodat het teken bij Source Serif 4 past.
+
+   Het derde pad is een los pad in plaats van een clipPath, omdat een id in
+   een data-URI kan botsen tussen achtergrondafbeeldingen. De donkere variant
+   staat verderop bij de footer. */
 .logo-icon {
   width: 40px; height: 35px;
   flex-shrink: 0;
-  background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%228%2018%2098%2064%22%3E%3Cpath%20d%3D%22M60.1%2071.6A29.5%2029.5%200%201%201%2060.1%2028.4L55.9%2040.5A18.5%2018.5%200%201%200%2055.9%2059.5Z%22%20fill%3D%22%23142a45%22%2F%3E%3Cpath%20d%3D%22M94.1%2071.6A29.5%2029.5%200%201%201%2094.1%2028.4L89.9%2040.5A18.5%2018.5%200%201%200%2089.9%2059.5Z%22%20fill%3D%22%230e7c5a%22%2F%3E%3Cpath%20d%3D%22M53.4%2023.7A29.5%2029.5%200%200%201%2060.1%2028.4L55.9%2040.5A18.5%2018.5%200%200%200%2048.4%2033.5Z%22%20fill%3D%22%23142a45%22%2F%3E%3C%2Fsvg%3E") no-repeat center / contain;
+  background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%228%2020%20100%2064%22%3E%3Cpath%20d%3D%22M53.1%2076.2A28.5%2028.5%200%201%201%2053.1%2027.8L51.0%2040.3A17.5%2017.5%200%201%200%2051.0%2063.7Z%22%20fill%3D%22%23142a45%22%2F%3E%3Cpath%20d%3D%22M93.6%2076.3A30.0%2030.0%200%201%201%2093.6%2027.7L91.8%2039.7A20.0%2020.0%200%201%200%2091.8%2064.3Z%22%20fill%3D%22%230e7c5a%22%2F%3E%3Cpath%20d%3D%22M53.1%2076.2A28.5%2028.5%200%200%201%2048.7%2078.4L44.6%2068.2A17.5%2017.5%200%200%200%2051.0%2063.7Z%22%20fill%3D%22%23142a45%22%2F%3E%3C%2Fsvg%3E") no-repeat center / contain;
 }
 
 .logo-text {
@@ -1195,7 +1206,7 @@ table,
 
 .footer .logo-icon,
 .nf-logo .logo-icon {
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%228%2018%2098%2064%22%3E%3Cpath%20d%3D%22M60.1%2071.6A29.5%2029.5%200%201%201%2060.1%2028.4L55.9%2040.5A18.5%2018.5%200%201%200%2055.9%2059.5Z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M94.1%2071.6A29.5%2029.5%200%201%201%2094.1%2028.4L89.9%2040.5A18.5%2018.5%200%201%200%2089.9%2059.5Z%22%20fill%3D%22%238ed9bd%22%2F%3E%3Cpath%20d%3D%22M53.4%2023.7A29.5%2029.5%200%200%201%2060.1%2028.4L55.9%2040.5A18.5%2018.5%200%200%200%2048.4%2033.5Z%22%20fill%3D%22%23ffffff%22%2F%3E%3C%2Fsvg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%228%2020%20100%2064%22%3E%3Cpath%20d%3D%22M53.1%2076.2A28.5%2028.5%200%201%201%2053.1%2027.8L51.0%2040.3A17.5%2017.5%200%201%200%2051.0%2063.7Z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M93.6%2076.3A30.0%2030.0%200%201%201%2093.6%2027.7L91.8%2039.7A20.0%2020.0%200%201%200%2091.8%2064.3Z%22%20fill%3D%22%238ed9bd%22%2F%3E%3Cpath%20d%3D%22M53.1%2076.2A28.5%2028.5%200%200%201%2048.7%2078.4L44.6%2068.2A17.5%2017.5%200%200%200%2051.0%2063.7Z%22%20fill%3D%22%23ffffff%22%2F%3E%3C%2Fsvg%3E");
 }
 
 .footer .logo-top { color: var(--emerald-soft); }

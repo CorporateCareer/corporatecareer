@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="CorporateCareer">
   <rect width="100" height="100" rx="24" fill="#142a45"/>
-  <g transform="translate(8.9 14) scale(0.72)">
-    <path d="M60.1 71.6A29.5 29.5 0 1 1 60.1 28.4L55.9 40.5A18.5 18.5 0 1 0 55.9 59.5Z" fill="#ffffff"/>
-    <path d="M94.1 71.6A29.5 29.5 0 1 1 94.1 28.4L89.9 40.5A18.5 18.5 0 1 0 89.9 59.5Z" fill="#8ed9bd"/>
-    <path d="M53.4 23.7A29.5 29.5 0 0 1 60.1 28.4L55.9 40.5A18.5 18.5 0 0 0 48.4 33.5Z" fill="#ffffff"/>
+  <g transform="translate(9.3 13.4) scale(0.705)">
+    <path d="M53.1 76.2A28.5 28.5 0 1 1 53.1 27.8L51.0 40.3A17.5 17.5 0 1 0 51.0 63.7Z" fill="#ffffff"/>
+    <path d="M93.6 76.3A30.0 30.0 0 1 1 93.6 27.7L91.8 39.7A20.0 20.0 0 1 0 91.8 64.3Z" fill="#8ed9bd"/>
+    <path d="M53.1 76.2A28.5 28.5 0 0 1 48.7 78.4L44.6 68.2A17.5 17.5 0 0 0 51.0 63.7Z" fill="#ffffff"/>
   </g>
 </svg>
