@@ -1765,11 +1765,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/vacatures/van-benthem-en-keulen-advocaat-medewerker-arbeidsrecht.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/vacatures/van-benthem-en-keulen-aankomend-partner-bouwrecht.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -4890,11 +4885,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/en/vacatures/van-benthem-en-keulen-juridisch-medewerker-en-advocaat-stagiaire-arbeidsrecht.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/van-benthem-en-keulen-advocaat-medewerker-arbeidsrecht.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
