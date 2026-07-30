@@ -664,7 +664,7 @@
           </button>
         </li>
         <li><a href="/en/index.html#start" class="btn-nav" data-i18n="nav.cta">Get Started</a></li>
-        <li><a href="/en/word-partner.html" class="btn-nav-partner">Become a partner</a></li>
+        <li><a href="/en/word-partner.html" class="btn-nav-partner" data-i18n="nav.partner">Become a partner</a></li>
       </ul>
       <button class="hamburger" id="hamburger" aria-label="Open menu" data-i18n-aria="nav.hamburger.open">
         <span></span><span></span><span></span>
@@ -699,9 +699,9 @@
 
         <div class="sector-pills" id="sectorPills">
           <button class="pill active" data-sector="">All sectors</button>
-          <button class="pill" data-sector="finance">Finance</button>
-          <button class="pill" data-sector="advocatuur">Law</button>
-          <button class="pill" data-sector="consulting">Consulting</button>
+          <button class="pill" data-sector="finance" data-i18n="jobs.sector.finance">Finance</button>
+          <button class="pill" data-sector="advocatuur" data-i18n="jobs.sector.advocatuur">Law</button>
+          <button class="pill" data-sector="consulting" data-i18n="jobs.sector.consulting">Consulting</button>
         </div>
       </div>
     </div>
@@ -720,8 +720,8 @@
 
         <aside class="filters-sidebar" id="filtersSidebar">
           <div class="sidebar-header">
-            <h3>Filters</h3>
-            <button id="clearFilters">Clear all</button>
+            <h3 data-i18n="jobs.filter.title">Filters</h3>
+            <button id="clearFilters" data-i18n="jobs.filter.clear">Clear all</button>
           </div>
 
           <div class="filter-group">
@@ -753,7 +753,7 @@
           </div>
 
           <div class="filter-group">
-            <h4>Location</h4>
+            <h4 data-i18n="jobs.filter.location">Location</h4>
             <label class="filter-label">
               <input type="checkbox" name="location" value="Amsterdam">
               Amsterdam <span class="filter-count">169</span>
@@ -40615,8 +40615,28 @@
     const JOBS = JSON.parse(document.getElementById('jobs-data').textContent).filter(j => j.active !== false);
 
     /* ── RENDER & FILTER LOGIC ─────────────── */
-    const sectorMap  = { finance: "Finance", advocatuur: "Law", consulting: "Consulting" };
-    const typeMap    = { graduate: "Graduate", stage: "Internship" };
+    // De labels komen uit de vertalingen; stonden ze hier hard, dan bleef de
+    // Nederlandse pagina Law en Internship tonen.
+    const L = k => { const l = window.CURRENT_LANG || 'nl';
+      return (typeof TRANSLATIONS !== 'undefined' && TRANSLATIONS[l] && TRANSLATIONS[l][k]) || null; };
+    const sectorMap = new Proxy({}, { get: (_, k) =>
+      L('jobs.sector.'+String(k)) || {finance:"Finance",advocatuur:"Law",consulting:"Consulting"}[k] });
+    const typeMap = new Proxy({}, { get: (_, k) =>
+      L('jobs.type.'+String(k)) || {graduate:"Graduate",stage:"Internship"}[k] });
+
+    // Vakgebiednamen blijven Engels: zo heten ze ook in de Nederlandse praktijk.
+    // Alleen algemene termen krijgen een Nederlandse variant.
+    const tagNL = {
+      "General Practice": "Algemene praktijk", "Internship": "Stage",
+      "Entry / experienced": "Starter / ervaren", "Law": "Advocatuur",
+      "Legal": "Advocatuur", "Public Sector": "Publieke sector",
+      "Administrative Law": "Bestuursrecht", "Graduate": "Vaste functie",
+      "Experienced": "Ervaren"
+    };
+    // De sectortag staat als Law, Legal en Advocatuur door elkaar in de data,
+    // dus ook de andere kant op normaliseren.
+    const tagEN = { "Advocatuur": "Law", "Legal": "Law", "Stage": "Internship" };
+    const tagLabel = t => ((window.CURRENT_LANG || 'nl') === 'nl' ? (tagNL[t] || t) : (tagEN[t] || t));
     const sectorBadgeClass = { finance: "badge--finance", advocatuur: "badge--advocatuur", consulting: "badge--consulting" };
     const typeBadgeClass   = { graduate: "badge--graduate", stage: "badge--stage" };
 
@@ -40732,7 +40752,7 @@
             </div>
             <p class="job-description">${(job.description&&typeof job.description==='object')?(job.description[lang]||job.description.en):job.description}</p>
             <div class="job-footer">
-              <div class="job-tags">${job.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
+              <div class="job-tags">${job.tags.map(t => `<span class="tag">${tagLabel(t)}</span>`).join('')}</div>
               <a href="/en/vacatures/${job.slug}.html" class="btn-job">
                 ${applyLabel}
                 <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg>
