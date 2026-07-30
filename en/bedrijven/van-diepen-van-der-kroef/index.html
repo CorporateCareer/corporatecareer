@@ -113,22 +113,22 @@
   <link rel="stylesheet" href="/css/style.css">
   <style>
     .page-hero{background:linear-gradient(135deg,var(--navy-950) 0%,var(--navy-800) 100%);padding:132px 0 74px;position:relative;overflow:hidden}
-    .page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(37,99,235,.18) 0%,transparent 70%);pointer-events:none}
+    .page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(14,124,90,.18) 0%,transparent 70%);pointer-events:none}
     .page-hero .inner{position:relative;max-width:760px}
-    .page-hero .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(37,99,235,.15);border:1px solid rgba(37,99,235,.3);color:var(--blue-300);font-size:.78rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:6px 14px;border-radius:999px;margin-bottom:22px}
+    .page-hero .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(14,124,90,.15);border:1px solid rgba(14,124,90,.3);color:var(--emerald-soft);font-size:.78rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:6px 14px;border-radius:999px;margin-bottom:22px}
     .page-hero h1{font-size:clamp(2.1rem,5vw,3.3rem);font-weight:800;color:#fff;line-height:1.12;margin-bottom:18px}
     .page-hero p.lead{font-size:1.1rem;color:rgba(255,255,255,.66);line-height:1.7;margin-bottom:0;max-width:680px}
     .breadcrumb{background:var(--gray-50);border-bottom:1px solid var(--gray-200)}
     .breadcrumb ol{list-style:none;display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:14px 0;margin:0;font-size:.82rem;color:var(--gray-500)}
-    .breadcrumb a{color:var(--gray-600);text-decoration:none}.breadcrumb a:hover{color:var(--blue-600)}
+    .breadcrumb a{color:var(--gray-600);text-decoration:none}.breadcrumb a:hover{color:var(--emerald-deep)}
     .breadcrumb li[aria-current]{color:var(--navy-900);font-weight:600}.breadcrumb .sep{color:var(--gray-300)}
     .page-section{padding:64px 0}.page-section.gray{background:var(--gray-50)}
-    .section-label{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-600);margin-bottom:12px}
+    .section-label{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gray-600);margin-bottom:12px}
     .section-title{font-size:clamp(1.5rem,3vw,2rem);font-weight:800;color:var(--navy-900);line-height:1.25;margin-bottom:16px}
     .pe-prose{max-width:768px}.pe-prose p{color:var(--gray-700);line-height:1.8;font-size:1rem;margin:0}
     .pe-related{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:40px}
     .pe-rel-card{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#fff;border:1px solid var(--gray-200);border-radius:12px;padding:18px 22px;text-decoration:none;color:var(--navy-900);font-weight:700;font-size:.95rem;transition:box-shadow .2s,transform .2s,color .2s}
-    .pe-rel-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px);color:var(--blue-600)}
+    .pe-rel-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px);color:var(--emerald-deep)}
     .pe-vac-grid{display:none;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:24px}
     .pe-vac-card{display:flex;flex-direction:column;gap:4px;background:#fff;border:1px solid var(--gray-200);border-radius:12px;padding:16px 20px;text-decoration:none;transition:box-shadow .2s,transform .2s}
     .pe-vac-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
@@ -137,14 +137,14 @@
     .page-cta h2{font-size:clamp(1.5rem,3vw,2rem);font-weight:800;color:#fff;margin-bottom:14px}
     .page-cta p{color:rgba(255,255,255,.72);font-size:1rem;margin-bottom:28px}
     .page-cta .btn-row{display:flex;gap:13px;justify-content:center;flex-wrap:wrap}
-    .page-cta .btn-primary{background:#fff;color:var(--blue-600);padding:14px 30px;border-radius:8px;font-weight:700;font-size:.93rem;text-decoration:none}
+    .page-cta .btn-primary{background:#fff;color:var(--emerald-deep);padding:14px 30px;border-radius:8px;font-weight:700;font-size:.93rem;text-decoration:none}
     .page-cta .btn-outline{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.45);padding:14px 30px;border-radius:8px;font-weight:600;font-size:.93rem;text-decoration:none}
     .bedrijf-badge{width:64px;height:64px;border-radius:16px;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:1rem;letter-spacing:.02em;margin-bottom:20px}
     .bedrijf-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
     .bedrijf-tag{font-size:.72rem;font-weight:600;color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);padding:5px 12px;border-radius:999px}
     .bedrijf-facts{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:40px;max-width:720px}
     .bedrijf-fact{background:#fff;border:1px solid var(--gray-200);border-radius:12px;padding:16px 20px}
-    .bedrijf-fact dt{font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue-600);margin-bottom:4px}
+    .bedrijf-fact dt{font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--emerald-deep);margin-bottom:4px}
     .bedrijf-fact dd{margin:0;font-size:.92rem;color:var(--gray-700);font-weight:600}
     .bedrijf-faq-item{background:#fff;border:1px solid var(--gray-200);border-radius:12px;padding:20px 22px;margin-bottom:12px}
     .bedrijf-faq-item summary{cursor:pointer;font-weight:700;color:var(--navy-900);font-size:.96rem}
@@ -309,7 +309,7 @@
     <h2 class="section-title"><span data-l="en">Vacancies at Van Diepen Van der Kroef</span><span data-l="nl" hidden>Vacatures bij Van Diepen Van der Kroef</span></h2>
     <p class="section-text" id="bVacMsg"><span data-l="en">We only show real, current openings with a link to the employer. When Van Diepen Van der Kroef has an opening here, it will appear below.</span><span data-l="nl" hidden>We tonen alleen echte, actuele vacatures met een link naar de werkgever. Zodra Van Diepen Van der Kroef hier een vacature heeft, verschijnt die hieronder.</span></p>
     <div class="pe-vac-grid" id="bVac"></div>
-    <a class="link-arrow" href="/en/jobs.html" style="color:var(--blue-600);font-weight:700;text-decoration:none;display:inline-block;margin-top:18px"><span data-l="en">View all vacancies</span><span data-l="nl" hidden>Bekijk alle vacatures</span></a>
+    <a class="link-arrow" href="/en/jobs.html" style="color:var(--emerald-deep);font-weight:700;text-decoration:none;display:inline-block;margin-top:18px"><span data-l="en">View all vacancies</span><span data-l="nl" hidden>Bekijk alle vacatures</span></a>
     <script>
     (function(){
       var FIRMS=["Van Diepen Van der Kroef"];
@@ -344,7 +344,7 @@
     <h2><span data-l="en">Explore Van Diepen Van der Kroef and other legal employers</span><span data-l="nl" hidden>Ontdek Van Diepen Van der Kroef en andere legal-werkgevers</span></h2>
     <p><span data-l="en">Browse open vacancies, or see all law firms active in the Netherlands.</span><span data-l="nl" hidden>Bekijk openstaande vacatures, of zie alle advocatenkantoren die actief zijn in Nederland.</span></p>
     <div class="btn-row"><a href="/en/jobs.html" class="btn-primary"><span data-l="en">View vacancies</span><span data-l="nl" hidden>Bekijk vacatures</span></a><a href="/en/legal/bedrijven/" class="btn-outline"><span data-l="en">All companies</span><span data-l="nl" hidden>Alle bedrijven</span></a></div>
-    <p style="margin-top:22px;font-size:.9rem;color:var(--gray-500)"><span data-l="en">Are you Van Diepen Van der Kroef and want to update this page or stand out to students? </span><span data-l="nl" hidden>Ben jij Van Diepen Van der Kroef en wil je deze pagina bijwerken of opvallen bij studenten? </span><a href="/en/word-partner.html" style="color:var(--blue-600);font-weight:600"><span data-l="en">Become a partner</span><span data-l="nl" hidden>Word partner</span></a>.</p>
+    <p style="margin-top:22px;font-size:.9rem;color:var(--gray-500)"><span data-l="en">Are you Van Diepen Van der Kroef and want to update this page or stand out to students? </span><span data-l="nl" hidden>Ben jij Van Diepen Van der Kroef en wil je deze pagina bijwerken of opvallen bij studenten? </span><a href="/en/word-partner.html" style="color:var(--emerald-deep);font-weight:600"><span data-l="en">Become a partner</span><span data-l="nl" hidden>Word partner</span></a>.</p>
   </div></section>
   </main>
 

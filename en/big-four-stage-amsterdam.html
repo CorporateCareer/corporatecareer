@@ -36,13 +36,13 @@
   <link rel="stylesheet" href="/css/style.css">
   <style>
     .page-hero{background:linear-gradient(150deg,#142a45 0%,#1e3a61 100%);padding:140px 0 80px;text-align:center;position:relative;overflow:hidden;}
-    .page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(37,99,235,0.18) 0%,transparent 70%);pointer-events:none;}
-    .page-hero .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(37,99,235,0.15);border:1px solid rgba(37,99,235,0.3);color:#93c5fd;font-size:0.78rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:6px 14px;border-radius:999px;margin-bottom:24px;}
+    .page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(14,124,90,0.18) 0%,transparent 70%);pointer-events:none;}
+    .page-hero .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(14,124,90,0.15);border:1px solid rgba(14,124,90,0.3);color:#93c5fd;font-size:0.78rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:6px 14px;border-radius:999px;margin-bottom:24px;}
     .page-hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;color:var(--white);line-height:1.15;margin-bottom:20px;}
     .page-hero p{font-size:1.1rem;color:rgba(255,255,255,0.6);max-width:680px;margin:0 auto;line-height:1.7;}
     .page-section{padding:80px 0;}
     .page-section.gray{background:var(--gray-50);}
-    .section-label{font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue-600);margin-bottom:12px;}
+    .section-label{font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray-600);margin-bottom:12px;}
     .section-title{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;color:var(--navy-900);line-height:1.25;margin-bottom:18px;}
     .section-text{color:var(--gray-600);line-height:1.8;margin-bottom:18px;font-size:1rem;max-width:720px;}
     /* Big Four cards */
@@ -66,13 +66,13 @@
     .salary-table td:last-child{font-weight:700;color:var(--navy-900);}
     .step-list{list-style:none;margin-top:32px;}
     .step-list li{display:flex;gap:18px;align-items:flex-start;padding:18px 0;border-bottom:1px solid var(--gray-100);}
-    .step-num{flex-shrink:0;width:36px;height:36px;border-radius:50%;background:var(--blue-600);color:white;font-size:0.9rem;font-weight:700;display:flex;align-items:center;justify-content:center;}
+    .step-num{flex-shrink:0;width:36px;height:36px;border-radius:50%;background:var(--emerald-deep);color:white;font-size:0.9rem;font-weight:700;display:flex;align-items:center;justify-content:center;}
     .step-body h4{font-size:1rem;font-weight:700;color:var(--navy-900);margin-bottom:4px;}
     .step-body p{font-size:0.9rem;color:var(--gray-600);line-height:1.6;}
     .faq-list{margin-top:40px;}
     .faq-item{border:1px solid var(--gray-200);border-radius:12px;margin-bottom:12px;overflow:hidden;}
     .faq-q{width:100%;background:var(--white);border:none;padding:20px 24px;text-align:left;font-size:1rem;font-weight:600;color:var(--navy-900);cursor:pointer;display:flex;justify-content:space-between;align-items:center;}
-    .faq-q::after{content:'+';font-size:1.4rem;color:var(--blue-600);font-weight:300;}
+    .faq-q::after{content:'+';font-size:1.4rem;color:var(--emerald-deep);font-weight:300;}
     .faq-a{padding:0 24px 20px;font-size:0.95rem;color:var(--gray-600);line-height:1.75;}
     .page-cta{background:#0f172a;padding:80px 0;text-align:center;}
     .page-cta h2{font-size:clamp(1.8rem,3vw,2.4rem);font-weight:800;color:var(--white);margin-bottom:16px;}
@@ -282,9 +282,9 @@
     <div class="container">
       <div class="section-header-center fade-up"><p class="section-label">Verder lezen</p><h2 class="section-title">Gerelateerde Pagina's</h2></div>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px;" class="fade-up">
-        <a href="/en/finance.html" style="display:block;background:var(--white);border:1px solid var(--gray-200);border-radius:14px;padding:28px;text-decoration:none;" onmouseover="this.style.boxShadow='0 4px 24px rgba(0,0,0,0.10)'" onmouseout="this.style.boxShadow=''"><div style="margin-bottom:12px;line-height:0;"><svg viewBox="0 0 24 24" fill="none" stroke="var(--blue-600)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="28" height="28" aria-hidden="true"><path d="M3 21h18M4 10h16M12 3 4 8h16zM7 10v11M12 10v11M17 10v11"/></svg></div><div style="font-weight:700;color:var(--navy-900);margin-bottom:8px;">Finance Career Guide</div><div style="font-size:0.875rem;color:var(--gray-500);">Van Big 4 naar IB of PE →</div></a>
-        <a href="/en/consulting-stage-amsterdam.html" style="display:block;background:var(--white);border:1px solid var(--gray-200);border-radius:14px;padding:28px;text-decoration:none;" onmouseover="this.style.boxShadow='0 4px 24px rgba(0,0,0,0.10)'" onmouseout="this.style.boxShadow=''"><div style="margin-bottom:12px;line-height:0;"><svg viewBox="0 0 24 24" fill="none" stroke="var(--blue-600)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="28" height="28" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.5.4.8 1 .8 1.6V16h5.4v-.5c0-.6.3-1.2.8-1.6A6 6 0 0 0 12 3z"/></svg></div><div style="font-weight:700;color:var(--navy-900);margin-bottom:8px;">Consulting Stage Amsterdam</div><div style="font-size:0.875rem;color:var(--gray-500);">McKinsey, BCG en Bain →</div></a>
-        <a href="/en/jobs.html" style="display:block;background:var(--white);border:1px solid var(--gray-200);border-radius:14px;padding:28px;text-decoration:none;" onmouseover="this.style.boxShadow='0 4px 24px rgba(0,0,0,0.10)'" onmouseout="this.style.boxShadow=''"><div style="margin-bottom:12px;line-height:0;"><svg viewBox="0 0 24 24" fill="none" stroke="var(--blue-600)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="28" height="28" aria-hidden="true"><path d="M4 7h16a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1zM9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2M3 13h18"/></svg></div><div style="font-weight:700;color:var(--navy-900);margin-bottom:8px;">Open Big 4 Vacatures</div><div style="font-size:0.875rem;color:var(--gray-500);">Stage en graduate posities →</div></a>
+        <a href="/en/finance.html" style="display:block;background:var(--white);border:1px solid var(--gray-200);border-radius:14px;padding:28px;text-decoration:none;" onmouseover="this.style.boxShadow='0 4px 24px rgba(0,0,0,0.10)'" onmouseout="this.style.boxShadow=''"><div style="margin-bottom:12px;line-height:0;"><svg viewBox="0 0 24 24" fill="none" stroke="var(--emerald-deep)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="28" height="28" aria-hidden="true"><path d="M3 21h18M4 10h16M12 3 4 8h16zM7 10v11M12 10v11M17 10v11"/></svg></div><div style="font-weight:700;color:var(--navy-900);margin-bottom:8px;">Finance Career Guide</div><div style="font-size:0.875rem;color:var(--gray-500);">Van Big 4 naar IB of PE →</div></a>
+        <a href="/en/consulting-stage-amsterdam.html" style="display:block;background:var(--white);border:1px solid var(--gray-200);border-radius:14px;padding:28px;text-decoration:none;" onmouseover="this.style.boxShadow='0 4px 24px rgba(0,0,0,0.10)'" onmouseout="this.style.boxShadow=''"><div style="margin-bottom:12px;line-height:0;"><svg viewBox="0 0 24 24" fill="none" stroke="var(--emerald-deep)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="28" height="28" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.5.4.8 1 .8 1.6V16h5.4v-.5c0-.6.3-1.2.8-1.6A6 6 0 0 0 12 3z"/></svg></div><div style="font-weight:700;color:var(--navy-900);margin-bottom:8px;">Consulting Stage Amsterdam</div><div style="font-size:0.875rem;color:var(--gray-500);">McKinsey, BCG en Bain →</div></a>
+        <a href="/en/jobs.html" style="display:block;background:var(--white);border:1px solid var(--gray-200);border-radius:14px;padding:28px;text-decoration:none;" onmouseover="this.style.boxShadow='0 4px 24px rgba(0,0,0,0.10)'" onmouseout="this.style.boxShadow=''"><div style="margin-bottom:12px;line-height:0;"><svg viewBox="0 0 24 24" fill="none" stroke="var(--emerald-deep)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="28" height="28" aria-hidden="true"><path d="M4 7h16a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1zM9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2M3 13h18"/></svg></div><div style="font-weight:700;color:var(--navy-900);margin-bottom:8px;">Open Big 4 Vacatures</div><div style="font-size:0.875rem;color:var(--gray-500);">Stage en graduate posities →</div></a>
       </div>
     </div>
   </section>
