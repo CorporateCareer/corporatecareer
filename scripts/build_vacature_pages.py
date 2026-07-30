@@ -26,6 +26,11 @@ SITE = "https://corporatecareer.nl"
 
 def esc(s): return H.escape(str(s), quote=True)
 
+# Als tekens en niet als HTML-entiteit: bi() escapet de tekst, dus &rarr;
+# zou er letterlijk uit komen.
+VIEW_EN = "View →"
+VIEW_NL = "Bekijken →"
+
 def bi(en, nl):
     """Inline tweetalige tekst: toont Engels of Nederlands via de taalknop."""
     return (f'<span data-l="en">{esc(en)}</span>'
@@ -409,9 +414,15 @@ def update_home(active, first_seen):
             f'<div class="job-badges"><span class="badge-pill badge-pill--type">'
             f'{SECTOR_LABEL.get(j.get("sector"), j.get("sector", ""))}</span></div></div>'
             f'<div class="compact-right"><span class="compact-location">{PIN_SVG}{esc(j.get("location", ""))}</span>'
-            f'<span class="job-link">View &rarr;</span></div></a>')
+            f'<span class="job-link">{bi(VIEW_EN, VIEW_NL)}</span></div></a>')
+    # De voorpagina is Nederlands, dus het fragment moet in het Nederlands
+    # gebakken worden voordat het erin gaat. bi() levert standaard Engels
+    # zichtbaar en Nederlands verborgen; zonder deze stap stond er View in
+    # plaats van Bekijken. Het bakken hier en niet in build_en, want de
+    # wekelijkse workflow draait dit script wel en build_en niet.
+    blok = gen_en.bake("\n".join(cards), "nl")
     html = re.sub(r'(<!-- NIEUWSTE-VACATURES:START -->)[\s\S]*?(<!-- NIEUWSTE-VACATURES:END -->)',
-                  lambda m: m.group(1) + "\n" + "\n".join(cards) + "\n" + m.group(2), html, count=1)
+                  lambda m: m.group(1) + "\n" + blok + "\n" + m.group(2), html, count=1)
 
     # aantallen: totaal en per sector, zodat de cijfers altijd kloppen
     per = {"finance": 0, "consulting": 0, "advocatuur": 0}
