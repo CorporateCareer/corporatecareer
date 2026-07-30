@@ -1281,17 +1281,38 @@ table,
 }
 
 /* ── FADE-UP ANIMATIONS ───────────────────── */
+/* Het uitgangspunt is zichtbaar, niet onzichtbaar. Alleen als JavaScript
+   draait, wat de class js op <html> aangeeft, wordt een element eerst
+   verborgen zodat de observer het kan laten opkomen. Zonder JavaScript, bij
+   een scriptfout of terwijl het script nog laadt, staat de pagina er dus
+   gewoon. Anders zou de hele pagina leeg blijven: het gaat om 37 elementen op
+   de homepage, waaronder de h1. */
 .fade-up {
-  opacity: 0;
-  transform: translateY(28px);
   transition:
     opacity   0.65s var(--ease),
     transform 0.65s var(--ease);
 }
 
-.fade-up.visible {
+.js .fade-up {
+  opacity: 0;
+  transform: translateY(28px);
+}
+
+/* Zelfde gewicht als de regel hierboven, dus deze moet erna staan om te
+   winnen zodra de observer visible toevoegt. */
+.js .fade-up.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Wie beweging heeft uitgezet krijgt de inhoud direct, zonder overgang. */
+@media (prefers-reduced-motion: reduce) {
+  .fade-up,
+  .js .fade-up {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 /* Stagger siblings */

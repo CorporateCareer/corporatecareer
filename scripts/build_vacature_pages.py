@@ -223,7 +223,7 @@ def build_page(job, nav, footer, first_seen, active):
 <html lang="nl">
 <head>
   <meta charset="UTF-8">
-  <script>window.__ccDefaultLang='nl';</script>
+  <script>var d=document.documentElement;d.classList.add('js');addEventListener('DOMContentLoaded',function(){window.__ccFade||d.classList.remove('js')});window.__ccDefaultLang='nl';</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="{esc(meta_desc)}">
   <meta name="author" content="CorporateCareer">

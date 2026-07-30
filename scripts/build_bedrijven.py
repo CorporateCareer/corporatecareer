@@ -1071,7 +1071,7 @@ def head(title, desc, url, extra_ld=""):
 <html lang="nl">
 <head>
   <meta charset="UTF-8">
-  <script>window.__ccDefaultLang='nl';</script>
+  <script>var d=document.documentElement;d.classList.add('js');addEventListener('DOMContentLoaded',function(){window.__ccFade||d.classList.remove('js')});window.__ccDefaultLang='nl';</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="CorporateCareer">
   <meta name="robots" content="index, follow">
