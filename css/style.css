@@ -1649,4 +1649,9 @@ table,
 .bedrijf-badge-logo.bedrijf-badge-flush { background: none; padding: 0; overflow: hidden; }
 .bedrijf-card-badge.bedrijf-badge-logo.bedrijf-badge-flush { border: none; }
 .bedrijf-badge-flush img { border-radius: inherit; }
-svg [data-l][hidden] { display: none; }
+/* Het hidden-attribuut verbergt alleen zolang niets anders display zet. Een
+   verborgen taalblok dat toevallig een display-regel meekrijgt, zoals
+   .vac-list met display grid, komt daardoor alsnog in beeld: op de
+   vacaturepagina's stonden zo drie Engelse blokken naast de Nederlandse.
+   Deze regel geldt voor alle taalblokken, ook die in een svg. */
+[data-l][hidden] { display: none !important; }
