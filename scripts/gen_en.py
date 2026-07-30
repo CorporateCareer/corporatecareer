@@ -116,7 +116,7 @@ def to_en(html, site_path, title, desc):
     if "__ccDefaultLang" in html:
         html=re.sub(r"__ccDefaultLang='[a-z]*'","__ccDefaultLang='en'",html,count=1)
     else:
-        html=html.replace('<meta charset="UTF-8">','<meta charset="UTF-8">\n  <script>window.__ccDefaultLang=\'en\';</script>',1)
+        html=html.replace('<meta charset="UTF-8">','<meta charset="UTF-8">\n  <script>var d=document.documentElement;d.classList.add(\'js\');addEventListener(\'DOMContentLoaded\',function(){window.__ccFade||d.classList.remove(\'js\')});window.__ccDefaultLang=\'en\';</script>',1)
     html=re.sub(r'\b(href|src)=(")([^"]*)"',lambda m:f'{m.group(1)}="{_rewrite_link(src_dir,m.group(3))}"',html)
     html=re.sub(r'(<link rel="canonical" href=")[^"]*(")',lambda m:m.group(1)+en_url+m.group(2),html,count=1)
     html=re.sub(r'(property="og:url" content=")[^"]*(")',lambda m:m.group(1)+en_url+m.group(2),html,count=1)

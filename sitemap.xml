@@ -2190,11 +2190,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/vacatures/oliver-wyman-risk-consultant-zakelijke-verzekeringsmarkt.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/vacatures/loyens-loeff-student-stage-notariaat.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -2221,11 +2216,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/vacatures/mufg-bank-credit-officer-leveraged-finance.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/mufg-bank-associate-avp-supporting-relationship-manager-corporate-coverage-benelux.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -5314,11 +5304,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/en/vacatures/oliver-wyman-risk-consultant-zakelijke-verzekeringsmarkt.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/en/vacatures/loyens-loeff-student-stage-notariaat.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -5345,11 +5330,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/en/vacatures/mufg-bank-credit-officer-leveraged-finance.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/mufg-bank-associate-avp-supporting-relationship-manager-corporate-coverage-benelux.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
