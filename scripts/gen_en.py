@@ -75,7 +75,10 @@ def bake(html, lang):
 # Mini-runtime die het 1,3 MB vertaalbestand vervangt: zet de paginataal,
 # levert de paar sleutels die main.js nodig heeft, en laat de toggle naar de
 # andere taal-URL navigeren. De paginatekst is verder ingebakken (zie bake()).
-RUNTIME_KEYS=("nav.hamburger.open","nav.hamburger.close","cta.success","cta.btn")
+RUNTIME_KEYS=("nav.hamburger.open","nav.hamburger.close","cta.success","cta.btn",
+              "jobs.card.apply","jobs.card.featured","jobs.card.view",
+              "jobs.sector.finance","jobs.sector.advocatuur","jobs.sector.consulting",
+              "jobs.type.graduate","jobs.type.stage")
 def runtime_js():
     en, nl = en_dict(), nl_dict()
     def obj(d): return "{"+",".join("'%s':'%s'"%(k, d.get(k,"").replace("'","\\'")) for k in RUNTIME_KEYS)+"}"
