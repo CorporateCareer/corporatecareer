@@ -46,11 +46,14 @@ jobs:
       - name: Genereer detailpagina's
         run: python scripts/build_vacature_pages.py
 
+      - name: Jaartal in de copyrightregel bijwerken
+        run: python scripts/sync_year.py
+
       - name: Commit naar main
         run: |
           git config user.name "vacature-check"
           git config user.email "actions@github.com"
-          git add jobs.html scripts/vacancy_state.json scripts/vacancy_seen.json vacatures en/vacatures sitemap.xml
+          git add -A
           if git diff --cached --quiet; then
             echo "Geen wijzigingen."
             exit 0
