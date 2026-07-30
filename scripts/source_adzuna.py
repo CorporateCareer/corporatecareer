@@ -232,7 +232,7 @@ def job_type(title):
     tl = title.lower()
     if any(x in tl for x in ("afstudeer", "scriptie", "thesis", "graduation")):
         return "stage", ("Graduation placement", "Afstudeerplek")
-    if any(x in tl for x in ("stage", "stagiair", "intern", "werkstudent")):
+    if any(x in tl for x in ("stage", "stagiair", "intern", "werkstudent", "student trainee")):
         return "stage", ("Internship", "Stage")
     return "graduate", ("Permanent", "Vaste functie")
 
