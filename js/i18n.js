@@ -189,7 +189,7 @@ const TRANSLATIONS = {
     'footer.col3.privacy':  'Privacy Policy',
     'footer.col3.terms':    'Terms & Conditions',
     'footer.col3.cookies':  'Cookies',
-    'footer.copy':          '© 2025 CorporateCareer. All rights reserved',
+    'footer.copy':          '© 2026 CorporateCareer. All rights reserved',
     'footer.location':      'Amsterdam, Netherlands',
 
     /* Jobs page UI */
@@ -8028,7 +8028,7 @@ const TRANSLATIONS = {
     'footer.col3.privacy':  'Privacybeleid',
     'footer.col3.terms':    'Algemene voorwaarden',
     'footer.col3.cookies':  'Cookies',
-    'footer.copy':          '© 2025 CorporateCareer. Alle rechten voorbehouden',
+    'footer.copy':          '© 2026 CorporateCareer. Alle rechten voorbehouden',
     'footer.location':      'Amsterdam, Nederland',
 
     /* Jobs page UI */
