@@ -108,6 +108,19 @@ def _hreflang(site_path):
             f'  <link rel="alternate" hreflang="en" href="{en}">\n'
             f'  <link rel="alternate" hreflang="x-default" href="{nl}">\n')
 
+_BTN=re.compile(r'<button class="lang-toggle" id="langToggle"[^>]*>([\s\S]*?)</button>')
+_SPAN=re.compile(r'<span class="lang-btn lang-btn--(en|nl)[^"]*">')
+
+def flip_lang_toggle(html):
+    """Zet de taalschakelaar op Engels. De NL-bron markeert NL als actief; zonder
+    deze stap zou de Engelse pagina beweren dat je op de Nederlandse zit. Het
+    aria-label beschrijft de handeling en staat dus in de taal van de pagina."""
+    def _btn(m):
+        inner=_SPAN.sub(lambda s:'<span class="lang-btn lang-btn--%s%s">'
+                        %(s.group(1), " lang-active" if s.group(1)=="en" else ""), m.group(1))
+        return f'<button class="lang-toggle" id="langToggle" aria-label="Switch to Dutch">{inner}</button>'
+    return _BTN.sub(_btn, html)
+
 def to_en(html, site_path, title, desc):
     """html = NL-bron; site_path = bv /finance.html of /vacatures/x.html."""
     src_dir=posixpath.dirname(site_path)
@@ -122,6 +135,7 @@ def to_en(html, site_path, title, desc):
     html=re.sub(r'(property="og:url" content=")[^"]*(")',lambda m:m.group(1)+en_url+m.group(2),html,count=1)
     # De deelkaart bestaat in twee talen: de kop erop staat in het Nederlands.
     html=html.replace("/img/og-cover.jpg","/img/og-cover-en.jpg")
+    html=flip_lang_toggle(html)
     html=re.sub(r'(property="og:locale" content=")[^"]*(")',r'\1en_GB\2',html,count=1)
     html=re.sub(r'(property="og:locale:alternate" content=")[^"]*(")',r'\1nl_NL\2',html,count=1)
     html=re.sub(r'<title>.*?</title>','<title>'+title+'</title>',html,count=1,flags=re.S)
