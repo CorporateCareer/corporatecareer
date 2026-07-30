@@ -28,7 +28,7 @@
   --navy-950:  #142a45;
   --navy-900:  #1d3150;
   --navy-800:  #234b7e;
-  --navy-700:  #1e40af;
+  --navy-700:  #234b7e;
   --emerald:      #0e7c5a;
   --emerald-deep: #0a5f45;
   --emerald-soft: #8ed9bd;
@@ -609,7 +609,7 @@ table,
 }
 
 .btn-primary:hover {
-  background: var(--navy-700);
+  background: var(--emerald-deep);
   transform: translateY(-2px);
   box-shadow: 0 8px 28px rgba(14,124,90,0.42);
 }
