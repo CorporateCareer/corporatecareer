@@ -120,6 +120,8 @@ def to_en(html, site_path, title, desc):
     html=re.sub(r'\b(href|src)=(")([^"]*)"',lambda m:f'{m.group(1)}="{_rewrite_link(src_dir,m.group(3))}"',html)
     html=re.sub(r'(<link rel="canonical" href=")[^"]*(")',lambda m:m.group(1)+en_url+m.group(2),html,count=1)
     html=re.sub(r'(property="og:url" content=")[^"]*(")',lambda m:m.group(1)+en_url+m.group(2),html,count=1)
+    # De deelkaart bestaat in twee talen: de kop erop staat in het Nederlands.
+    html=html.replace("/img/og-cover.jpg","/img/og-cover-en.jpg")
     html=re.sub(r'(property="og:locale" content=")[^"]*(")',r'\1en_GB\2',html,count=1)
     html=re.sub(r'(property="og:locale:alternate" content=")[^"]*(")',r'\1nl_NL\2',html,count=1)
     html=re.sub(r'<title>.*?</title>','<title>'+title+'</title>',html,count=1,flags=re.S)
