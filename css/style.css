@@ -1374,15 +1374,24 @@ table,
     -webkit-backdrop-filter: none;
     backdrop-filter: none;
   }
+  /* De staffel hierboven verbergt items zodra de balk te smal wordt. Die
+     display:none geldt ook nog op telefoonbreedte, waardoor Partners,
+     Artikelen, Over ons en het zoekveld in het uitklapmenu onbereikbaar
+     waren. In het menu is er ruimte zat, dus daar komen ze terug. */
+  .nav-links li:has(> a[href$="articles.html"]),
+  .nav-links li:has(> a[href$="over-ons.html"]),
+  .nav-links li:has(> a[href$="partners.html"]),
+  .nav-search-li { display: block; }
+
   .nav-links {
     position: fixed;
     inset: 0;
     background: var(--white);
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
-    gap: 22px;
-    padding: 94px 24px 48px;
+    align-items: stretch;
+    gap: 0;
+    padding: 78px 22px 40px;
     overflow-y: auto;
     z-index: 199;
     margin-left: 0;
@@ -1391,9 +1400,49 @@ table,
     transition: transform 0.35s var(--ease);
   }
   .nav-links.open { transform: translateX(0); display: flex; }
-  .nav-links a { font-size: 1.15rem; font-weight: 600; color: var(--navy-950); }
-  .btn-nav, .btn-nav-partner { padding: 13px 30px !important; font-size: 1.05rem !important; border-radius: 12px !important; }
-  .lang-toggle { margin-right: 8px; }
+
+  /* Links onder elkaar, links uitgelijnd en met een scheiding: sneller te
+     scannen dan gecentreerde tekst die in het midden zweeft. */
+  .nav-links > li { border-bottom: 1px solid var(--gray-200); }
+  /* De drie met een uitklap hebben een tussenlaag nav-dropdown-head; zonder
+     die selector bleven ze gecentreerd staan naast de rest. */
+  .nav-links > li > .nav-dropdown-head { display: flex; align-items: center;
+    justify-content: space-between; width: 100%; gap: 10px; }
+  .nav-links > li > .nav-dropdown-head > a { flex: 1; }
+  .nav-links > li > .nav-dropdown-head > a,
+  .nav-links > li > a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 15px 2px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--navy-950);
+  }
+  .nav-links > li:has(> .btn-nav),
+  .nav-links > li:has(> .btn-nav-partner),
+  .nav-links > li:has(> .lang-toggle) { border-bottom: 0; }
+
+  /* Het zoekveld bovenaan: op een telefoon is zoeken vaak de reden dat
+     iemand het menu opent. */
+  .nav-search-li { order: -1; margin-bottom: 14px; border-bottom: 0; }
+  .nav-search { width: 100%; max-width: none; }
+
+  /* Knoppen onderaan, over de volle breedte en met ruimte erboven. */
+  .nav-links > li:has(> .btn-nav) { margin-top: 22px; }
+  .btn-nav, .btn-nav-partner {
+    display: block !important;
+    width: 100% !important;
+    text-align: center;
+    padding: 14px 20px !important;
+    font-size: 1.02rem !important;
+    border-radius: 12px !important;
+    margin-top: 10px;
+  }
+  /* De taalknop is een hulpmiddel, geen navigatie: klein en onderaan. */
+  .nav-links > li:has(> .lang-toggle) { margin-top: 26px; display: flex; justify-content: center; }
+  .lang-toggle { margin: 0; }
 }
 
 /* Mobile-landscape / small tablet */
@@ -1419,9 +1468,9 @@ table,
     background: var(--white);
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
-    gap: 22px;
-    padding: 94px 24px 48px;
+    align-items: stretch;
+    gap: 0;
+    padding: 78px 22px 40px;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     z-index: 199;
@@ -1661,3 +1710,104 @@ table,
    vacaturepagina's stonden zo drie Engelse blokken naast de Nederlandse.
    Deze regel geldt voor alle taalblokken, ook die in een svg. */
 [data-l][hidden] { display: none !important; }
+
+
+/* ── MOBIEL UITKLAPMENU ───────────────────────
+   Op een plek en achteraan, want de opmaak stond eerder verspreid over twee
+   breedteblokken die elkaar overschreven: de een lijnde links uit, de ander
+   centreerde. Alles wat het menu betreft staat daarom hier bij elkaar. */
+@media (max-width: 1040px) {
+  /* De staffel voor de smalle balk verbergt items met display:none. Die geldt
+     ook op telefoonbreedte, waardoor Partners, Artikelen, Over ons en het
+     zoekveld in het menu onbereikbaar waren. In het menu is ruimte zat. */
+  .nav-links li:has(> a[href$="articles.html"]),
+  .nav-links li:has(> a[href$="over-ons.html"]),
+  .nav-links li:has(> a[href$="partners.html"]),
+  .nav-search-li { display: block !important; }
+
+  .nav-links {
+    align-items: stretch !important;
+    gap: 0 !important;
+    padding: 76px 22px 40px !important;
+    text-align: left;
+  }
+  .nav-links > li { width: 100%; border-bottom: 1px solid var(--gray-200); }
+
+  /* Zoeken bovenaan: op een telefoon is dat vaak de reden dat het menu opengaat. */
+  .nav-search-li { order: -1; border-bottom: 0 !important; margin-bottom: 12px; }
+  .nav-search-li .nav-search,
+  .nav-search-li form { width: 100% !important; max-width: none !important; }
+  .nav-search-li input { width: 100% !important; }
+
+  /* Een rij per onderdeel, met de uitklappijl rechts. De drie sectoren hebben
+     een tussenlaag nav-dropdown-head, vandaar de tweede selector. */
+  .nav-links > li > a,
+  .nav-links > li > .nav-dropdown-head {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 15px 2px;
+    font-size: 1.04rem;
+    font-weight: 600;
+    color: var(--navy-950);
+    text-align: left;
+  }
+  .nav-links > li > .nav-dropdown-head > a { flex: 1; padding: 0; }
+  .nav-links > li > .nav-dropdown-head > .nav-sub-toggle { flex: none; padding: 6px; }
+
+  /* Het uitgeklapte submenu: links uitgelijnd en ingesprongen, zodat je ziet
+     dat het onder de sector hangt. Stond eerder gecentreerd en zeer ruim. */
+  .nav-dropdown.open .nav-dropdown-menu {
+    position: static !important;
+    box-shadow: none !important;
+    border: 0 !important;
+    background: var(--gray-50);
+    border-radius: 10px;
+    padding: 6px 0 10px !important;
+    margin: 0 0 12px !important;
+    min-width: 0 !important;
+    width: 100% !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+  .nav-dropdown.open .nav-dropdown-menu a {
+    display: block !important;
+    text-align: left !important;
+    padding: 10px 16px !important;
+    font-size: 0.95rem !important;
+    font-weight: 500;
+    color: var(--gray-700);
+  }
+  #navLinks .nav-dropdown-menu li,
+  .nav-dropdown.open .nav-dropdown-menu .nav-dropdown-head { border: 0; margin: 0; }
+  #navLinks .nav-dropdown-menu { display: block !important; }
+  #navLinks .nav-dropdown-menu li > a,
+  #navLinks .nav-dropdown-menu a {
+    display: block !important;
+    text-align: left !important;
+    justify-content: flex-start !important;
+    padding: 9px 16px !important;
+    font-size: 0.95rem !important;
+    font-weight: 500 !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Taalknop en knoppen onderaan, zonder scheidingslijn. */
+  .nav-links > li:has(> .lang-toggle),
+  .nav-links > li:has(> .btn-nav),
+  .nav-links > li:has(> .btn-nav-partner) { border-bottom: 0; }
+  .nav-links > li:has(> .lang-toggle) { margin-top: 22px; display: flex; justify-content: center; }
+  .nav-links > li:has(> .btn-nav) { margin-top: 18px; }
+  .btn-nav, .btn-nav-partner {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center;
+    width: 100% !important;
+    text-align: center !important;
+    padding: 14px 20px !important;
+    font-size: 1.02rem !important;
+    border-radius: 12px !important;
+    margin-top: 10px;
+  }
+}
