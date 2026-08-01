@@ -1195,11 +1195,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/vacatures/a-en-o-shearman-studentstage-tax.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/vacatures/banning-advocaat-medewerker-corporate-litigation.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -1346,11 +1341,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/vacatures/dentons-werkstudent-support-indirect-tax.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/dirkzwager-advocaat-stagiair-e-en-beginnend-medewerker-omgevingsrecht.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2225,6 +2215,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://corporatecareer.nl/vacatures/mufg-bank-associate-avp-supporting-relationship-manager-corporate-coverage-benelux.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://corporatecareer.nl/vacatures/deutsche-bank-senior-relationship-manager-netherlands-f-m-x.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -2925,11 +2920,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/vacatures/ig-h-junior-consultant-retail-products.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/vacatures/ig-h-senior-proces-consultant.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -3031,11 +3021,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/vacatures/twynstra-gudde-adviseur-energietransitie.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/twynstra-gudde-startende-adviseur-projectmanager-huisvesting-en-vastgoed.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -4719,11 +4704,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/en/vacatures/a-en-o-shearman-studentstage-tax.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/en/vacatures/banning-advocaat-medewerker-corporate-litigation.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -4870,11 +4850,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/en/vacatures/dentons-werkstudent-support-indirect-tax.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/dirkzwager-advocaat-stagiair-e-en-beginnend-medewerker-omgevingsrecht.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -5749,6 +5724,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://corporatecareer.nl/en/vacatures/mufg-bank-associate-avp-supporting-relationship-manager-corporate-coverage-benelux.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://corporatecareer.nl/en/vacatures/deutsche-bank-senior-relationship-manager-netherlands-f-m-x.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -6449,11 +6429,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/en/vacatures/ig-h-junior-consultant-retail-products.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/en/vacatures/ig-h-senior-proces-consultant.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -6555,11 +6530,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/en/vacatures/twynstra-gudde-adviseur-energietransitie.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/twynstra-gudde-startende-adviseur-projectmanager-huisvesting-en-vastgoed.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
