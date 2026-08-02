@@ -1125,11 +1125,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/vacatures/mufg-bank-credit-analyst-japanese-corporate-banking-division-japanese-speaking.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/vacatures/deutsche-bank-investment-banking-analyst-f-m-x.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -4630,11 +4625,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/en/vacatures/bnp-paribas-global-markets-institutional-sales-graduate.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/mufg-bank-credit-analyst-japanese-corporate-banking-division-japanese-speaking.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
