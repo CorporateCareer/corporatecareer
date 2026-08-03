@@ -23,6 +23,41 @@ import source_adzuna as A
 BASE = A.BASE
 JOBS = A.JOBS
 
+# Kantoren waarvan het wervingssysteem niet uit een bestaande vacature valt af
+# te leiden, omdat ze nog geen vacature op de site hebben. De code is per
+# kantoor opgezocht en nagelopen: er is gecontroleerd dat de vacaturebank
+# werkelijk van dit kantoor is en niet van een naamgenoot. Kantoren waarvan
+# alleen de vacaturebank van een buitenlandse zusterorganisatie te vinden was,
+# staan hier bewust niet in.
+REGISTRY = {
+    "AlixPartners": ("greenhouse", ("alixpartners",)),
+    "Barclays": ("workday", ("barclays", "wd3", "External_Career_Site_Barclays")),
+    "BearingPoint": ("greenhouse", ("bearingpoint",)),
+    "Berenschot": ("recruitee", ("berenschot",)),
+    "Jane Street": ("greenhouse", ("janestreet",)),
+    "NWB Bank": ("recruitee", ("nwbbank",)),
+    "Protiviti": ("recruitee", ("protiviti",)),
+    "Xebia": ("recruitee", ("xebiacareers",)),
+    "bunq": ("recruitee", ("bunq",)),
+}
+
+# Deze kantoren hebben nog geen vacature waar het uiterlijk van over te nemen
+# valt, dus de initialen en de tint staan hier. De tinten komen uit het palet
+# van de site, niet uit een gegokte huisstijl. Het logobestand wordt alleen
+# meegegeven als het er werkelijk staat; anders vallen de kaarten terug op de
+# initialen, net als bij de andere kantoren zonder logo.
+REGISTRY_LOOK = {
+    "AlixPartners": ("AP", "#1c3f60"),
+    "Barclays": ("BA", "#234b7e"),
+    "BearingPoint": ("BP", "#0f766e"),
+    "Berenschot": ("BS", "#334155"),
+    "Jane Street": ("JS", "#1c3f60"),
+    "NWB Bank": ("NWB", "#234b7e"),
+    "Protiviti": ("PR", "#334155"),
+    "Xebia": ("XB", "#0f766e"),
+    "bunq": ("BQ", "#142a45"),
+}
+
 # systeem -> patroon om de bedrijfscode uit een vacature-URL te vissen
 PLATFORMS = [
     ("recruitee",       r"https?://([a-z0-9-]+)\.recruitee\.com"),
@@ -39,7 +74,8 @@ NL_PLACES = ("netherlands", "nederland", "holland", "amsterdam", "rotterdam", "d
 
 # Rollen die bij het kantoor horen maar niet bij het vak. Iemand die op deze
 # site komt zoekt geen netwerkbeheer of officemanagement.
-SUPPORT = ("recruiter", "recruitment", "secretaresse", "secretaris", "assistent", "assistant",
+SUPPORT = ("recruiter", "recruitment", "secretaresse", "secretaris", "secretary",
+           "assistent", "assistant",
            "administrative", "receptionist", "office manager", "interne communicatie", "marketing",
            "payroll", "hr ", "human resources", "facilit", "netwerk", "network engineer",
            "cloud engineer", "it operations", "mission critical", "sap ", "epd ", "afas", "mendix",
@@ -64,13 +100,31 @@ def is_nl(loc):
     return any(p in (loc or "").lower() for p in NL_PLACES)
 
 
+# Een bureau dat ook werving en interim voor klanten doet, zet die opdrachten
+# in dezelfde vacaturebank. Dat zijn geen banen bij het bureau zelf, dus die
+# horen niet onder de naam van het bureau op de site. Recruitee levert de
+# afdeling en de labels mee, en daar markeert het bureau het zelf.
+PLACEMENT_DEPT = ("search", "interim management", "executive search", "detachering",
+                  "secondment", "werving en selectie")
+PLACEMENT_TAG = ("search", "im", "interim", "detachering")
+
+
+def is_placement(offer):
+    dept = (offer.get("department") or "").strip().lower()
+    if dept in PLACEMENT_DEPT:
+        return True
+    tags = {str(t).strip().lower() for t in (offer.get("tags") or [])}
+    return bool(tags & set(PLACEMENT_TAG))
+
+
 def listings(kind, code):
     """(titel, locatie, url, checkText) per open vacature."""
     if kind == "recruitee":
         d = get(f"https://{code[0]}.recruitee.com/api/offers/") or {}
         return [(o.get("title", ""), f"{o.get('city','')} {o.get('country_code','')}",
                  o.get("careers_url") or "", o.get("title", ""))
-                for o in d.get("offers", []) if o.get("status", "published") == "published"]
+                for o in d.get("offers", [])
+                if o.get("status", "published") == "published" and not is_placement(o)]
     if kind == "greenhouse":
         d = get(f"https://boards-api.greenhouse.io/v1/boards/{code[0]}/jobs") or {}
         return [(j.get("title", ""), (j.get("location") or {}).get("name", ""),
@@ -92,20 +146,68 @@ def listings(kind, code):
                 break
         return out
     if kind == "workday":
-        tenant, dc, site = code
-        out = []
-        for off in (0, 20, 40, 60):
-            d = get(f"https://{tenant}.{dc}.myworkdayjobs.com/wday/cxs/{tenant}/{site}/jobs",
-                    {"appliedFacets": {}, "limit": 20, "offset": off, "searchText": "Netherlands"}) or {}
-            page = d.get("jobPostings", [])
-            for p in page:
-                out.append((p.get("title", ""), p.get("locationsText", ""),
-                            f"https://{tenant}.{dc}.myworkdayjobs.com/{site}{p.get('externalPath','')}",
-                            p.get("title", "")))
-            if len(page) < 20:
-                break
-        return out
+        return workday(*code)
     return []
+
+
+def workday_nl_facets(base):
+    """De Nederlandse locatiefilters van deze werkgever, per filtergroep.
+
+    Workday levert bij elke zoekopdracht de beschikbare filters mee, met per
+    vestiging een id en het aantal openstaande vacatures. Op die ids filteren
+    is veel nauwkeuriger dan zoeken op het woord Netherlands: dat laatste
+    zoekt in de vacaturetekst en mist bij de meeste werkgevers het merendeel.
+
+    Er is niet een enkele lijst. De ene werkgever biedt alleen steden aan
+    (parameter locations), de andere daarnaast landen (locationCountry). Elke
+    groep heeft een eigen parameternaam, en die moet je aanhouden: land- en
+    stad-ids onder een noemer aanbieden levert nul resultaten op, want Workday
+    leest dat als twee eisen tegelijk.
+
+    Van de groepen die iets Nederlands bevatten wordt de smalste gekozen, dus
+    liever de steden dan het hele land, zodat de uitvraag zo klein mogelijk is.
+    """
+    d = get(base, {"appliedFacets": {}, "limit": 20, "offset": 0, "searchText": ""}) or {}
+    groups = {}
+    for f in d.get("facets", []):
+        if f.get("facetParameter") != "locationMainGroup":
+            continue
+        for group in f.get("values") or []:
+            param = group.get("facetParameter")
+            ids = [v.get("id") for v in (group.get("values") or [])
+                   if any(p in (v.get("descriptor") or "").lower() for p in NL_PLACES)]
+            if param and ids:
+                groups[param] = ids
+    if not groups:
+        return {}
+    if "locations" in groups:
+        return {"locations": groups["locations"]}
+    param = min(groups, key=lambda k: len(groups[k]))
+    return {param: groups[param]}
+
+
+def workday(tenant, dc, site):
+    base = f"https://{tenant}.{dc}.myworkdayjobs.com/wday/cxs/{tenant}/{site}/jobs"
+    facets = workday_nl_facets(base)
+    # Zonder Nederlandse vestiging in de filterlijst valt er niets te halen.
+    # Terugvallen op de tekstzoekopdracht heeft dan alsnog zin: een enkele
+    # werkgever levert de filters niet mee.
+    body = {"appliedFacets": facets} if facets else {"appliedFacets": {}, "searchText": "Netherlands"}
+    out, seen = [], set()
+    for off in range(0, 400, 20):
+        d = get(base, dict(body, limit=20, offset=off, searchText=body.get("searchText", ""))) or {}
+        page = d.get("jobPostings", [])
+        for p in page:
+            path = p.get("externalPath", "")
+            if path in seen:
+                continue
+            seen.add(path)
+            out.append((p.get("title", ""), p.get("locationsText", ""),
+                        f"https://{tenant}.{dc}.myworkdayjobs.com/{site}{path}",
+                        p.get("title", "")))
+        if len(page) < 20:
+            break
+    return out
 
 
 def relevant(title, sector):
@@ -150,6 +252,37 @@ def main():
                      ("firmSite", d.get("firmSite")), ("firmBlurb", d.get("firmBlurb"))):
             if not cur.get(k) and v:
                 cur[k] = v
+
+    # Kantoren uit het register hebben nog geen vacature, dus er valt niets
+    # over te nemen. Het logo en de omschrijving komen van hun bedrijfspagina.
+    slug_of = {norm(v["name"]): slug for slug, v in hubs.items()}
+    for company, (kind, code) in REGISTRY.items():
+        if norm(company) not in sector_of:
+            continue
+        platform.setdefault(company, (kind, code))
+        cur = look.setdefault(company, {"logo": "", "initials": "", "color": "", "firmSite": "", "firmBlurb": None})
+        initials, color = REGISTRY_LOOK.get(company, ("", ""))
+        cur["initials"] = cur["initials"] or initials
+        cur["color"] = cur["color"] or color
+        slug = slug_of.get(norm(company), "")
+        logo = f"/img/logos/{slug}.svg"
+        if slug and os.path.exists(os.path.join(BASE, logo.lstrip("/"))):
+            cur["logo"] = cur["logo"] or logo
+        if not cur["firmBlurb"] and slug:
+            # Per taal uit de eigen bedrijfspagina, niet de Nederlandse zin
+            # ook op de Engelse site zetten. Alleen als beide er staan.
+            blurb = {}
+            for lang, rel in (("nl", ("bedrijven", slug)), ("en", ("en", "bedrijven", slug))):
+                page = os.path.join(BASE, *rel, "index.html")
+                if not os.path.exists(page):
+                    continue
+                mm = re.search(r'<meta name="description" content="([^"]+)"',
+                               open(page, encoding="utf-8").read())
+                if mm:
+                    blurb[lang] = re.sub(r"\s*(Bekijk stages|View internships|Browse).*$", "",
+                                         mm.group(1)).strip()
+            if len(blurb) == 2:
+                cur["firmBlurb"] = blurb
 
     known_url = {(j.get("url") or "").split("?")[0].rstrip("/") for j in jobs}
     known_tt = {(j["company"], re.sub(r"\W+", "", j["title"]).lower()) for j in jobs}
