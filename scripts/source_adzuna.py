@@ -228,11 +228,20 @@ def fetch_topic(q):
     return api(f"1?results_per_page=50&what={q.replace(' ', '%20')}")
 
 
+# Op hele woorden zoeken, niet op een letterreeks. Anders leest intern mee in
+# International en stage in Stagemanagement, en belandt een functie voor een
+# ervaren fiscalist onder de stages.
+STAGE_WORD = re.compile(r"\b(stages?|stagiair\w*|interns?|internships?|werkstudent\w*|"
+                        r"student[- ]?trainee|student[- ]?worker|working student|"
+                        r"summer analyst)\b|student\w*stage\w*")
+THESIS_WORD = re.compile(r"\b(afstudeer\w*|scriptie\w*|thesis|graduation)\b")
+
+
 def job_type(title):
     tl = title.lower()
-    if any(x in tl for x in ("afstudeer", "scriptie", "thesis", "graduation")):
+    if THESIS_WORD.search(tl):
         return "stage", ("Graduation placement", "Afstudeerplek")
-    if any(x in tl for x in ("stage", "stagiair", "intern", "werkstudent", "student trainee")):
+    if STAGE_WORD.search(tl):
         return "stage", ("Internship", "Stage")
     return "graduate", ("Permanent", "Vaste functie")
 
