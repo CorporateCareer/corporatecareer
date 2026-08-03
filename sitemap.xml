@@ -1125,11 +1125,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/vacatures/mufg-bank-credit-analyst-japanese-corporate-banking-division-japanese-speaking.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/vacatures/deutsche-bank-investment-banking-analyst-f-m-x.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -3024,6 +3019,36 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/barentskrans-gevorderd-advocaat-stagiaire-beginnend-medewerker-eu-competition.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/imc-trading-graduate-quant-researcher.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/imc-trading-graduate-trader.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/imc-trading-macro-analyst-intern.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/imc-trading-quantitative-trader-intern.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/imc-trading-trader-intern.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <!-- VACATURES:END -->
 
   <!-- BEDRIJVEN:START -->
@@ -4630,11 +4655,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/en/vacatures/bnp-paribas-global-markets-institutional-sales-graduate.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/mufg-bank-credit-analyst-japanese-corporate-banking-division-japanese-speaking.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -6530,6 +6550,36 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/en/vacatures/twynstra-gudde-adviseur-energietransitie.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/barentskrans-gevorderd-advocaat-stagiaire-beginnend-medewerker-eu-competition.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/imc-trading-graduate-quant-researcher.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/imc-trading-graduate-trader.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/imc-trading-macro-analyst-intern.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/imc-trading-quantitative-trader-intern.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/imc-trading-trader-intern.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
