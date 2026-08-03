@@ -45,6 +45,7 @@ SUPPORT = ("recruiter", "recruitment", "secretaresse", "secretaris", "assistent"
            "cloud engineer", "it operations", "mission critical", "sap ", "epd ", "afas", "mendix",
            "relex", "mavim", "aris", "dynamics", "erp ", "solution architect", "projectleider",
            "software engineer", "machine learning engineer", "ai engineer", "c++", "data engineer",
+           "hardware engineer", "fpga",
            "devops", "servicedesk", "helpdesk")
 
 
