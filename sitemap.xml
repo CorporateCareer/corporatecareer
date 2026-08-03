@@ -3019,6 +3019,36 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/barentskrans-gevorderd-advocaat-stagiaire-beginnend-medewerker-eu-competition.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/imc-trading-graduate-quant-researcher.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/imc-trading-graduate-trader.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/imc-trading-macro-analyst-intern.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/imc-trading-quantitative-trader-intern.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/imc-trading-trader-intern.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <!-- VACATURES:END -->
 
   <!-- BEDRIJVEN:START -->
@@ -6520,6 +6550,36 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/en/vacatures/twynstra-gudde-adviseur-energietransitie.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/barentskrans-gevorderd-advocaat-stagiaire-beginnend-medewerker-eu-competition.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/imc-trading-graduate-quant-researcher.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/imc-trading-graduate-trader.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/imc-trading-macro-analyst-intern.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/imc-trading-quantitative-trader-intern.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/imc-trading-trader-intern.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
