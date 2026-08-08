@@ -174,12 +174,79 @@ def pillar_block(job):
           </ul>
         </section>"""
 
-def facts_dl(facts, lang, hidden):
+# De kerngegevens die het wervingssysteem van het kantoor meelevert, met per
+# taal het opschrift. Deze waarden zijn losse velden, geen lopende tekst, dus
+# de site kan ze zelf verwoorden en beide taalversies kloppen.
+ATS_FACT_LABEL = {
+    "hours": ("Hours", "Uren"),
+    "contract": ("Contract", "Contract"),
+    "level": ("Level", "Niveau"),
+    "education": ("Education", "Opleiding"),
+    "workform": ("Work form", "Werkvorm"),
+    "department": ("Department", "Afdeling"),
+}
+# Volgorde waarin ze onder de bestaande gegevens komen te staan.
+ATS_FACT_ORDER = ("contract", "hours", "workform", "level", "education", "department")
+
+
+def merged_facts(d, lang):
+    """De bestaande kerngegevens, aangevuld met wat het kantoor zelf opgeeft.
+
+    Waar het kantoor een echt niveau opgeeft, vervangt dat de vulwaarde
+    Divers die er anders staat.
+    """
+    i = 0 if lang == "en" else 1
+    uit = dict(d["facts"][lang])
+    ats = d.get("atsFacts") or {}
+    niveau = ats.get("level")
+    if niveau:
+        for sleutel in ("Level", "Niveau"):
+            if sleutel in uit:
+                uit[sleutel] = niveau[i]
+    for sleutel in ATS_FACT_ORDER:
+        if sleutel == "level" or sleutel not in ats:
+            continue
+        label = ATS_FACT_LABEL[sleutel][i]
+        if label not in uit:
+            uit[label] = ats[sleutel][i]
+    return uit
+
+
+def facts_dl(d, lang, hidden):
     rows = "\n".join(
         f'            <div class="vac-fact"><dt>{esc(k)}</dt><dd>{esc(v)}</dd></div>'
-        for k, v in facts[lang].items())
+        for k, v in merged_facts(d, lang).items())
     h = ' hidden' if hidden else ''
     return f'          <dl class="vac-facts" data-l="{lang}"{h}>\n{rows}\n          </dl>'
+
+
+def quote_block(job):
+    """Een begrensd citaat uit de vacaturetekst van het kantoor zelf.
+
+    Het citaat staat in de taal waarin het kantoor schreef. Op de taalversie
+    waar dat niet mee overeenkomt wordt dat er met zoveel woorden bij gezet,
+    zodat er geen onaangekondigd blok in een vreemde taal staat. Het lang-
+    kenmerk zorgt dat voorleessoftware en zoekmachines het ook zo lezen.
+    """
+    d = job.get("detail") or {}
+    tekst = (d.get("quote") or "").strip()
+    if not tekst:
+        return ""
+    taal = d.get("quoteLang") or "nl"
+    naam = {"nl": ("Dutch", "het Nederlands"), "en": ("English", "het Engels")}.get(taal, ("Dutch", "het Nederlands"))
+    kop_en = f"In the words of {job['company']}"
+    kop_nl = f"In de woorden van {job['company']}"
+    intro_en = ("From the vacancy text itself." if taal == "en"
+                else f"From the vacancy text itself, written in {naam[0]}.")
+    intro_nl = ("Uit de vacaturetekst zelf." if taal == "nl"
+                else f"Uit de vacaturetekst zelf, geschreven in {naam[1]}.")
+    return f"""
+        <section class="vac-block">
+          <h2>{bi(kop_en, kop_nl)}</h2>
+          <p class="vac-quote-intro">{bi(intro_en, intro_nl)}</p>
+          <blockquote class="vac-quote" lang="{taal}" cite="{esc(job['url'])}">{esc(tekst)}</blockquote>
+          <p class="vac-quote-src">{bi("Excerpt. Read the full description on the ", "Fragment. Lees de volledige omschrijving op de ")}<a href="{esc(job['url'])}" target="_blank" rel="noopener nofollow">{bi("job page of "+job['company'], "vacaturepagina van "+job['company'])}</a>.</p>
+        </section>"""
 
 def build_page(job, nav, footer, first_seen, active):
     d = job["detail"]
@@ -325,6 +392,8 @@ def build_page(job, nav, footer, first_seen, active):
 {dual_list(d['brings'])}
         </section>
 
+{quote_block(job)}
+
         <section class="vac-block">
           <h2>{bi("About "+job['company'], "Over "+job['company'])}</h2>
           <p>{bi(d['firmBlurb']['en'], d['firmBlurb']['nl'])}</p>
@@ -336,8 +405,8 @@ def build_page(job, nav, footer, first_seen, active):
 
       <aside class="vac-aside">
         <div class="vac-card">
-{facts_dl(d['facts'], 'en', False)}
-{facts_dl(d['facts'], 'nl', True)}
+{facts_dl(d, 'en', False)}
+{facts_dl(d, 'nl', True)}
           <a class="vac-apply" href="{esc(job['url'])}" target="_blank" rel="noopener">
             {bi("Apply on the official site", "Solliciteer op de officiele site")} {ARROW_SVG}
           </a>

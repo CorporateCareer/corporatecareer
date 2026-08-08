@@ -94,3 +94,26 @@
   .vac-hero { gap: 16px; }
   .vac-logo { width: 60px; height: 60px; font-size: 1.2rem; }
 }
+
+/* ── CITAAT UIT DE VACATURETEKST VAN HET KANTOOR ── */
+/* Een begrensd fragment, herkenbaar als overgenomen tekst en niet als onze
+   eigen woorden. Vandaar de streep aan de zijkant en de afwijkende kleur. */
+.vac-quote-intro {
+  font-size: .86rem;
+  color: var(--gray-500);
+  margin: 0 0 10px;
+}
+.vac-quote {
+  margin: 0;
+  padding: 2px 0 2px 18px;
+  border-left: 3px solid var(--emerald-soft);
+  color: var(--gray-700);
+  line-height: 1.75;
+  font-style: normal;
+}
+.vac-quote-src {
+  font-size: .82rem;
+  color: var(--gray-500);
+  margin: 12px 0 0;
+}
+.vac-quote-src a { color: var(--navy-700); font-weight: 600; }
