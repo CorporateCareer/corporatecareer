@@ -266,13 +266,24 @@ def build_page(job, nav, footer, first_seen, active):
         vac_logo_style = f' style="background:{esc(job["color"])}"'
         vac_logo_inner = esc(job["initials"])
 
-    # JobPosting-structuurdata: Engelse tekst (standaardtaal van de site)
-    desc_parts = [f"<p>{esc(d['intro']['en'])}</p>", "<p><strong>What you will do:</strong></p><ul>"]
-    desc_parts += [f"<li>{esc(x)}</li>" for x in d["does"]["en"]]
-    desc_parts += ["</ul><p><strong>What we are looking for:</strong></p><ul>"]
-    desc_parts += [f"<li>{esc(x)}</li>" for x in d["brings"]["en"]]
-    desc_parts += ["</ul>", f"<p>{esc(d['firmBlurb']['en'])}</p>"]
-    desc_html = "".join(desc_parts)
+    # JobPosting-structuurdata, per taal. Stond eerder op beide pagina's in het
+    # Engels en woord voor woord hetzelfde, dus een zoekmachine zag twee URLs
+    # met identieke gegevens. De blokken dragen data-l, zodat het bakken de
+    # verkeerde taal weghaalt zoals bij de rest van de pagina.
+    def _desc(lang):
+        kop_doen = "What you will do:" if lang == "en" else "Wat je gaat doen:"
+        kop_vraag = "What we are looking for:" if lang == "en" else "Wat we vragen:"
+        parts = [f"<p>{esc(d['intro'][lang])}</p>", f"<p><strong>{kop_doen}</strong></p><ul>"]
+        parts += [f"<li>{esc(x)}</li>" for x in d["does"][lang]]
+        parts += [f"</ul><p><strong>{kop_vraag}</strong></p><ul>"]
+        parts += [f"<li>{esc(x)}</li>" for x in d["brings"][lang]]
+        parts += ["</ul>", f"<p>{esc(d['firmBlurb'][lang])}</p>"]
+        citaat = (d.get("quote") or "").strip()
+        if citaat and (d.get("quoteLang") or lang) == lang:
+            parts.append(f"<p>{esc(citaat)}</p>")
+        return "".join(parts)
+
+    desc_html = _desc("en")
 
     job_address = {"@type": "PostalAddress", "addressLocality": job["location"]}
     _office = OFFICE_ADDRESS.get((job["company"], job["location"]))
@@ -293,7 +304,7 @@ def build_page(job, nav, footer, first_seen, active):
         "jobLocation": {"@type": "Place", "address": job_address},
         "identifier": {"@type": "PropertyValue", "name": job["company"],
                        "value": str(job.get("checkText") or job["id"])},
-        "directApply": False, "url": url,
+        "directApply": False, "url": url, "inLanguage": "en",
     }
     bs = job.get("baseSalary")
     if bs:
@@ -305,6 +316,8 @@ def build_page(job, nav, footer, first_seen, active):
                 "unitText": bs["period"],
             },
         }
+    jobposting_nl = dict(jobposting, description=_desc("nl"), inLanguage="nl")
+
     breadcrumb = {
         "@context": "https://schema.org", "@type": "BreadcrumbList",
         "itemListElement": [
@@ -333,8 +346,11 @@ def build_page(job, nav, footer, first_seen, active):
   <meta property="og:description" content="{esc(meta_desc)}">
   <meta property="og:url" content="{url}">
   <meta property="og:locale" content="nl_NL">
-  <script type="application/ld+json">
+  <script type="application/ld+json" data-l="en">
 {json.dumps(jobposting, ensure_ascii=False, indent=2)}
+  </script>
+  <script type="application/ld+json" data-l="nl">
+{json.dumps(jobposting_nl, ensure_ascii=False, indent=2)}
   </script>
   <script type="application/ld+json">
 {json.dumps(breadcrumb, ensure_ascii=False, indent=2)}
@@ -562,13 +578,18 @@ def main():
         fn = f"{j['slug']}.html"
         wanted.add(fn)
         site_path = f"/vacatures/{fn}"
-        nl_html = gen_en.add_hreflang_nl(gen_en.bake(build_page(j, nav, footer, first_seen, active), "nl"), site_path)
+        # Beide talen uit dezelfde onbewerkte bron bakken. De Engelse pagina
+        # werd eerder uit de al gebakken Nederlandse gemaakt; dat kon alleen
+        # zolang bakken de andere taal verborg in plaats van weghaalde. Nu die
+        # er echt uit gaat, moet de Engelse versie uit het origineel komen.
+        raw = build_page(j, nav, footer, first_seen, active)
+        nl_html = gen_en.add_hreflang_nl(gen_en.bake(raw, "nl", strip=True), site_path)
         open(os.path.join(VAC_DIR, fn), "w", encoding="utf-8").write(nl_html)
         en_title = f"{j['title']} at {j['company']} in {j['location']} | CorporateCareer"
         en_desc = (f"{j['title']} at {j['company']} in {j['location']}. "
                    "View the role and apply via the official job page.")
         open(os.path.join(EN_VAC_DIR, fn), "w", encoding="utf-8").write(
-            gen_en.to_en(nl_html, site_path, en_title, en_desc))
+            gen_en.to_en(raw, site_path, en_title, en_desc, strip=True))
 
     removed = 0
     for d in (VAC_DIR, EN_VAC_DIR):
