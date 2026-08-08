@@ -365,7 +365,7 @@
     <p class="section-label"><span data-l="en" hidden>Vacancies</span><span data-l="nl">Vacatures</span></p>
     <h2 class="section-title"><span data-l="en" hidden>Vacancies at KKR</span><span data-l="nl">Vacatures bij KKR</span></h2>
     <p class="section-text" id="bVacMsg"><span data-l="en" hidden>We only show real, current openings with a link to the employer. When KKR has an opening here, it will appear below.</span><span data-l="nl">We tonen alleen echte, actuele vacatures met een link naar de werkgever. Zodra KKR hier een vacature heeft, verschijnt die hieronder.</span></p>
-    <div class="pe-vac-grid" id="bVac"></div>
+    <div class="pe-vac-grid" id="bVac"><!-- ingebakken vacaturelinks: begin --><!-- ingebakken vacaturelinks: einde --></div>
     <a class="link-arrow" href="/jobs.html" style="color:var(--emerald-deep);font-weight:700;text-decoration:none;display:inline-block;margin-top:18px"><span data-l="en" hidden>View all vacancies</span><span data-l="nl">Bekijk alle vacatures</span></a>
     <script>
     (function(){
@@ -374,7 +374,7 @@
         var n=new DOMParser().parseFromString(t,'text/html').getElementById('jobs-data'); if(!n)return;
         var jobs=JSON.parse(n.textContent).filter(function(j){return j.active!==false;});
         var m=jobs.filter(function(j){return FIRMS.indexOf(j.company)!==-1;}); if(!m.length)return;
-        var w=document.getElementById('bVac'),msg=document.getElementById('bVacMsg');
+        var w=document.getElementById('bVac'),msg=document.getElementById('bVacMsg');w.innerHTML='';w.innerHTML='';w.innerHTML='';w.innerHTML='';
         m.forEach(function(j){var a=document.createElement('a');a.className='pe-vac-card';a.href='/vacatures/'+j.slug+'.html';
           var ti=document.createElement('span');ti.className='pe-vac-t';ti.textContent=j.title;
           var co=document.createElement('span');co.className='pe-vac-c';co.textContent=j.company+(j.location?' \u00b7 '+j.location:'');
