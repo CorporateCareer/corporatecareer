@@ -113,8 +113,34 @@ OFFICE_ADDRESS = {
 }
 
 def related_block(job, active):
-    same = [j for j in active if j["id"] != job["id"] and j["sector"] == job["sector"]]
-    same = same[:5] if len(same) >= 3 else [j for j in active if j["id"] != job["id"]][:5]
+    """Vijf verwante vacatures: eerst van hetzelfde kantoor, daarna uit de sector.
+
+    De sectorvacatures worden als een ring doorlopen, beginnend net na deze
+    vacature zelf. Wie hier gewoon de eerste vijf van de sector pakte, liet elke
+    pagina in die sector naar dezelfde vijf wijzen: 205 pagina's linkten naar
+    dezelfde vijf PwC-vacatures en de rest kreeg geen enkele link binnen. Met
+    een ring krijgt elke vacature er ongeveer evenveel.
+    """
+    eigen = [j for j in active if j["id"] != job["id"] and j["company"] == job["company"]][:2]
+    ring = [j for j in active if j["id"] != job["id"] and j["sector"] == job["sector"]]
+    if len(ring) < 3:
+        ring = [j for j in active if j["id"] != job["id"]]
+    ids = [j["id"] for j in ring]
+    start = 0
+    for k, j in enumerate(ring):
+        if j["id"] > job["id"]:
+            start = k
+            break
+    gekozen, gezien = list(eigen), {j["id"] for j in eigen}
+    for k in range(len(ring)):
+        j = ring[(start + k) % len(ring)] if ring else None
+        if j is None:
+            break
+        if len(gekozen) >= 5:
+            break
+        if j["id"] not in gezien:
+            gezien.add(j["id"]); gekozen.append(j)
+    same = gekozen[:5]
     if not same:
         return ""
     items = "\n".join(
@@ -485,6 +511,12 @@ def main():
     update_home(active, first_seen)
     json.dump(first_seen, open(SEEN, "w", encoding="utf-8"), indent=2)
     print(f"{len(wanted)} pagina's geschreven, {removed} verwijderd")
+
+    # De vacaturelinks op jobs.html, de bedrijfspagina's en de sectorpagina's
+    # opnieuw inbakken. Dit hoort bij het bouwen: zonder deze stap wijzen die
+    # pagina's na een vacaturewissel naar een pagina die niet meer bestaat.
+    import bake_links
+    bake_links.main()
 
 if __name__ == "__main__":
     main()
