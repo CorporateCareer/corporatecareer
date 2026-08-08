@@ -147,7 +147,10 @@ def _curl(url, post=None, timeout=25):
     wacht = PAUSE - (time.time() - _LAST.get(host, 0))
     if wacht > 0:
         time.sleep(wacht)
-    cmd = ["curl", "-sS", "-m", str(timeout), url, "-H", "Accept: application/json",
+    # -L: Workday antwoordt met een 303 naar de eigen onderhoudspagina zodra
+    # het systeem er even uit ligt. Zonder omleidingen te volgen komt daar een
+    # leeg antwoord uit en lijkt het alsof het kantoor niets aanlevert.
+    cmd = ["curl", "-sSL", "-m", str(timeout), url, "-H", "Accept: application/json",
            "-H", "User-Agent: Mozilla/5.0 (compatible; CorporateCareer/1.0)"]
     if post is not None:
         cmd += ["-X", "POST", "-H", "Content-Type: application/json", "-d", json.dumps(post)]
@@ -221,8 +224,10 @@ def from_recruitee(code, url):
         feiten = {}
         if o.get("min_hours") or o.get("max_hours"):
             lo, hi = o.get("min_hours"), o.get("max_hours")
-            uren = f"{lo} tot {hi}" if lo and hi and lo != hi else str(hi or lo)
-            feiten["hours"] = (f"{uren} hours per week", f"{uren} uur per week")
+            bereik = bool(lo and hi and lo != hi)
+            en = f"{lo} to {hi}" if bereik else str(hi or lo)
+            nl = f"{lo} tot {hi}" if bereik else str(hi or lo)
+            feiten["hours"] = (f"{en} hours per week", f"{nl} uur per week")
         for sleutel, tabel, veld in (("contract", EMPLOY, "employment_type_code"),
                                      ("level", EXPERIENCE, "experience_code"),
                                      ("education", EDUCATION, "education_code")):
