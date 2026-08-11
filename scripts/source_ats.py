@@ -82,6 +82,13 @@ SUPPORT = ("recruiter", "recruitment", "secretaresse", "secretaris", "secretary"
            "relex", "mavim", "aris", "dynamics", "erp ", "solution architect", "projectleider",
            "software engineer", "machine learning engineer", "ai engineer", "c++", "data engineer",
            "hardware engineer", "fpga",
+           # Synoniemen van wat hierboven al uitgesloten staat. Zonder deze
+           # kwamen Site Reliability Engineer, Staff Infrastructure Engineer en
+           # Android Developer alsnog binnen, terwijl software engineer en
+           # cloud engineer wel werden geweerd. Dat is dezelfde soort rol.
+           "site reliability", "infrastructure engineer", "platform engineer",
+           "engineering manager", "android developer", "ios developer",
+           "frontend developer", "backend developer", "full stack",
            "devops", "servicedesk", "helpdesk")
 
 
@@ -98,6 +105,35 @@ def get(url, post=None):
 
 def is_nl(loc):
     return any(p in (loc or "").lower() for p in NL_PLACES)
+
+
+# De plaatsnaam zoals we hem op de site schrijven. De systemen leveren er van
+# alles bij: "Rotterdam - Conradstraat", "Amsterdam - Strawinskylaan 410".
+# Zonder schoonmaak staat dat zo op de kaart, en vindt build_vacature_pages de
+# provincie niet meer, waardoor de structuurdata er zonder komt te staan.
+CITY_NAME = {
+    "amsterdam": "Amsterdam", "rotterdam": "Rotterdam", "den haag": "Den Haag",
+    "the hague": "Den Haag", "utrecht": "Utrecht", "eindhoven": "Eindhoven",
+    "hilversum": "Hilversum", "zoetermeer": "Zoetermeer", "amstelveen": "Amstelveen",
+    "leiden": "Leiden", "groningen": "Groningen", "breda": "Breda", "tilburg": "Tilburg",
+    "arnhem": "Arnhem", "nijmegen": "Nijmegen", "maastricht": "Maastricht",
+    "zwolle": "Zwolle", "apeldoorn": "Apeldoorn", "haarlem": "Haarlem", "delft": "Delft",
+    "almere": "Almere", "'s-hertogenbosch": "'s-Hertogenbosch", "den bosch": "Den Bosch",
+    "amersfoort": "Amersfoort", "enschede": "Enschede", "deventer": "Deventer",
+}
+
+
+def city_of(loc):
+    """De plaats uit een vrije-tekstlocatie, mits die eenduidig is.
+
+    Staan er twee plaatsen in, zoals "Den Haag en/of Amsterdam", dan is er niets
+    te kiezen en blijft de tekst staan zoals het kantoor hem schreef."""
+    s = (loc or "").strip()
+    laag = s.lower()
+    gevonden = [naam for sleutel, naam in CITY_NAME.items() if sleutel in laag]
+    if len(set(gevonden)) == 1:
+        return gevonden[0]
+    return A.city_of(s.replace(" NL", "").replace(" nl", ""))
 
 
 # Een bureau dat ook werving en interim voor klanten doet, zet die opdrachten
@@ -307,7 +343,7 @@ def main():
                 continue
             if not relevant(title, sector):
                 continue
-            city = A.city_of(loc.replace(" NL", "").replace(" nl", ""))
+            city = city_of(loc)
             typ, (type_en, type_nl) = A.job_type(title)
             sec_en, sec_nl = A.SECTOR_LABEL[sector]
             lk = look.get(company, {})

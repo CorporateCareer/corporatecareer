@@ -2165,11 +2165,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/vacatures/mufg-bank-associate-avp-supporting-relationship-manager-corporate-coverage-benelux.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/vacatures/deutsche-bank-senior-relationship-manager-netherlands-f-m-x.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -3150,11 +3145,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/vacatures/pwc-netherlands-senior-associate-technology-consulting-publieke-sector.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/vacatures/pwc-netherlands-senior-associate-itx-real-estate.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -3291,6 +3281,66 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/vacatures/bunq-fraud-operations-analyst.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/berenschot-traineeship-digital-data-generatieve-ai.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/da-vinci-trading-graduate-trading-risk-analyst.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/eraneos-manager-it-strategy-advisory-m-v-x.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/eraneos-senior-consultant-digital-resilience-m-v-x.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/ig-h-stage-artificial-intelligence-data-science.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/ig-h-consultant-enterprise-architecture.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/mufg-bank-analyst-administration-team-japanese-corporate-banking-division.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/oliver-wyman-teamlead-operations-m-v-x.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/twynstra-gudde-innovatie-adviseur-medior.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/twynstra-gudde-adviseur-project-programma-en-portfoliomanagement-publieke-sector.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/bunq-it-risk-engineer.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/bunq-product-owner-credit.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -5944,11 +5994,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/en/vacatures/mufg-bank-associate-avp-supporting-relationship-manager-corporate-coverage-benelux.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/en/vacatures/deutsche-bank-senior-relationship-manager-netherlands-f-m-x.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -6929,11 +6974,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/en/vacatures/pwc-netherlands-senior-associate-technology-consulting-publieke-sector.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/en/vacatures/pwc-netherlands-senior-associate-itx-real-estate.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -7070,6 +7110,66 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/en/vacatures/bunq-fraud-operations-analyst.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/berenschot-traineeship-digital-data-generatieve-ai.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/da-vinci-trading-graduate-trading-risk-analyst.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/eraneos-manager-it-strategy-advisory-m-v-x.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/eraneos-senior-consultant-digital-resilience-m-v-x.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/ig-h-stage-artificial-intelligence-data-science.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/ig-h-consultant-enterprise-architecture.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/mufg-bank-analyst-administration-team-japanese-corporate-banking-division.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/oliver-wyman-teamlead-operations-m-v-x.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/twynstra-gudde-innovatie-adviseur-medior.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/twynstra-gudde-adviseur-project-programma-en-portfoliomanagement-publieke-sector.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/bunq-it-risk-engineer.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/bunq-product-owner-credit.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
