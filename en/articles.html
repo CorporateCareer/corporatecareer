@@ -467,217 +467,489 @@
         <span data-i18n="articles.badge">Knowledge Hub</span>
       </div>
       <h1 class="fade-up" data-i18n-html="articles.title">Career Guides &<br><span>Articles</span></h1>
-      <p class="fade-up">In-depth guides on breaking into finance, consulting and law in the Netherlands.</p>
+      <p class="fade-up"><span data-l="en">Everything we have written about careers in finance, consulting and law in the Netherlands: the application guides and a deep dive per practice area.</span><span data-l="nl" hidden>Alles wat we schreven over werken in finance, consulting en de advocatuur in Nederland: de sollicitatiegidsen en per vakgebied een uitgebreide verdieping.</span></p>
     </div>
   </section>
+
+
+  <!-- ── GIDSEN ─────────────────────────── -->
+  <section class="page-section"><div class="container">
+    <p class="section-label"><span data-l="en">Guides</span><span data-l="nl" hidden>Gidsen</span></p>
+    <h2 class="section-title"><span data-l="en">Application guides</span><span data-l="nl" hidden>Sollicitatiegidsen</span></h2>
+    <p class="section-text"><span data-l="en">Step-by-step guides to the application process, written for students aiming at the leading employers in the Netherlands.</span><span data-l="nl" hidden>Stap voor stap door het sollicitatieproces, geschreven voor studenten die mikken op de topwerkgevers in Nederland.</span></p>
+    <div class="pe-res-grid" style="margin-top:22px">
+        <a class="pe-res-card fade-up" href="/en/resources/sollicitatiegids/" style="text-decoration:none"><span class="pe-res-t"><span data-l="en">Application guide</span><span data-l="nl" hidden>Sollicitatiegids</span></span><span class="pe-res-d"><span data-l="en">CV, cover letter, online assessments, interviews and the process from application to offer.</span><span data-l="nl" hidden>Cv, motivatiebrief, online assessments, gesprekken en het proces van sollicitatie tot aanbod.</span></span></a>
+        <a class="pe-res-card fade-up" href="/en/resources/case-interview/" style="text-decoration:none"><span class="pe-res-t"><span data-l="en">Case interview guide</span><span data-l="nl" hidden>Case-interviewgids</span></span><span class="pe-res-d"><span data-l="en">How to structure and solve a business problem, the main case types, mental maths and four worked cases.</span><span data-l="nl" hidden>Een businessprobleem structureren en oplossen, de casetypen, hoofdrekenen en vier uitgewerkte cases.</span></span></a>
+        <a class="pe-res-card fade-up" href="/en/resources/finance-interview/" style="text-decoration:none"><span class="pe-res-t"><span data-l="en">Finance interview guide</span><span data-l="nl" hidden>Finance-interviewgids</span></span><span class="pe-res-d"><span data-l="en">The process, financial statements, valuation and the finance case types with worked examples.</span><span data-l="nl" hidden>Het proces, jaarrekeninglezen, waardering en de finance-casetypen met uitgewerkte voorbeelden.</span></span></a>
+        <a class="pe-res-card fade-up" href="/en/resources/legal-interview/" style="text-decoration:none"><span class="pe-res-t"><span data-l="en">Law firm application guide</span><span data-l="nl" hidden>Sollicitatiegids advocatuur</span></span><span class="pe-res-d"><span data-l="en">The route to becoming a trainee lawyer, the interview components, practice areas and a worked legal case.</span><span data-l="nl" hidden>De route naar advocaat-stagiaire, de gespreksonderdelen, praktijkgebieden en een uitgewerkte casus.</span></span></a>
+        <a class="pe-res-card fade-up" href="/en/resources/dagelijks-lezen/" style="text-decoration:none"><span class="pe-res-t"><span data-l="en">What to read daily</span><span data-l="nl" hidden>Wat je elke dag leest</span></span><span class="pe-res-d"><span data-l="en">Which sources to follow, how to reach them free through your university, and how to use them in an interview.</span><span data-l="nl" hidden>Welke bronnen je volgt, hoe je er gratis bij komt via je universiteit, en hoe je ze inzet in een gesprek.</span></span></a>
+    </div>
+  </div></section>
+
+  <!-- ── VAKGEBIEDEN ────────────────────── -->
+  <div class="container"><p class="section-label" style="margin-top:8px"><span data-l="en">Practice areas</span><span data-l="nl" hidden>Vakgebieden</span></p><h2 class="section-title"><span data-l="en">A deep dive per field</span><span data-l="nl" hidden>Per vakgebied een verdieping</span></h2></div>
 
   <!-- ── FILTER PILLS ───────────────────── -->
   <div class="articles-filters">
     <div class="articles-filters-inner">
-      <button class="filter-pill active" data-filter="all" onclick="filterArticles('all', this)">All</button>
-      <button class="filter-pill" data-filter="finance" onclick="filterArticles('finance', this)">Finance</button>
-      <button class="filter-pill" data-filter="consulting" onclick="filterArticles('consulting', this)">Consulting</button>
-      <button class="filter-pill" data-filter="legal" onclick="filterArticles('legal', this)">Legal</button>
+      <button class="filter-pill active" data-filter="all" onclick="filterArticles('all', this)"><span data-l="en">All</span><span data-l="nl" hidden>Alles</span></button>
+      <button class="filter-pill" data-filter="finance" onclick="filterArticles('finance', this)"><span data-l="en">Finance</span><span data-l="nl" hidden>Finance</span></button>
+      <button class="filter-pill" data-filter="consulting" onclick="filterArticles('consulting', this)"><span data-l="en">Consulting</span><span data-l="nl" hidden>Consulting</span></button>
+      <button class="filter-pill" data-filter="legal" onclick="filterArticles('legal', this)"><span data-l="en">Legal</span><span data-l="nl" hidden>Advocatuur</span></button>
     </div>
   </div>
 
   <!-- ── ARTICLES GRID ───────────────────── -->
   <section class="articles-section">
     <div class="container">
-      <p class="articles-count" id="articlesCount">9 articles</p>
+      <p class="articles-count" id="articlesCount"><span data-l="en">37 practice areas</span><span data-l="nl" hidden>37 vakgebieden</span></p>
 
       <div class="articles-grid" id="articlesGrid">
 
-        <!-- Finance 1 -->
+        <article class="article-card fade-up" data-category="consulting">
+          <div class="article-accent" style="background:#0f766e;"></div>
+          <div class="article-card-body">
+            <span class="article-category" style="background:rgba(35,75,126,0.08);color:var(--navy-800);"><span data-l="en">Consulting</span><span data-l="nl" hidden>Consulting</span></span>
+            <h2 class="article-title"><a href="/en/consulting/data-analytics/"><span data-l="en">Data &amp; Analytics Consulting</span><span data-l="nl" hidden>Data &amp; Analytics Consulting</span></a></h2>
+            <p class="article-excerpt"><span data-l="en">Discover what data &amp; analytics consulting involves: how consultants help organisations get value from data with analytics, data science and AI, what they do...</span><span data-l="nl" hidden>Data en analytics consulting in Nederland: wat het inhoudt, de carriereladder, salaris en werkgevers zoals Xebia, Accenture, Capgemini Invent en meer.</span></p>
+            <div class="article-footer">
+              <a href="/en/consulting/data-analytics/" class="article-read-more"><span data-l="en">Read more →</span><span data-l="nl" hidden>Lees meer →</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card fade-up" data-category="consulting">
+          <div class="article-accent" style="background:#0f766e;"></div>
+          <div class="article-card-body">
+            <span class="article-category" style="background:rgba(35,75,126,0.08);color:var(--navy-800);"><span data-l="en">Consulting</span><span data-l="nl" hidden>Consulting</span></span>
+            <h2 class="article-title"><a href="/en/consulting/financial-deal-advisory/"><span data-l="en">Financial &amp; Deal Advisory</span><span data-l="nl" hidden>Financial &amp; Deal Advisory</span></a></h2>
+            <p class="article-excerpt"><span data-l="en">Discover what financial &amp; deal advisory involves: how advisers guide companies and investors through acquisitions, valuations and restructurings, what they...</span><span data-l="nl" hidden>Financial en deal advisory in Nederland: wat het inhoudt, de carriereladder, salaris en werkgevers zoals Deloitte, PwC, KPMG, EY, AlixPartners en meer.</span></p>
+            <div class="article-footer">
+              <a href="/en/consulting/financial-deal-advisory/" class="article-read-more"><span data-l="en">Read more →</span><span data-l="nl" hidden>Lees meer →</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card fade-up" data-category="consulting">
+          <div class="article-accent" style="background:#0f766e;"></div>
+          <div class="article-card-body">
+            <span class="article-category" style="background:rgba(35,75,126,0.08);color:var(--navy-800);"><span data-l="en">Consulting</span><span data-l="nl" hidden>Consulting</span></span>
+            <h2 class="article-title"><a href="/en/consulting/operations/"><span data-l="en">Operations Consulting</span><span data-l="nl" hidden>Operations Consulting</span></a></h2>
+            <p class="article-excerpt"><span data-l="en">Discover what operations consulting involves: how consultants help organisations improve their processes, supply chain and execution, what they do day to...</span><span data-l="nl" hidden>Operations consulting in Nederland: wat het inhoudt, de carriereladder, salaris en werkgevers zoals Kearney, TwynstraGudde, EFESO en Accenture.</span></p>
+            <div class="article-footer">
+              <a href="/en/consulting/operations/" class="article-read-more"><span data-l="en">Read more →</span><span data-l="nl" hidden>Lees meer →</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card fade-up" data-category="consulting">
+          <div class="article-accent" style="background:#0f766e;"></div>
+          <div class="article-card-body">
+            <span class="article-category" style="background:rgba(35,75,126,0.08);color:var(--navy-800);"><span data-l="en">Consulting</span><span data-l="nl" hidden>Consulting</span></span>
+            <h2 class="article-title"><a href="/en/consulting/people-organisation/"><span data-l="en">People &amp; Organisation Consulting</span><span data-l="nl" hidden>People &amp; Organisation Consulting</span></a></h2>
+            <p class="article-excerpt"><span data-l="en">Discover what people &amp; organisation consulting involves: how consultants help organisations with change, structure, talent and culture, what they do day to...</span><span data-l="nl" hidden>People &amp; organisation consulting in Nederland: wat het inhoudt, de carriereladder, salaris en werkgevers zoals Korn Ferry, Mercer, Berenschot en Rijnconsult.</span></p>
+            <div class="article-footer">
+              <a href="/en/consulting/people-organisation/" class="article-read-more"><span data-l="en">Read more →</span><span data-l="nl" hidden>Lees meer →</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card fade-up" data-category="consulting">
+          <div class="article-accent" style="background:#0f766e;"></div>
+          <div class="article-card-body">
+            <span class="article-category" style="background:rgba(35,75,126,0.08);color:var(--navy-800);"><span data-l="en">Consulting</span><span data-l="nl" hidden>Consulting</span></span>
+            <h2 class="article-title"><a href="/en/consulting/risk-regulatory/"><span data-l="en">Risk &amp; Regulatory Consulting</span><span data-l="nl" hidden>Risk &amp; Regulatory Consulting</span></a></h2>
+            <p class="article-excerpt"><span data-l="en">Discover what risk &amp; regulatory consulting involves: how consultants help organisations manage risk and comply with regulation, what they do day to day, the...</span><span data-l="nl" hidden>Risk en regulatory consulting in Nederland: wat het inhoudt, de carriereladder, salaris en werkgevers zoals Deloitte, PwC, KPMG, EY en Protiviti.</span></p>
+            <div class="article-footer">
+              <a href="/en/consulting/risk-regulatory/" class="article-read-more"><span data-l="en">Read more →</span><span data-l="nl" hidden>Lees meer →</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card fade-up" data-category="consulting">
+          <div class="article-accent" style="background:#0f766e;"></div>
+          <div class="article-card-body">
+            <span class="article-category" style="background:rgba(35,75,126,0.08);color:var(--navy-800);"><span data-l="en">Consulting</span><span data-l="nl" hidden>Consulting</span></span>
+            <h2 class="article-title"><a href="/en/consulting/strategy/"><span data-l="en">Strategy Consulting</span><span data-l="nl" hidden>Strategy Consulting</span></a></h2>
+            <p class="article-excerpt"><span data-l="en">Discover what strategy consulting involves: how consultants advise the leadership of companies and organisations on their most important choices, what they...</span><span data-l="nl" hidden>Strategy consulting in Nederland: wat het inhoudt, de carriereladder, salaris en werkgevers zoals McKinsey, BCG, Bain, Roland Berger en meer.</span></p>
+            <div class="article-footer">
+              <a href="/en/consulting/strategy/" class="article-read-more"><span data-l="en">Read more →</span><span data-l="nl" hidden>Lees meer →</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card fade-up" data-category="consulting">
+          <div class="article-accent" style="background:#0f766e;"></div>
+          <div class="article-card-body">
+            <span class="article-category" style="background:rgba(35,75,126,0.08);color:var(--navy-800);"><span data-l="en">Consulting</span><span data-l="nl" hidden>Consulting</span></span>
+            <h2 class="article-title"><a href="/en/consulting/sustainability/"><span data-l="en">Sustainability Consulting</span><span data-l="nl" hidden>Sustainability Consulting</span></a></h2>
+            <p class="article-excerpt"><span data-l="en">Discover what sustainability consulting involves: how consultants help organisations become more sustainable, from strategy to reporting, what they do day...</span><span data-l="nl" hidden>Sustainability consulting in Nederland: wat het inhoudt, de carriereladder, salaris en de rol van duurzaamheidsadvies bij strategiehuizen en de Big Four.</span></p>
+            <div class="article-footer">
+              <a href="/en/consulting/sustainability/" class="article-read-more"><span data-l="en">Read more →</span><span data-l="nl" hidden>Lees meer →</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card fade-up" data-category="consulting">
+          <div class="article-accent" style="background:#0f766e;"></div>
+          <div class="article-card-body">
+            <span class="article-category" style="background:rgba(35,75,126,0.08);color:var(--navy-800);"><span data-l="en">Consulting</span><span data-l="nl" hidden>Consulting</span></span>
+            <h2 class="article-title"><a href="/en/consulting/technology-digital/"><span data-l="en">Technology &amp; Digital Consulting</span><span data-l="nl" hidden>Technology &amp; Digital Consulting</span></a></h2>
+            <p class="article-excerpt"><span data-l="en">Discover what technology &amp; digital consulting involves: how consultants help organisations with digital transformation, technology and new ways of working,...</span><span data-l="nl" hidden>Technology en digital consulting in Nederland: wat het inhoudt, de carriereladder, salaris en werkgevers zoals Accenture, Capgemini Invent, BearingPoint en meer.</span></p>
+            <div class="article-footer">
+              <a href="/en/consulting/technology-digital/" class="article-read-more"><span data-l="en">Read more →</span><span data-l="nl" hidden>Lees meer →</span></a>
+            </div>
+          </div>
+        </article>
+
         <article class="article-card fade-up" data-category="finance">
           <div class="article-accent" style="background:#1c3f60;"></div>
           <div class="article-card-body">
-            <span class="article-category" style="background:rgba(14,124,90,0.08);color:var(--emerald-deep);">Investment Banking</span>
-            <h2 class="article-title">Breaking Into Investment Banking in the Netherlands</h2>
-            <p class="article-excerpt">Everything you need to know about the application process, spring weeks and summer internships at bulge bracket and elite boutique banks in Amsterdam and beyond.</p>
+            <span class="article-category" style="background:rgba(14,124,90,0.08);color:var(--emerald-deep);"><span data-l="en">Finance</span><span data-l="nl" hidden>Finance</span></span>
+            <h2 class="article-title"><a href="/en/finance/asset-management/"><span data-l="en">Asset Management</span><span data-l="nl" hidden>Asset Management</span></a></h2>
+            <p class="article-excerpt"><span data-l="en">Learn what asset management is, the asset classes and skills involved, the roles from analyst to portfolio manager, and how students can prepare.</span><span data-l="nl" hidden>Ontdek asset management in Nederland: beleggingscategorieën, vaardigheden en functies van analist tot portefeuillebeheerder.</span></p>
             <div class="article-footer">
-              <div class="article-author">
-                <div class="author-avatar" style="background:#1c3f60;">TK</div>
-                <div class="author-info">
-                  <span class="author-name">Thomas K.</span>
-                  <span class="author-date">June 2025</span>
-                </div>
-              </div>
-              <a href="#" class="article-read-more">Read more →</a>
+              <a href="/en/finance/asset-management/" class="article-read-more"><span data-l="en">Read more →</span><span data-l="nl" hidden>Lees meer →</span></a>
             </div>
           </div>
         </article>
 
-        <!-- Finance 2 -->
         <article class="article-card fade-up" data-category="finance">
           <div class="article-accent" style="background:#1c3f60;"></div>
           <div class="article-card-body">
-            <span class="article-category" style="background:rgba(14,124,90,0.08);color:var(--emerald-deep);">Investment Banking</span>
-            <h2 class="article-title">The IB Recruitment Timeline: When to Apply</h2>
-            <p class="article-excerpt">A month-by-month breakdown of spring weeks, summer internships and full-time analyst applications, so you never miss a deadline at Goldman, JPM or Rothschild.</p>
+            <span class="article-category" style="background:rgba(14,124,90,0.08);color:var(--emerald-deep);"><span data-l="en">Finance</span><span data-l="nl" hidden>Finance</span></span>
+            <h2 class="article-title"><a href="/en/finance/corporate-development/"><span data-l="en">Corporate Development</span><span data-l="nl" hidden>Corporate Development</span></a></h2>
+            <p class="article-excerpt"><span data-l="en">Corporate Development in the Netherlands: what the work involves, roles, the recruitment process and how to get started.</span><span data-l="nl" hidden>Ontdek corporate development in Nederland: hoe bedrijven zelf overnames en partnerships uitvoeren, de functies en hoe je je voorbereidt.</span></p>
             <div class="article-footer">
-              <div class="article-author">
-                <div class="author-avatar" style="background:#1c3f60;">SV</div>
-                <div class="author-info">
-                  <span class="author-name">Sophie V.</span>
-                  <span class="author-date">May 2025</span>
-                </div>
-              </div>
-              <a href="#" class="article-read-more">Read more →</a>
+              <a href="/en/finance/corporate-development/" class="article-read-more"><span data-l="en">Read more →</span><span data-l="nl" hidden>Lees meer →</span></a>
             </div>
           </div>
         </article>
 
-        <!-- Finance 3 -->
         <article class="article-card fade-up" data-category="finance">
           <div class="article-accent" style="background:#1c3f60;"></div>
           <div class="article-card-body">
-            <span class="article-category" style="background:rgba(14,124,90,0.08);color:var(--emerald-deep);">Investment Banking</span>
-            <h2 class="article-title">Financial Modelling: What Banks Actually Test</h2>
-            <p class="article-excerpt">DCF, LBO, merger models, a practical guide to the technical skills tested in IB superdays, with example questions from real Goldman Sachs and Rothschild interviews.</p>
+            <span class="article-category" style="background:rgba(14,124,90,0.08);color:var(--emerald-deep);"><span data-l="en">Finance</span><span data-l="nl" hidden>Finance</span></span>
+            <h2 class="article-title"><a href="/en/finance/corporate-finance/"><span data-l="en">Corporate Finance</span><span data-l="nl" hidden>Corporate Finance</span></a></h2>
+            <p class="article-excerpt"><span data-l="en">Learn what corporate finance is as an in-house career, how it differs from M&amp;A advisory, what the teams and roles do, and how students can prepare.</span><span data-l="nl" hidden>Ontdek corporate finance als carrière binnen een bedrijf: FP&amp;A, treasury, de functies van analist tot CFO, en hoe je je voorbereidt.</span></p>
             <div class="article-footer">
-              <div class="article-author">
-                <div class="author-avatar" style="background:#234b7e;">LM</div>
-                <div class="author-info">
-                  <span class="author-name">Lena M.</span>
-                  <span class="author-date">April 2025</span>
-                </div>
-              </div>
-              <a href="#" class="article-read-more">Read more →</a>
+              <a href="/en/finance/corporate-finance/" class="article-read-more"><span data-l="en">Read more →</span><span data-l="nl" hidden>Lees meer →</span></a>
             </div>
           </div>
         </article>
 
-        <!-- Consulting 1 -->
-        <article class="article-card fade-up" data-category="consulting">
-          <div class="article-accent" style="background:#16a34a;"></div>
+        <article class="article-card fade-up" data-category="finance">
+          <div class="article-accent" style="background:#1c3f60;"></div>
           <div class="article-card-body">
-            <span class="article-category" style="background:rgba(22,163,74,0.08);color:#16a34a;">Consulting</span>
-            <h2 class="article-title">How to Crack the Case Interview</h2>
-            <p class="article-excerpt">A step-by-step guide to mastering the case interview at McKinsey, BCG and Bain, from market sizing and profitability cases to the final recommendation.</p>
+            <span class="article-category" style="background:rgba(14,124,90,0.08);color:var(--emerald-deep);"><span data-l="en">Finance</span><span data-l="nl" hidden>Finance</span></span>
+            <h2 class="article-title"><a href="/en/finance/debt-advisory/"><span data-l="en">Debt Advisory</span><span data-l="nl" hidden>Debt Advisory</span></a></h2>
+            <p class="article-excerpt"><span data-l="en">Debt Advisory in the Netherlands: what the work involves, roles, the recruitment process and how to get started.</span><span data-l="nl" hidden>Ontdek debt advisory in Nederland: hoe financieringsprocessen werken, welke functies er zijn, de beloning en hoe je je voorbereidt.</span></p>
             <div class="article-footer">
-              <div class="article-author">
-                <div class="author-avatar" style="background:#16a34a;">JR</div>
-                <div class="author-info">
-                  <span class="author-name">Jasper R.</span>
-                  <span class="author-date">June 2025</span>
-                </div>
-              </div>
-              <a href="#" class="article-read-more">Read more →</a>
+              <a href="/en/finance/debt-advisory/" class="article-read-more"><span data-l="en">Read more →</span><span data-l="nl" hidden>Lees meer →</span></a>
             </div>
           </div>
         </article>
 
-        <!-- Consulting 2 -->
-        <article class="article-card fade-up" data-category="consulting">
-          <div class="article-accent" style="background:#16a34a;"></div>
+        <article class="article-card fade-up" data-category="finance">
+          <div class="article-accent" style="background:#1c3f60;"></div>
           <div class="article-card-body">
-            <span class="article-category" style="background:rgba(22,163,74,0.08);color:#16a34a;">Consulting</span>
-            <h2 class="article-title">McKinsey vs BCG vs Bain: Which Is Right for You?</h2>
-            <p class="article-excerpt">A candid comparison of the three MBB firms on culture, work-life balance, exit opportunities and the Dutch office experience, to help you decide where to focus.</p>
+            <span class="article-category" style="background:rgba(14,124,90,0.08);color:var(--emerald-deep);"><span data-l="en">Finance</span><span data-l="nl" hidden>Finance</span></span>
+            <h2 class="article-title"><a href="/en/finance/equity-research/"><span data-l="en">Equity Research</span><span data-l="nl" hidden>Equity Research</span></a></h2>
+            <p class="article-excerpt"><span data-l="en">Equity Research in the Netherlands: what the work involves, roles, the recruitment process and how to get started.</span><span data-l="nl" hidden>Ontdek equity research in Nederland: hoe analisten beursgenoteerde bedrijven volgen, de functies, beloning en hoe je je voorbereidt.</span></p>
             <div class="article-footer">
-              <div class="article-author">
-                <div class="author-avatar" style="background:#15803d;">NB</div>
-                <div class="author-info">
-                  <span class="author-name">Nina B.</span>
-                  <span class="author-date">May 2025</span>
-                </div>
-              </div>
-              <a href="#" class="article-read-more">Read more →</a>
+              <a href="/en/finance/equity-research/" class="article-read-more"><span data-l="en">Read more →</span><span data-l="nl" hidden>Lees meer →</span></a>
             </div>
           </div>
         </article>
 
-        <!-- Consulting 3 -->
-        <article class="article-card fade-up" data-category="consulting">
-          <div class="article-accent" style="background:#16a34a;"></div>
+        <article class="article-card fade-up" data-category="finance">
+          <div class="article-accent" style="background:#1c3f60;"></div>
           <div class="article-card-body">
-            <span class="article-category" style="background:rgba(22,163,74,0.08);color:#16a34a;">Consulting</span>
-            <h2 class="article-title">Building the Perfect Consulting CV</h2>
-            <p class="article-excerpt">What top consulting firms actually look for on your CV: the right extracurriculars, how to frame your thesis, and the one mistake that kills most applications before round one.</p>
+            <span class="article-category" style="background:rgba(14,124,90,0.08);color:var(--emerald-deep);"><span data-l="en">Finance</span><span data-l="nl" hidden>Finance</span></span>
+            <h2 class="article-title"><a href="/en/finance/investment-banking/"><span data-l="en">Investment Banking</span><span data-l="nl" hidden>Investment Banking</span></a></h2>
+            <p class="article-excerpt"><span data-l="en">Learn what investment banking is, what the divisions and roles involve, what it pays, and how students can prepare for internships and analyst roles.</span><span data-l="nl" hidden>Ontdek investment banking in Nederland: de divisies, functies en het salaris, en hoe je je als student voorbereidt op stages.</span></p>
             <div class="article-footer">
-              <div class="article-author">
-                <div class="author-avatar" style="background:#16a34a;">AV</div>
-                <div class="author-info">
-                  <span class="author-name">Anna V.</span>
-                  <span class="author-date">March 2025</span>
-                </div>
-              </div>
-              <a href="#" class="article-read-more">Read more →</a>
+              <a href="/en/finance/investment-banking/" class="article-read-more"><span data-l="en">Read more →</span><span data-l="nl" hidden>Lees meer →</span></a>
             </div>
           </div>
         </article>
 
-        <!-- Legal 1 -->
+        <article class="article-card fade-up" data-category="finance">
+          <div class="article-accent" style="background:#1c3f60;"></div>
+          <div class="article-card-body">
+            <span class="article-category" style="background:rgba(14,124,90,0.08);color:var(--emerald-deep);"><span data-l="en">Finance</span><span data-l="nl" hidden>Finance</span></span>
+            <h2 class="article-title"><a href="/en/finance/ma/"><span data-l="en">Mergers &amp; Acquisitions (M&amp;A)</span><span data-l="nl" hidden>Mergers &amp; Acquisitions (M&amp;A)</span></a></h2>
+            <p class="article-excerpt"><span data-l="en">Learn what M&amp;A advisory is, the difference between buy-side and sell-side, what the roles pay, which exit routes it opens, and how students can prepare.</span><span data-l="nl" hidden>Ontdek M&amp;A in Nederland: buy-side en sell-side, de functies en het salaris, en hoe je je als student voorbereidt op stages.</span></p>
+            <div class="article-footer">
+              <a href="/en/finance/ma/" class="article-read-more"><span data-l="en">Read more →</span><span data-l="nl" hidden>Lees meer →</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card fade-up" data-category="finance">
+          <div class="article-accent" style="background:#1c3f60;"></div>
+          <div class="article-card-body">
+            <span class="article-category" style="background:rgba(14,124,90,0.08);color:var(--emerald-deep);"><span data-l="en">Finance</span><span data-l="nl" hidden>Finance</span></span>
+            <h2 class="article-title"><a href="/en/finance/private-equity/"><span data-l="en">Private Equity</span><span data-l="nl" hidden>Private Equity</span></a></h2>
+            <p class="article-excerpt"><span data-l="en">Learn what private equity is, how funds invest in companies, what the work involves, and how students can prepare for internships and analyst roles.</span><span data-l="nl" hidden>Ontdek private equity in Nederland: hoe fondsen investeren, welke functies er zijn, het salaris en hoe je je voorbereidt op stages.</span></p>
+            <div class="article-footer">
+              <a href="/en/finance/private-equity/" class="article-read-more"><span data-l="en">Read more →</span><span data-l="nl" hidden>Lees meer →</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card fade-up" data-category="finance">
+          <div class="article-accent" style="background:#1c3f60;"></div>
+          <div class="article-card-body">
+            <span class="article-category" style="background:rgba(14,124,90,0.08);color:var(--emerald-deep);"><span data-l="en">Finance</span><span data-l="nl" hidden>Finance</span></span>
+            <h2 class="article-title"><a href="/en/finance/real-estate-finance/"><span data-l="en">Real Estate Finance</span><span data-l="nl" hidden>Real Estate Finance</span></a></h2>
+            <p class="article-excerpt"><span data-l="en">Real Estate Finance in the Netherlands: what the work involves, roles, the recruitment process and how to get started.</span><span data-l="nl" hidden>Ontdek real estate finance in Nederland: hoe vastgoedfinanciering en -investeringen werken, de functies en hoe je je voorbereidt.</span></p>
+            <div class="article-footer">
+              <a href="/en/finance/real-estate-finance/" class="article-read-more"><span data-l="en">Read more →</span><span data-l="nl" hidden>Lees meer →</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card fade-up" data-category="finance">
+          <div class="article-accent" style="background:#1c3f60;"></div>
+          <div class="article-card-body">
+            <span class="article-category" style="background:rgba(14,124,90,0.08);color:var(--emerald-deep);"><span data-l="en">Finance</span><span data-l="nl" hidden>Finance</span></span>
+            <h2 class="article-title"><a href="/en/finance/risk-management/"><span data-l="en">Risk Management</span><span data-l="nl" hidden>Risk Management</span></a></h2>
+            <p class="article-excerpt"><span data-l="en">in the Netherlands: what the work involves, roles, the recruitment process and how to get started.</span><span data-l="nl" hidden>Ontdek risk management in Nederland: hoe banken risico beheersen, welke functies er zijn, de beloning en hoe je je voorbereidt.</span></p>
+            <div class="article-footer">
+              <a href="/en/finance/risk-management/" class="article-read-more"><span data-l="en">Read more →</span><span data-l="nl" hidden>Lees meer →</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card fade-up" data-category="finance">
+          <div class="article-accent" style="background:#1c3f60;"></div>
+          <div class="article-card-body">
+            <span class="article-category" style="background:rgba(14,124,90,0.08);color:var(--emerald-deep);"><span data-l="en">Finance</span><span data-l="nl" hidden>Finance</span></span>
+            <h2 class="article-title"><a href="/en/finance/trading/"><span data-l="en">Trading</span><span data-l="nl" hidden>Trading</span></a></h2>
+            <p class="article-excerpt"><span data-l="en">Trading in the Netherlands: what the work involves, roles, the recruitment process and how to get started.</span><span data-l="nl" hidden>Ontdek trading in Nederland: wat market makers en prop trading firms doen, de functies, de beloning en hoe je je voorbereidt.</span></p>
+            <div class="article-footer">
+              <a href="/en/finance/trading/" class="article-read-more"><span data-l="en">Read more →</span><span data-l="nl" hidden>Lees meer →</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card fade-up" data-category="finance">
+          <div class="article-accent" style="background:#1c3f60;"></div>
+          <div class="article-card-body">
+            <span class="article-category" style="background:rgba(14,124,90,0.08);color:var(--emerald-deep);"><span data-l="en">Finance</span><span data-l="nl" hidden>Finance</span></span>
+            <h2 class="article-title"><a href="/en/finance/transaction-services/"><span data-l="en">Transaction Services</span><span data-l="nl" hidden>Transaction Services</span></a></h2>
+            <p class="article-excerpt"><span data-l="en">Transaction Services in the Netherlands: what the work involves, roles, the recruitment process and how to get started.</span><span data-l="nl" hidden>Ontdek transaction services in Nederland: wat financial due diligence inhoudt, hoe een deal-onderzoek werkt en hoe je je voorbereidt.</span></p>
+            <div class="article-footer">
+              <a href="/en/finance/transaction-services/" class="article-read-more"><span data-l="en">Read more →</span><span data-l="nl" hidden>Lees meer →</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card fade-up" data-category="finance">
+          <div class="article-accent" style="background:#1c3f60;"></div>
+          <div class="article-card-body">
+            <span class="article-category" style="background:rgba(14,124,90,0.08);color:var(--emerald-deep);"><span data-l="en">Finance</span><span data-l="nl" hidden>Finance</span></span>
+            <h2 class="article-title"><a href="/en/finance/valuation/"><span data-l="en">Valuation</span><span data-l="nl" hidden>Valuation</span></a></h2>
+            <p class="article-excerpt"><span data-l="en">Valuation in the Netherlands: what the work involves, roles, the recruitment process and how to get started.</span><span data-l="nl" hidden>Ontdek valuation in Nederland: wat waarderingsspecialisten doen, welke methodes ze gebruiken en hoe je je voorbereidt op stages.</span></p>
+            <div class="article-footer">
+              <a href="/en/finance/valuation/" class="article-read-more"><span data-l="en">Read more →</span><span data-l="nl" hidden>Lees meer →</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card fade-up" data-category="finance">
+          <div class="article-accent" style="background:#1c3f60;"></div>
+          <div class="article-card-body">
+            <span class="article-category" style="background:rgba(14,124,90,0.08);color:var(--emerald-deep);"><span data-l="en">Finance</span><span data-l="nl" hidden>Finance</span></span>
+            <h2 class="article-title"><a href="/en/finance/venture-capital/"><span data-l="en">Venture Capital</span><span data-l="nl" hidden>Venture Capital</span></a></h2>
+            <p class="article-excerpt"><span data-l="en">Learn what venture capital is, how funds invest in startups, what the work involves, and how students can prepare for internships and analyst roles.</span><span data-l="nl" hidden>Ontdek venture capital in Nederland: hoe fondsen in startups investeren, de functies, het salaris en hoe je je voorbereidt.</span></p>
+            <div class="article-footer">
+              <a href="/en/finance/venture-capital/" class="article-read-more"><span data-l="en">Read more →</span><span data-l="nl" hidden>Lees meer →</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card fade-up" data-category="finance">
+          <div class="article-accent" style="background:#1c3f60;"></div>
+          <div class="article-card-body">
+            <span class="article-category" style="background:rgba(14,124,90,0.08);color:var(--emerald-deep);"><span data-l="en">Finance</span><span data-l="nl" hidden>Finance</span></span>
+            <h2 class="article-title"><a href="/en/finance/wealth-management/"><span data-l="en">Wealth Management &amp; Private Banking</span><span data-l="nl" hidden>Wealth Management &amp; Private Banking</span></a></h2>
+            <p class="article-excerpt"><span data-l="en">in the Netherlands: what the work involves, roles, the recruitment process and how to get started.</span><span data-l="nl" hidden>Ontdek wealth management en private banking in Nederland: de adviesrelatie, functies, beloning en hoe je je als student voorbereidt.</span></p>
+            <div class="article-footer">
+              <a href="/en/finance/wealth-management/" class="article-read-more"><span data-l="en">Read more →</span><span data-l="nl" hidden>Lees meer →</span></a>
+            </div>
+          </div>
+        </article>
+
         <article class="article-card fade-up" data-category="legal">
-          <div class="article-accent" style="background:var(--navy-800);"></div>
+          <div class="article-accent" style="background:#234b7e;"></div>
           <div class="article-card-body">
-            <span class="article-category" style="background:rgba(124,58,237,0.08);color:var(--emerald-deep);">Legal</span>
-            <h2 class="article-title">Your Path to a Magic Circle Traineeship</h2>
-            <p class="article-excerpt">How to position yourself for a traineeship at De Brauw, NautaDutilh or Freshfields, from your LLM results and moot court experience to your first networking event.</p>
+            <span class="article-category" style="background:rgba(20,42,69,0.08);color:var(--navy-950);"><span data-l="en">Law</span><span data-l="nl" hidden>Advocatuur</span></span>
+            <h2 class="article-title"><a href="/en/legal/administrative-law/"><span data-l="en">Administrative Law</span><span data-l="nl" hidden>Administrative Law</span></a></h2>
+            <p class="article-excerpt"><span data-l="en">Discover what administrative law, known in the Netherlands as bestuursrecht, involves: the practice areas, what lawyers do day to day, the career ladder,...</span><span data-l="nl" hidden>Bestuursrecht (administrative law) in Nederland: praktijkgebieden, wat advocaten doen, salaris, carrièreladder en vacatures bij Pels Rijcken, AKD en meer.</span></p>
             <div class="article-footer">
-              <div class="article-author">
-                <div class="author-avatar" style="background:var(--navy-800);">EK</div>
-                <div class="author-info">
-                  <span class="author-name">Emma K.</span>
-                  <span class="author-date">June 2025</span>
-                </div>
-              </div>
-              <a href="#" class="article-read-more">Read more →</a>
+              <a href="/en/legal/administrative-law/" class="article-read-more"><span data-l="en">Read more →</span><span data-l="nl" hidden>Lees meer →</span></a>
             </div>
           </div>
         </article>
 
-        <!-- Legal 2 -->
         <article class="article-card fade-up" data-category="legal">
-          <div class="article-accent" style="background:var(--navy-800);"></div>
+          <div class="article-accent" style="background:#234b7e;"></div>
           <div class="article-card-body">
-            <span class="article-category" style="background:rgba(124,58,237,0.08);color:var(--emerald-deep);">Legal</span>
-            <h2 class="article-title">Corporate Law vs Litigation: Which Practice Area Suits You?</h2>
-            <p class="article-excerpt">A practical guide to the main practice areas at Dutch top firms, M&amp;A, restructuring, disputes and regulatory, with salary ranges and typical career trajectories.</p>
+            <span class="article-category" style="background:rgba(20,42,69,0.08);color:var(--navy-950);"><span data-l="en">Law</span><span data-l="nl" hidden>Advocatuur</span></span>
+            <h2 class="article-title"><a href="/en/legal/antitrust-competition-trade/"><span data-l="en">Antitrust, Competition &amp; Trade</span><span data-l="nl" hidden>Antitrust, Competition &amp; Trade</span></a></h2>
+            <p class="article-excerpt"><span data-l="en">Discover what antitrust and competition law involves: the practice areas, what lawyers do day to day, the career ladder, and how students prepare for an...</span><span data-l="nl" hidden>Mededingingsrecht (antitrust, competition &amp; trade) in Nederland: praktijkgebieden, salaris, carrièreladder en vacatures bij Freshfields, Brinkhof en meer.</span></p>
             <div class="article-footer">
-              <div class="article-author">
-                <div class="author-avatar" style="background:#6d28d9;">DH</div>
-                <div class="author-info">
-                  <span class="author-name">Daan H.</span>
-                  <span class="author-date">April 2025</span>
-                </div>
-              </div>
-              <a href="#" class="article-read-more">Read more →</a>
+              <a href="/en/legal/antitrust-competition-trade/" class="article-read-more"><span data-l="en">Read more →</span><span data-l="nl" hidden>Lees meer →</span></a>
             </div>
           </div>
         </article>
 
-        <!-- Legal 3 -->
         <article class="article-card fade-up" data-category="legal">
-          <div class="article-accent" style="background:var(--navy-800);"></div>
+          <div class="article-accent" style="background:#234b7e;"></div>
           <div class="article-card-body">
-            <span class="article-category" style="background:rgba(124,58,237,0.08);color:var(--emerald-deep);">Legal</span>
-            <h2 class="article-title">Networking at Law Firms: A Student's Guide</h2>
-            <p class="article-excerpt">How to attend open days, firm events and drinks sessions at De Brauw and NautaDutilh, and actually build the relationships that get you remembered when applications open.</p>
+            <span class="article-category" style="background:rgba(20,42,69,0.08);color:var(--navy-950);"><span data-l="en">Law</span><span data-l="nl" hidden>Advocatuur</span></span>
+            <h2 class="article-title"><a href="/en/legal/artificial-intelligence-digital-regulation/"><span data-l="en">Artificial Intelligence &amp; Digital Regulation</span><span data-l="nl" hidden>Artificial Intelligence &amp; Digital Regulation</span></a></h2>
+            <p class="article-excerpt"><span data-l="en">Discover what artificial intelligence &amp; digital regulation means in legal practice: how lawyers advise companies on AI, privacy, data and online platforms,...</span><span data-l="nl" hidden>AI en digitale regelgeving in de advocatuur in Nederland: de AI-verordening, AVG, DSA en DMA, praktijkgebieden, salaris, carriereladder en vacatures.</span></p>
             <div class="article-footer">
-              <div class="article-author">
-                <div class="author-avatar" style="background:var(--navy-800);">ML</div>
-                <div class="author-info">
-                  <span class="author-name">Mila L.</span>
-                  <span class="author-date">February 2025</span>
-                </div>
-              </div>
-              <a href="#" class="article-read-more">Read more →</a>
+              <a href="/en/legal/artificial-intelligence-digital-regulation/" class="article-read-more"><span data-l="en">Read more →</span><span data-l="nl" hidden>Lees meer →</span></a>
             </div>
           </div>
         </article>
 
+        <article class="article-card fade-up" data-category="legal">
+          <div class="article-accent" style="background:#234b7e;"></div>
+          <div class="article-card-body">
+            <span class="article-category" style="background:rgba(20,42,69,0.08);color:var(--navy-950);"><span data-l="en">Law</span><span data-l="nl" hidden>Advocatuur</span></span>
+            <h2 class="article-title"><a href="/en/legal/banking-finance/"><span data-l="en">Banking &amp; Finance</span><span data-l="nl" hidden>Banking &amp; Finance</span></a></h2>
+            <p class="article-excerpt"><span data-l="en">Discover what banking &amp; finance, known in the Netherlands as financieringsrecht, involves: the practice areas, what lawyers do day to day, the career...</span><span data-l="nl" hidden>Financieringsrecht (banking &amp; finance) in Nederland: praktijkgebieden, salaris, carrièreladder en vacatures bij Clifford Chance, De Brauw en meer.</span></p>
+            <div class="article-footer">
+              <a href="/en/legal/banking-finance/" class="article-read-more"><span data-l="en">Read more →</span><span data-l="nl" hidden>Lees meer →</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card fade-up" data-category="legal">
+          <div class="article-accent" style="background:#234b7e;"></div>
+          <div class="article-card-body">
+            <span class="article-category" style="background:rgba(20,42,69,0.08);color:var(--navy-950);"><span data-l="en">Law</span><span data-l="nl" hidden>Advocatuur</span></span>
+            <h2 class="article-title"><a href="/en/legal/commercial/"><span data-l="en">Commercial</span><span data-l="nl" hidden>Commercial</span></a></h2>
+            <p class="article-excerpt"><span data-l="en">Discover what commercial (contract law) means in legal practice: how lawyers draft the contracts that let businesses do business with each other, what they...</span><span data-l="nl" hidden>Commercial (contractenrecht) in Nederland: praktijkgebieden, salaris, carrièreladder en vacatures bij Bird &amp; Bird, Van Doorne en meer.</span></p>
+            <div class="article-footer">
+              <a href="/en/legal/commercial/" class="article-read-more"><span data-l="en">Read more →</span><span data-l="nl" hidden>Lees meer →</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card fade-up" data-category="legal">
+          <div class="article-accent" style="background:#234b7e;"></div>
+          <div class="article-card-body">
+            <span class="article-category" style="background:rgba(20,42,69,0.08);color:var(--navy-950);"><span data-l="en">Law</span><span data-l="nl" hidden>Advocatuur</span></span>
+            <h2 class="article-title"><a href="/en/legal/corporate-ma/"><span data-l="en">Corporate/M&amp;A</span><span data-l="nl" hidden>Corporate/M&amp;A</span></a></h2>
+            <p class="article-excerpt"><span data-l="en">Discover what corporate/M&amp;A means in legal practice: how lawyers guide mergers and acquisitions, what they do day to day, the career ladder, and how...</span><span data-l="nl" hidden>Corporate/M&amp;A in de advocatuur in Nederland: praktijkgebieden, salaris, carrièreladder en vacatures bij De Brauw, Clifford Chance en meer.</span></p>
+            <div class="article-footer">
+              <a href="/en/legal/corporate-ma/" class="article-read-more"><span data-l="en">Read more →</span><span data-l="nl" hidden>Lees meer →</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card fade-up" data-category="legal">
+          <div class="article-accent" style="background:#234b7e;"></div>
+          <div class="article-card-body">
+            <span class="article-category" style="background:rgba(20,42,69,0.08);color:var(--navy-950);"><span data-l="en">Law</span><span data-l="nl" hidden>Advocatuur</span></span>
+            <h2 class="article-title"><a href="/en/legal/dispute-resolution/"><span data-l="en">Dispute Resolution</span><span data-l="nl" hidden>Dispute Resolution</span></a></h2>
+            <p class="article-excerpt"><span data-l="en">Discover what dispute resolution means in legal practice: how lawyers conduct proceedings before courts and arbitrators, what they do day to day, the career...</span><span data-l="nl" hidden>Dispute resolution in de advocatuur in Nederland: praktijkgebieden, salaris, carrièreladder en vacatures bij De Brauw, Clifford Chance en meer.</span></p>
+            <div class="article-footer">
+              <a href="/en/legal/dispute-resolution/" class="article-read-more"><span data-l="en">Read more →</span><span data-l="nl" hidden>Lees meer →</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card fade-up" data-category="legal">
+          <div class="article-accent" style="background:#234b7e;"></div>
+          <div class="article-card-body">
+            <span class="article-category" style="background:rgba(20,42,69,0.08);color:var(--navy-950);"><span data-l="en">Law</span><span data-l="nl" hidden>Advocatuur</span></span>
+            <h2 class="article-title"><a href="/en/legal/employment-labour-pensions/"><span data-l="en">Employment, Labour &amp; Pensions</span><span data-l="nl" hidden>Employment, Labour &amp; Pensions</span></a></h2>
+            <p class="article-excerpt"><span data-l="en">Discover what employment, labour &amp; pensions means in legal practice: how lawyers guide employment relationships, works councils and pension schemes, what...</span><span data-l="nl" hidden>Employment, labour &amp; pensions in de advocatuur in Nederland: praktijkgebieden, salaris, carrièreladder en vacatures bij Stibbe, Van Doorne en meer.</span></p>
+            <div class="article-footer">
+              <a href="/en/legal/employment-labour-pensions/" class="article-read-more"><span data-l="en">Read more →</span><span data-l="nl" hidden>Lees meer →</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card fade-up" data-category="legal">
+          <div class="article-accent" style="background:#234b7e;"></div>
+          <div class="article-card-body">
+            <span class="article-category" style="background:rgba(20,42,69,0.08);color:var(--navy-950);"><span data-l="en">Law</span><span data-l="nl" hidden>Advocatuur</span></span>
+            <h2 class="article-title"><a href="/en/legal/esg/"><span data-l="en">ESG</span><span data-l="nl" hidden>ESG</span></a></h2>
+            <p class="article-excerpt"><span data-l="en">Discover what ESG (Environmental, Social, Governance) means in legal practice: how lawyers guide companies through sustainability regulation, human rights...</span><span data-l="nl" hidden>ESG in de advocatuur in Nederland: praktijkgebieden, salaris, carrièreladder en de regelgeving rond duurzaamheid en corporate governance.</span></p>
+            <div class="article-footer">
+              <a href="/en/legal/esg/" class="article-read-more"><span data-l="en">Read more →</span><span data-l="nl" hidden>Lees meer →</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card fade-up" data-category="legal">
+          <div class="article-accent" style="background:#234b7e;"></div>
+          <div class="article-card-body">
+            <span class="article-category" style="background:rgba(20,42,69,0.08);color:var(--navy-950);"><span data-l="en">Law</span><span data-l="nl" hidden>Advocatuur</span></span>
+            <h2 class="article-title"><a href="/en/legal/intellectual-property/"><span data-l="en">Intellectual Property</span><span data-l="nl" hidden>Intellectual Property</span></a></h2>
+            <p class="article-excerpt"><span data-l="en">Discover what intellectual property means in legal practice: how lawyers protect and enforce patents, trademarks and copyright, what they do day to day, the...</span><span data-l="nl" hidden>Intellectual property in de advocatuur in Nederland: praktijkgebieden, salaris, carrièreladder en vacatures bij Bird &amp; Bird, DLA Piper en meer.</span></p>
+            <div class="article-footer">
+              <a href="/en/legal/intellectual-property/" class="article-read-more"><span data-l="en">Read more →</span><span data-l="nl" hidden>Lees meer →</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card fade-up" data-category="legal">
+          <div class="article-accent" style="background:#234b7e;"></div>
+          <div class="article-card-body">
+            <span class="article-category" style="background:rgba(20,42,69,0.08);color:var(--navy-950);"><span data-l="en">Law</span><span data-l="nl" hidden>Advocatuur</span></span>
+            <h2 class="article-title"><a href="/en/legal/public-procurement/"><span data-l="en">Public Procurement</span><span data-l="nl" hidden>Public Procurement</span></a></h2>
+            <p class="article-excerpt"><span data-l="en">Discover what public procurement means in legal practice: how lawyers guide public authorities and companies through tender procedures, what they do day to...</span><span data-l="nl" hidden>Public procurement in de advocatuur in Nederland: praktijkgebieden, salaris, carrièreladder en vacatures bij Pels Rijcken, Van Doorne en meer.</span></p>
+            <div class="article-footer">
+              <a href="/en/legal/public-procurement/" class="article-read-more"><span data-l="en">Read more →</span><span data-l="nl" hidden>Lees meer →</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card fade-up" data-category="legal">
+          <div class="article-accent" style="background:#234b7e;"></div>
+          <div class="article-card-body">
+            <span class="article-category" style="background:rgba(20,42,69,0.08);color:var(--navy-950);"><span data-l="en">Law</span><span data-l="nl" hidden>Advocatuur</span></span>
+            <h2 class="article-title"><a href="/en/legal/real-estate/"><span data-l="en">Real Estate</span><span data-l="nl" hidden>Real Estate</span></a></h2>
+            <p class="article-excerpt"><span data-l="en">Discover what real estate means in legal practice: how lawyers guide property transactions, leasing relationships and area development, what they do day to...</span><span data-l="nl" hidden>Real estate in de advocatuur in Nederland: praktijkgebieden, salaris, carrièreladder en vacatures bij Houthoff, CMS, Dentons en meer.</span></p>
+            <div class="article-footer">
+              <a href="/en/legal/real-estate/" class="article-read-more"><span data-l="en">Read more →</span><span data-l="nl" hidden>Lees meer →</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card fade-up" data-category="legal">
+          <div class="article-accent" style="background:#234b7e;"></div>
+          <div class="article-card-body">
+            <span class="article-category" style="background:rgba(20,42,69,0.08);color:var(--navy-950);"><span data-l="en">Law</span><span data-l="nl" hidden>Advocatuur</span></span>
+            <h2 class="article-title"><a href="/en/legal/restructuring-insolvency/"><span data-l="en">Restructuring &amp; Insolvency</span><span data-l="nl" hidden>Restructuring &amp; Insolvency</span></a></h2>
+            <p class="article-excerpt"><span data-l="en">Discover what restructuring &amp; insolvency means in legal practice: how lawyers guide financially distressed companies, insolvency practitioners and...</span><span data-l="nl" hidden>Restructuring &amp; insolvency in de advocatuur in Nederland: praktijkgebieden, salaris, carrièreladder en vacatures bij DLA Piper en meer.</span></p>
+            <div class="article-footer">
+              <a href="/en/legal/restructuring-insolvency/" class="article-read-more"><span data-l="en">Read more →</span><span data-l="nl" hidden>Lees meer →</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card fade-up" data-category="legal">
+          <div class="article-accent" style="background:#234b7e;"></div>
+          <div class="article-card-body">
+            <span class="article-category" style="background:rgba(20,42,69,0.08);color:var(--navy-950);"><span data-l="en">Law</span><span data-l="nl" hidden>Advocatuur</span></span>
+            <h2 class="article-title"><a href="/en/legal/tax/"><span data-l="en">Tax</span><span data-l="nl" hidden>Tax</span></a></h2>
+            <p class="article-excerpt"><span data-l="en">Discover what tax, known in the Netherlands as fiscaal recht or belastingrecht, means in legal practice: how tax advisers and lawyers advise companies on...</span><span data-l="nl" hidden>Tax (fiscaal recht) in de advocatuur in Nederland: praktijkgebieden, salaris, carrièreladder en vacatures bij Loyens &amp; Loeff, NautaDutilh, AKD en meer.</span></p>
+            <div class="article-footer">
+              <a href="/en/legal/tax/" class="article-read-more"><span data-l="en">Read more →</span><span data-l="nl" hidden>Lees meer →</span></a>
+            </div>
+          </div>
+        </article>
       </div>
-
-      <!-- Pagination -->
-      <nav class="pagination" aria-label="Article pages">
-        <a href="#" class="page-btn active">1</a>
-        <a href="#" class="page-btn">2</a>
-        <a href="#" class="page-btn">3</a>
-        <span class="page-ellipsis">…</span>
-        <a href="#" class="page-btn">Next →</a>
-      </nav>
     </div>
   </section>
 
@@ -755,7 +1027,10 @@
         if (match) visible++;
       });
 
-      document.getElementById('articlesCount').textContent = visible + ' article' + (visible === 1 ? '' : 's');
+      var nl = (window.CURRENT_LANG||'nl')==='nl';
+      var woord = nl ? (visible === 1 ? ' vakgebied' : ' vakgebieden')
+                     : (visible === 1 ? ' practice area' : ' practice areas');
+      document.getElementById('articlesCount').textContent = visible + woord;
     }
   </script>
 </body>
