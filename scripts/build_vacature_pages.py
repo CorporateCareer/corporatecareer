@@ -554,6 +554,137 @@ def update_home(active, first_seen):
           f"(finance {per['finance']}, consulting {per['consulting']}, legal {per['advocatuur']})")
 
 
+def closed_page(job, nav, footer, active):
+    """De pagina van een vacature die niet meer open staat.
+
+    Tot nu toe werd zo'n pagina verwijderd. Wie de link nog ergens had staan
+    kreeg dan een 404, en Google meldde er negenendertig. Een bezoeker die hier
+    komt heeft een concrete vraag, en die is beter geholpen met de mededeling
+    dat het dicht is plus een lijst met wat er bij dat kantoor wel open staat.
+
+    De pagina staat op noindex: hij is er voor wie de link volgt, niet om
+    gevonden te worden. Follow blijft aan, zodat de links naar de openstaande
+    vacatures wel meetellen. Er staat ook geen JobPosting meer in: een gesloten
+    vacature is geen aanbod, en dat als zodanig blijven aanbieden zou onjuist
+    zijn.
+    """
+    slug = job["slug"]
+    url = f"{SITE}/vacatures/{slug}.html"
+    d = job.get("detail") or {}
+    sector_en = (d.get("facts", {}).get("en", {}) or {}).get("Sector", "")
+    sector_nl = (d.get("facts", {}).get("nl", {}) or {}).get("Sector", "")
+
+    eigen = [j for j in active if j["company"] == job["company"]][:5]
+    rest = [j for j in active if j["sector"] == job["sector"] and j not in eigen][:5 - len(eigen)]
+    verder = eigen + (rest if len(eigen) < 5 else [])
+
+    if verder:
+        items = "\n".join(
+            f'          <li>{CHECK_SVG}<a href="{esc(j["slug"])}.html">{esc(j["title"])}</a>'
+            f' <span style="color:var(--gray-500)">{bi("at " + j["company"], "bij " + j["company"])}</span></li>'
+            for j in verder)
+        kop = (bi(f"Currently open at {job['company']}", f"Nu open bij {job['company']}")
+               if eigen else bi(f"Currently open in {sector_en.lower()}", f"Nu open in {sector_nl.lower()}"))
+        lijst = f"""
+        <section class="vac-block">
+          <h2>{kop}</h2>
+          <ul class="vac-list">
+{items}
+          </ul>
+        </section>"""
+    else:
+        lijst = ""
+
+    gesloten = job.get("closedOn")
+    wanneer = (bi(f"This vacancy closed on {gesloten}.", f"Deze vacature is gesloten op {gesloten}.")
+               if gesloten else bi("This vacancy is no longer open.", "Deze vacature staat niet meer open."))
+
+    if job.get("logo"):
+        logo_class, logo_style = "vac-logo vac-logo-img", ""
+        logo_inner = f'<img src="{esc(job["logo"])}" alt="{esc(job["company"])} logo">'
+    else:
+        logo_class = "vac-logo"
+        logo_style = f' style="background:{esc(job.get("color") or "#0f2540")}"'
+        logo_inner = esc(job.get("initials") or "")
+
+    breadcrumb = {
+        "@context": "https://schema.org", "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": SITE + "/"},
+            {"@type": "ListItem", "position": 2, "name": "Jobs", "item": SITE + "/jobs.html"},
+            {"@type": "ListItem", "position": 3, "name": job["title"], "item": url},
+        ],
+    }
+    page_title = f"{job['title']} bij {job['company']}: gesloten | CorporateCareer"
+    meta_desc = (f"De vacature {job['title']} bij {job['company']} in {job['location']} staat niet meer open. "
+                 f"Bekijk wat er nu wel open staat bij {job['company']}.")
+
+    return f"""<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <script>var d=document.documentElement;d.classList.add('js');addEventListener('DOMContentLoaded',function(){{window.__ccFade||d.classList.remove('js')}});window.__ccDefaultLang='nl';</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{esc(meta_desc)}">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="{url}">
+  <script type="application/ld+json">
+{json.dumps(breadcrumb, ensure_ascii=False, indent=2)}
+  </script>
+  <title>{esc(page_title)}</title>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/vacature.css">
+</head>
+<body>
+
+{nav}
+
+  <div class="vac-wrap">
+    <nav class="vac-breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">Home</a><span>/</span><a href="../jobs.html">{bi("Jobs", "Vacatures")}</a><span>/</span>{esc(job['title'])}
+    </nav>
+
+    <header class="vac-hero">
+      <div class="{logo_class}"{logo_style}>{logo_inner}</div>
+      <div class="vac-hero-main">
+        <p class="vac-company">{esc(job['company'])}</p>
+        <h1 class="vac-title">{esc(job['title'])}</h1>
+        <div class="vac-badges">
+          <span class="vac-badge vac-badge--closed">{bi("Closed", "Gesloten")}</span>
+          <span class="vac-badge vac-badge--loc">{esc(job['location'])}</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="vac-layout">
+      <main class="vac-main">
+        <section class="vac-block">
+          <p>{wanneer} {bi("We check every vacancy daily and mark it as closed as soon as the employer takes it offline.", "We controleren elke vacature dagelijks en zetten hem op gesloten zodra de werkgever hem offline haalt.")}</p>
+        </section>
+{lijst}
+        <section class="vac-block">
+          <h2>{bi("Keep looking", "Verder zoeken")}</h2>
+          <ul class="vac-list">
+            <li>{CHECK_SVG}<a href="../jobs.html">{bi("All current vacancies", "Alle actuele vacatures")}</a></li>
+            <li>{CHECK_SVG}<a href="../{'legal' if job['sector'] == 'advocatuur' else job['sector']}.html">{bi("Career paths in " + sector_en.lower(), "Carrierepaden in " + sector_nl.lower())}</a></li>
+          </ul>
+        </section>
+      </main>
+    </div>
+  </div>
+
+{footer}
+
+  <script src="../js/i18n.min.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>
+"""
+
+
 def main():
     jobs = read_island()
     active = [j for j in jobs if j.get("active", True) is not False and j.get("slug") and j.get("detail")]
@@ -589,6 +720,23 @@ def main():
         en_title = f"{j['title']} at {j['company']} in {j['location']} | CorporateCareer"
         en_desc = (f"{j['title']} at {j['company']} in {j['location']}. "
                    "View the role and apply via the official job page.")
+        open(os.path.join(EN_VAC_DIR, fn), "w", encoding="utf-8").write(
+            gen_en.to_en(raw, site_path, en_title, en_desc, strip=True))
+
+    # Gesloten vacatures krijgen een pagina die zegt dat ze dicht zijn en die
+    # doorverwijst, in plaats van een 404. Alleen bestanden waarvan de vacature
+    # helemaal niet meer in jobs.html staat worden nog weggegooid.
+    gesloten = [j for j in jobs if j.get("active") is False and j.get("slug") and j.get("detail")]
+    for j in gesloten:
+        fn = f"{j['slug']}.html"
+        wanted.add(fn)
+        site_path = f"/vacatures/{fn}"
+        raw = closed_page(j, nav, footer, active)
+        nl_html = gen_en.add_hreflang_nl(gen_en.bake(raw, "nl", strip=True), site_path)
+        open(os.path.join(VAC_DIR, fn), "w", encoding="utf-8").write(nl_html)
+        en_title = f"{j['title']} at {j['company']}: closed | CorporateCareer"
+        en_desc = (f"The {j['title']} vacancy at {j['company']} in {j['location']} is no longer open. "
+                   f"See what is currently open at {j['company']}.")
         open(os.path.join(EN_VAC_DIR, fn), "w", encoding="utf-8").write(
             gen_en.to_en(raw, site_path, en_title, en_desc, strip=True))
 
