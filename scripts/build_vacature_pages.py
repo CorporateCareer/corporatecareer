@@ -527,14 +527,20 @@ def update_home(active, first_seen):
             f'{SECTOR_LABEL.get(j.get("sector"), j.get("sector", ""))}</span></div></div>'
             f'<div class="compact-right"><span class="compact-location">{PIN_SVG}{esc(j.get("location", ""))}</span>'
             f'<span class="job-link">{bi(VIEW_EN, VIEW_NL)}</span></div></a>')
-    # De voorpagina is Nederlands, dus het fragment moet in het Nederlands
-    # gebakken worden voordat het erin gaat. bi() levert standaard Engels
-    # zichtbaar en Nederlands verborgen; zonder deze stap stond er View in
-    # plaats van Bekijken. Het bakken hier en niet in build_en, want de
-    # wekelijkse workflow draait dit script wel en build_en niet.
-    blok = gen_en.bake("\n".join(cards), "nl")
+    # Het fragment moet per taal ingebakken worden voordat het erin gaat.
+    # bi() levert standaard Engels zichtbaar en Nederlands verborgen; zonder
+    # deze stap stond er View in plaats van Bekijken. Het bakken hier en niet
+    # in build_en, want de wekelijkse workflow draait dit script wel en
+    # build_en niet.
+    #
+    # strip=True is wezenlijk: zonder dat kwamen er weer Engelse blokken in de
+    # Nederlandse voorpagina, en dan bouwde build_en.py de Engelse voorpagina
+    # opnieuw uit een al gestripte bron. Die verloor daardoor haar kop.
+    def _blok(lang):
+        return gen_en.bake("\n".join(cards), lang, strip=True)
+
     html = re.sub(r'(<!-- NIEUWSTE-VACATURES:START -->)[\s\S]*?(<!-- NIEUWSTE-VACATURES:END -->)',
-                  lambda m: m.group(1) + "\n" + blok + "\n" + m.group(2), html, count=1)
+                  lambda m: m.group(1) + "\n" + _blok("nl") + "\n" + m.group(2), html, count=1)
 
     # aantallen: totaal en per sector, zodat de cijfers altijd kloppen
     per = {"finance": 0, "consulting": 0, "advocatuur": 0}
@@ -550,6 +556,20 @@ def update_home(active, first_seen):
     for key, val in counts.items():
         html = re.sub(r'(data-count="' + key + r'"[^>]*>)[^<]*(<)', lambda m, v=val: m.group(1) + v + m.group(2), html)
     open(HOME, "w", encoding="utf-8").write(html)
+
+    # De Engelse voorpagina draagt sinds de splitsing haar eigen kaarten, dus
+    # die moet hier mee bijgewerkt worden; build_en.py raakt haar niet meer aan.
+    en_home = os.path.join(BASE, "en", "index.html")
+    if os.path.exists(en_home):
+        eh = open(en_home, encoding="utf-8").read()
+        eh = re.sub(r'(<!-- NIEUWSTE-VACATURES:START -->)[\s\S]*?(<!-- NIEUWSTE-VACATURES:END -->)',
+                    lambda m: m.group(1) + "\n" + _blok("en").replace('href="vacatures/', 'href="/en/vacatures/')
+                    + "\n" + m.group(2), eh, count=1)
+        for key, val in counts.items():
+            eh = re.sub(r'(data-count="' + key + r'"[^>]*>)[^<]*(<)',
+                        lambda m, v=val: m.group(1) + v.replace(" vacatures", " vacancies") + m.group(2), eh)
+        open(en_home, "w", encoding="utf-8").write(eh)
+
     print(f"voorpagina bijgewerkt: 4 vacaturekaarten, {len(active)} vacatures "
           f"(finance {per['finance']}, consulting {per['consulting']}, legal {per['advocatuur']})")
 
