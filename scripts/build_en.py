@@ -88,26 +88,58 @@ def update_sitemap(rels):
         xml=xml.replace("</urlset>",marked+"\n\n</urlset>")
     open(sm,"w",encoding="utf-8").write(xml)
 
+def is_split(html):
+    """Of deze pagina al eentalig is.
+
+    Een pagina die nog beide talen draagt bevat data-l-blokken voor het Engels.
+    Zijn die er niet, dan is de pagina al gesplitst en is de Engelse tekst
+    verhuisd naar het bestand onder /en/. Dan mag hier niets meer overheen
+    geschreven worden, want dan zou het Engels verloren gaan.
+
+    Let op: een pagina die zijn Engels uit de woordenlijst haalt via data-i18n
+    heeft ook geen data-l-blokken, maar die kan wel opnieuw gebouwd worden. Het
+    onderscheid is dat de Engelse versie dan uit de woordenlijst komt en niet
+    uit de pagina. Zulke pagina's worden herkend doordat er geen enkel
+    data-l-blok in staat, ook niet voor het Nederlands."""
+    return 'data-l="en"' not in html and 'data-l="nl"' in html
+
+
 def main():
-    rels=page_list(); n=0
+    rels=page_list(); n=gesplitst=overgeslagen=0
     for rel in rels:
         src=os.path.join(BASE,rel)
         html=open(src,encoding="utf-8").read()
         site_path="/"+rel
+        out=os.path.join(BASE,"en",rel); os.makedirs(os.path.dirname(out),exist_ok=True)
+
+        if is_split(html):
+            # Al eentalig. De Engelse tekst staat alleen nog onder /en/, dus die
+            # pagina blijft zoals ze is; hier wordt alleen de Nederlandse
+            # hreflang nog bijgehouden.
+            new_nl=gen_en.add_hreflang_nl(html, site_path)
+            if new_nl!=html: open(src,"w",encoding="utf-8").write(new_nl)
+            overgeslagen+=1
+            continue
+
         if rel in CURATED:
             title,desc=CURATED[rel]
         else:
             h1=derive_title(html); title=f"{h1} | CorporateCareer"
             desc=derive_desc(html) or f"{h1} in the Netherlands: what the work involves, roles, the recruitment process and how to get started."
-        en_html=gen_en.to_en(html, site_path, title, desc)
-        out=os.path.join(BASE,"en",rel); os.makedirs(os.path.dirname(out),exist_ok=True)
+        # Beide talen uit dezelfde bron, en elk zonder de andere taal erin. De
+        # Nederlandse en de Engelse pagina waren zo voor 92 tot 98 procent
+        # identiek, omdat elke pagina beide talen droeg met de ene verborgen.
+        heeft_paren='data-l="en"' in html
+        en_html=gen_en.to_en(html, site_path, title, desc, strip=heeft_paren)
         open(out,"w",encoding="utf-8").write(en_html)
-        new_nl=gen_en.add_hreflang_nl(gen_en.bake(html, "nl"), site_path)
+        new_nl=gen_en.add_hreflang_nl(gen_en.bake(html, "nl", strip=heeft_paren), site_path)
         if new_nl!=html: open(src,"w",encoding="utf-8").write(new_nl)
         n+=1
+        if heeft_paren: gesplitst+=1
     update_sitemap(rels)
     gen_en.write_runtime()
-    print(f"build_en: {n} content/bedrijf-paginas -> /en/ + hreflang op NL + sitemap; mini-runtime geschreven")
+    print(f"build_en: {n} pagina's naar /en/ ({gesplitst} gesplitst in een taal), "
+          f"{overgeslagen} al eentalig; hreflang op NL + sitemap; mini-runtime geschreven")
 
 if __name__=="__main__":
     main()

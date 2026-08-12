@@ -78,10 +78,13 @@ def job_card(j, prefix="/"):
         f'</div></article>')
 
 
-def vac_card(j):
-    """De compacte kaart van de bedrijfs- en sectorpagina's."""
+def vac_card(j, prefix="/"):
+    """De compacte kaart van de bedrijfs- en sectorpagina's.
+
+    prefix is /en/ op de Engelse pagina's: die dragen hun eigen kaarten sinds de
+    twee taalversies eentalig zijn geworden."""
     plaats = f' · {esc(j["location"])}' if j.get("location") else ""
-    return (f'<a class="pe-vac-card" href="/vacatures/{esc(j["slug"])}.html">'
+    return (f'<a class="pe-vac-card" href="{prefix}vacatures/{esc(j["slug"])}.html">'
             f'<span class="pe-vac-t">{esc(j["title"])}</span>'
             f'<span class="pe-vac-c">{esc(j["company"])}{plaats}</span></a>')
 
@@ -95,7 +98,7 @@ def inject(html, block, anchor_re, lang="nl"):
     m = anchor_re.search(html)
     if not m:
         return html, False
-    payload = START + gen_en.bake(block, lang) + END
+    payload = START + gen_en.bake(block, lang, strip=True) + END
     inner = m.group(2)
     cleaned = re.sub(re.escape(START) + r"[\s\S]*?" + re.escape(END), "", inner)
     return html[:m.start()] + m.group(1) + payload + cleaned + m.group(3) + html[m.end():], True
@@ -110,13 +113,21 @@ def do_jobs(jobs):
     # niet uitvoert; de JavaScript vervangt het bij het laden door de volledige
     # kaarten. De volledige vorm zou de pagina 200 kB zwaarder maken zonder dat
     # iemand hem ooit te zien krijgt.
-    p = JOBS
-    html = open(p, encoding="utf-8").read()
+    #
+    # Beide taalversies worden hier gevuld. Sinds de pagina's eentalig zijn,
+    # bouwt build_en.py de Engelse niet meer uit de Nederlandse; die zou anders
+    # met verouderde links blijven staan.
     block = "".join(hub_card(j, cls="job-card") for j in jobs)
-    out, ok = inject(html, block, JOBSLIST, "nl")
-    if ok:
-        open(p, "w", encoding="utf-8").write(out)
-    return ok, len(jobs)
+    n = 0
+    for pad, lang in ((JOBS, "nl"), (os.path.join(BASE, "en", "jobs.html"), "en")):
+        if not os.path.exists(pad):
+            continue
+        html = open(pad, encoding="utf-8").read()
+        out, ok = inject(html, block, JOBSLIST, lang)
+        if ok:
+            open(pad, "w", encoding="utf-8").write(out)
+            n += 1
+    return n, len(jobs)
 
 
 # ── bedrijfspagina's ─────────────────────────────────────────────────────────
@@ -140,25 +151,34 @@ def do_bedrijven(jobs):
         m = re.search(r'<h1[^>]*>([^<]+)</h1>', html)
         naam = m.group(1).strip() if m else d
         mine = per.get(norm(naam), [])
-        block = "".join(vac_card(j) for j in mine)
-        out, ok = inject(html, block, BVAC, "nl")
-        if not ok:
-            continue
-        # De JavaScript vult dezelfde bak; die moet hem eerst leegmaken,
-        # anders staat alles er straks twee keer in.
-        out = out.replace("var w=document.getElementById('bVac'),msg=document.getElementById('bVacMsg');",
-                          "var w=document.getElementById('bVac'),msg=document.getElementById('bVacMsg');w.innerHTML='';")
-        if mine:
-            # De bak en de mededeling staan op de JavaScript te wachten. Met
-            # kaarten in de HTML moet de bak meteen zichtbaar zijn.
-            out = out.replace('<div class="pe-vac-grid" id="bVac"', '<div class="pe-vac-grid" id="bVac" style="display:grid"', 1)
-            out = re.sub(r'(<p class="section-text" id="bVacMsg")', r'\1 style="display:none"', out, count=1)
-        else:
-            out = out.replace('<div class="pe-vac-grid" id="bVac" style="display:grid"', '<div class="pe-vac-grid" id="bVac"', 1)
-            out = out.replace('<p class="section-text" id="bVacMsg" style="display:none"', '<p class="section-text" id="bVacMsg"', 1)
-        open(p, "w", encoding="utf-8").write(out)
-        done += 1
-        hits += len(mine)
+        paren = [(p, "nl", "/")]
+        pe = os.path.join(BASE, "en", "bedrijven", d, "index.html")
+        if os.path.exists(pe):
+            paren.append((pe, "en", "/en/"))
+        geschreven = False
+        for pad, lang, prefix in paren:
+            html = open(pad, encoding="utf-8").read()
+            block = "".join(vac_card(j, prefix) for j in mine)
+            out, ok = inject(html, block, BVAC, lang)
+            if not ok:
+                continue
+            geschreven = True
+            # De JavaScript vult dezelfde bak; die moet hem eerst leegmaken,
+            # anders staat alles er straks twee keer in.
+            out = out.replace("var w=document.getElementById('bVac'),msg=document.getElementById('bVacMsg');",
+                              "var w=document.getElementById('bVac'),msg=document.getElementById('bVacMsg');w.innerHTML='';")
+            if mine:
+                # De bak en de mededeling staan op de JavaScript te wachten. Met
+                # kaarten in de HTML moet de bak meteen zichtbaar zijn.
+                out = out.replace('<div class="pe-vac-grid" id="bVac"', '<div class="pe-vac-grid" id="bVac" style="display:grid"', 1)
+                out = re.sub(r'(<p class="section-text" id="bVacMsg")', r'\1 style="display:none"', out, count=1)
+            else:
+                out = out.replace('<div class="pe-vac-grid" id="bVac" style="display:grid"', '<div class="pe-vac-grid" id="bVac"', 1)
+                out = out.replace('<p class="section-text" id="bVacMsg" style="display:none"', '<p class="section-text" id="bVacMsg"', 1)
+            open(pad, "w", encoding="utf-8").write(out)
+        if geschreven:
+            done += 1
+            hits += len(mine)
     return done, hits
 
 
@@ -212,25 +232,29 @@ def do_sectors(jobs):
         per.setdefault(j["sector"], []).append(j)
     out = []
     for sector, fname in SECTOR_PAGE.items():
-        p = os.path.join(BASE, fname)
-        if not os.path.exists(p):
-            continue
-        html = open(p, encoding="utf-8").read()
         mine = per.get(sector, [])[:12]
-        cards = gen_en.bake("".join(hub_card(j) for j in mine), "nl")
-        m = GRID.search(html)
-        if m:
-            html = html[:m.start()] + m.group(1) + START + cards + END + m.group(3) + html[m.end():]
-        else:
-            blok = gen_en.bake(sector_section(sector, cards), "nl")
-            # Voor de afsluitende oproep zetten, zodat de vacatures nog binnen
-            # de inhoud staan en niet onder de knoppenbalk.
-            mm = re.search(r'\n\s*<section class="page-cta"', html) or re.search(r'\n\s*</main>', html)
-            if not mm:
+        geschreven = 0
+        for pad, lang in ((os.path.join(BASE, fname), "nl"),
+                          (os.path.join(BASE, "en", fname), "en")):
+            if not os.path.exists(pad):
                 continue
-            html = html[:mm.start()] + "\n" + blok + html[mm.start():]
-        open(p, "w", encoding="utf-8").write(html)
-        out.append((fname, len(mine)))
+            html = open(pad, encoding="utf-8").read()
+            cards = gen_en.bake("".join(hub_card(j) for j in mine), lang, strip=True)
+            m = GRID.search(html)
+            if m:
+                html = html[:m.start()] + m.group(1) + START + cards + END + m.group(3) + html[m.end():]
+            else:
+                blok = gen_en.bake(sector_section(sector, cards), lang, strip=True)
+                # Voor de afsluitende oproep zetten, zodat de vacatures nog binnen
+                # de inhoud staan en niet onder de knoppenbalk.
+                mm = re.search(r'\n\s*<section class="page-cta"', html) or re.search(r'\n\s*</main>', html)
+                if not mm:
+                    continue
+                html = html[:mm.start()] + "\n" + blok + html[mm.start():]
+            open(pad, "w", encoding="utf-8").write(html)
+            geschreven += 1
+        if geschreven:
+            out.append((fname, len(mine)))
     return out
 
 
