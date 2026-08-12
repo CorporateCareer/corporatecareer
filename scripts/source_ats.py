@@ -30,13 +30,21 @@ JOBS = A.JOBS
 # alleen de vacaturebank van een buitenlandse zusterorganisatie te vinden was,
 # staan hier bewust niet in.
 REGISTRY = {
+    "AKD": ("recruitee", ("akd",)),
     "AlixPartners": ("greenhouse", ("alixpartners",)),
     "Barclays": ("workday", ("barclays", "wd3", "External_Career_Site_Barclays")),
     "BearingPoint": ("greenhouse", ("bearingpoint",)),
     "Berenschot": ("recruitee", ("berenschot",)),
+    "CMS": ("recruitee", ("cms",)),
+    "DAS Nederlandse Rechtsbijstand": ("recruitee", ("das",)),
+    "HVG Law": ("recruitee", ("hvglaw",)),
     "Jane Street": ("greenhouse", ("janestreet",)),
+    "Jump Trading": ("greenhouse", ("jumptrading",)),
     "NWB Bank": ("recruitee", ("nwbbank",)),
+    "Nysingh": ("recruitee", ("nysingh",)),
+    "Pels Rijcken": ("recruitee", ("pelsrijcken",)),
     "Protiviti": ("recruitee", ("protiviti",)),
+    "Winston Taylor": ("recruitee", ("winstontaylor",)),
     "Xebia": ("recruitee", ("xebiacareers",)),
     "bunq": ("recruitee", ("bunq",)),
 }
@@ -87,6 +95,7 @@ SUPPORT = ("recruiter", "recruitment", "secretaresse", "secretaris", "secretary"
            # Android Developer alsnog binnen, terwijl software engineer en
            # cloud engineer wel werden geweerd. Dat is dezelfde soort rol.
            "site reliability", "infrastructure engineer", "platform engineer",
+           "support engineer", "enterprise engineer",
            "engineering manager", "android developer", "ios developer",
            "frontend developer", "backend developer", "full stack",
            "devops", "servicedesk", "helpdesk")
