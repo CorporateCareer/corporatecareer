@@ -19,6 +19,20 @@ import json, os, re, sys, urllib.error, urllib.request
 
 JOBS_HTML = "jobs.html"
 STATE = "scripts/vacancy_state.json"
+
+def _note_closed(job, still_active):
+    """Legt vast wanneer een vacature dichtging.
+
+    De pagina van een gesloten vacature blijft staan en vermeldt die datum.
+    Zonder dit zou daar niets kunnen staan, en een datum verzinnen is geen
+    optie. Vacatures die eerder al sloten hebben hem dus niet; die pagina
+    meldt alleen dat de vacature niet meer open staat."""
+    from datetime import date
+    if still_active:
+        job.pop("closedOn", None)
+    else:
+        job.setdefault("closedOn", date.today().isoformat())
+
 FAIL_LIMIT = 2
 UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
 
@@ -99,6 +113,7 @@ def main():
             should_be_active = fails < FAIL_LIMIT
             if job.get("active", True) != should_be_active:
                 job["active"] = should_be_active; changed = True
+                _note_closed(job, should_be_active)
                 print(f"[{job['company']}] {job['title']}: actief -> {should_be_active} (fails={fails})")
             else:
                 print(f"[{job['company']}] {job['title']}: ok={ok} fails={fails}")
@@ -123,6 +138,7 @@ def main():
         if job.get("active", True) != should_be_active:
             job["active"] = should_be_active
             changed = True
+            _note_closed(job, should_be_active)
             print(f"[{job['company']}] {job['title']}: actief -> {should_be_active} (fails={fails})")
         else:
             print(f"[{job['company']}] {job['title']}: ok={ok} fails={fails}")

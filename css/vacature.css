@@ -117,3 +117,13 @@
   margin: 12px 0 0;
 }
 .vac-quote-src a { color: var(--navy-700); font-weight: 600; }
+
+/* ── GESLOTEN VACATURE ── */
+/* De pagina blijft bestaan zodat een oude link niet doodloopt. De badge moet
+   meteen duidelijk maken dat er niets meer te solliciteren valt, dus grijs en
+   niet in een accentkleur. */
+.vac-badge--closed {
+  background: var(--gray-100);
+  color: var(--gray-600);
+  border: 1px solid var(--gray-200);
+}
