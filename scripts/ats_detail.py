@@ -292,15 +292,52 @@ def from_workday(tenant, dc, site, path, url):
     return {"raw": tekst, "lang": detect_lang(" ".join(paragraphs(tekst))), "facts": feiten}
 
 
-def for_job(url):
+def _from_registry(company, url):
+    """Het systeem en de code uit het register van source_ats.
+
+    Recruitee laat een kantoor een eigen domein gebruiken. AKD linkt naar
+    careers.akd.eu en HVG Law naar werkenbijhvglaw.nl, en daar valt niet uit af
+    te leiden welke vacaturebank eronder zit. Het register weet dat wel, want
+    daar is de code per kantoor opgezocht.
+
+    Bij Recruitee is de bedrijfscode genoeg: de juiste vacature wordt gezocht op
+    haar adres. Greenhouse heeft daarnaast het vacaturenummer nodig, en dat
+    staat als gh_jid in de URL."""
+    if not company:
+        return None
+    try:
+        import source_ats
+    except Exception:
+        return None
+    doel = re.sub(r"[^a-z0-9]", "", str(company).lower())
+    for naam, (kind, code) in source_ats.REGISTRY.items():
+        if re.sub(r"[^a-z0-9]", "", naam.lower()) != doel:
+            continue
+        if kind == "recruitee":
+            return kind, code
+        if kind == "greenhouse":
+            m = re.search(r"gh_jid=(\d+)", url or "")
+            return (kind, (code[0], m.group(1))) if m else None
+        # Workday en SmartRecruiters dragen hun eigen adres, dus die zijn hier
+        # al uit de URL herkend. Komen ze hier toch, dan is er geen nummer.
+        return None
+    return None
+
+
+def for_job(url, company=None):
     """Kerngegevens en citaat voor een vacature, of None."""
     if not url:
         return None
+    gevonden = None
     for kind, patroon in PLATFORMS:
         m = re.search(patroon, url)
-        if not m:
-            continue
-        g = m.groups()
+        if m:
+            gevonden = (kind, m.groups())
+            break
+    if gevonden is None:
+        gevonden = _from_registry(company, url)
+    if gevonden is not None:
+        kind, g = gevonden
         try:
             if kind == "recruitee":
                 return from_recruitee(g[0], url)
@@ -331,7 +368,7 @@ def enrich(jobs, log=None):
     for kantoor, lijst in sorted(per_kantoor.items()):
         ruw = {}
         for j in lijst:
-            r = for_job(j.get("url"))
+            r = for_job(j.get("url"), j.get("company"))
             if r:
                 ruw[j["id"]] = r
         if not ruw:
