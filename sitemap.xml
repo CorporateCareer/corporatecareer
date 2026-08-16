@@ -1015,16 +1015,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/vacatures/bcg-associate-netherlands.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/bcg-senior-associate-netherlands.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/vacatures/bcg-platinion-senior-ai-tech-consultant-private-equity.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -2040,11 +2030,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/vacatures/twynstra-gudde-adviseur-project-en-programmabeheersing.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/vacatures/twynstra-gudde-adviseur-digitale-transitie-in-het-waterdomein.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -2966,11 +2951,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/vacatures/twynstra-gudde-senior-adviseur-huisvesting.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/twynstra-gudde-adviseur-bouwen-aan-projecten-en-programmas.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -5109,16 +5089,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/en/vacatures/bcg-associate-netherlands.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/bcg-senior-associate-netherlands.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/en/vacatures/bcg-platinion-senior-ai-tech-consultant-private-equity.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -6134,11 +6104,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/en/vacatures/twynstra-gudde-adviseur-project-en-programmabeheersing.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/en/vacatures/twynstra-gudde-adviseur-digitale-transitie-in-het-waterdomein.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -7060,11 +7025,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/en/vacatures/twynstra-gudde-senior-adviseur-huisvesting.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/twynstra-gudde-adviseur-bouwen-aan-projecten-en-programmas.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
