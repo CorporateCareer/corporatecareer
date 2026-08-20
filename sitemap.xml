@@ -825,11 +825,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/vacatures/pwc-senior-associate-corporate-tax-financial-services.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/vacatures/pwc-manager-transfer-pricing-private-business.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -2076,11 +2071,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/vacatures/pwc-netherlands-senior-business-consultant-identity-access-management.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/pwc-netherlands-identity-access-management-engineer.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -4784,11 +4774,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/en/vacatures/pwc-senior-associate-corporate-tax-financial-services.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/en/vacatures/pwc-manager-transfer-pricing-private-business.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -6035,11 +6020,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/en/vacatures/pwc-netherlands-senior-business-consultant-identity-access-management.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/pwc-netherlands-identity-access-management-engineer.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
