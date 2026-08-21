@@ -1815,6 +1815,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://corporatecareer.nl/vacatures/ig-h-junior-ai-consultant.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://corporatecareer.nl/vacatures/ig-h-cloud-consultant-azure.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -2246,11 +2251,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/vacatures/twynstra-gudde-adviseur-financiele-gebiedsontwikkeling-planeconoom.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/twynstra-gudde-social-designer-adviseur-water-en-landelijk-gebied.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2720,11 +2720,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/vacatures/hogan-lovells-werkstudent-banking-finance.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/vacatures/ig-h-manager-data-ai.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -2821,11 +2816,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/vacatures/oliver-wyman-oliver-wyman-recruiting-intern-30-40-hours-per-week-up-to-12-months-amsterdam.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/oliver-wyman-stage-operations-m-v-x.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -5764,6 +5754,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://corporatecareer.nl/en/vacatures/ig-h-junior-ai-consultant.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://corporatecareer.nl/en/vacatures/ig-h-cloud-consultant-azure.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -6195,11 +6190,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/en/vacatures/twynstra-gudde-adviseur-financiele-gebiedsontwikkeling-planeconoom.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/twynstra-gudde-social-designer-adviseur-water-en-landelijk-gebied.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -6669,11 +6659,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/en/vacatures/hogan-lovells-werkstudent-banking-finance.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/en/vacatures/ig-h-manager-data-ai.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -6770,11 +6755,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/en/vacatures/oliver-wyman-oliver-wyman-recruiting-intern-30-40-hours-per-week-up-to-12-months-amsterdam.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/oliver-wyman-stage-operations-m-v-x.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
