@@ -3295,11 +3295,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/vacatures/bunq-operational-risk-intern.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/vacatures/berenschot-traineeship-digital-data-generatieve-ai.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -7350,11 +7345,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/en/vacatures/xebia-business-development-representative-data-ai.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/bunq-operational-risk-intern.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
