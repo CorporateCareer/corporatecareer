@@ -253,6 +253,7 @@ def build_page(job, nav, footer, first_seen, active):
     d = job["detail"]
     slug = job["slug"]
     url = f"{SITE}/vacatures/{slug}.html"
+    en_url = f"{SITE}/en/vacatures/{slug}.html"
     posted = first_seen.get(str(job["id"]), date.today().isoformat())
     valid = (date.fromisoformat(posted) + timedelta(days=90)).isoformat()
 
@@ -305,7 +306,7 @@ def build_page(job, nav, footer, first_seen, active):
         "jobLocation": {"@type": "Place", "address": job_address},
         "identifier": {"@type": "PropertyValue", "name": job["company"],
                        "value": str(job.get("checkText") or job["id"])},
-        "directApply": False, "url": url, "inLanguage": "en",
+        "directApply": False, "url": en_url, "inLanguage": "en",
     }
     bs = job.get("baseSalary")
     if bs:
@@ -317,16 +318,26 @@ def build_page(job, nav, footer, first_seen, active):
                 "unitText": bs["period"],
             },
         }
-    jobposting_nl = dict(jobposting, description=_desc("nl"), inLanguage="nl")
+    jobposting_nl = dict(jobposting, description=_desc("nl"), inLanguage="nl", url=url)
 
-    breadcrumb = {
-        "@context": "https://schema.org", "@type": "BreadcrumbList",
-        "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": "Home", "item": SITE + "/"},
-            {"@type": "ListItem", "position": 2, "name": "Jobs", "item": SITE + "/jobs.html"},
-            {"@type": "ListItem", "position": 3, "name": job["title"], "item": url},
-        ],
-    }
+    # De kruimelpaden per taal. Ze wezen op de Engelse pagina allemaal naar de
+    # Nederlandse URL, net als het url-veld van de JobPosting. Google zag zo
+    # twee URLs die allebei dezelfde vacature op de Nederlandse URL claimden.
+    def _breadcrumb(lang):
+        pad = url if lang == "nl" else en_url
+        return {
+            "@context": "https://schema.org", "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Home",
+                 "item": SITE + ("/" if lang == "nl" else "/en/")},
+                {"@type": "ListItem", "position": 2,
+                 "name": "Vacatures" if lang == "nl" else "Jobs",
+                 "item": SITE + ("/jobs.html" if lang == "nl" else "/en/jobs.html")},
+                {"@type": "ListItem", "position": 3, "name": job["title"], "item": pad},
+            ],
+        }
+    breadcrumb = _breadcrumb("en")
+    breadcrumb_nl = _breadcrumb("nl")
     meta_desc = f"{job['title']} bij {job['company']} in {job['location']}. Bekijk de vacature en solliciteer via de officiele vacaturepagina."
     page_title = f"{job['title']} bij {job['company']} in {job['location']} | CorporateCareer"
     sector_en = d["facts"]["en"]["Sector"]; sector_nl = d["facts"]["nl"]["Sector"]
@@ -353,8 +364,11 @@ def build_page(job, nav, footer, first_seen, active):
   <script type="application/ld+json" data-l="nl">
 {json.dumps(jobposting_nl, ensure_ascii=False, indent=2)}
   </script>
-  <script type="application/ld+json">
+  <script type="application/ld+json" data-l="en">
 {json.dumps(breadcrumb, ensure_ascii=False, indent=2)}
+  </script>
+  <script type="application/ld+json" data-l="nl">
+{json.dumps(breadcrumb_nl, ensure_ascii=False, indent=2)}
   </script>
   <title>{esc(page_title)}</title>
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
@@ -627,14 +641,21 @@ def closed_page(job, nav, footer, active):
         logo_style = f' style="background:{esc(job.get("color") or "#0f2540")}"'
         logo_inner = esc(job.get("initials") or "")
 
-    breadcrumb = {
-        "@context": "https://schema.org", "@type": "BreadcrumbList",
-        "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": "Home", "item": SITE + "/"},
-            {"@type": "ListItem", "position": 2, "name": "Jobs", "item": SITE + "/jobs.html"},
-            {"@type": "ListItem", "position": 3, "name": job["title"], "item": url},
-        ],
-    }
+    def _breadcrumb(lang):
+        pad = url if lang == "nl" else f"{SITE}/en/vacatures/{slug}.html"
+        return {
+            "@context": "https://schema.org", "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Home",
+                 "item": SITE + ("/" if lang == "nl" else "/en/")},
+                {"@type": "ListItem", "position": 2,
+                 "name": "Vacatures" if lang == "nl" else "Jobs",
+                 "item": SITE + ("/jobs.html" if lang == "nl" else "/en/jobs.html")},
+                {"@type": "ListItem", "position": 3, "name": job["title"], "item": pad},
+            ],
+        }
+    breadcrumb = _breadcrumb("en")
+    breadcrumb_nl = _breadcrumb("nl")
     page_title = f"{job['title']} bij {job['company']}: gesloten | CorporateCareer"
     meta_desc = (f"De vacature {job['title']} bij {job['company']} in {job['location']} staat niet meer open. "
                  f"Bekijk wat er nu wel open staat bij {job['company']}.")
@@ -648,8 +669,11 @@ def closed_page(job, nav, footer, active):
   <meta name="description" content="{esc(meta_desc)}">
   <meta name="robots" content="noindex, follow">
   <link rel="canonical" href="{url}">
-  <script type="application/ld+json">
+  <script type="application/ld+json" data-l="en">
 {json.dumps(breadcrumb, ensure_ascii=False, indent=2)}
+  </script>
+  <script type="application/ld+json" data-l="nl">
+{json.dumps(breadcrumb_nl, ensure_ascii=False, indent=2)}
   </script>
   <title>{esc(page_title)}</title>
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
