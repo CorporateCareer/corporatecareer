@@ -52,6 +52,10 @@ def main(refresh=False):
         d["quote"] = r["quote"]
         d["quoteLang"] = r["lang"] or ""
         d["atsFacts"] = r["facts"]
+        # Een adres uit de bron is per vacature juist. Alleen overschrijven als
+        # er werkelijk een is; anders blijft staan wat er stond.
+        if r.get("address"):
+            d["address"] = r["address"]
 
     met_citaat = sum(1 for j in jobs if (j.get("detail") or {}).get("quote"))
     met_feiten = sum(1 for j in jobs if (j.get("detail") or {}).get("atsFacts"))

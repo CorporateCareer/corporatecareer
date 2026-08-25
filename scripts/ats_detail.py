@@ -214,6 +214,33 @@ def _workform(o):
     return None
 
 
+# Een adres uit de bron is per vacature juist; een adres uit een eigen tabel is
+# hoogstens het kantoor van dat kantoor in die plaats. SmartRecruiters levert
+# het als een enkele regel, bijvoorbeeld "Droogbak 1a 1013 GE Amsterdam".
+POSTCODE = re.compile(r"\b(\d{4}\s?[A-Za-z]{2})\b")
+
+
+def split_address(regel, plaats=None):
+    """Straat en postcode uit een adresregel, of None als het niet lukt.
+
+    Er wordt niets gegokt: zonder herkenbare Nederlandse postcode komt er
+    niets uit, want een halve straatnaam in de structuurdata is erger dan
+    geen adres."""
+    if not regel:
+        return None
+    tekst = re.sub(r"\s+", " ", str(regel)).strip()
+    m = POSTCODE.search(tekst)
+    if not m:
+        return None
+    straat = tekst[:m.start()].strip(" ,")
+    postcode = m.group(1).upper()
+    if len(postcode) == 6:
+        postcode = postcode[:4] + " " + postcode[4:]
+    if not straat or not re.search(r"\d", straat):
+        return None
+    return {"street": straat, "postalCode": postcode}
+
+
 def from_recruitee(code, url):
     d = _curl(f"https://{code}.recruitee.com/api/offers/") or {}
     doel = url.split("?")[0].rstrip("/")
@@ -275,9 +302,11 @@ def from_smartrecruiters(code, pid, url):
     if fn:
         feiten["department"] = (fn, fn)
     taal = (p.get("language") or {}).get("code")
+    loc = p.get("location") or {}
+    adres = split_address(loc.get("address"), loc.get("city"))
     return {"raw": tekst,
             "lang": (taal[:2] if taal else None) or detect_lang(" ".join(paragraphs(tekst))),
-            "facts": feiten}
+            "facts": feiten, "address": adres}
 
 
 def from_workday(tenant, dc, site, path, url):
@@ -382,7 +411,8 @@ def enrich(jobs, log=None):
         standaard = {p for p, n in telling.items() if n > 1} if len(ruw) > 1 else set()
         for jid, r in ruw.items():
             citaat = quote_from(r.get("raw"), standaard)
-            uit[jid] = {"quote": citaat, "lang": r.get("lang"), "facts": r.get("facts") or {}}
+            uit[jid] = {"quote": citaat, "lang": r.get("lang"), "facts": r.get("facts") or {},
+                       "address": r.get("address")}
         if log:
             met = sum(1 for v in uit.values() if v["quote"])
             log(f"  {kantoor:28} {len(ruw):4} opgehaald, {len(standaard):3} standaardalinea's")

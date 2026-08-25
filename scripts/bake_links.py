@@ -165,8 +165,11 @@ def do_bedrijven(jobs):
             geschreven = True
             # De JavaScript vult dezelfde bak; die moet hem eerst leegmaken,
             # anders staat alles er straks twee keer in.
-            out = out.replace("var w=document.getElementById('bVac'),msg=document.getElementById('bVacMsg');",
-                              "var w=document.getElementById('bVac'),msg=document.getElementById('bVacMsg');w.innerHTML='';")
+            # Eerst weghalen wat een vorige run er neerzette, anders groeit de
+            # regel bij elke bouw met nog een leegmaakopdracht.
+            out = re.sub(
+                r"(var w=document\.getElementById\('bVac'\),msg=document\.getElementById\('bVacMsg'\);)(?:w\.innerHTML='';)*",
+                r"\1w.innerHTML='';", out)
             if mine:
                 # De bak en de mededeling staan op de JavaScript te wachten. Met
                 # kaarten in de HTML moet de bak meteen zichtbaar zijn.

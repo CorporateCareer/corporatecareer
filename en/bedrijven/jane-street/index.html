@@ -374,7 +374,7 @@
         var n=new DOMParser().parseFromString(t,'text/html').getElementById('jobs-data'); if(!n)return;
         var jobs=JSON.parse(n.textContent).filter(function(j){return j.active!==false;});
         var m=jobs.filter(function(j){return FIRMS.indexOf(j.company)!==-1;}); if(!m.length)return;
-        var w=document.getElementById('bVac'),msg=document.getElementById('bVacMsg');w.innerHTML='';w.innerHTML='';w.innerHTML='';w.innerHTML='';w.innerHTML='';w.innerHTML='';w.innerHTML='';w.innerHTML='';w.innerHTML='';w.innerHTML='';w.innerHTML='';w.innerHTML='';w.innerHTML='';w.innerHTML='';
+        var w=document.getElementById('bVac'),msg=document.getElementById('bVacMsg');w.innerHTML='';
         m.forEach(function(j){var a=document.createElement('a');a.className='pe-vac-card';a.href='/vacatures/'+j.slug+'.html';
           var ti=document.createElement('span');ti.className='pe-vac-t';ti.textContent=j.title;
           var co=document.createElement('span');co.className='pe-vac-c';co.textContent=j.company+(j.location?' \u00b7 '+j.location:'');
