@@ -82,7 +82,59 @@ NL_REGION = {
 # het adres met een officiele bron is geverifieerd; onbekende combinaties
 # krijgen geen straatadres, we gokken niet.
 OFFICE_ADDRESS = {
+    ("AKD", "Amsterdam"): ("Gustav Mahlerlaan 2970", "1081 LA"),
+    ("AKD", "Breda"): ("Vlaszak 67", "4811 GX"),
+    ("AKD", "Eindhoven"): ("Flight Forum 1", "5657 DA"),
+    ("AKD", "Rotterdam"): ("Wilhelminakade 1", "3072 AP"),
     ("BCG", "Amsterdam"): ("Hildegard von Bingenstraat 16-20", "1081 LH"),
+    ("Banning", "'s-Hertogenbosch"): ("Spinhuiswal 2", "5211 JG"),
+    ("Banning", "Amsterdam"): ("James Wattstraat 100", "1097 DM"),
+    ("BarentsKrans", "Amsterdam"): ("Eduard van Beinumstraat 6", "1077 CZ"),
+    ("BarentsKrans", "Den Haag"): ("Lange Voorhout 3", "2514 EA"),
+    ("Berenschot", "Utrecht"): ("Van Deventerlaan 31-51", "3528 AG"),
+    ("Boels Zanders", "Eindhoven"): ("Vestdijk 76", "5611 CE"),
+    ("Boels Zanders", "Venlo"): ("Hulsterweg 82", "5912 PL"),
+    ("Brinkhof", "Amsterdam"): ("Grote Bickersstraat 74-78", "1013 KS"),
+    ("CMS", "Amsterdam"): ("Parnassusweg 737", "1077 DG"),
+    ("Conclusion", "Utrecht"): ("Herculesplein 80", "3584 AA"),
+    ("DAS Nederlandse Rechtsbijstand", "Amsterdam"): ("De Entree 203-225", "1101 HG"),
+    ("DAS Nederlandse Rechtsbijstand", "Arnhem"): ("Meander 729-9", "6825 ME"),
+    ("DLA Piper", "Amsterdam"): ("Prinses Amaliaplein 3", "1077 XS"),
+    ("DRW", "Amsterdam"): ("Locatellikade 1", "1076 AZ"),
+    ("Damsté", "Amsterdam"): ("Prins Bernhardplein 200", "1097 JB"),
+    ("Damsté", "Enschede"): ("Hengelosestraat 571", "7521 AG"),
+    ("De Brauw Blackstone Westbroek", "Amsterdam"): ("Burgerweeshuispad 201", "1076 GR"),
+    ("Eraneos", "Amsterdam"): ("De Passage 126-136", "1101 AX"),
+    ("Eraneos", "Groningen"): ("Rozenburglaan 3", "9727 DL"),
+    ("HVG Law", "Amsterdam"): ("Antonio Vivaldistraat 150", "1083 HP"),
+    ("HVG Law", "Eindhoven"): ("Prof. Dr. Dorgelolaan 12", "5613 AM"),
+    ("HVG Law", "Rotterdam"): ("Boompjes 258", "3011 XZ"),
+    ("Holla", "'s-Hertogenbosch"): ("Stationsplein 101", "5211 BM"),
+    ("Holla", "Eindhoven"): ("Prof. Dr. Dorgelolaan 30", "5613 AM"),
+    ("Holla", "Utrecht"): ("Stationsplein 32", "3511 ED"),
+    ("Houthoff", "Amsterdam"): ("Gustav Mahlerplein 50", "1082 MA"),
+    ("Houthoff", "Rotterdam"): ("Weena 355", "3013 AL"),
+    ("IG&H", "Utrecht"): ("Hondiuslaan 102", "3528 AC"),
+    ("KPMG Netherlands", "Amstelveen"): ("Laan van Langerhuize 1", "1186 DS"),
+    ("Kennedy Van der Laan", "Amsterdam"): ("Molenwerf 16", "1014 BG"),
+    ("Lexence", "Amsterdam"): ("Amstelveenseweg 500", "1081 KL"),
+    ("Loyens & Loeff", "Amsterdam"): ("Parnassusweg 300", "1081 LC"),
+    ("Loyens & Loeff", "Rotterdam"): ("Blaak 31", "3011 GA"),
+    ("NIBC Bank", "Den Haag"): ("Carnegieplein 4", "2517 KJ"),
+    ("NautaDutilh", "Amsterdam"): ("Beethovenstraat 400", "1082 PR"),
+    ("NautaDutilh", "Rotterdam"): ("Weena 804", "3014 DA"),
+    ("Norton Rose Fulbright", "Amsterdam"): ("Eduard van Beinumstraat 34", "1077 CZ"),
+    ("Nysingh", "Arnhem"): ("Velperweg 10", "6824 BH"),
+    ("Nysingh", "Utrecht"): ("Maliebaan 83", "3581 CG"),
+    ("Nysingh", "Zwolle"): ("Grote Voort 291C", "8041 BL"),
+    ("Pels Rijcken", "Den Haag"): ("Bezuidenhoutseweg 57", "2594 AC"),
+    ("Ploum", "Rotterdam"): ("Blaak 28", "3011 TA"),
+    ("TRIP Advocaten Notarissen", "Assen"): ("Zoom 2", "9405 PS"),
+    ("TRIP Advocaten Notarissen", "Groningen"): ("Hereweg 93", "9721 AA"),
+    ("TRIP Advocaten Notarissen", "Leeuwarden"): ("Wiardaplantage 9", "8939 AA"),
+    ("Twynstra Gudde", "Amersfoort"): ("Oliemolenhof 14a", "3812 PB"),
+    ("Twynstra Gudde", "Den Haag"): ("Anna van Buerenplein 41", "2595 DA"),
+    ("Winston Taylor", "Eindhoven"): ("Kennedyplein 201", "5611 ZT"),
     ("BCG Platinion", "Amsterdam"): ("Gustav Mahlerlaan 40", "1082 MC"),
     ("BDO Netherlands", "Eindhoven"): ("Philitelaan 73", "5617 AM"),
     ("BNP Paribas", "Amsterdam"): ("Parnassusweg 789", "1082 LZ"),
@@ -110,7 +162,15 @@ OFFICE_ADDRESS = {
     ("RSM Netherlands", "Utrecht"): ("Oorsprongpark 12", "3581 ET"),
     ("Roland Berger", "Amsterdam"): ("Strawinskylaan 581", "1077 XW"),
     ("Sia", "Amsterdam"): ("Amstelplein 1", "1096 HA"),
+    ("Simmons & Simmons", "Amsterdam"): ("Claude Debussylaan 247", "1082 MC"),
+    ("Stek", "Amsterdam"): ("Leidseplein 29", "1017 PS"),
+    ("Ten Holter Noordam", "Rotterdam"): ("Veerhaven 17", "3016 CJ"),
+    ("Van Doorne", "Amsterdam"): ("Amstelveenseweg 638", "1081 JJ"),
     ("Van Lanschot Kempen", "Amsterdam"): ("Beethovenstraat 300", "1077 WZ"),
+    ("Wijn & Stael", "Utrecht"): ("Maliesingel 20", "3581 BE"),
+    ("Xebia", "Eindhoven"): ("Willemstraat 1-K", "5611 HA"),
+    ("Xebia", "Hilversum"): ("Laapersveld 27", "1213 VB"),
+    ("bunq", "Amsterdam"): ("Basisweg 32", "1043 AP"),
 }
 
 def related_block(job, active):
@@ -288,8 +348,14 @@ def build_page(job, nav, footer, first_seen, active):
     desc_html = _desc("en")
 
     job_address = {"@type": "PostalAddress", "addressLocality": job["location"]}
+    # Het adres uit de vacaturebron gaat voor op de kantoortabel: dat hoort bij
+    # deze vacature zelf en blijft vanzelf kloppen als het kantoor verhuist.
+    _bron = (d.get("address") or {}) if isinstance(d.get("address"), dict) else {}
     _office = OFFICE_ADDRESS.get((job["company"], job["location"]))
-    if _office:
+    if _bron.get("street") and _bron.get("postalCode"):
+        job_address["streetAddress"] = _bron["street"]
+        job_address["postalCode"] = _bron["postalCode"]
+    elif _office:
         job_address["streetAddress"] = _office[0]
         job_address["postalCode"] = _office[1]
     _region = NL_REGION.get(job["location"])
