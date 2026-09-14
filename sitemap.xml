@@ -835,11 +835,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/vacatures/pwc-senior-associate-employment-law.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/vacatures/pwc-senior-manager-international-business-reorganisations-legal-busine.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -995,11 +990,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/vacatures/bcg-consultant-netherlands.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/vacatures/bcg-platinion-senior-ai-tech-consultant-private-equity.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -1096,11 +1086,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/vacatures/imc-trading-machine-learning-research-intern-summer-2027-amsterdam.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/bdo-netherlands-junior-adviseur-corporate-finance.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1325,11 +1310,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/vacatures/freshfields-freshfields-connect-stage-2026.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/vacatures/freshfields-werkstudentschap.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -1400,11 +1380,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/vacatures/hvg-law-advocaat-senior-medewerker.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/vacatures/hvg-law-advocaat-stagiair-e.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -1426,16 +1401,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/vacatures/kennedy-van-der-laan-advocaat-medewerker-letselschade.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/la-gro-advocaat-bestuursrecht-specialisme-openbare-orde-en-veiligheid.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/la-gro-advocaat-bestuursrecht.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1481,11 +1446,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/vacatures/loyens-en-loeff-kandidaat-notaris.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/loyens-en-loeff-werkstudent-class-actions-en-esg-dispute-resolution.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1685,11 +1645,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/vacatures/trip-advocaten-notarissen-student-medewerker.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/vacatures/van-benthem-en-keulen-aankomend-partner-bouwrecht.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -1735,11 +1690,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/vacatures/winston-taylor-junior-associate-litigation.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/vacatures/winston-taylor-senior-associate-restructuring-en-insolvency.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -1775,11 +1725,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/vacatures/oliver-wyman-internship-analyst-data-analytics.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/vacatures/roland-berger-senior-consultant-circular-chemistry-materials.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -1796,6 +1741,11 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/vacatures/ig-h-consultant-transformation.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/ig-h-junior-ai-consultant.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2055,6 +2005,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://corporatecareer.nl/vacatures/pwc-netherlands-security-operations-analyst.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://corporatecareer.nl/vacatures/pwc-netherlands-senior-business-consultant-identity-access-management.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -2221,11 +2176,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/vacatures/twynstra-gudde-medior-adviseur-zorghuisvesting-zorgsector.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/twynstra-gudde-adviseur-en-projectmanager-innovatiemilieus-medior.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2890,11 +2840,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/vacatures/berenschot-consultant-digitale-transformatie-in-het-openbaar-bestuur.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/vacatures/berenschot-stagiair-digital-en-data.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -2910,16 +2855,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/vacatures/berenschot-junior-consultant-bedrijfsvoering-benchmarking.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/berenschot-traineeship-benchmark-bedrijfsvoering.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/vacatures/berenschot-senior-consultant-financiering-en-innovatie.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -2931,11 +2866,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/vacatures/berenschot-juridisch-adviseur-openbaar-bestuur.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/berenschot-stage-consultancy-in-het-publieke-domein.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -4709,11 +4639,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/en/vacatures/pwc-senior-associate-employment-law.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/en/vacatures/pwc-senior-manager-international-business-reorganisations-legal-busine.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -4869,11 +4794,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/en/vacatures/bcg-consultant-netherlands.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/en/vacatures/bcg-platinion-senior-ai-tech-consultant-private-equity.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -4970,11 +4890,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/en/vacatures/imc-trading-machine-learning-research-intern-summer-2027-amsterdam.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/bdo-netherlands-junior-adviseur-corporate-finance.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -5199,11 +5114,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/en/vacatures/freshfields-freshfields-connect-stage-2026.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/en/vacatures/freshfields-werkstudentschap.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -5274,11 +5184,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/en/vacatures/hvg-law-advocaat-senior-medewerker.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/en/vacatures/hvg-law-advocaat-stagiair-e.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -5300,16 +5205,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/en/vacatures/kennedy-van-der-laan-advocaat-medewerker-letselschade.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/la-gro-advocaat-bestuursrecht-specialisme-openbare-orde-en-veiligheid.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/la-gro-advocaat-bestuursrecht.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -5355,11 +5250,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/en/vacatures/loyens-en-loeff-kandidaat-notaris.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/loyens-en-loeff-werkstudent-class-actions-en-esg-dispute-resolution.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -5559,11 +5449,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/en/vacatures/trip-advocaten-notarissen-student-medewerker.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/en/vacatures/van-benthem-en-keulen-aankomend-partner-bouwrecht.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -5609,11 +5494,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/en/vacatures/winston-taylor-junior-associate-litigation.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/en/vacatures/winston-taylor-senior-associate-restructuring-en-insolvency.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -5649,11 +5529,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/en/vacatures/oliver-wyman-internship-analyst-data-analytics.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/en/vacatures/roland-berger-senior-consultant-circular-chemistry-materials.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -5670,6 +5545,11 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/en/vacatures/ig-h-consultant-transformation.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/ig-h-junior-ai-consultant.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -5929,6 +5809,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://corporatecareer.nl/en/vacatures/pwc-netherlands-security-operations-analyst.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://corporatecareer.nl/en/vacatures/pwc-netherlands-senior-business-consultant-identity-access-management.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -6095,11 +5980,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/en/vacatures/twynstra-gudde-medior-adviseur-zorghuisvesting-zorgsector.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/twynstra-gudde-adviseur-en-projectmanager-innovatiemilieus-medior.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -6764,11 +6644,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/en/vacatures/berenschot-consultant-digitale-transformatie-in-het-openbaar-bestuur.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/en/vacatures/berenschot-stagiair-digital-en-data.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -6784,16 +6659,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/en/vacatures/berenschot-junior-consultant-bedrijfsvoering-benchmarking.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/berenschot-traineeship-benchmark-bedrijfsvoering.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/en/vacatures/berenschot-senior-consultant-financiering-en-innovatie.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -6805,11 +6670,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/en/vacatures/berenschot-juridisch-adviseur-openbaar-bestuur.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/berenschot-stage-consultancy-in-het-publieke-domein.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
