@@ -44,6 +44,7 @@ REGISTRY = {
     "Houthoff": ("recruitee", ("houthoff",)),
     "Jane Street": ("greenhouse", ("janestreet",)),
     "Jump Trading": ("greenhouse", ("jumptrading",)),
+    "Marktlink": ("recruitee", ("marktlink",)),
     "NWB Bank": ("recruitee", ("nwbbank",)),
     "Nysingh": ("recruitee", ("nysingh",)),
     "Pels Rijcken": ("recruitee", ("pelsrijcken",)),
