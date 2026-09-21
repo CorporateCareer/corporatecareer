@@ -139,8 +139,24 @@ def _rewrite_link(src_dir, href):
     ab=href if href.startswith("/") else "/"+posixpath.normpath(posixpath.join(src_dir,href)).lstrip("/")
     return (ab if _is_asset(ab) else "/en"+ab)+frag
 
+def canon_path(site_path):
+    """De URL zoals die in de sitemap en de canonical staat.
+
+    Een mappagina is via twee URL's te bereiken, /bedrijven/akd/ en
+    /bedrijven/akd/index.html, met dezelfde inhoud. De sitemap en de canonical
+    gebruiken de eerste. Wees je hreflang of og:url naar de tweede, dan wijzen
+    ze naar een URL die niet de canonieke is, en dan negeert Google de hele
+    hreflang-groep. Hier wordt alles op dezelfde vorm gebracht."""
+    if site_path.endswith("/index.html"):
+        return site_path[: -len("index.html")]
+    if site_path == "/index.html":
+        return "/"
+    return site_path
+
+
 def _hreflang(site_path):
-    en=f"{SITE}/en{site_path}"; nl=f"{SITE}{site_path}"
+    p = canon_path(site_path)
+    en = f"{SITE}/en{p}"; nl = f"{SITE}{p}"
     return (f'  <link rel="alternate" hreflang="nl" href="{nl}">\n'
             f'  <link rel="alternate" hreflang="en" href="{en}">\n'
             f'  <link rel="alternate" hreflang="x-default" href="{nl}">\n')
@@ -161,7 +177,7 @@ def flip_lang_toggle(html):
 def to_en(html, site_path, title, desc, strip=False):
     """html = NL-bron; site_path = bv /finance.html of /vacatures/x.html."""
     src_dir=posixpath.dirname(site_path)
-    en_url=f"{SITE}/en{site_path}"
+    en_url=f"{SITE}/en{canon_path(site_path)}"
     html=re.sub(r'<html lang="[a-z]*"','<html lang="en"',html,count=1)
     if "__ccDefaultLang" in html:
         html=re.sub(r"__ccDefaultLang='[a-z]*'","__ccDefaultLang='en'",html,count=1)

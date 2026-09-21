@@ -1,9 +1,13 @@
 name: Wekelijkse vacaturecontrole
 
-# Controleert wekelijks (maandag) of elke vacature nog open staat,
-# regenereert de detailpagina's en publiceert de wijzigingen. De .nl-site
-# draait op de gh-pages-branch, dus na het bijwerken van main wordt
-# gh-pages gesynct.
+# Draait elke maandag. Haalt eerst nieuwe vacatures op bij de wervingssystemen
+# van de kantoren zelf, controleert daarna of de bestaande nog open staan,
+# verrijkt de nieuwe met kerngegevens en een citaat, regenereert de
+# detailpagina's en publiceert. De .nl-site draait op de gh-pages-branch, dus
+# na het bijwerken van main wordt gh-pages gesynct.
+#
+# Zonder de ophaalstap liep de voorraad alleen maar terug: er gingen wel
+# vacatures dicht, er kwamen er geen bij.
 
 on:
   schedule:
@@ -31,17 +35,14 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Nieuwe Adzuna-vacatures ophalen
-        env:
-          ADZUNA_APP_ID: ${{ secrets.ADZUNA_APP_ID }}
-          ADZUNA_APP_KEY: ${{ secrets.ADZUNA_APP_KEY }}
-        run: python scripts/source_adzuna.py
+      - name: Nieuwe vacatures ophalen bij de kantoren zelf
+        run: python scripts/source_ats.py
 
       - name: Controleer vacatures
-        env:
-          ADZUNA_APP_ID: ${{ secrets.ADZUNA_APP_ID }}
-          ADZUNA_APP_KEY: ${{ secrets.ADZUNA_APP_KEY }}
         run: python scripts/check_vacancies.py
+
+      - name: Vacatures verrijken met kerngegevens en citaat
+        run: python scripts/enrich_details.py
 
       - name: Genereer detailpagina's
         run: python scripts/build_vacature_pages.py

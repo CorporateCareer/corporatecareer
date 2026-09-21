@@ -71,7 +71,11 @@ def page_list():
     return sorted(set(p))
 
 def en_url(rel):
-    return f"{gen_en.SITE}/en/{rel[:-10] if rel.endswith('/index.html') else rel}"
+    # canon_path werkt op een pad dat met een schuine streep begint en vangt
+    # zo ook de voorpagina: "index.html" zelf eindigt niet op "/index.html",
+    # waardoor die eerder als /en/index.html in de sitemap belandde terwijl de
+    # canonical /en/ zei.
+    return f"{gen_en.SITE}/en" + gen_en.canon_path("/" + rel)
 
 def update_sitemap(rels):
     sm=os.path.join(BASE,"sitemap.xml")
