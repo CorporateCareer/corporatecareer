@@ -71,7 +71,11 @@ PLATFORMS = [
     ("recruitee",       r"https?://([a-z0-9-]+)\.recruitee\.com"),
     ("greenhouse",      r"greenhouse\.io/([a-z0-9_-]+)/jobs"),
     ("smartrecruiters", r"jobs\.smartrecruiters\.com/([A-Za-z0-9_-]+)/"),
-    ("workday",         r"https?://([a-z0-9-]+)\.(wd\d+)\.myworkdayjobs\.com/([A-Za-z0-9_-]+)"),
+    # Workday-URL's komen in twee vormen: met en zonder taalcode voor de
+    # sitenaam. Zonder de taalcode over te slaan werd "en-US" als site gelezen,
+    # en dan bestaat de site niet en komt er niets terug. Loyens & Loeff en
+    # Norton Rose Fulbright gaven daardoor nul resultaten.
+    ("workday",         r"https?://([a-z0-9-]+)\.(wd\d+)\.myworkdayjobs\.com/(?:[a-z]{2}-[A-Z]{2}/)?([A-Za-z0-9_-]+)"),
 ]
 
 # Nederlandse plaatsen; de systemen leveren de locatie als vrije tekst aan.
