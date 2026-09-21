@@ -532,14 +532,19 @@ def build_page(job, nav, footer, first_seen, active):
 </html>
 """
 
-def update_sitemap(active):
+def update_sitemap(active, blijvend=()):
+    """De sitemap krijgt de openstaande vacatures plus de gesloten vacatures die
+    een blijvende pagina hebben gekregen. Gesloten vacatures op noindex horen er
+    niet in: een sitemap met pagina's die je zelf uitsluit is een tegenstrijdig
+    signaal."""
+    paginas = list(active) + list(blijvend)
     xml = open(SITEMAP, encoding="utf-8").read()
     block = "\n".join(
         f"""  <url>
     <loc>{SITE}/vacatures/{j['slug']}.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-  </url>""" for j in active)
+  </url>""" for j in paginas)
     marked = f"  <!-- VACATURES:START -->\n{block}\n  <!-- VACATURES:END -->"
     if "<!-- VACATURES:START -->" in xml:
         xml = re.sub(r"  <!-- VACATURES:START -->[\s\S]*?  <!-- VACATURES:END -->", marked, xml)
@@ -551,7 +556,7 @@ def update_sitemap(active):
     <loc>{SITE}/en/vacatures/{j['slug']}.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-  </url>""" for j in active)
+  </url>""" for j in paginas)
     en_marked = f"  <!-- EN_VACATURES:START -->\n{en_block}\n  <!-- EN_VACATURES:END -->"
     if "<!-- EN_VACATURES:START -->" in xml:
         xml = re.sub(r"  <!-- EN_VACATURES:START -->[\s\S]*?  <!-- EN_VACATURES:END -->", en_marked, xml)
@@ -654,6 +659,28 @@ def update_home(active, first_seen):
           f"(finance {per['finance']}, consulting {per['consulting']}, legal {per['advocatuur']})")
 
 
+# Gesloten vacatures die aantoonbaar zoekverkeer trekken. Hun pagina wordt geen
+# doodlopend "gesloten"-bericht maar een pagina over die rol bij dat kantoor:
+# wat het werk inhield, wat er gevraagd werd, het kantoor zelf, en wat er nu wel
+# open staat. Zonder JobPosting, want er is geen aanbod meer; wel indexeerbaar,
+# want de pagina beantwoordt de zoekvraag nog steeds.
+#
+# De lijst komt uit de Search Console-export. Deze vijf waren samen goed voor
+# 113 van de 148 kliks op gesloten vacatures. Een pagina hier neerzetten die
+# verder niets te vertellen heeft, maakt hem dun; daarom alleen vacatures met
+# een eigen omschrijving.
+DUURZAAM = {
+    "brinkhof-advocaat-stagiaire-contracts",
+    "dirkzwager-advocaat-stagiair-e-en-beginnend-medewerker-omgevingsrecht",
+    "jpmorgan-2027-commercial-investment-bank-global-investment-banking-analyst-program-off-cycle-internship-january-april-amsterdam",
+    "ten-holter-noordam-gevorderd-advocaat-stagiair-e-vastgoed-en-gebiedsontwikkeling",
+    # De export kortte de URL af, dus welke van deze twee de kliks trok is er
+    # niet uit op te maken. Allebei gesloten, allebei met een eigen omschrijving.
+    "van-benthem-en-keulen-juridisch-medewerker-en-advocaat-stagiaire-omgevingsrecht-",
+    "van-benthem-en-keulen-juridisch-medewerker-en-advocaat-stagiaire-arbeidsrecht",
+}
+
+
 def closed_page(job, nav, footer, active):
     """De pagina van een vacature die niet meer open staat.
 
@@ -696,8 +723,25 @@ def closed_page(job, nav, footer, active):
         lijst = ""
 
     gesloten = job.get("closedOn")
-    wanneer = (bi(f"This vacancy closed on {gesloten}.", f"Deze vacature is gesloten op {gesloten}.")
-               if gesloten else bi("This vacancy is no longer open.", "Deze vacature staat niet meer open."))
+    # De controle draait elke maandag, niet dagelijks: zo staat het ook in de
+    # workflow, en een pagina moet geen frequentie beloven die we niet halen.
+    _CONTROLE = bi("We check every vacancy weekly and mark it as closed as soon as the employer takes it offline.",
+                   "We controleren elke vacature wekelijks en zetten hem op gesloten zodra de werkgever hem offline haalt.")
+    if job.get("closedReason") == "unverified":
+        # Deze vacature kwam van een vacaturesite in plaats van het kantoor zelf.
+        # Sinds we die bron niet meer gebruiken kunnen we niet meer nagaan of hij
+        # open staat, en dan is "gesloten" een bewering die we niet waar kunnen
+        # maken. Zeg dus wat er werkelijk aan de hand is.
+        wanneer = bi("This vacancy is no longer listed on CorporateCareer: we can no longer verify it at the source.",
+                     "Deze vacature staat niet meer op CorporateCareer: we kunnen hem niet meer bij de bron controleren.")
+        toelichting = bi("We only list vacancies we can check at the employer itself.",
+                         "We tonen alleen vacatures die we bij de werkgever zelf kunnen controleren.")
+    elif gesloten:
+        wanneer = bi(f"This vacancy closed on {gesloten}.", f"Deze vacature is gesloten op {gesloten}.")
+        toelichting = _CONTROLE
+    else:
+        wanneer = bi("This vacancy is no longer open.", "Deze vacature staat niet meer open.")
+        toelichting = _CONTROLE
 
     if job.get("logo"):
         logo_class, logo_style = "vac-logo vac-logo-img", ""
@@ -722,9 +766,45 @@ def closed_page(job, nav, footer, active):
         }
     breadcrumb = _breadcrumb("en")
     breadcrumb_nl = _breadcrumb("nl")
-    page_title = f"{job['title']} bij {job['company']}: gesloten | CorporateCareer"
-    meta_desc = (f"De vacature {job['title']} bij {job['company']} in {job['location']} staat niet meer open. "
-                 f"Bekijk wat er nu wel open staat bij {job['company']}.")
+
+    # Een pagina mag alleen blijvend meedoen als er ook werkelijk iets op staat.
+    # Zonder eigen omschrijving houd je 77 woorden over, en dat is precies het
+    # soort dunne pagina dat Google als soft 404 behandelt.
+    duurzaam = (slug in DUURZAAM and d.get("intro") and d.get("does") and d.get("brings"))
+
+    if duurzaam:
+        robots = "index, follow"
+        page_title = f"{job['title']} bij {job['company']}: de rol en de vacatures | CorporateCareer"
+        meta_desc = (f"Wat de rol {job['title']} bij {job['company']} in {job['location']} inhield en wat er werd gevraagd. "
+                     f"Deze vacature is gesloten; bekijk wat er nu wel open staat bij {job['company']}.")
+        romp = f"""
+        <section class="vac-block">
+          <p>{bi(d['intro']['en'], d['intro']['nl'])}</p>
+        </section>
+
+        <section class="vac-block">
+          <h2>{bi("What the role involved", "Wat de rol inhield")}</h2>
+{dual_list(d['does'])}
+        </section>
+
+        <section class="vac-block">
+          <h2>{bi("What was asked", "Wat er werd gevraagd")}</h2>
+{dual_list(d['brings'])}
+        </section>
+
+{quote_block(job)}
+
+        <section class="vac-block">
+          <h2>{bi("About " + job['company'], "Over " + job['company'])}</h2>
+          <p>{bi(d['firmBlurb']['en'], d['firmBlurb']['nl'])}</p>
+        </section>
+"""
+    else:
+        robots = "noindex, follow"
+        page_title = f"{job['title']} bij {job['company']}: gesloten | CorporateCareer"
+        meta_desc = (f"De vacature {job['title']} bij {job['company']} in {job['location']} staat niet meer open. "
+                     f"Bekijk wat er nu wel open staat bij {job['company']}.")
+        romp = ""
 
     return f"""<!DOCTYPE html>
 <html lang="nl">
@@ -733,7 +813,7 @@ def closed_page(job, nav, footer, active):
   <script>var d=document.documentElement;d.classList.add('js');addEventListener('DOMContentLoaded',function(){{window.__ccFade||d.classList.remove('js')}});window.__ccDefaultLang='nl';</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="{esc(meta_desc)}">
-  <meta name="robots" content="noindex, follow">
+  <meta name="robots" content="{robots}">
   <link rel="canonical" href="{url}">
   <script type="application/ld+json" data-l="en">
 {json.dumps(breadcrumb, ensure_ascii=False, indent=2)}
@@ -772,8 +852,9 @@ def closed_page(job, nav, footer, active):
     <div class="vac-layout">
       <main class="vac-main">
         <section class="vac-block">
-          <p>{wanneer} {bi("We check every vacancy daily and mark it as closed as soon as the employer takes it offline.", "We controleren elke vacature dagelijks en zetten hem op gesloten zodra de werkgever hem offline haalt.")}</p>
+          <p>{wanneer} {toelichting}</p>
         </section>
+{romp}
 {lijst}
         <section class="vac-block">
           <h2>{bi("Keep looking", "Verder zoeken")}</h2>
@@ -844,9 +925,14 @@ def main():
         raw = closed_page(j, nav, footer, active)
         nl_html = gen_en.add_hreflang_nl(gen_en.bake(raw, "nl", strip=True), site_path)
         open(os.path.join(VAC_DIR, fn), "w", encoding="utf-8").write(nl_html)
-        en_title = f"{j['title']} at {j['company']}: closed | CorporateCareer"
-        en_desc = (f"The {j['title']} vacancy at {j['company']} in {j['location']} is no longer open. "
-                   f"See what is currently open at {j['company']}.")
+        if j["slug"] in DUURZAAM:
+            en_title = f"{j['title']} at {j['company']}: the role and the vacancies | CorporateCareer"
+            en_desc = (f"What the {j['title']} role at {j['company']} in {j['location']} involved and what was asked. "
+                       f"This vacancy has closed; see what is currently open at {j['company']}.")
+        else:
+            en_title = f"{j['title']} at {j['company']}: closed | CorporateCareer"
+            en_desc = (f"The {j['title']} vacancy at {j['company']} in {j['location']} is no longer open. "
+                       f"See what is currently open at {j['company']}.")
         open(os.path.join(EN_VAC_DIR, fn), "w", encoding="utf-8").write(
             gen_en.to_en(raw, site_path, en_title, en_desc, strip=True))
 
@@ -856,7 +942,7 @@ def main():
             if f.endswith(".html") and f not in wanted:
                 os.remove(os.path.join(d, f)); removed += 1
 
-    update_sitemap(active)
+    update_sitemap(active, [j for j in gesloten if j["slug"] in DUURZAAM])
     update_home(active, first_seen)
     json.dump(first_seen, open(SEEN, "w", encoding="utf-8"), indent=2)
     print(f"{len(wanted)} pagina's geschreven, {removed} verwijderd")

@@ -16,6 +16,7 @@ ingebakken versie.
 Alles staat tussen markeringen, zodat het script elke week opnieuw kan draaien
 zonder dat er iets dubbel komt te staan.
 """
+import html as html_mod
 import json, os, re, sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -135,13 +136,25 @@ BVAC = re.compile(r'(<div class="pe-vac-grid" id="bVac"[^>]*>)([\s\S]*?)(</div>)
 
 
 def norm(s):
-    return re.sub(r"[^a-z0-9]", "", str(s).lower())
+    # De naam komt uit de <h1> van de bedrijfspagina en staat daar als HTML,
+    # dus "IG&amp;H". Zonder unescape wordt dat "igamph" en matcht het nooit met
+    # "IG&H" uit jobs.html. Zes kantoren, samen 45 vacatures, kregen daardoor
+    # nergens op de site een interne link.
+    return re.sub(r"[^a-z0-9]", "", html_mod.unescape(str(s)).lower())
+
+
+# Kantoren die in jobs.html anders heten dan op hun eigen pagina. De sleutel is
+# de genormaliseerde naam uit de vacature, de waarde die van de <h1>.
+ALIAS = {
+    "bcg": "bostonconsultinggroup",
+}
 
 
 def do_bedrijven(jobs):
     per = {}
     for j in jobs:
-        per.setdefault(norm(j["company"]), []).append(j)
+        sleutel = norm(j["company"])
+        per.setdefault(ALIAS.get(sleutel, sleutel), []).append(j)
     done = hits = 0
     for d in sorted(os.listdir(os.path.join(BASE, "bedrijven"))):
         p = os.path.join(BASE, "bedrijven", d, "index.html")
