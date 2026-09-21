@@ -1290,11 +1290,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/vacatures/dvdw-advocaten-advocaat-medewerker-corporate-litigation-arbitration-en-dispute-r.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/vacatures/dvdw-advocaten-advocaat-medewerker-commerci-le-contracten-en-vastgoed.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -1476,11 +1471,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/vacatures/norton-rose-fulbright-energy-lawyer.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/norton-rose-fulbright-student-worker-dispute-resolution-en-litigation.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1910,11 +1900,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/vacatures/conclusion-portfolio-sales-data-ai.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/vacatures/conclusion-data-developer-medior-senior.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -2021,11 +2006,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/vacatures/pwc-netherlands-manager-assurance-corporate-reporting-services.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/oliver-wyman-medior-pensioen-consultant.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2200,11 +2180,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/vacatures/barentskrans-senior-advocaat-medewerker-cassatie.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/vacatures/barentskrans-student-stagiaire-notariaat.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -2231,6 +2206,11 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/vacatures/oliver-wyman-broking-advisor-property.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/mufg-bank-emea-structured-finance-lawyer.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2915,11 +2895,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/vacatures/mufg-bank-valuation-and-product-control-specialist.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/vacatures/pwc-netherlands-manager-risk-control-publieke-sector.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -2946,11 +2921,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/vacatures/pwc-netherlands-senior-associate-itx-real-estate.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/pwc-netherlands-medior-servicenow-developer.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -3015,11 +2985,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/vacatures/xebia-cloud-consultant.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/vacatures/xebia-analytics-engineer.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -3065,11 +3030,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/vacatures/berenschot-traineeship-digital-data-generatieve-ai.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/vacatures/da-vinci-trading-graduate-trading-risk-analyst.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -3106,16 +3066,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/vacatures/akd-data-analyst.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/cms-juridisch-medewerker-fintech-met-mogelijkheid-aanstelling-tot-advocaat-stagiaire.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/cms-advocaat-medewerker-litigation.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -3261,11 +3211,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/vacatures/pels-rijcken-advocaat-stagiair-privacy-recht.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/pels-rijcken-werkstudent-ruimte-en-milieu.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -5094,11 +5039,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/en/vacatures/dvdw-advocaten-advocaat-medewerker-corporate-litigation-arbitration-en-dispute-r.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/en/vacatures/dvdw-advocaten-advocaat-medewerker-commerci-le-contracten-en-vastgoed.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -5280,11 +5220,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/en/vacatures/norton-rose-fulbright-energy-lawyer.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/norton-rose-fulbright-student-worker-dispute-resolution-en-litigation.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -5714,11 +5649,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/en/vacatures/conclusion-portfolio-sales-data-ai.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/en/vacatures/conclusion-data-developer-medior-senior.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -5825,11 +5755,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/en/vacatures/pwc-netherlands-manager-assurance-corporate-reporting-services.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/oliver-wyman-medior-pensioen-consultant.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -6004,11 +5929,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/en/vacatures/barentskrans-senior-advocaat-medewerker-cassatie.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/en/vacatures/barentskrans-student-stagiaire-notariaat.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -6035,6 +5955,11 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/en/vacatures/oliver-wyman-broking-advisor-property.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/mufg-bank-emea-structured-finance-lawyer.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -6719,11 +6644,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/en/vacatures/mufg-bank-valuation-and-product-control-specialist.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/en/vacatures/pwc-netherlands-manager-risk-control-publieke-sector.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -6750,11 +6670,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/en/vacatures/pwc-netherlands-senior-associate-itx-real-estate.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/pwc-netherlands-medior-servicenow-developer.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -6819,11 +6734,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/en/vacatures/xebia-cloud-consultant.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/en/vacatures/xebia-analytics-engineer.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -6869,11 +6779,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/en/vacatures/berenschot-traineeship-digital-data-generatieve-ai.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/en/vacatures/da-vinci-trading-graduate-trading-risk-analyst.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -6910,16 +6815,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/en/vacatures/akd-data-analyst.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/cms-juridisch-medewerker-fintech-met-mogelijkheid-aanstelling-tot-advocaat-stagiaire.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/cms-advocaat-medewerker-litigation.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -7065,11 +6960,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/en/vacatures/pels-rijcken-advocaat-stagiair-privacy-recht.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/pels-rijcken-werkstudent-ruimte-en-milieu.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
