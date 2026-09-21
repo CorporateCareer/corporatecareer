@@ -130,7 +130,22 @@ def haal_site(pg, site, wil, log):
     return uit
 
 
-def main(refresh=False, alleen=None):
+def _ophalen(wil, sync_playwright):
+    gevonden = {}
+    with sync_playwright() as p:
+        b = chromium(p)
+        ctx = b.new_context(user_agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+                                       "(KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36")
+        pg = ctx.new_page()
+        for site in SITES:
+            if site["naam"] not in wil:
+                continue
+            gevonden.update(haal_site(pg, site, wil[site["naam"]], print))
+        b.close()
+    return gevonden
+
+
+def main(refresh=False, alleen=None, verwerk_alleen=False):
     try:
         from playwright.sync_api import sync_playwright
     except ImportError:
@@ -149,7 +164,7 @@ def main(refresh=False, alleen=None):
             continue
         if alleen and j["company"] != alleen:
             continue
-        if not refresh and (j.get("detail") or {}).get("quote"):
+        if not refresh and not verwerk_alleen and (j.get("detail") or {}).get("quote"):
             continue
         wil.setdefault(j["company"], set()).add((j.get("url") or "").split("?")[0])
     if not any(wil.values()):
@@ -159,24 +174,47 @@ def main(refresh=False, alleen=None):
         print(f"{n}: {len(v)} vacatures zonder tekst")
 
     gevonden = {}
-    with sync_playwright() as p:
-        b = chromium(p)
-        ctx = b.new_context(user_agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
-                                       "(KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36")
-        pg = ctx.new_page()
-        for site in SITES:
-            if site["naam"] not in wil:
-                continue
-            gevonden.update(haal_site(pg, site, wil[site["naam"]], print))
-        b.close()
+    if verwerk_alleen:
+        print("verwerkstand: bestaande teksten opnieuw tot citaat maken")
+    else:
+        gevonden = _ophalen(wil, sync_playwright)
 
-    n = 0
+    # De opgehaalde tekst door dezelfde citaatbepaling als de andere kantoren.
+    # Anders zouden deze pagina's een ander soort citaat krijgen: langer, met
+    # kopjes erin, en met het bedrijfsverhaal dat bij elke vacature terugkomt.
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import ats_detail as D
+
+    per_kantoor = {}
     for j in jobs:
         tekst = gevonden.get((j.get("url") or "").split("?")[0])
-        if not tekst:
-            continue
-        j.setdefault("detail", {})["rendered"] = tekst
-        n += 1
+        if not tekst and verwerk_alleen:
+            # De ruwe tekst van een eerdere run. Zo kunnen de citaatregels
+            # opnieuw worden toegepast zonder alles weer op te halen.
+            tekst = (j.get("detail") or {}).get("rendered")
+        if tekst:
+            j.setdefault("detail", {})["rendered"] = tekst
+            per_kantoor.setdefault(j["company"], []).append((j, tekst))
+
+    n = 0
+    for kantoor, paren in sorted(per_kantoor.items()):
+        telling = {}
+        for _, tekst in paren:
+            for alinea in set(D.paragraphs(tekst)):
+                if len(alinea) >= D.MIN_PARAGRAPH:
+                    telling[alinea] = telling.get(alinea, 0) + 1
+        standaard = {a for a, k in telling.items() if k > 1} if len(paren) > 1 else set()
+        met = 0
+        for j, tekst in paren:
+            citaat = D.quote_from(tekst, standaard)
+            if not citaat:
+                continue
+            d = j.setdefault("detail", {})
+            d["quote"] = citaat
+            d["quoteLang"] = D.detect_lang(" ".join(D.paragraphs(tekst))) or ""
+            met += 1
+            n += 1
+        print(f"  {kantoor:22} {met:3} citaten, {len(standaard):3} standaardalinea's")
     open(JOBS, "w", encoding="utf-8").write(
         html[:m.start()] + m.group(1) + "\n" + json.dumps(jobs, ensure_ascii=False, indent=2)
         + "\n" + m.group(3) + html[m.end():])
@@ -189,4 +227,4 @@ if __name__ == "__main__":
     for a in sys.argv[1:]:
         if a.startswith("--only="):
             alleen = a.split("=", 1)[1]
-    sys.exit(main("--refresh" in sys.argv, alleen))
+    sys.exit(main("--refresh" in sys.argv, alleen, "--verwerk" in sys.argv))
