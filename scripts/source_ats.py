@@ -32,18 +32,24 @@ JOBS = A.JOBS
 REGISTRY = {
     "AKD": ("recruitee", ("akd",)),
     "AlixPartners": ("greenhouse", ("alixpartners",)),
+    "Baker Tilly Netherlands": ("recruitee", ("bakertilly",)),
     "Barclays": ("workday", ("barclays", "wd3", "External_Career_Site_Barclays")),
     "BearingPoint": ("greenhouse", ("bearingpoint",)),
     "Berenschot": ("recruitee", ("berenschot",)),
     "CMS": ("recruitee", ("cms",)),
+    "Crowe Foederer": ("recruitee", ("crowefoederer",)),
     "DAS Nederlandse Rechtsbijstand": ("recruitee", ("das",)),
     "HVG Law": ("recruitee", ("hvglaw",)),
+    "Holla": ("recruitee", ("hollalegaltax",)),
+    "Houthoff": ("recruitee", ("houthoff",)),
     "Jane Street": ("greenhouse", ("janestreet",)),
     "Jump Trading": ("greenhouse", ("jumptrading",)),
     "NWB Bank": ("recruitee", ("nwbbank",)),
     "Nysingh": ("recruitee", ("nysingh",)),
     "Pels Rijcken": ("recruitee", ("pelsrijcken",)),
     "Protiviti": ("recruitee", ("protiviti",)),
+    "Stek": ("recruitee", ("stek",)),
+    "Van Doorne": ("recruitee", ("vandoorne",)),
     "Winston Taylor": ("recruitee", ("winstontaylor",)),
     "Xebia": ("recruitee", ("xebiacareers",)),
     "bunq": ("recruitee", ("bunq",)),
@@ -75,6 +81,12 @@ PLATFORMS = [
     # sitenaam. Zonder de taalcode over te slaan werd "en-US" als site gelezen,
     # en dan bestaat de site niet en komt er niets terug. Loyens & Loeff en
     # Norton Rose Fulbright gaven daardoor nul resultaten.
+    # Workday draait op twee domeinen. Bij myworkdaysite.com staat de klantnaam
+    # in het pad in plaats van in de hostnaam, zoals bij Simmons & Simmons:
+    # wd3.myworkdaysite.com/en-US/recruiting/simmonssimmons/SimmonsSimmonsExternal
+    # De volgorde van de groepen is daar (datacentrum, klant, site); listings()
+    # draait die om voordat workday() ze krijgt.
+    ("workday_site",    r"https?://(?:[a-z0-9-]+\.)?(wd\d+)\.myworkdaysite\.com/(?:[a-z]{2}-[A-Z]{2}/)?recruiting/([a-z0-9-]+)/([A-Za-z0-9_-]+)"),
     ("workday",         r"https?://([a-z0-9-]+)\.(wd\d+)\.myworkdayjobs\.com/(?:[a-z]{2}-[A-Z]{2}/)?([A-Za-z0-9_-]+)"),
 ]
 
@@ -196,6 +208,9 @@ def listings(kind, code):
         return out
     if kind == "workday":
         return workday(*code)
+    if kind == "workday_site":
+        dc, tenant, site = code
+        return workday(tenant, dc, site, host="myworkdaysite.com")
     return []
 
 
@@ -235,8 +250,11 @@ def workday_nl_facets(base):
     return {param: groups[param]}
 
 
-def workday(tenant, dc, site):
-    base = f"https://{tenant}.{dc}.myworkdayjobs.com/wday/cxs/{tenant}/{site}/jobs"
+def workday(tenant, dc, site, host="myworkdayjobs.com"):
+    # Bij myworkdayjobs.com staat de klant in de hostnaam, bij myworkdaysite.com
+    # niet. Het API-pad is bij allebei /wday/cxs/<klant>/<site>/jobs.
+    voor = f"https://{tenant}.{dc}.{host}" if host == "myworkdayjobs.com" else f"https://{dc}.{host}"
+    base = f"{voor}/wday/cxs/{tenant}/{site}/jobs"
     facets = workday_nl_facets(base)
     # Zonder Nederlandse vestiging in de filterlijst valt er niets te halen.
     # Terugvallen op de tekstzoekopdracht heeft dan alsnog zin: een enkele
@@ -252,7 +270,7 @@ def workday(tenant, dc, site):
                 continue
             seen.add(path)
             out.append((p.get("title", ""), p.get("locationsText", ""),
-                        f"https://{tenant}.{dc}.myworkdayjobs.com/{site}{path}",
+                        f"{voor}/{site}{path}",
                         p.get("title", "")))
         if len(page) < 20:
             break
