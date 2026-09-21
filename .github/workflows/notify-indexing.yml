@@ -1,0 +1,66 @@
+name: Vacatures aanmelden bij Google
+
+# De Indexing API accepteert 200 URL's per dag. Met 790 vacatures duurt de
+# eerste ronde dus een dag of vijf; daarna gaat het om enkele tientallen per
+# week en is de run in seconden klaar. Vandaar dagelijks en niet wekelijks:
+# via de maandagrun alleen zou de eerste ronde vijf weken kosten.
+#
+# Deze workflow verandert niets aan de site. Hij meldt alleen bij Google welke
+# vacaturepagina's nieuw zijn en welke dicht zijn gegaan. Het enige dat hij
+# wegschrijft is scripts/indexing_state.json, de administratie van wat er al
+# gemeld is.
+
+on:
+  schedule:
+    - cron: "30 7 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: indexing-melding
+  cancel-in-progress: false
+
+jobs:
+  melden:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Afhankelijkheden
+        run: pip install google-auth requests
+
+      - name: Vacatures aan- en afmelden
+        env:
+          GOOGLE_INDEXING_KEY: ${{ secrets.GOOGLE_INDEXING_KEY }}
+        run: python scripts/notify_indexing.py
+
+      - name: Administratie bijwerken
+        run: |
+          git config user.name "indexing-melding"
+          git config user.email "actions@github.com"
+          git add scripts/indexing_state.json
+          if git diff --cached --quiet; then
+            echo "Niets gemeld, niets bij te werken."
+            exit 0
+          fi
+          git commit -m "Vacatures aangemeld bij Google"
+          for i in 1 2 3 4 5; do
+            if git push origin main; then
+              exit 0
+            fi
+            echo "Push afgewezen, rebasen en opnieuw proberen..."
+            git fetch origin main
+            git rebase origin/main
+            sleep $((i * 5))
+          done
+          echo "::error::Kon de administratie niet naar main pushen."
+          exit 1
