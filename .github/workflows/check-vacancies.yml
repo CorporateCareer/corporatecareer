@@ -44,6 +44,16 @@ jobs:
       - name: Vacatures verrijken met kerngegevens en citaat
         run: python scripts/enrich_details.py
 
+      - name: Browser voor de sites die hun tekst pas in de browser opbouwen
+        run: pip install playwright && playwright install --with-deps chromium
+
+      - name: Teksten ophalen die alleen met een browser te lezen zijn
+        # Mislukt deze stap, dan missen alleen die kantoren hun citaat; de
+        # vacatures zelf komen uit source_ats en blijven gewoon staan. Daarom
+        # mag hij de hele run niet omvergooien.
+        continue-on-error: true
+        run: python scripts/render_detail.py
+
       - name: Genereer detailpagina's
         run: python scripts/build_vacature_pages.py
 

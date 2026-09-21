@@ -15,6 +15,7 @@ functies die bij finance, consulting of de advocatuur horen. Ondersteunende
 rollen bij hetzelfde kantoor (recruiter, secretaresse, netwerkbeheer) vallen
 af: die horen niet bij waar de site over gaat.
 """
+import html as H
 import json, os, re, subprocess, sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -39,11 +40,18 @@ REGISTRY = {
     "CMS": ("recruitee", ("cms",)),
     "Crowe Foederer": ("recruitee", ("crowefoederer",)),
     "DAS Nederlandse Rechtsbijstand": ("recruitee", ("das",)),
+    # SuccessFactors heeft geen JSON-koppeling; de zoekpagina zet de rijen wel
+    # gewoon in de HTML. Dentons houdt zijn Nederlandse vacatures op een eigen
+    # landenpagina, want de gewone zoekpagina toont alleen Noord-Amerika.
+    "Dentons": ("successfactors", ("careers.dentons.com", "/go/Opportunities-in-the-Netherlands/8677902/", False)),
+    "EY Netherlands": ("successfactors", ("careers.ey.com", "/ey/search/", True, None, "EY-Parthenon")),
+    "EY-Parthenon": ("successfactors", ("careers.ey.com", "/ey/search/", True, "EY-Parthenon", None)),
     "HVG Law": ("recruitee", ("hvglaw",)),
     "Holla": ("recruitee", ("hollalegaltax",)),
     "Houthoff": ("recruitee", ("houthoff",)),
     "Jane Street": ("greenhouse", ("janestreet",)),
     "Jump Trading": ("greenhouse", ("jumptrading",)),
+    "Marktlink": ("recruitee", ("marktlink",)),
     "NWB Bank": ("recruitee", ("nwbbank",)),
     "Nysingh": ("recruitee", ("nysingh",)),
     "Pels Rijcken": ("recruitee", ("pelsrijcken",)),
@@ -126,6 +134,82 @@ def get(url, post=None):
         return json.loads(subprocess.run(cmd, capture_output=True, text=True).stdout)
     except Exception:
         return None
+
+
+def get_html(url):
+    """Rauwe HTML ophalen. SuccessFactors heeft geen JSON-koppeling, maar zet de
+    vacaturerijen wel gewoon in de HTML, dus die is te lezen."""
+    cmd = ["curl", "-sSL", "-m", "30", url,
+           "-H", "User-Agent: Mozilla/5.0 (compatible; CorporateCareer/1.0)"]
+    try:
+        return subprocess.run(cmd, capture_output=True, text=True, timeout=45).stdout
+    except Exception:
+        return ""
+
+
+# Een rij in de zoekresultaten van SuccessFactors: titel met link, dan locatie.
+SF_RIJ = re.compile(
+    r'<a href="([^"]+)"\s+class="jobTitle-link">([^<]*)</a>'
+    r'[\s\S]*?class="jobLocation">\s*([^<]*)')
+SF_TOTAAL = re.compile(r'of\s*<b>\s*([\d.,]+)\s*</b>')
+
+
+def successfactors(host, zoekpad, landfilter=True, titel_bevat=None, titel_niet=None):
+    """(titel, locatie, url, checkText) per vacature.
+
+    host = careers.ey.com, zoekpad = /ey/search/ of, bij Dentons, de eigen
+    landenpagina /go/Opportunities-in-the-Netherlands/8677902/. Drie dingen
+    verschillen per kantoor, dus daar gaan we niet van uit:
+
+    - Waar de Nederlandse vacatures staan. EY filtert met
+      locationsearch=Netherlands; bij Dentons levert dat een landenpagina
+      zonder vacatures op, en staan de Nederlandse juist op een eigen
+      go-pagina, terwijl de gewone zoekpagina alleen Noord-Amerika toont.
+    - Of dat landfilter er dus wel of niet bij moet.
+    - Het aantal rijen per pagina: EY toont er 25, Dentons 10. De stapgrootte
+      lezen we af aan de eerste pagina in plaats van hem vast te zetten.
+
+    EY en EY-Parthenon delen een vacaturebank. De rollen van EY-Parthenon
+    dragen dat in hun titel, dus titel_bevat en titel_niet verdelen ze over de
+    twee kantoren in plaats van ze allemaal onder EY te scharen.
+    """
+    scheiding = "&" if "?" in zoekpad else "?"
+    basis = f"https://{host}{zoekpad}{scheiding}q="
+    if landfilter:
+        basis += "&locationsearch=Netherlands"
+    eerste = get_html(f"{basis}&startrow=0")
+    rijen = SF_RIJ.findall(eerste)
+    if not rijen:
+        return []
+    stap = len(rijen)
+    m = SF_TOTAAL.search(eerste)
+    totaal = int(m.group(1).replace(",", "").replace(".", "")) if m else stap
+
+    out, gezien = [], set()
+
+    def voeg_toe(paar):
+        for href, titel, loc in paar:
+            url = f"https://{host}{href}" if href.startswith("/") else href
+            if url in gezien:
+                continue
+            gezien.add(url)
+            titel = H.unescape(titel).strip()
+            # "Amsterdam, NL, 1083 HP  +4 more..." wordt "Amsterdam, NL, 1083 HP".
+            laag = titel.lower()
+            if titel_bevat and titel_bevat.lower() not in laag:
+                continue
+            if titel_niet and titel_niet.lower() in laag:
+                continue
+            loc = H.unescape(re.sub(r"\s+", " ", loc)).strip().rstrip(",")
+            out.append((titel, loc, url, titel))
+
+    voeg_toe(rijen)
+    for start in range(stap, min(totaal, 400), stap):
+        volgende = SF_RIJ.findall(get_html(f"{basis}&startrow={start}"))
+        if not volgende:
+            break
+        voeg_toe(volgende)
+    return out
 
 
 def is_nl(loc):
@@ -211,6 +295,8 @@ def listings(kind, code):
     if kind == "workday_site":
         dc, tenant, site = code
         return workday(tenant, dc, site, host="myworkdaysite.com")
+    if kind == "successfactors":
+        return successfactors(*code)
     return []
 
 
