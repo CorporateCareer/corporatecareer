@@ -5064,6 +5064,24 @@
   </url>
   <!-- BEDRIJVEN:END -->
 
+  <!-- JURIDISCH:START -->
+  <url>
+    <loc>https://corporatecareer.nl/privacy.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/voorwaarden.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/cookies.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <!-- JURIDISCH:END -->
+
   <!-- EN:START -->
   <url>
     <loc>https://corporatecareer.nl/en/articles.html</loc>
@@ -5167,6 +5185,11 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/en/bedrijven/barentskrans/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/bedrijven/bcg-platinion/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -5342,6 +5365,11 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/en/bedrijven/ey-netherlands/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/bedrijven/ey-parthenon/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -5611,6 +5639,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://corporatecareer.nl/en/bedrijven/sia/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://corporatecareer.nl/en/bedrijven/sig/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -5772,6 +5805,11 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/en/consulting/technology-digital/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/cookies.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -6006,6 +6044,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://corporatecareer.nl/en/privacy.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://corporatecareer.nl/en/private-equity-nederland.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -6052,6 +6095,11 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/en/venture-capital-nederland.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/voorwaarden.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
