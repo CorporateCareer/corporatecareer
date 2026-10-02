@@ -24,6 +24,10 @@ SITEMAP = os.path.join(BASE, "sitemap.xml")
 SEEN = os.path.join(BASE, "scripts", "vacancy_seen.json")
 SITE = "https://corporatecareer.nl"
 
+# Hoe lang een vacature na de laatste bevestigde controle geldig heet. De
+# controle draait wekelijks, dus 45 dagen laat ruim zes gemiste runs marge.
+GELDIG_NA_CONTROLE = 45
+
 def esc(s): return H.escape(str(s), quote=True)
 
 # Als tekens en niet als HTML-entiteit: bi() escapet de tekst, dus &rarr;
@@ -315,7 +319,17 @@ def build_page(job, nav, footer, first_seen, active):
     url = f"{SITE}/vacatures/{slug}.html"
     en_url = f"{SITE}/en/vacatures/{slug}.html"
     posted = first_seen.get(str(job["id"]), date.today().isoformat())
-    valid = (date.fromisoformat(posted) + timedelta(days=90)).isoformat()
+    # validThrough schuift mee zolang de vacature openstaat. Eerder stond hij
+    # vast op 90 dagen na de eerste keer gezien, en Google haalt een vacature
+    # na die datum uit Google Jobs, ook als hij nog gewoon openstaat. Met de
+    # eerste lichting uit juli ging zo in oktober de helft van de voorraad
+    # onterecht uit beeld, terwijl Google Jobs bijna de helft van de kliks
+    # levert. Deze pagina wordt alleen gebouwd voor vacatures die de wekelijkse
+    # controle als open heeft bevestigd, dus vanaf vandaag nog GELDIG_NA_CONTROLE
+    # dagen is verdedigbaar. Stopt die controle ooit, dan verlopen de vacatures
+    # binnen die termijn vanzelf in plaats van eindeloos te blijven staan.
+    valid = max(date.fromisoformat(posted) + timedelta(days=90),
+                date.today() + timedelta(days=GELDIG_NA_CONTROLE)).isoformat()
 
     tags_html = "".join(f'<span class="vac-tag">{esc(t)}</span>' for t in job["tags"])
 

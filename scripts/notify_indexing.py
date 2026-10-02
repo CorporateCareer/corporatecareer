@@ -29,6 +29,7 @@ slaat het script zichzelf over.
 """
 import json, os, re, sys, time
 import urllib.request, urllib.error
+from datetime import date, timedelta
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 JOBS = os.path.join(BASE, "jobs.html")
@@ -39,6 +40,14 @@ ENDPOINT = "https://indexing.googleapis.com/v3/urlNotifications:publish"
 # Het standaardquotum is 200 per dag. We laten marge, want een mislukte melding
 # telt ook mee en we willen niet halverwege tegen de limiet aanlopen.
 PER_RUN = 180
+
+# Een open vacature krijgt elke week een nieuwe validThrough. Google ziet die
+# pas als hij de pagina opnieuw ophaalt, en haalt hij hem niet op voor de oude
+# datum verstrijkt, dan valt de vacature alsnog uit Google Jobs. Daarom melden
+# we een vacature opnieuw zodra de datum die Google kent binnen deze termijn
+# afloopt. Niet elke week voor elke pagina: dat zou het quotum opmaken voor
+# een verschuiving die Google meestal ook zelf oppikt.
+VERVERS_BINNEN = 21
 
 
 def token(sleutel):
@@ -74,6 +83,31 @@ def laad_state():
         return {}
 
 
+def datums_op_pagina(slug):
+    """datePosted en validThrough zoals ze nu op de pagina staan."""
+    try:
+        h = open(os.path.join(BASE, "vacatures", f"{slug}.html"), encoding="utf-8").read()
+    except OSError:
+        return None, None
+    p = re.search(r'"datePosted"\s*:\s*"([^"]{10})', h)
+    v = re.search(r'"validThrough"\s*:\s*"([^"]{10})', h)
+    return (p.group(1) if p else None), (v.group(1) if v else None)
+
+
+def bekend_bij_google(record, geplaatst):
+    """De validThrough die Google bij de laatste melding te zien kreeg.
+
+    Meldingen van voor 2 oktober 2026 hebben dat veld niet, maar toen stond
+    validThrough nog vast op 90 dagen na datePosted. Die datum is dus terug te
+    rekenen, en dat is precies de datum waarop die vacatures zouden verlopen.
+    """
+    if record.get("geldig_tot"):
+        return record["geldig_tot"]
+    if geplaatst:
+        return (date.fromisoformat(geplaatst) + timedelta(days=90)).isoformat()
+    return None
+
+
 def main():
     ruw = os.environ.get("GOOGLE_INDEXING_KEY", "").strip()
     if not ruw:
@@ -94,22 +128,43 @@ def main():
     # Wat moet er gemeld worden, en in welke volgorde. Afmeldingen eerst: die
     # zijn er weinig en ze zijn het meest tijdgevoelig, want een gesloten
     # vacature die in Google blijft staan stuurt mensen naar een dood spoor.
-    af, aan = [], []
+    af, aan, ververs = [], [], []
+    geldig = {}
+    vandaag = date.today()
     for j in jobs:
         slug = j.get("slug")
         if not slug:
             continue
         url = f"{SITE}/vacatures/{slug}.html"
         dicht = j.get("active") is False
-        was = state.get(url, {}).get("soort")
+        record = state.get(url, {})
+        was = record.get("soort")
         if dicht and was != "URL_DELETED" and was is not None:
             # Alleen afmelden wat we ooit hebben aangemeld.
             af.append(url)
-        elif not dicht and was != "URL_UPDATED":
+            continue
+        if dicht:
+            continue
+        geplaatst, nu_geldig = datums_op_pagina(slug)
+        geldig[url] = nu_geldig
+        if was != "URL_UPDATED":
             aan.append(url)
+            continue
+        # Al aangemeld. Opnieuw melden als de datum die Google kent bijna
+        # verloopt en de pagina inmiddels een latere datum draagt.
+        oud = bekend_bij_google(record, geplaatst)
+        if not (oud and nu_geldig and nu_geldig != oud):
+            continue
+        if (date.fromisoformat(oud) - vandaag).days <= VERVERS_BINNEN:
+            ververs.append((oud, url))
 
-    todo = [(u, "URL_DELETED") for u in af] + [(u, "URL_UPDATED") for u in aan]
-    print(f"{len(af)} af te melden, {len(aan)} aan te melden, quotum {PER_RUN} per run")
+    # De urgentste eerst: wie het eerst zou verlopen.
+    ververs = [u for _, u in sorted(ververs)]
+    todo = ([(u, "URL_DELETED") for u in af] + [(u, "URL_UPDATED") for u in aan]
+            + [(u, "URL_UPDATED") for u in ververs])
+    print(f"{len(af)} af te melden, {len(aan)} aan te melden, "
+          f"{len(ververs)} opnieuw te melden wegens een verlengde einddatum, "
+          f"quotum {PER_RUN} per run")
     if not todo:
         print("niets te melden")
         return 0
@@ -123,6 +178,10 @@ def main():
         ok, reden = meld(url, soort, tok)
         if ok:
             state[url] = {"soort": soort, "op": time.strftime("%Y-%m-%d")}
+            if soort == "URL_UPDATED" and geldig.get(url):
+                # Onthouden welke einddatum Google nu kent, zodat de volgende
+                # verlenging pas weer gemeld wordt als die bijna verloopt.
+                state[url]["geldig_tot"] = geldig[url]
             gelukt += 1
         else:
             mislukt += 1
