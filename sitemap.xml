@@ -1135,11 +1135,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/vacatures/banning-advocaat-medewerker-corporate-en-m-en-a.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/vacatures/banning-student-stagiair-den-bosch.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -1230,11 +1225,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/vacatures/de-brauw-blackstone-westbroek-legal-adviser-employment-pensions-en-remuneration-.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/vacatures/de-brauw-blackstone-westbroek-legal-adviser-employment-pensions-en-remuneration--2.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -1290,16 +1280,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/vacatures/dvdw-advocaten-advocaat-medewerker-commerci-le-contracten-en-vastgoed.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/dvdw-advocaten-advocaat-medewerker-m-en-a.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/vacatures/freshfields-werkstudentschap.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -1326,11 +1306,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/vacatures/holla-senior-advocaat-corporate-litigation.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/holla-advocaat-stagiair-bouwrecht.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1940,11 +1915,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/vacatures/barentskrans-legal-engineer.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/vacatures/barentskrans-kandidaat-notaris-corporate-m-a.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -1976,11 +1946,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/vacatures/flow-traders-staff-engineer-trading-automation-and-backend-platforms.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/pwc-netherlands-security-operations-analyst.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2440,11 +2405,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/vacatures/conclusion-onsite-engineer.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/vacatures/da-vinci-trading-experienced-quant.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -2485,6 +2445,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://corporatecareer.nl/vacatures/hogan-lovells-werkstudent-banking-finance.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://corporatecareer.nl/vacatures/ig-h-manager-data-ai.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -2521,11 +2486,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/vacatures/ig-h-techlead-low-code.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/ig-h-process-mining-expert.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2571,11 +2531,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/vacatures/imc-trading-senior-macro-analyst.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/mufg-bank-vp-eu-cash-liquidity-management-sales-japanese-corporates.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2675,17 +2630,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/vacatures/berenschot-junior-consultant-team-leiderschap-change.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/vacatures/berenschot-stagiair-digital-en-data.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/berenschot-stagiair-e-backend-developer.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2701,11 +2646,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/vacatures/berenschot-managing-consultant-business-intelligence-bi.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/berenschot-juridisch-adviseur-openbaar-bestuur.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2741,11 +2681,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/vacatures/berenschot-senior-consultant-digitale-transformatie-in-het-openbaar-bestuur.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/berenschot-stagiair-e-software-development-ai-bouw-aan-de-toekomst-van-consultancy.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2900,11 +2835,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/vacatures/ig-h-stage-artificial-intelligence-data-science.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/vacatures/ig-h-consultant-enterprise-architecture.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -2970,11 +2900,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/vacatures/hvg-law-legal-engineer.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/vacatures/hvg-law-corporate-m-a.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -3006,11 +2931,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/vacatures/nysingh-advocaat-stagiair-grondzaken-gebiedsontwikkeling.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/nysingh-werkstudent-notariaat-vastgoed.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -3081,11 +3001,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/vacatures/winston-taylor-student-stagiair-e-ip.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/bunq-technology-risk-officer.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -3255,11 +3170,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/vacatures/ig-h-junior-proces-consultant.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/vacatures/ig-h-stage-zorgtransformatie-en-beslisondersteuning-health-alii.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -3310,11 +3220,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/vacatures/mufg-bank-senior-auditor.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/vacatures/mufg-bank-vice-president-enterprise-risk-planning.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -3345,11 +3250,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/vacatures/pels-rijcken-werkstudent-client-acceptatie-desk.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/vacatures/pels-rijcken-hoofd-risk-and-compliance.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -3361,11 +3261,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/vacatures/pwc-netherlands-senior-manager-risk-quality.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/pwc-netherlands-senior-manager-finance-consulting.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -3405,11 +3300,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/vacatures/winston-taylor-legal-ai-innovation-manager.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/vacatures/xebia-medior-data-analist.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -3426,11 +3316,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/vacatures/xebia-architect-of-digital-transformation.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/bunq-copywriting-intern.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -3615,16 +3500,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/vacatures/baker-tilly-netherlands-consultant-vat-advisory-nationaal.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/baker-tilly-netherlands-consultant-vat-advisory-nationaal-2.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/vacatures/baker-tilly-netherlands-manager-valuation-modelling.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -3676,11 +3551,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/vacatures/baker-tilly-netherlands-senior-consultant-tax-advisory.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/baker-tilly-netherlands-senior-manager-audit-ra.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -3780,16 +3650,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/vacatures/baker-tilly-netherlands-senior-consultant-tax-compliance.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/baker-tilly-netherlands-senior-consultant-tax-compliance-2.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/vacatures/baker-tilly-netherlands-supervisor-audit-4.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -3806,11 +3666,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/vacatures/baker-tilly-netherlands-werkstudent-tax-advisory.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/baker-tilly-netherlands-stagiair-subsidie-compliance.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -3845,16 +3700,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/vacatures/baker-tilly-netherlands-consultant-vat-advisory-nationaal-3.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/baker-tilly-netherlands-senior-consultant-tax-advisory-3.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/vacatures/baker-tilly-netherlands-manager-legal-advisory-ondernemingsrecht.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -3866,11 +3711,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/vacatures/baker-tilly-netherlands-consultant-tax-advisory-2.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/baker-tilly-netherlands-senior-consultant-tax-compliance-3.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -3901,11 +3741,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/vacatures/baker-tilly-netherlands-supervisor-audit-non-profit-2.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/baker-tilly-netherlands-supervisor-audit-5.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -4095,52 +3930,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/vacatures/holla-advocaat-medewerker-arbeidsrecht.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/holla-medewerker-risk-compliance.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/holla-werkstudent-financiering-zekerheden-insolventie-fzi.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/holla-advocaat-stagiair-m-a.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/holla-stage-fiscale-praktijk.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/holla-junior-belastingadviseur.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/holla-litigation-support-coordinator.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/holla-stage-kantoorbreed.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/vacatures/houthoff-studerend-juridisch-medewerker-rotterdam.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/houthoff-student-stagiaire-ai-ondernemingsrecht-m-a-rotterdam.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -4260,32 +4050,12 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/vacatures/simmons-simmons-advocaat-stagiair-junior-associate-simmons-simmons-amsterdam.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/stek-advocaat-medewerker-banking-finance-4-tot-7-jaar-ervaring.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/stek-advocaat-medewerker-corporate-m-a-4-tot-7-jaar-ervaring.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/vacatures/stek-advocaat-medewerker-regulatory-energierecht-omgevingsrecht.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://corporatecareer.nl/vacatures/stek-gevorderde-advocaat-stagiaire-of-beginnend-advocaat-medewerker-litigation.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/stek-transactiemanager-paralegal-banking-finance.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -4300,27 +4070,12 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/vacatures/stek-gevorderd-advocaat-stagiaire-of-beginnend-advocaat-medewerker-banking-finance.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/vacatures/stek-advocaat-medewerker-corporate-energy-5-tot-7-jaar-ervaring.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/vacatures/stek-advocaat-medewerker-banking-finance-acquisition-finance.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/vacatures/stek-werkstudent-energy.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/stek-student-stagiaire-banking-finance.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -4341,11 +4096,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/vacatures/marktlink-strategic-associate.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/marktlink-international-workplace-coordinator.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -4670,11 +4420,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/vacatures/ey-netherlands-business-tax-compliance-senior-consultant-amsterdam.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/vacatures/ey-netherlands-manager-tax-technology-transformation-1.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -4696,11 +4441,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/vacatures/ey-netherlands-business-tax-compliance-senior-consultant-groningen.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/ey-netherlands-tax-accounting-risk-advisory-senior-consultant-tax-accounting-1.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -4775,17 +4515,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/vacatures/cms-advocaat-stagiair-construction-infrastructure-projects.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/vacatures/cms-advocaat-stagiair-corporate-m-a.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/cms-advocaat-stagiair-banking-finance-transactional-banking.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -4831,11 +4561,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/vacatures/freshfields-werkstudentschap-finance-knowhow.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/vacatures/holla-advocaat-stagiair-arbeidsrecht.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -4891,6 +4616,181 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/vacatures/winston-taylor-associate-patents-innovation.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/baker-tilly-netherlands-corporate-tax-partner.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/baker-tilly-netherlands-senior-manager-corporate-tax.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/barclays-europe-issuing-sales-analyst.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/barentskrans-junior-medewerker-financiele-administratie.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/berenschot-adviseur-verandermanagement-en-leiderschapsontwikkeling.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/berenschot-junior-consultant-water-en-ruimte.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/cms-student-stage-construction-infrastructure-projects.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/cms-student-stage-insurance-liability.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/cms-student-stage-dispute-resolution.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/cms-advocaat-stagiair-transactional-banking.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/cms-student-stage-employment-labour-pensions.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/conclusion-it-afstudeerstage-data-in-de-zorg.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/deutsche-bank-o-a-benelux-coverage-seasonal-intern-f-m-x.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/deutsche-bank-o-a-benelux-coverage-seasonal-intern-f-m-x-2.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/deutsche-bank-investment-banking-associate-f-m-x.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/deutsche-bank-o-a-benelux-coverage-seasonal-intern-f-m-x-3.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/ey-netherlands-senior-manager-public-advisory.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/ey-netherlands-senior-consultant-public-advisory.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/ey-netherlands-senior-consultant-indirect-tax-compliance.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/eraneos-senior-consultant-it-sourcing-m-v-x.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/linklaters-werkstudent-corporate-litigation-lai.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/mufg-bank-2027-mufg-6-month-amsterdam-internship-japanese-corporate-banking-division.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/mufg-bank-internal-communications-and-pa-to-cfo-and-coo.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/mufg-bank-2027-mufg-analyst-programme-finance-track.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/mufg-bank-avp-market-risk-manager.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/mufg-bank-2027-mufg-analyst-programme-ceo-domain-track.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/mufg-bank-2027-mufg-analyst-programme-coo-domain-track.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/pels-rijcken-werkstudent-europees-en-mededingingsrecht.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/pels-rijcken-werkstudent-ip-t.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/pwc-netherlands-senior-associate-public-policy-economics.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/roland-berger-senior-consultant-project-manager-chemicals-process-industries.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/twynstra-gudde-medior-adviseur-strategisch-proces-en-omgevingsmanagement.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/winston-taylor-head-of-compliance.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/winston-taylor-associate-intellectual-property.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/vacatures/bunq-audit-automation-intern.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -6592,11 +6492,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/en/vacatures/banning-advocaat-medewerker-corporate-en-m-en-a.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/en/vacatures/banning-student-stagiair-den-bosch.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -6687,11 +6582,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/en/vacatures/de-brauw-blackstone-westbroek-legal-adviser-employment-pensions-en-remuneration-.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/en/vacatures/de-brauw-blackstone-westbroek-legal-adviser-employment-pensions-en-remuneration--2.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -6747,16 +6637,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/en/vacatures/dvdw-advocaten-advocaat-medewerker-commerci-le-contracten-en-vastgoed.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/dvdw-advocaten-advocaat-medewerker-m-en-a.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/en/vacatures/freshfields-werkstudentschap.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -6783,11 +6663,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/en/vacatures/holla-senior-advocaat-corporate-litigation.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/holla-advocaat-stagiair-bouwrecht.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -7397,11 +7272,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/en/vacatures/barentskrans-legal-engineer.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/en/vacatures/barentskrans-kandidaat-notaris-corporate-m-a.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -7433,11 +7303,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/en/vacatures/flow-traders-staff-engineer-trading-automation-and-backend-platforms.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/pwc-netherlands-security-operations-analyst.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -7897,11 +7762,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/en/vacatures/conclusion-onsite-engineer.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/en/vacatures/da-vinci-trading-experienced-quant.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -7942,6 +7802,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://corporatecareer.nl/en/vacatures/hogan-lovells-werkstudent-banking-finance.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://corporatecareer.nl/en/vacatures/ig-h-manager-data-ai.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -7978,11 +7843,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/en/vacatures/ig-h-techlead-low-code.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/ig-h-process-mining-expert.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -8028,11 +7888,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/en/vacatures/imc-trading-senior-macro-analyst.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/mufg-bank-vp-eu-cash-liquidity-management-sales-japanese-corporates.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -8132,17 +7987,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/en/vacatures/berenschot-junior-consultant-team-leiderschap-change.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/en/vacatures/berenschot-stagiair-digital-en-data.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/berenschot-stagiair-e-backend-developer.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -8158,11 +8003,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/en/vacatures/berenschot-managing-consultant-business-intelligence-bi.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/berenschot-juridisch-adviseur-openbaar-bestuur.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -8198,11 +8038,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/en/vacatures/berenschot-senior-consultant-digitale-transformatie-in-het-openbaar-bestuur.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/berenschot-stagiair-e-software-development-ai-bouw-aan-de-toekomst-van-consultancy.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -8357,11 +8192,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/en/vacatures/ig-h-stage-artificial-intelligence-data-science.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/en/vacatures/ig-h-consultant-enterprise-architecture.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -8427,11 +8257,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/en/vacatures/hvg-law-legal-engineer.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/en/vacatures/hvg-law-corporate-m-a.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -8463,11 +8288,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/en/vacatures/nysingh-advocaat-stagiair-grondzaken-gebiedsontwikkeling.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/nysingh-werkstudent-notariaat-vastgoed.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -8538,11 +8358,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/en/vacatures/winston-taylor-student-stagiair-e-ip.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/bunq-technology-risk-officer.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -8712,11 +8527,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/en/vacatures/ig-h-junior-proces-consultant.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/en/vacatures/ig-h-stage-zorgtransformatie-en-beslisondersteuning-health-alii.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -8767,11 +8577,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/en/vacatures/mufg-bank-senior-auditor.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/en/vacatures/mufg-bank-vice-president-enterprise-risk-planning.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -8802,11 +8607,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/en/vacatures/pels-rijcken-werkstudent-client-acceptatie-desk.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/en/vacatures/pels-rijcken-hoofd-risk-and-compliance.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -8818,11 +8618,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/en/vacatures/pwc-netherlands-senior-manager-risk-quality.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/pwc-netherlands-senior-manager-finance-consulting.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -8862,11 +8657,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/en/vacatures/winston-taylor-legal-ai-innovation-manager.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/en/vacatures/xebia-medior-data-analist.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -8883,11 +8673,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/en/vacatures/xebia-architect-of-digital-transformation.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/bunq-copywriting-intern.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -9072,16 +8857,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/en/vacatures/baker-tilly-netherlands-consultant-vat-advisory-nationaal.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/baker-tilly-netherlands-consultant-vat-advisory-nationaal-2.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/en/vacatures/baker-tilly-netherlands-manager-valuation-modelling.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -9133,11 +8908,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/en/vacatures/baker-tilly-netherlands-senior-consultant-tax-advisory.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/baker-tilly-netherlands-senior-manager-audit-ra.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -9237,16 +9007,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/en/vacatures/baker-tilly-netherlands-senior-consultant-tax-compliance.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/baker-tilly-netherlands-senior-consultant-tax-compliance-2.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/en/vacatures/baker-tilly-netherlands-supervisor-audit-4.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -9263,11 +9023,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/en/vacatures/baker-tilly-netherlands-werkstudent-tax-advisory.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/baker-tilly-netherlands-stagiair-subsidie-compliance.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -9302,16 +9057,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/en/vacatures/baker-tilly-netherlands-consultant-vat-advisory-nationaal-3.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/baker-tilly-netherlands-senior-consultant-tax-advisory-3.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/en/vacatures/baker-tilly-netherlands-manager-legal-advisory-ondernemingsrecht.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -9323,11 +9068,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/en/vacatures/baker-tilly-netherlands-consultant-tax-advisory-2.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/baker-tilly-netherlands-senior-consultant-tax-compliance-3.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -9358,11 +9098,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/en/vacatures/baker-tilly-netherlands-supervisor-audit-non-profit-2.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/baker-tilly-netherlands-supervisor-audit-5.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -9552,52 +9287,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/en/vacatures/holla-advocaat-medewerker-arbeidsrecht.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/holla-medewerker-risk-compliance.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/holla-werkstudent-financiering-zekerheden-insolventie-fzi.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/holla-advocaat-stagiair-m-a.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/holla-stage-fiscale-praktijk.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/holla-junior-belastingadviseur.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/holla-litigation-support-coordinator.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/holla-stage-kantoorbreed.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/en/vacatures/houthoff-studerend-juridisch-medewerker-rotterdam.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/houthoff-student-stagiaire-ai-ondernemingsrecht-m-a-rotterdam.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -9717,32 +9407,12 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/en/vacatures/simmons-simmons-advocaat-stagiair-junior-associate-simmons-simmons-amsterdam.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/stek-advocaat-medewerker-banking-finance-4-tot-7-jaar-ervaring.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/stek-advocaat-medewerker-corporate-m-a-4-tot-7-jaar-ervaring.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/en/vacatures/stek-advocaat-medewerker-regulatory-energierecht-omgevingsrecht.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://corporatecareer.nl/en/vacatures/stek-gevorderde-advocaat-stagiaire-of-beginnend-advocaat-medewerker-litigation.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/stek-transactiemanager-paralegal-banking-finance.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -9757,27 +9427,12 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/en/vacatures/stek-gevorderd-advocaat-stagiaire-of-beginnend-advocaat-medewerker-banking-finance.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/en/vacatures/stek-advocaat-medewerker-corporate-energy-5-tot-7-jaar-ervaring.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/en/vacatures/stek-advocaat-medewerker-banking-finance-acquisition-finance.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/en/vacatures/stek-werkstudent-energy.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/stek-student-stagiaire-banking-finance.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -9798,11 +9453,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/en/vacatures/marktlink-strategic-associate.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/marktlink-international-workplace-coordinator.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -10127,11 +9777,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/en/vacatures/ey-netherlands-business-tax-compliance-senior-consultant-amsterdam.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/en/vacatures/ey-netherlands-manager-tax-technology-transformation-1.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -10153,11 +9798,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/en/vacatures/ey-netherlands-business-tax-compliance-senior-consultant-groningen.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/ey-netherlands-tax-accounting-risk-advisory-senior-consultant-tax-accounting-1.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -10232,17 +9872,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://corporatecareer.nl/en/vacatures/cms-advocaat-stagiair-construction-infrastructure-projects.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://corporatecareer.nl/en/vacatures/cms-advocaat-stagiair-corporate-m-a.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/cms-advocaat-stagiair-banking-finance-transactional-banking.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -10288,11 +9918,6 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/en/vacatures/freshfields-werkstudentschap-finance-knowhow.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://corporatecareer.nl/en/vacatures/holla-advocaat-stagiair-arbeidsrecht.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -10348,6 +9973,181 @@
   </url>
   <url>
     <loc>https://corporatecareer.nl/en/vacatures/winston-taylor-associate-patents-innovation.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/baker-tilly-netherlands-corporate-tax-partner.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/baker-tilly-netherlands-senior-manager-corporate-tax.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/barclays-europe-issuing-sales-analyst.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/barentskrans-junior-medewerker-financiele-administratie.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/berenschot-adviseur-verandermanagement-en-leiderschapsontwikkeling.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/berenschot-junior-consultant-water-en-ruimte.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/cms-student-stage-construction-infrastructure-projects.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/cms-student-stage-insurance-liability.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/cms-student-stage-dispute-resolution.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/cms-advocaat-stagiair-transactional-banking.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/cms-student-stage-employment-labour-pensions.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/conclusion-it-afstudeerstage-data-in-de-zorg.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/deutsche-bank-o-a-benelux-coverage-seasonal-intern-f-m-x.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/deutsche-bank-o-a-benelux-coverage-seasonal-intern-f-m-x-2.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/deutsche-bank-investment-banking-associate-f-m-x.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/deutsche-bank-o-a-benelux-coverage-seasonal-intern-f-m-x-3.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/ey-netherlands-senior-manager-public-advisory.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/ey-netherlands-senior-consultant-public-advisory.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/ey-netherlands-senior-consultant-indirect-tax-compliance.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/eraneos-senior-consultant-it-sourcing-m-v-x.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/linklaters-werkstudent-corporate-litigation-lai.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/mufg-bank-2027-mufg-6-month-amsterdam-internship-japanese-corporate-banking-division.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/mufg-bank-internal-communications-and-pa-to-cfo-and-coo.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/mufg-bank-2027-mufg-analyst-programme-finance-track.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/mufg-bank-avp-market-risk-manager.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/mufg-bank-2027-mufg-analyst-programme-ceo-domain-track.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/mufg-bank-2027-mufg-analyst-programme-coo-domain-track.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/pels-rijcken-werkstudent-europees-en-mededingingsrecht.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/pels-rijcken-werkstudent-ip-t.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/pwc-netherlands-senior-associate-public-policy-economics.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/roland-berger-senior-consultant-project-manager-chemicals-process-industries.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/twynstra-gudde-medior-adviseur-strategisch-proces-en-omgevingsmanagement.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/winston-taylor-head-of-compliance.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/winston-taylor-associate-intellectual-property.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://corporatecareer.nl/en/vacatures/bunq-audit-automation-intern.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
