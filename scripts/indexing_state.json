@@ -77,15 +77,20 @@
   "soort": "URL_UPDATED"
  },
  "https://corporatecareer.nl/vacatures/baker-tilly-netherlands-consultant-vat-advisory-nationaal-2.html": {
-  "op": "2026-09-24",
-  "soort": "URL_UPDATED"
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
  },
  "https://corporatecareer.nl/vacatures/baker-tilly-netherlands-consultant-vat-advisory-nationaal-3.html": {
-  "op": "2026-09-24",
-  "soort": "URL_UPDATED"
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
  },
  "https://corporatecareer.nl/vacatures/baker-tilly-netherlands-consultant-vat-advisory-nationaal.html": {
-  "op": "2026-09-24",
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
+ },
+ "https://corporatecareer.nl/vacatures/baker-tilly-netherlands-corporate-tax-partner.html": {
+  "geldig_tot": "2027-01-03",
+  "op": "2026-10-05",
   "soort": "URL_UPDATED"
  },
  "https://corporatecareer.nl/vacatures/baker-tilly-netherlands-director-legal-advisory-vastgoed.html": {
@@ -201,24 +206,24 @@
   "soort": "URL_UPDATED"
  },
  "https://corporatecareer.nl/vacatures/baker-tilly-netherlands-senior-consultant-tax-advisory-3.html": {
-  "op": "2026-09-24",
-  "soort": "URL_UPDATED"
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
  },
  "https://corporatecareer.nl/vacatures/baker-tilly-netherlands-senior-consultant-tax-advisory.html": {
   "op": "2026-09-24",
   "soort": "URL_UPDATED"
  },
  "https://corporatecareer.nl/vacatures/baker-tilly-netherlands-senior-consultant-tax-compliance-2.html": {
-  "op": "2026-09-24",
-  "soort": "URL_UPDATED"
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
  },
  "https://corporatecareer.nl/vacatures/baker-tilly-netherlands-senior-consultant-tax-compliance-3.html": {
-  "op": "2026-09-24",
-  "soort": "URL_UPDATED"
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
  },
  "https://corporatecareer.nl/vacatures/baker-tilly-netherlands-senior-consultant-tax-compliance.html": {
-  "op": "2026-09-24",
-  "soort": "URL_UPDATED"
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
  },
  "https://corporatecareer.nl/vacatures/baker-tilly-netherlands-senior-consultant-valuation-modelling-2.html": {
   "op": "2026-09-24",
@@ -241,11 +246,16 @@
   "soort": "URL_UPDATED"
  },
  "https://corporatecareer.nl/vacatures/baker-tilly-netherlands-senior-manager-audit-ra.html": {
-  "op": "2026-09-24",
-  "soort": "URL_UPDATED"
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
  },
  "https://corporatecareer.nl/vacatures/baker-tilly-netherlands-senior-manager-audit.html": {
   "op": "2026-09-24",
+  "soort": "URL_UPDATED"
+ },
+ "https://corporatecareer.nl/vacatures/baker-tilly-netherlands-senior-manager-corporate-tax.html": {
+  "geldig_tot": "2027-01-03",
+  "op": "2026-10-05",
   "soort": "URL_UPDATED"
  },
  "https://corporatecareer.nl/vacatures/baker-tilly-netherlands-senior-manager-legal-advisory-ondernemingsrecht.html": {
@@ -282,8 +292,8 @@
   "soort": "URL_UPDATED"
  },
  "https://corporatecareer.nl/vacatures/baker-tilly-netherlands-stagiair-subsidie-compliance.html": {
-  "op": "2026-09-24",
-  "soort": "URL_UPDATED"
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
  },
  "https://corporatecareer.nl/vacatures/baker-tilly-netherlands-supervisor-audit-2.html": {
   "op": "2026-09-24",
@@ -298,8 +308,8 @@
   "soort": "URL_UPDATED"
  },
  "https://corporatecareer.nl/vacatures/baker-tilly-netherlands-supervisor-audit-5.html": {
-  "op": "2026-09-24",
-  "soort": "URL_UPDATED"
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
  },
  "https://corporatecareer.nl/vacatures/baker-tilly-netherlands-supervisor-audit-6.html": {
   "op": "2026-09-24",
@@ -346,9 +356,8 @@
   "soort": "URL_UPDATED"
  },
  "https://corporatecareer.nl/vacatures/banning-advocaat-medewerker-corporate-en-m-en-a.html": {
-  "geldig_tot": "2026-11-16",
-  "op": "2026-10-02",
-  "soort": "URL_UPDATED"
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
  },
  "https://corporatecareer.nl/vacatures/banning-advocaat-medewerker-corporate-litigation.html": {
   "geldig_tot": "2026-11-16",
@@ -362,6 +371,11 @@
  },
  "https://corporatecareer.nl/vacatures/barclays-banking-off-cycle-internship-programme-2027-amsterdam.html": {
   "op": "2026-09-28",
+  "soort": "URL_UPDATED"
+ },
+ "https://corporatecareer.nl/vacatures/barclays-europe-issuing-sales-analyst.html": {
+  "geldig_tot": "2027-01-03",
+  "op": "2026-10-05",
   "soort": "URL_UPDATED"
  },
  "https://corporatecareer.nl/vacatures/barclays-international-corporate-banking-off-cycle-internship-programme-2027-amsterdam.html": {
@@ -401,15 +415,19 @@
   "op": "2026-09-22",
   "soort": "URL_UPDATED"
  },
+ "https://corporatecareer.nl/vacatures/barentskrans-junior-medewerker-financiele-administratie.html": {
+  "geldig_tot": "2027-01-03",
+  "op": "2026-10-05",
+  "soort": "URL_UPDATED"
+ },
  "https://corporatecareer.nl/vacatures/barentskrans-kandidaat-notaris-corporate-m-a.html": {
   "geldig_tot": "2026-11-16",
   "op": "2026-10-02",
   "soort": "URL_UPDATED"
  },
  "https://corporatecareer.nl/vacatures/barentskrans-legal-engineer.html": {
-  "geldig_tot": "2026-11-16",
-  "op": "2026-10-02",
-  "soort": "URL_UPDATED"
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
  },
  "https://corporatecareer.nl/vacatures/barentskrans-student-stagiaire-advocatuur.html": {
   "geldig_tot": "2026-11-16",
@@ -464,6 +482,11 @@
   "op": "2026-10-02",
   "soort": "URL_UPDATED"
  },
+ "https://corporatecareer.nl/vacatures/berenschot-adviseur-verandermanagement-en-leiderschapsontwikkeling.html": {
+  "geldig_tot": "2027-01-03",
+  "op": "2026-10-05",
+  "soort": "URL_UPDATED"
+ },
  "https://corporatecareer.nl/vacatures/berenschot-consultant-warmtetransitie.html": {
   "op": "2026-09-23",
   "soort": "URL_UPDATED"
@@ -477,12 +500,17 @@
   "soort": "URL_UPDATED"
  },
  "https://corporatecareer.nl/vacatures/berenschot-junior-consultant-team-leiderschap-change.html": {
-  "op": "2026-09-23",
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
+ },
+ "https://corporatecareer.nl/vacatures/berenschot-junior-consultant-water-en-ruimte.html": {
+  "geldig_tot": "2027-01-03",
+  "op": "2026-10-05",
   "soort": "URL_UPDATED"
  },
  "https://corporatecareer.nl/vacatures/berenschot-juridisch-adviseur-openbaar-bestuur.html": {
-  "op": "2026-09-23",
-  "soort": "URL_UPDATED"
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
  },
  "https://corporatecareer.nl/vacatures/berenschot-managing-consultant-business-intelligence-bi.html": {
   "op": "2026-09-23",
@@ -569,16 +597,16 @@
   "soort": "URL_UPDATED"
  },
  "https://corporatecareer.nl/vacatures/berenschot-stagiair-e-backend-developer.html": {
-  "op": "2026-09-23",
-  "soort": "URL_UPDATED"
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
  },
  "https://corporatecareer.nl/vacatures/berenschot-stagiair-e-energie-en-leefomgeving.html": {
   "op": "2026-09-23",
   "soort": "URL_UPDATED"
  },
  "https://corporatecareer.nl/vacatures/berenschot-stagiair-e-software-development-ai-bouw-aan-de-toekomst-van-consultancy.html": {
-  "op": "2026-09-23",
-  "soort": "URL_UPDATED"
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
  },
  "https://corporatecareer.nl/vacatures/berenschot-teamlead-financien-bedrijfsvoering-en-control-bij-openbaar-bestuur.html": {
   "op": "2026-09-23",
@@ -604,13 +632,18 @@
   "op": "2026-10-02",
   "soort": "URL_UPDATED"
  },
- "https://corporatecareer.nl/vacatures/bunq-copywriting-intern.html": {
-  "op": "2026-09-23",
+ "https://corporatecareer.nl/vacatures/bunq-audit-automation-intern.html": {
+  "geldig_tot": "2027-01-03",
+  "op": "2026-10-05",
   "soort": "URL_UPDATED"
  },
+ "https://corporatecareer.nl/vacatures/bunq-copywriting-intern.html": {
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
+ },
  "https://corporatecareer.nl/vacatures/bunq-technology-risk-officer.html": {
-  "op": "2026-09-23",
-  "soort": "URL_UPDATED"
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
  },
  "https://corporatecareer.nl/vacatures/buren-kandidaat-notaris-vastgoed.html": {
   "geldig_tot": "2026-11-16",
@@ -747,15 +780,20 @@
   "soort": "URL_UPDATED"
  },
  "https://corporatecareer.nl/vacatures/cms-advocaat-stagiair-banking-finance-transactional-banking.html": {
-  "op": "2026-09-28",
-  "soort": "URL_UPDATED"
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
  },
  "https://corporatecareer.nl/vacatures/cms-advocaat-stagiair-construction-infrastructure-projects.html": {
-  "op": "2026-09-28",
-  "soort": "URL_UPDATED"
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
  },
  "https://corporatecareer.nl/vacatures/cms-advocaat-stagiair-corporate-m-a.html": {
   "op": "2026-09-28",
+  "soort": "URL_UPDATED"
+ },
+ "https://corporatecareer.nl/vacatures/cms-advocaat-stagiair-transactional-banking.html": {
+  "geldig_tot": "2027-01-03",
+  "op": "2026-10-05",
   "soort": "URL_UPDATED"
  },
  "https://corporatecareer.nl/vacatures/cms-advocaat-stagiaire-corporate-en-m-en-a.html": {
@@ -783,13 +821,33 @@
   "op": "2026-09-23",
   "soort": "URL_UPDATED"
  },
+ "https://corporatecareer.nl/vacatures/cms-student-stage-construction-infrastructure-projects.html": {
+  "geldig_tot": "2027-01-03",
+  "op": "2026-10-05",
+  "soort": "URL_UPDATED"
+ },
  "https://corporatecareer.nl/vacatures/cms-student-stage-corporate-m-a.html": {
   "op": "2026-09-23",
+  "soort": "URL_UPDATED"
+ },
+ "https://corporatecareer.nl/vacatures/cms-student-stage-dispute-resolution.html": {
+  "geldig_tot": "2027-01-03",
+  "op": "2026-10-05",
   "soort": "URL_UPDATED"
  },
  "https://corporatecareer.nl/vacatures/cms-student-stage-employment-en-pensions.html": {
   "geldig_tot": "2026-11-16",
   "op": "2026-10-02",
+  "soort": "URL_UPDATED"
+ },
+ "https://corporatecareer.nl/vacatures/cms-student-stage-employment-labour-pensions.html": {
+  "geldig_tot": "2027-01-03",
+  "op": "2026-10-05",
+  "soort": "URL_UPDATED"
+ },
+ "https://corporatecareer.nl/vacatures/cms-student-stage-insurance-liability.html": {
+  "geldig_tot": "2027-01-03",
+  "op": "2026-10-05",
   "soort": "URL_UPDATED"
  },
  "https://corporatecareer.nl/vacatures/cms-student-stage-ip-tmc.html": {
@@ -865,6 +923,11 @@
   "op": "2026-10-02",
   "soort": "URL_UPDATED"
  },
+ "https://corporatecareer.nl/vacatures/conclusion-it-afstudeerstage-data-in-de-zorg.html": {
+  "geldig_tot": "2027-01-03",
+  "op": "2026-10-05",
+  "soort": "URL_UPDATED"
+ },
  "https://corporatecareer.nl/vacatures/conclusion-junior-data-consultant.html": {
   "geldig_tot": "2026-11-16",
   "op": "2026-10-02",
@@ -899,8 +962,8 @@
   "soort": "URL_UPDATED"
  },
  "https://corporatecareer.nl/vacatures/conclusion-onsite-engineer.html": {
-  "op": "2026-09-22",
-  "soort": "URL_UPDATED"
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
  },
  "https://corporatecareer.nl/vacatures/conclusion-sap-business-consultant-manufacturing.html": {
   "geldig_tot": "2026-11-16",
@@ -1144,9 +1207,8 @@
   "soort": "URL_UPDATED"
  },
  "https://corporatecareer.nl/vacatures/de-brauw-blackstone-westbroek-legal-adviser-employment-pensions-en-remuneration-.html": {
-  "geldig_tot": "2026-11-16",
-  "op": "2026-10-02",
-  "soort": "URL_UPDATED"
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
  },
  "https://corporatecareer.nl/vacatures/de-brauw-blackstone-westbroek-student-stage-arbeidsrecht.html": {
   "geldig_tot": "2026-11-16",
@@ -1214,6 +1276,26 @@
   "op": "2026-10-02",
   "soort": "URL_UPDATED"
  },
+ "https://corporatecareer.nl/vacatures/deutsche-bank-investment-banking-associate-f-m-x.html": {
+  "geldig_tot": "2027-01-03",
+  "op": "2026-10-05",
+  "soort": "URL_UPDATED"
+ },
+ "https://corporatecareer.nl/vacatures/deutsche-bank-o-a-benelux-coverage-seasonal-intern-f-m-x-2.html": {
+  "geldig_tot": "2027-01-03",
+  "op": "2026-10-05",
+  "soort": "URL_UPDATED"
+ },
+ "https://corporatecareer.nl/vacatures/deutsche-bank-o-a-benelux-coverage-seasonal-intern-f-m-x-3.html": {
+  "geldig_tot": "2027-01-03",
+  "op": "2026-10-05",
+  "soort": "URL_UPDATED"
+ },
+ "https://corporatecareer.nl/vacatures/deutsche-bank-o-a-benelux-coverage-seasonal-intern-f-m-x.html": {
+  "geldig_tot": "2027-01-03",
+  "op": "2026-10-05",
+  "soort": "URL_UPDATED"
+ },
  "https://corporatecareer.nl/vacatures/deutsche-bank-relationship-manager-f-m-x.html": {
   "geldig_tot": "2026-11-16",
   "op": "2026-10-02",
@@ -1273,14 +1355,12 @@
   "soort": "URL_UPDATED"
  },
  "https://corporatecareer.nl/vacatures/dvdw-advocaten-advocaat-medewerker-commerci-le-contracten-en-vastgoed.html": {
-  "geldig_tot": "2026-11-16",
-  "op": "2026-10-02",
-  "soort": "URL_UPDATED"
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
  },
  "https://corporatecareer.nl/vacatures/dvdw-advocaten-advocaat-medewerker-m-en-a.html": {
-  "geldig_tot": "2026-11-16",
-  "op": "2026-10-02",
-  "soort": "URL_UPDATED"
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
  },
  "https://corporatecareer.nl/vacatures/eqt-investment-professionals-associate-eu.html": {
   "geldig_tot": "2026-11-16",
@@ -1335,6 +1415,11 @@
  },
  "https://corporatecareer.nl/vacatures/eraneos-senior-consultant-it-risk-management-m-v-x.html": {
   "op": "2026-09-22",
+  "soort": "URL_UPDATED"
+ },
+ "https://corporatecareer.nl/vacatures/eraneos-senior-consultant-it-sourcing-m-v-x.html": {
+  "geldig_tot": "2027-01-03",
+  "op": "2026-10-05",
   "soort": "URL_UPDATED"
  },
  "https://corporatecareer.nl/vacatures/eraneos-senior-consultant-secure-by-design.html": {
@@ -1410,8 +1495,8 @@
   "soort": "URL_UPDATED"
  },
  "https://corporatecareer.nl/vacatures/ey-netherlands-business-tax-compliance-senior-consultant-amsterdam.html": {
-  "op": "2026-09-25",
-  "soort": "URL_UPDATED"
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
  },
  "https://corporatecareer.nl/vacatures/ey-netherlands-business-tax-compliance-senior-consultant-den-haag.html": {
   "op": "2026-09-25",
@@ -1589,6 +1674,11 @@
   "op": "2026-09-25",
   "soort": "URL_UPDATED"
  },
+ "https://corporatecareer.nl/vacatures/ey-netherlands-senior-consultant-indirect-tax-compliance.html": {
+  "geldig_tot": "2027-01-03",
+  "op": "2026-10-05",
+  "soort": "URL_UPDATED"
+ },
  "https://corporatecareer.nl/vacatures/ey-netherlands-senior-consultant-internal-control.html": {
   "op": "2026-09-25",
   "soort": "URL_UPDATED"
@@ -1599,6 +1689,11 @@
  },
  "https://corporatecareer.nl/vacatures/ey-netherlands-senior-consultant-manager-financial-due-diligence.html": {
   "op": "2026-09-25",
+  "soort": "URL_UPDATED"
+ },
+ "https://corporatecareer.nl/vacatures/ey-netherlands-senior-consultant-public-advisory.html": {
+  "geldig_tot": "2027-01-03",
+  "op": "2026-10-05",
   "soort": "URL_UPDATED"
  },
  "https://corporatecareer.nl/vacatures/ey-netherlands-senior-consultant-public-finance.html": {
@@ -1649,6 +1744,11 @@
   "op": "2026-09-25",
   "soort": "URL_UPDATED"
  },
+ "https://corporatecareer.nl/vacatures/ey-netherlands-senior-manager-public-advisory.html": {
+  "geldig_tot": "2027-01-03",
+  "op": "2026-10-05",
+  "soort": "URL_UPDATED"
+ },
  "https://corporatecareer.nl/vacatures/ey-netherlands-senior-manager-public-finance.html": {
   "op": "2026-09-25",
   "soort": "URL_UPDATED"
@@ -1674,8 +1774,8 @@
   "soort": "URL_UPDATED"
  },
  "https://corporatecareer.nl/vacatures/ey-netherlands-tax-accounting-risk-advisory-senior-consultant-tax-accounting-1.html": {
-  "op": "2026-09-25",
-  "soort": "URL_UPDATED"
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
  },
  "https://corporatecareer.nl/vacatures/ey-netherlands-tax-accounting-risk-advisory-senior-consultant-tax-accounting-amsterdam.html": {
   "op": "2026-09-25",
@@ -1862,6 +1962,11 @@
   "op": "2026-10-02",
   "soort": "URL_UPDATED"
  },
+ "https://corporatecareer.nl/vacatures/hogan-lovells-werkstudent-banking-finance.html": {
+  "geldig_tot": "2026-11-19",
+  "op": "2026-10-05",
+  "soort": "URL_UPDATED"
+ },
  "https://corporatecareer.nl/vacatures/hogan-lovells-werkstudent-corporate-horizon.html": {
   "geldig_tot": "2026-11-16",
   "op": "2026-10-02",
@@ -1885,8 +1990,8 @@
   "soort": "URL_UPDATED"
  },
  "https://corporatecareer.nl/vacatures/holla-advocaat-medewerker-arbeidsrecht.html": {
-  "op": "2026-09-24",
-  "soort": "URL_UPDATED"
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
  },
  "https://corporatecareer.nl/vacatures/holla-advocaat-medewerker-m-en-a.html": {
   "geldig_tot": "2026-11-16",
@@ -1899,29 +2004,28 @@
   "soort": "URL_UPDATED"
  },
  "https://corporatecareer.nl/vacatures/holla-advocaat-stagiair-arbeidsrecht.html": {
-  "op": "2026-09-28",
-  "soort": "URL_UPDATED"
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
  },
  "https://corporatecareer.nl/vacatures/holla-advocaat-stagiair-bouwrecht.html": {
-  "geldig_tot": "2026-11-16",
-  "op": "2026-10-02",
-  "soort": "URL_UPDATED"
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
  },
  "https://corporatecareer.nl/vacatures/holla-advocaat-stagiair-m-a.html": {
-  "op": "2026-09-24",
-  "soort": "URL_UPDATED"
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
  },
  "https://corporatecareer.nl/vacatures/holla-junior-belastingadviseur.html": {
-  "op": "2026-09-24",
-  "soort": "URL_UPDATED"
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
  },
  "https://corporatecareer.nl/vacatures/holla-litigation-support-coordinator.html": {
-  "op": "2026-09-24",
-  "soort": "URL_UPDATED"
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
  },
  "https://corporatecareer.nl/vacatures/holla-medewerker-risk-compliance.html": {
-  "op": "2026-09-24",
-  "soort": "URL_UPDATED"
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
  },
  "https://corporatecareer.nl/vacatures/holla-senior-advocaat-corporate-litigation.html": {
   "geldig_tot": "2026-11-16",
@@ -1929,16 +2033,16 @@
   "soort": "URL_UPDATED"
  },
  "https://corporatecareer.nl/vacatures/holla-stage-fiscale-praktijk.html": {
-  "op": "2026-09-24",
-  "soort": "URL_UPDATED"
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
  },
  "https://corporatecareer.nl/vacatures/holla-stage-kantoorbreed.html": {
-  "op": "2026-09-24",
-  "soort": "URL_UPDATED"
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
  },
  "https://corporatecareer.nl/vacatures/holla-werkstudent-financiering-zekerheden-insolventie-fzi.html": {
-  "op": "2026-09-24",
-  "soort": "URL_UPDATED"
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
  },
  "https://corporatecareer.nl/vacatures/houthoff-advocaat-stagiaire-amsterdam.html": {
   "op": "2026-09-24",
@@ -1959,8 +2063,8 @@
   "soort": "URL_UPDATED"
  },
  "https://corporatecareer.nl/vacatures/houthoff-student-stagiaire-ai-ondernemingsrecht-m-a-rotterdam.html": {
-  "op": "2026-09-24",
-  "soort": "URL_UPDATED"
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
  },
  "https://corporatecareer.nl/vacatures/houthoff-student-stagiaire-amsterdam.html": {
   "geldig_tot": "2026-11-16",
@@ -2016,8 +2120,8 @@
   "soort": "URL_UPDATED"
  },
  "https://corporatecareer.nl/vacatures/hvg-law-legal-engineer.html": {
-  "op": "2026-09-23",
-  "soort": "URL_UPDATED"
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
  },
  "https://corporatecareer.nl/vacatures/hvg-law-ondernemingsrecht.html": {
   "op": "2026-09-23",
@@ -2084,8 +2188,8 @@
   "soort": "URL_UPDATED"
  },
  "https://corporatecareer.nl/vacatures/ig-h-junior-proces-consultant.html": {
-  "op": "2026-09-23",
-  "soort": "URL_UPDATED"
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
  },
  "https://corporatecareer.nl/vacatures/ig-h-lead-sap-business-cloud.html": {
   "geldig_tot": "2026-11-16",
@@ -2129,8 +2233,8 @@
   "soort": "URL_UPDATED"
  },
  "https://corporatecareer.nl/vacatures/ig-h-process-mining-expert.html": {
-  "op": "2026-09-22",
-  "soort": "URL_UPDATED"
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
  },
  "https://corporatecareer.nl/vacatures/ig-h-programma-manager-zorgdigitalisatie.html": {
   "geldig_tot": "2026-11-16",
@@ -2184,8 +2288,8 @@
   "soort": "URL_UPDATED"
  },
  "https://corporatecareer.nl/vacatures/ig-h-stage-artificial-intelligence-data-science.html": {
-  "op": "2026-09-23",
-  "soort": "URL_UPDATED"
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
  },
  "https://corporatecareer.nl/vacatures/ig-h-stage-zorgtransformatie-en-beslisondersteuning-health-alii.html": {
   "op": "2026-09-23",
@@ -2336,6 +2440,11 @@
   "op": "2026-10-03",
   "soort": "URL_UPDATED"
  },
+ "https://corporatecareer.nl/vacatures/linklaters-werkstudent-corporate-litigation-lai.html": {
+  "geldig_tot": "2027-01-03",
+  "op": "2026-10-05",
+  "soort": "URL_UPDATED"
+ },
  "https://corporatecareer.nl/vacatures/linklaters-wij-zoeken-startend-notarieel-talent.html": {
   "geldig_tot": "2026-11-16",
   "op": "2026-10-02",
@@ -2423,8 +2532,8 @@
   "soort": "URL_UPDATED"
  },
  "https://corporatecareer.nl/vacatures/marktlink-international-workplace-coordinator.html": {
-  "op": "2026-09-24",
-  "soort": "URL_UPDATED"
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
  },
  "https://corporatecareer.nl/vacatures/marktlink-legal-intern.html": {
   "op": "2026-09-24",
@@ -2454,6 +2563,26 @@
   "op": "2026-09-24",
   "soort": "URL_UPDATED"
  },
+ "https://corporatecareer.nl/vacatures/mufg-bank-2027-mufg-6-month-amsterdam-internship-japanese-corporate-banking-division.html": {
+  "geldig_tot": "2027-01-03",
+  "op": "2026-10-05",
+  "soort": "URL_UPDATED"
+ },
+ "https://corporatecareer.nl/vacatures/mufg-bank-2027-mufg-analyst-programme-ceo-domain-track.html": {
+  "geldig_tot": "2027-01-03",
+  "op": "2026-10-05",
+  "soort": "URL_UPDATED"
+ },
+ "https://corporatecareer.nl/vacatures/mufg-bank-2027-mufg-analyst-programme-coo-domain-track.html": {
+  "geldig_tot": "2027-01-03",
+  "op": "2026-10-05",
+  "soort": "URL_UPDATED"
+ },
+ "https://corporatecareer.nl/vacatures/mufg-bank-2027-mufg-analyst-programme-finance-track.html": {
+  "geldig_tot": "2027-01-03",
+  "op": "2026-10-05",
+  "soort": "URL_UPDATED"
+ },
  "https://corporatecareer.nl/vacatures/mufg-bank-2027-mufg-analyst-programme-risk-management-track.html": {
   "op": "2026-09-28",
   "soort": "URL_UPDATED"
@@ -2466,6 +2595,11 @@
   "op": "2026-09-23",
   "soort": "URL_UPDATED"
  },
+ "https://corporatecareer.nl/vacatures/mufg-bank-avp-market-risk-manager.html": {
+  "geldig_tot": "2027-01-03",
+  "op": "2026-10-05",
+  "soort": "URL_UPDATED"
+ },
  "https://corporatecareer.nl/vacatures/mufg-bank-credit-officer-leveraged-finance.html": {
   "geldig_tot": "2026-11-16",
   "op": "2026-10-03",
@@ -2476,9 +2610,14 @@
   "op": "2026-10-03",
   "soort": "URL_UPDATED"
  },
- "https://corporatecareer.nl/vacatures/mufg-bank-senior-auditor.html": {
-  "op": "2026-09-23",
+ "https://corporatecareer.nl/vacatures/mufg-bank-internal-communications-and-pa-to-cfo-and-coo.html": {
+  "geldig_tot": "2027-01-03",
+  "op": "2026-10-05",
   "soort": "URL_UPDATED"
+ },
+ "https://corporatecareer.nl/vacatures/mufg-bank-senior-auditor.html": {
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
  },
  "https://corporatecareer.nl/vacatures/mufg-bank-vice-president-enterprise-risk-planning.html": {
   "op": "2026-09-23",
@@ -2490,8 +2629,8 @@
   "soort": "URL_UPDATED"
  },
  "https://corporatecareer.nl/vacatures/mufg-bank-vp-eu-cash-liquidity-management-sales-japanese-corporates.html": {
-  "op": "2026-09-22",
-  "soort": "URL_UPDATED"
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
  },
  "https://corporatecareer.nl/vacatures/nautadutilh-advocaat-medewerker-financial-law.html": {
   "geldig_tot": "2026-11-16",
@@ -2590,8 +2729,8 @@
   "soort": "URL_UPDATED"
  },
  "https://corporatecareer.nl/vacatures/nysingh-werkstudent-notariaat-vastgoed.html": {
-  "op": "2026-09-23",
-  "soort": "URL_UPDATED"
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
  },
  "https://corporatecareer.nl/vacatures/oliver-wyman-actuarial-services-manager-senior-manager.html": {
   "geldig_tot": "2026-11-16",
@@ -2736,12 +2875,22 @@
   "soort": "URL_UPDATED"
  },
  "https://corporatecareer.nl/vacatures/pels-rijcken-werkstudent-client-acceptatie-desk.html": {
-  "op": "2026-09-23",
-  "soort": "URL_UPDATED"
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
  },
  "https://corporatecareer.nl/vacatures/pels-rijcken-werkstudent-energierecht.html": {
   "geldig_tot": "2026-11-16",
   "op": "2026-10-02",
+  "soort": "URL_UPDATED"
+ },
+ "https://corporatecareer.nl/vacatures/pels-rijcken-werkstudent-europees-en-mededingingsrecht.html": {
+  "geldig_tot": "2027-01-03",
+  "op": "2026-10-05",
+  "soort": "URL_UPDATED"
+ },
+ "https://corporatecareer.nl/vacatures/pels-rijcken-werkstudent-ip-t.html": {
+  "geldig_tot": "2027-01-03",
+  "op": "2026-10-05",
   "soort": "URL_UPDATED"
  },
  "https://corporatecareer.nl/vacatures/pels-rijcken-werkstudent-ondernemingsrecht.html": {
@@ -2824,9 +2973,8 @@
   "soort": "URL_UPDATED"
  },
  "https://corporatecareer.nl/vacatures/pwc-netherlands-security-operations-analyst.html": {
-  "geldig_tot": "2026-11-16",
-  "op": "2026-10-03",
-  "soort": "URL_UPDATED"
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
  },
  "https://corporatecareer.nl/vacatures/pwc-netherlands-senior-associate-corporate-tax-real-estate.html": {
   "op": "2026-09-23",
@@ -2842,6 +2990,11 @@
  },
  "https://corporatecareer.nl/vacatures/pwc-netherlands-senior-associate-legal-consulting-publieke-sector.html": {
   "op": "2026-09-23",
+  "soort": "URL_UPDATED"
+ },
+ "https://corporatecareer.nl/vacatures/pwc-netherlands-senior-associate-public-policy-economics.html": {
+  "geldig_tot": "2027-01-03",
+  "op": "2026-10-05",
   "soort": "URL_UPDATED"
  },
  "https://corporatecareer.nl/vacatures/pwc-netherlands-senior-associate-tax-accounting-services.html": {
@@ -2886,8 +3039,8 @@
   "soort": "URL_UPDATED"
  },
  "https://corporatecareer.nl/vacatures/pwc-netherlands-senior-manager-finance-consulting.html": {
-  "op": "2026-09-23",
-  "soort": "URL_UPDATED"
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
  },
  "https://corporatecareer.nl/vacatures/pwc-netherlands-senior-manager-risk-control-publieke-sector.html": {
   "op": "2026-09-23",
@@ -2992,6 +3145,11 @@
  "https://corporatecareer.nl/vacatures/roland-berger-senior-consultant-project-manager-automotive.html": {
   "geldig_tot": "2026-11-16",
   "op": "2026-10-02",
+  "soort": "URL_UPDATED"
+ },
+ "https://corporatecareer.nl/vacatures/roland-berger-senior-consultant-project-manager-chemicals-process-industries.html": {
+  "geldig_tot": "2027-01-03",
+  "op": "2026-10-05",
   "soort": "URL_UPDATED"
  },
  "https://corporatecareer.nl/vacatures/roland-berger-senior-consultant-project-manager-energy.html": {
@@ -3210,16 +3368,16 @@
   "soort": "URL_UPDATED"
  },
  "https://corporatecareer.nl/vacatures/simmons-simmons-advocaat-stagiair-junior-associate-simmons-simmons-amsterdam.html": {
-  "op": "2026-09-24",
-  "soort": "URL_UPDATED"
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
  },
  "https://corporatecareer.nl/vacatures/stek-advocaat-medewerker-banking-finance-4-tot-7-jaar-ervaring.html": {
-  "op": "2026-09-24",
-  "soort": "URL_UPDATED"
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
  },
  "https://corporatecareer.nl/vacatures/stek-advocaat-medewerker-banking-finance-acquisition-finance.html": {
-  "op": "2026-09-24",
-  "soort": "URL_UPDATED"
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
  },
  "https://corporatecareer.nl/vacatures/stek-advocaat-medewerker-corporate-energy-5-tot-7-jaar-ervaring.html": {
   "op": "2026-09-24",
@@ -3231,8 +3389,8 @@
   "soort": "URL_UPDATED"
  },
  "https://corporatecareer.nl/vacatures/stek-advocaat-medewerker-corporate-m-a-4-tot-7-jaar-ervaring.html": {
-  "op": "2026-09-24",
-  "soort": "URL_UPDATED"
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
  },
  "https://corporatecareer.nl/vacatures/stek-advocaat-medewerker-regulatory-energierecht-omgevingsrecht.html": {
   "op": "2026-09-24",
@@ -3244,16 +3402,16 @@
   "soort": "URL_UPDATED"
  },
  "https://corporatecareer.nl/vacatures/stek-gevorderd-advocaat-stagiaire-of-beginnend-advocaat-medewerker-banking-finance.html": {
-  "op": "2026-09-24",
-  "soort": "URL_UPDATED"
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
  },
  "https://corporatecareer.nl/vacatures/stek-gevorderde-advocaat-stagiaire-of-beginnend-advocaat-medewerker-litigation.html": {
   "op": "2026-09-24",
   "soort": "URL_UPDATED"
  },
  "https://corporatecareer.nl/vacatures/stek-student-stagiaire-banking-finance.html": {
-  "op": "2026-09-24",
-  "soort": "URL_UPDATED"
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
  },
  "https://corporatecareer.nl/vacatures/stek-student-stagiaire-corporate-m-a.html": {
   "op": "2026-09-24",
@@ -3272,8 +3430,8 @@
   "soort": "URL_UPDATED"
  },
  "https://corporatecareer.nl/vacatures/stek-transactiemanager-paralegal-banking-finance.html": {
-  "op": "2026-09-24",
-  "soort": "URL_UPDATED"
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
  },
  "https://corporatecareer.nl/vacatures/stek-werkstudent-energy.html": {
   "op": "2026-09-24",
@@ -3410,6 +3568,11 @@
   "op": "2026-10-03",
   "soort": "URL_UPDATED"
  },
+ "https://corporatecareer.nl/vacatures/twynstra-gudde-medior-adviseur-strategisch-proces-en-omgevingsmanagement.html": {
+  "geldig_tot": "2027-01-03",
+  "op": "2026-10-05",
+  "soort": "URL_UPDATED"
+ },
  "https://corporatecareer.nl/vacatures/twynstra-gudde-medior-adviseur-zorghuisvesting-zorgsector.html": {
   "geldig_tot": "2026-11-16",
   "op": "2026-10-03",
@@ -3465,6 +3628,11 @@
   "op": "2026-10-02",
   "soort": "URL_UPDATED"
  },
+ "https://corporatecareer.nl/vacatures/winston-taylor-associate-intellectual-property.html": {
+  "geldig_tot": "2027-01-03",
+  "op": "2026-10-05",
+  "soort": "URL_UPDATED"
+ },
  "https://corporatecareer.nl/vacatures/winston-taylor-associate-patents-innovation.html": {
   "op": "2026-09-28",
   "soort": "URL_UPDATED"
@@ -3473,14 +3641,19 @@
   "op": "2026-09-23",
   "soort": "URL_UPDATED"
  },
+ "https://corporatecareer.nl/vacatures/winston-taylor-head-of-compliance.html": {
+  "geldig_tot": "2027-01-03",
+  "op": "2026-10-05",
+  "soort": "URL_UPDATED"
+ },
  "https://corporatecareer.nl/vacatures/winston-taylor-junior-kandidaat-notaris-corporate.html": {
   "geldig_tot": "2026-11-16",
   "op": "2026-10-02",
   "soort": "URL_UPDATED"
  },
  "https://corporatecareer.nl/vacatures/winston-taylor-legal-ai-innovation-manager.html": {
-  "op": "2026-09-23",
-  "soort": "URL_UPDATED"
+  "op": "2026-10-05",
+  "soort": "URL_DELETED"
  },
  "https://corporatecareer.nl/vacatures/winston-taylor-senior-associate-restructuring-en-insolvency.html": {
   "geldig_tot": "2026-11-16",
