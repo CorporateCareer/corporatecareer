@@ -28,6 +28,36 @@ SITE = "https://corporatecareer.nl"
 # controle draait wekelijks, dus 45 dagen laat ruim zes gemiste runs marge.
 GELDIG_NA_CONTROLE = 45
 
+# De Engelse vacaturepagina's blijven bestaan voor wie via de taalknop komt,
+# maar worden niet meer geindexeerd. Achtergrond: tijdens de spam-update van
+# Google van 24 september tot 8 oktober 2026 zakte de hele site van gemiddeld
+# positie 22 naar 60 tot 80, en het verkeer viel van rond de 10 kliks per dag
+# naar nul. 1.550 van de 1.960 indexeerbare pagina's waren toen gegenereerde
+# vacaturepagina's, waarvan de helft een Engelse schil om dezelfde vacature.
+# Elke open vacature stond daardoor ook twee keer als JobPosting van dezelfde
+# site bij Google. De Engelse versie voegt aan een Nederlandse vacature weinig
+# toe; de Nederlandse is het origineel.
+_HREFLANG = re.compile(r'[ \t]*<link rel="alternate" hreflang="[^"]*" href="[^"]*">\n?')
+_LD = re.compile(r'[ \t]*<script type="application/ld\+json"[^>]*>[\s\S]*?</script>\n?')
+
+
+def zonder_hreflang(html):
+    """Een vacature heeft geen taalvariant meer om naar te verwijzen."""
+    return _HREFLANG.sub("", html)
+
+
+def buiten_index(html):
+    """Engelse vacaturepagina: wel bereikbaar, niet geindexeerd, geen JobPosting.
+
+    De JobPosting gaat er ook uit en niet alleen de indexering: een vacature
+    hoort maar een keer van deze site bij Google te staan, en die ene keer is
+    de Nederlandse pagina.
+    """
+    html = re.sub(r'<meta name="robots" content="[^"]*">',
+                  '<meta name="robots" content="noindex, follow">', html, count=1)
+    html = zonder_hreflang(html)
+    return _LD.sub(lambda m: "" if "JobPosting" in m.group(0) else m.group(0), html)
+
 def esc(s): return H.escape(str(s), quote=True)
 
 # Als tekens en niet als HTML-entiteit: bi() escapet de tekst, dus &rarr;
@@ -565,17 +595,10 @@ def update_sitemap(active, blijvend=()):
     else:
         xml = xml.replace("</urlset>", marked + "\n\n</urlset>")
 
-    en_block = "\n".join(
-        f"""  <url>
-    <loc>{SITE}/en/vacatures/{j['slug']}.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>""" for j in paginas)
-    en_marked = f"  <!-- EN_VACATURES:START -->\n{en_block}\n  <!-- EN_VACATURES:END -->"
-    if "<!-- EN_VACATURES:START -->" in xml:
-        xml = re.sub(r"  <!-- EN_VACATURES:START -->[\s\S]*?  <!-- EN_VACATURES:END -->", en_marked, xml)
-    else:
-        xml = xml.replace("</urlset>", en_marked + "\n\n</urlset>")
+    # De Engelse vacaturepagina's staan op noindex en horen dus niet in de
+    # sitemap: een sitemap met pagina's die je zelf uitsluit is een
+    # tegenstrijdig signaal. Het blok en de bijbehorende witregel gaan eruit.
+    xml = re.sub(r"\n*  <!-- EN_VACATURES:START -->[\s\S]*?  <!-- EN_VACATURES:END -->", "", xml)
     open(SITEMAP, "w", encoding="utf-8").write(xml)
 
 HOME = os.path.join(BASE, "index.html")
@@ -920,13 +943,13 @@ def main():
         # zolang bakken de andere taal verborg in plaats van weghaalde. Nu die
         # er echt uit gaat, moet de Engelse versie uit het origineel komen.
         raw = build_page(j, nav, footer, first_seen, active)
-        nl_html = gen_en.add_hreflang_nl(gen_en.bake(raw, "nl", strip=True), site_path)
+        nl_html = zonder_hreflang(gen_en.bake(raw, "nl", strip=True))
         open(os.path.join(VAC_DIR, fn), "w", encoding="utf-8").write(nl_html)
         en_title = f"{j['title']} at {j['company']} in {j['location']} | CorporateCareer"
         en_desc = (f"{j['title']} at {j['company']} in {j['location']}. "
                    "View the role and apply via the official job page.")
         open(os.path.join(EN_VAC_DIR, fn), "w", encoding="utf-8").write(
-            gen_en.to_en(raw, site_path, en_title, en_desc, strip=True))
+            buiten_index(gen_en.to_en(raw, site_path, en_title, en_desc, strip=True)))
 
     # Gesloten vacatures krijgen een pagina die zegt dat ze dicht zijn en die
     # doorverwijst, in plaats van een 404. Alleen bestanden waarvan de vacature
@@ -937,7 +960,7 @@ def main():
         wanted.add(fn)
         site_path = f"/vacatures/{fn}"
         raw = closed_page(j, nav, footer, active)
-        nl_html = gen_en.add_hreflang_nl(gen_en.bake(raw, "nl", strip=True), site_path)
+        nl_html = zonder_hreflang(gen_en.bake(raw, "nl", strip=True))
         open(os.path.join(VAC_DIR, fn), "w", encoding="utf-8").write(nl_html)
         if j["slug"] in DUURZAAM:
             en_title = f"{j['title']} at {j['company']}: the role and the vacancies | CorporateCareer"
@@ -948,7 +971,7 @@ def main():
             en_desc = (f"The {j['title']} vacancy at {j['company']} in {j['location']} is no longer open. "
                        f"See what is currently open at {j['company']}.")
         open(os.path.join(EN_VAC_DIR, fn), "w", encoding="utf-8").write(
-            gen_en.to_en(raw, site_path, en_title, en_desc, strip=True))
+            buiten_index(gen_en.to_en(raw, site_path, en_title, en_desc, strip=True)))
 
     removed = 0
     for d in (VAC_DIR, EN_VAC_DIR):
